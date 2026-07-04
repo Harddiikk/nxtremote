@@ -1,0 +1,193 @@
+"use client";
+
+import React, { useRef, useEffect, useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { Heading } from "@/components/heading";
+import { Subheading } from "@/components/subheading";
+import { cn } from "@/lib/utils";
+import { IconPlus } from "@tabler/icons-react";
+import { GridLineHorizontal, GridLineVertical } from "./grid-lines";
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface FAQSection {
+  title: string;
+  items: FAQItem[];
+}
+
+const faqData: FAQSection[] = [
+  {
+    title: "Talent & Vetting",
+    items: [
+      {
+        question: "How does the NXT Remote vetting process work?",
+        answer:
+          "Every specialist undergoes a rigorous 3-stage vetting process: domain-specific portfolio checks, advanced English & cultural nuance communication audits, and diagnostic reviews of their physical remote infrastructure (redundant power, secondary internet lines, hardware specifications)."
+      },
+      {
+        question: "Are candidates experienced in agency environments?",
+        answer:
+          "Yes. Our talent is sourced specifically for digital agency environments and is fully operational from day one. They are natively trained in workflows like Asana, ClickUp, Jira, and Slack, and have background records working with western agency brands."
+      },
+      {
+        question: "What specific marketing roles can I hire?",
+        answer:
+          "We offer specialized remote placements for Paid Media & Performance (Meta, Google, TikTok), Technical SEO & Content Strategists, Brand & Short-form Video Editors, and Operations Engineers (HubSpot, GoHighLevel, Zapier)."
+      }
+    ]
+  },
+  {
+    title: "Operations & Integration",
+    items: [
+      {
+        question: "How long does a placement typically take?",
+        answer:
+          "Our placement time is highly optimized. Sourcing and role profiling takes 1-2 days, vetting takes 3-7 days, client shortlists are interview-ready by Day 8-10, and onboarding setup occurs from Day 11+."
+      },
+      {
+        question: "What communication channels are used?",
+        answer:
+          "NXT Remote operates with WhatsApp Velocity. We don't hide behind slow email support tickets or clunky portals. You communicate directly with your dedicated account coordinators and specialists on the messaging app you use daily."
+      },
+      {
+        question: "What is your replacement guarantee?",
+        answer:
+          "We provide a 30-Day Free Replacement Guarantee on our Growth tier, a 90-Day Guarantee on our Scale tier, and lifetime replacement protection on custom Enterprise builds. If a candidate doesn't work out technically or culturally, we replace them immediately."
+      }
+    ]
+  },
+  {
+    title: "Infrastructure & Legal",
+    items: [
+      {
+        question: "How do you guarantee 99.9% work shift uptime?",
+        answer:
+          "We mandate physical audits of candidate workstations. Every resource must operate on a machine tailored for heavy multitasking, hold a professional noise-canceling headset, and keep secondary power backups (UPS/inverters) plus a secondary high-speed internet source."
+      },
+      {
+        question: "How is my proprietary data protected?",
+        answer:
+          "All remote specialists are contractually bound to strict corporate NDAs and complete GDPR data protection training. We enforce secure credential-sharing practices (using LastPass or 1Password) and strict data security safeguards."
+      }
+    ]
+  }
+];
+
+export function FAQs() {
+  const [activeId, setActiveId] = useState<string | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
+      ) {
+        setActiveId(null);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const toggleQuestion = (id: string) => {
+    setActiveId(activeId === id ? null : id);
+  };
+
+  return (
+    <div className="mx-auto max-w-4xl overflow-hidden px-4 py-20 md:px-8 md:py-32">
+      <div className="text-center">
+        <Heading as="h2">Frequently Asked Questions</Heading>
+        <Subheading className="mx-auto mt-4 max-w-2xl">
+          Everything you need to know about scaling your digital marketing agency with top-tier remote talent.
+        </Subheading>
+      </div>
+
+      <div
+        ref={containerRef}
+        className="relative mt-16 flex flex-col gap-12 px-4 md:px-8"
+      >
+        {faqData.map((section) => (
+          <div key={section.title}>
+            <h3 className="mb-6 text-lg font-medium text-neutral-800 dark:text-neutral-200">
+              {section.title}
+            </h3>
+            <div className="flex flex-col gap-3">
+              {section.items.map((item, index) => {
+                const id = `${section.title}-${index}`;
+                const isActive = activeId === id;
+
+                return (
+                  <div
+                    key={id}
+                    className={cn(
+                      "relative rounded-lg transition-all duration-200",
+                      isActive
+                        ? "bg-white shadow-sm ring-1 shadow-black/10 ring-black/10 dark:bg-neutral-900 dark:shadow-white/5 dark:ring-white/10"
+                        : "hover:bg-neutral-50 dark:hover:bg-neutral-900",
+                    )}
+                  >
+                    {isActive && (
+                      <div className="absolute inset-0">
+                        <GridLineHorizontal
+                          className="-top-[2px]"
+                          offset="100px"
+                        />
+                        <GridLineHorizontal
+                          className="-bottom-[2px]"
+                          offset="100px"
+                        />
+                        <GridLineVertical
+                          className="-left-[2px]"
+                          offset="100px"
+                        />
+                        <GridLineVertical
+                          className="-right-[2px] left-auto"
+                          offset="100px"
+                        />
+                      </div>
+                    )}
+                    <button
+                      onClick={() => toggleQuestion(id)}
+                      className="flex w-full items-center justify-between px-4 py-4 text-left"
+                    >
+                      <span className="text-sm font-medium text-neutral-700 md:text-base dark:text-neutral-300">
+                        {item.question}
+                      </span>
+                      <motion.div
+                        animate={{ rotate: isActive ? 45 : 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="ml-4 shrink-0"
+                      >
+                        <IconPlus className="size-5 text-neutral-500 dark:text-neutral-400" />
+                      </motion.div>
+                    </button>
+                    <AnimatePresence initial={false}>
+                      {isActive && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.15, ease: "easeInOut" }}
+                          className="relative"
+                        >
+                          <p className="max-w-[90%] px-4 pb-4 text-sm text-neutral-600 dark:text-neutral-400">
+                            {item.answer}
+                          </p>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
