@@ -115,7 +115,7 @@ export default function ServicesPage() {
           <Heading as="h1" className="mt-4 text-4xl md:text-6xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 leading-tight">
             On-Demand Offshore Staffing for Every Marketing Vertical
           </Heading>
-          <p className="mt-6 text-lg md:text-xl text-neutral-600 dark:text-neutral-350 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-xl md:text-2xl text-neutral-600 dark:text-neutral-350 max-w-3xl mx-auto leading-relaxed">
             From media buyers to technical SEOs, we source the exact skill sets you need to deliver exceptional client results.
           </p>
         </Container>
@@ -152,10 +152,10 @@ export default function ServicesPage() {
                       </div>
                       {spec.role}
                     </td>
-                    <td className="px-6 py-6 text-sm text-neutral-600 dark:text-neutral-300 max-w-lg">
+                    <td className="px-6 py-6 text-base text-neutral-600 dark:text-neutral-300 max-w-lg">
                       {spec.competencies}
                     </td>
-                    <td className="px-6 py-6 text-sm font-semibold text-neutral-800 dark:text-neutral-200 text-right text-brand-secondary dark:text-brand-accent">
+                    <td className="px-6 py-6 text-base font-semibold text-neutral-800 dark:text-neutral-200 text-right text-brand-secondary dark:text-brand-accent">
                       {spec.time}
                     </td>
                   </tr>
@@ -183,7 +183,7 @@ export default function ServicesPage() {
                   <span className="text-[10px] font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-widest block">
                     Competencies
                   </span>
-                  <p className="text-xs text-neutral-600 dark:text-neutral-300 mt-0.5">
+                  <p className="text-sm text-neutral-600 dark:text-neutral-300 mt-0.5">
                     {spec.competencies}
                   </p>
                 </div>
@@ -234,7 +234,7 @@ export default function ServicesPage() {
                   <h3 className="font-bold text-sm text-neutral-800 dark:text-neutral-50">
                     {step.title}
                   </h3>
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-2 leading-relaxed">
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-2 leading-relaxed">
                     {step.description}
                   </p>
                 </div>

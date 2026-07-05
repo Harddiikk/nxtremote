@@ -107,6 +107,7 @@ function Logo() {
         width={24}
         height={24}
         className="size-6"
+        priority
       />
       <span className="text-lg font-semibold">Simplistic</span>
     </Link>

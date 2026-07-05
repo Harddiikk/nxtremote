@@ -38,7 +38,7 @@ export default function AboutPage() {
           <Heading as="h1" className="mt-4 text-4xl md:text-6xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 leading-tight">
             Bridging the Gap Between Top Agencies and Elite Remote Talent
           </Heading>
-          <p className="mt-6 text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-xl md:text-2xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto leading-relaxed">
             We build the backend execution engines for the world’s fastest-growing digital marketing brands.
           </p>
         </Container>
@@ -54,7 +54,7 @@ export default function AboutPage() {
             <Heading as="h2" className="mt-2 mb-6 text-3xl md:text-4xl font-bold">
               Built by Marketers, For Marketers
             </Heading>
-            <div className="space-y-4 text-base text-neutral-600 dark:text-neutral-350 leading-relaxed">
+            <div className="space-y-4 text-lg text-neutral-600 dark:text-neutral-350 leading-relaxed">
               <p>
                 At NXT Remote, we don't believe in generic virtual assistants. We know that a high-growth digital marketing agency needs specialized technical execution to thrive. That’s why we built a dedicated offshore staffing solution focused exclusively on the digital marketing domain.
               </p>
@@ -71,10 +71,10 @@ export default function AboutPage() {
                   <Compass className="size-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-sm text-neutral-800 dark:text-neutral-100">
+                  <h3 className="font-bold text-base text-neutral-800 dark:text-neutral-100">
                     Laser Focus
                   </h3>
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed">
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed">
                     100% digital marketing specialization. No generalists, no administrative fillers.
                   </p>
                 </div>
@@ -87,10 +87,10 @@ export default function AboutPage() {
                   <Award className="size-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-sm text-neutral-800 dark:text-neutral-100">
+                  <h3 className="font-bold text-base text-neutral-800 dark:text-neutral-100">
                     Rigorous Standard
                   </h3>
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed">
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed">
                     Our triple-vetted pipeline accepts only the top 3% of global digital applicants.
                   </p>
                 </div>
@@ -103,10 +103,10 @@ export default function AboutPage() {
                   <Heart className="size-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-sm text-neutral-800 dark:text-neutral-100">
+                  <h3 className="font-bold text-base text-neutral-800 dark:text-neutral-100">
                     Seamless Fit
                   </h3>
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed">
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed">
                     Natively trained in Slack, Jira, ClickUp, and Asana for zero integration lag.
                   </p>
                 </div>

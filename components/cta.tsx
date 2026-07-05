@@ -66,11 +66,11 @@ export function CTA() {
       <div className="max-w-xl">
         <Heading
           as="h2"
-          className="text-3xl font-bold tracking-tight text-balance text-black md:text-4xl dark:text-white animate-pulse-once"
+          className="text-4xl font-bold tracking-tight text-balance text-black md:text-5xl dark:text-white animate-pulse-once"
         >
           Stop Vetting Resumes. Start Scaling Operations.
         </Heading>
-        <Subheading className="mt-6 max-w-lg text-base text-neutral-600 md:text-base dark:text-neutral-400 leading-relaxed">
+        <Subheading className="mt-6 max-w-lg text-lg text-neutral-600 md:text-xl dark:text-neutral-400 leading-relaxed">
           Skip the scrolling, the ghosting, and the onboarding headaches. Tell us the digital marketing specialist your agency is missing, and let us handle the rest.
         </Subheading>
         <Link href="https://wa.me/1234567890?text=Hi%20NXT%20Remote,%20I'd%20like%20to%20schedule%20a%20WhatsApp%20discovery%20call." target="_blank" rel="noopener noreferrer">

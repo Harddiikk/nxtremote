@@ -170,6 +170,7 @@ function TestimonialCard() {
           src="https://assets.aceternity.com/avatars/1.webp"
           alt="Sarah Chen"
           className="size-5 rounded-full object-cover"
+          loading="lazy"
         />
         <div className="flex flex-col">
           <span className="text-[10px] font-medium text-neutral-800 dark:text-neutral-200">
@@ -193,6 +194,7 @@ function LoginLogo() {
           height={20}
           width={20}
           alt="Logo"
+          loading="lazy"
         />
       </div>
       <span className="text-xs font-semibold text-neutral-900 dark:text-white">

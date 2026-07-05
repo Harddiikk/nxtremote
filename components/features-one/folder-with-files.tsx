@@ -108,6 +108,7 @@ export function FolderWithFiles({ className }: { className?: string }) {
                       src={image}
                       alt={`File ${index + 1}`}
                       className="h-full w-full object-cover"
+                      loading="lazy"
                     />
                   </motion.div>
                 );

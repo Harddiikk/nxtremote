@@ -22,7 +22,7 @@ export function FeaturesOne() {
         <Heading className="mt-2 text-neutral-900 dark:text-neutral-100">
           High Local Salaries Shouldn't Stall Your Agency’s Growth
         </Heading>
-        <p className="mt-4 text-base text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed">
           Finding skilled media buyers, SEO strategists, and account managers in local markets is becoming unsustainably expensive. NXT Remote solves this by sourcing, vetting, and embedding top-tier offshore digital marketing talent directly into your workflow.
         </p>
       </div>
@@ -161,7 +161,7 @@ function CardTitle({
   return (
     <h3
       className={cn(
-        "text-sm font-semibold text-neutral-900 dark:text-white",
+        "text-base md:text-lg font-semibold text-neutral-900 dark:text-white",
         className,
       )}
     >
@@ -180,7 +180,7 @@ function CardDescription({
   return (
     <p
       className={cn(
-        "text-sm text-balance text-neutral-600 dark:text-neutral-400",
+        "text-base text-balance text-neutral-600 dark:text-neutral-400 leading-relaxed",
         className,
       )}
     >
@@ -211,10 +211,10 @@ function FeatureCard({
   return (
     <div className="group rounded-2xl bg-white p-6 dark:bg-neutral-900">
       {icon}
-      <h3 className="mt-4 text-sm font-semibold text-neutral-900 dark:text-white">
+      <h3 className="mt-4 text-base font-semibold text-neutral-900 dark:text-white">
         {title}
       </h3>
-      <p className="mt-2 text-sm text-balance text-neutral-600 dark:text-neutral-400">
+      <p className="mt-2 text-base text-balance text-neutral-600 dark:text-neutral-400 leading-relaxed">
         {description}
       </p>
     </div>

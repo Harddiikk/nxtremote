@@ -175,7 +175,7 @@ export function FAQs() {
                           transition={{ duration: 0.15, ease: "easeInOut" }}
                           className="relative"
                         >
-                          <p className="max-w-[90%] px-4 pb-4 text-sm text-neutral-600 dark:text-neutral-400">
+                          <p className="max-w-[90%] px-4 pb-4 text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
                             {item.answer}
                           </p>
                         </motion.div>

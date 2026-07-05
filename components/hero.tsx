@@ -22,16 +22,16 @@ export default function Hero() {
           <Badge href="/about">NXT Remote bridges the gap between top-tier global talent and growing digital agencies</Badge>
         </div>
 
-        <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-neutral-900 md:text-6xl dark:text-neutral-100 leading-tight">
+        <h1 className="mt-6 max-w-4xl text-5xl font-bold tracking-tight text-neutral-900 md:text-7xl lg:text-8xl dark:text-neutral-100 leading-[1.15]">
           Scale Your Digital Marketing Agency with Pre-Vetted Offshore Talent
         </h1>
 
-        <p className="mt-4 max-w-3xl text-base text-neutral-600 md:text-xl dark:text-neutral-300">
+        <p className="mt-6 max-w-3xl text-lg text-neutral-600 md:text-2xl dark:text-neutral-300 leading-relaxed">
           Skip the local hiring crunch. Build a high-performing, dedicated remote team of digital marketing specialists at a fraction of the cost.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center gap-4">
-          <Link href="https://wa.me/1234567890?text=Hi%20NXT%20Remote,%20I'd%20like%20to%20schedule%20a%20discovery%20call." target="_blank" rel="noopener noreferrer">
+          <Link href="/hire">
             <Button>
               <span className="flex items-center gap-2">
                 Find Your Next Hire <Arrow className="size-4" />
@@ -41,42 +41,9 @@ export default function Hero() {
           <Link href="/services">
             <Button variant="outline">View Open Roles</Button>
           </Link>
-        </div>
-
-        {/* MacBook Window */}
-        <div className="mt-16 md:mt-24">
-          <div className="relative mx-auto max-w-full">
-            {/* Window Frame */}
-            <div className="overflow-hidden rounded-xl border border-neutral-300/50 bg-white/70 backdrop-blur-sm dark:border-neutral-700/50 dark:bg-neutral-900/70">
-              {/* Title Bar */}
-              <div className="flex items-center gap-2 border-b border-neutral-200/50 px-4 py-3 dark:border-neutral-700/50">
-                <div className="flex items-center gap-1.5">
-                  <div className="size-3 rounded-full bg-red-500" />
-                  <div className="size-3 rounded-full bg-yellow-500" />
-                  <div className="size-3 rounded-full bg-green-500" />
-                </div>
-                <div className="flex-1 text-center">
-                  <span className="text-xs text-neutral-500 dark:text-neutral-400">
-                    app.simplistic.ai
-                  </span>
-                </div>
-                <div className="w-12" />
-              </div>
-              {/* Window Content */}
-              <div className="relative aspect-16/10 w-full">
-                <Image
-                  src="https://assets.aceternity.com/screenshots/3.jpg"
-                  width={1000}
-                  height={1000}
-                  alt="Dashboard Preview"
-                  className="h-full w-full object-cover object-top"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
+  </div>
   );
 }
 

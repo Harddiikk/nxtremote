@@ -143,7 +143,7 @@ export function Pricing() {
           >
             Predictable, Transparent Pricing. No Hidden Hiring Fees.
           </Heading>
-          <p className="mt-4 text-base text-neutral-600 dark:text-neutral-350 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-350 max-w-3xl mx-auto leading-relaxed">
             Stop paying 20%–30% recruitment fees. Choose a flexible monthly subscription model built around your agency's scaling velocity.
           </p>
         </div>
@@ -191,11 +191,11 @@ export function Pricing() {
                 
                 <div>
                   <div className="flex items-start justify-between">
-                    <p className="text-base font-bold text-neutral-900 dark:text-white">
+                    <p className="text-lg font-bold text-neutral-900 dark:text-white">
                       {plan.name}
                     </p>
                   </div>
-                  <p className="mt-2 text-xs text-neutral-500 dark:text-neutral-400 min-h-8">
+                  <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400 min-h-8">
                     {plan.description}
                   </p>
                   
@@ -227,7 +227,7 @@ export function Pricing() {
                         <div className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-brand-accent/20 dark:bg-brand-accent/15">
                           <IconCheck className="h-3 w-3 stroke-[4px] text-[#00E5AA]" />
                         </div>
-                        <span className="text-xs text-neutral-600 dark:text-neutral-350">
+                        <span className="text-sm text-neutral-600 dark:text-neutral-350">
                           {feature}
                         </span>
                       </div>
@@ -269,9 +269,9 @@ export function Pricing() {
               <div className="bg-white/5 rounded-xl p-6 border border-white/5">
                 <div className="flex items-center gap-2 text-red-400 mb-4">
                   <AlertCircle className="size-4" />
-                  <span className="font-semibold text-sm">Hiring Digital Marketer Locally</span>
+                  <span className="font-semibold text-base">Hiring Digital Marketer Locally</span>
                 </div>
-                <ul className="space-y-3 text-sm text-neutral-300">
+                <ul className="space-y-3 text-base text-neutral-300">
                   <li className="flex justify-between">
                     <span>Base salary:</span>
                     <span className="font-semibold">$6,500/month</span>
@@ -284,7 +284,7 @@ export function Pricing() {
                     <span>Upfront recruiting fees:</span>
                     <span className="font-semibold">$5,000 (one-time)</span>
                   </li>
-                  <li className="flex justify-between border-t border-white/10 pt-3 font-bold text-white text-base">
+                  <li className="flex justify-between border-t border-white/10 pt-3 font-bold text-white text-lg">
                     <span>Total Year 1 Cost:</span>
                     <span>~$97,400</span>
                   </li>
@@ -298,9 +298,9 @@ export function Pricing() {
                 </div>
                 <div className="flex items-center gap-2 text-[#00E5AA] mb-4">
                   <ShieldCheck className="size-4" />
-                  <span className="font-semibold text-sm">NXT Remote Dedicated Specialist</span>
+                  <span className="font-semibold text-base">NXT Remote Dedicated Specialist</span>
                 </div>
-                <ul className="space-y-3 text-sm text-neutral-300">
+                <ul className="space-y-3 text-base text-neutral-300">
                   <li className="flex justify-between">
                     <span>Flat rate:</span>
                     <span className="font-semibold">$1,599/month</span>
@@ -313,7 +313,7 @@ export function Pricing() {
                     <span>Recruiting fees:</span>
                     <span className="font-semibold">$0</span>
                   </li>
-                  <li className="flex justify-between border-t border-[#00E5AA]/20 pt-3 font-bold text-[#00E5AA] text-base">
+                  <li className="flex justify-between border-t border-[#00E5AA]/20 pt-3 font-bold text-[#00E5AA] text-lg">
                     <span>Total Year 1 Cost:</span>
                     <span>~$19,188</span>
                   </li>
@@ -360,7 +360,7 @@ export function Pricing() {
           <div className="hidden md:block overflow-hidden rounded-2xl border border-neutral-200 dark:border-white/5 bg-white dark:bg-neutral-900/40 shadow-xs">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="border-b border-neutral-200 dark:border-white/5 bg-neutral-50/50 dark:bg-neutral-950/20 text-xs font-bold uppercase tracking-wider text-neutral-500">
+                <tr className="border-b border-neutral-200 dark:border-white/5 bg-neutral-50/50 dark:bg-neutral-950/20 text-sm font-bold uppercase tracking-wider text-neutral-500">
                   <th className="px-6 py-4 w-1/4">Evaluation Criteria</th>
                   <th className="px-6 py-4 bg-brand-secondary/5 dark:bg-brand-secondary/10 w-3/8 text-neutral-900 dark:text-neutral-100 font-bold border-x border-neutral-200/50 dark:border-neutral-800">
                     NXT Remote (Our Standard)
@@ -368,7 +368,7 @@ export function Pricing() {
                   <th className="px-6 py-4 w-3/8">General Freelancers (Upwork, Fiverr)</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-neutral-200 dark:divide-white/5 text-xs leading-relaxed">
+              <tbody className="divide-y divide-neutral-200 dark:divide-white/5 text-sm leading-relaxed">
                 {comparisonData.map((row) => (
                   <tr key={row.criteria} className="hover:bg-neutral-50/30 dark:hover:bg-neutral-900/20">
                     <td className="px-6 py-4 font-bold text-neutral-800 dark:text-neutral-200">{row.criteria}</td>
@@ -389,14 +389,14 @@ export function Pricing() {
                 key={row.criteria} 
                 className="p-5 rounded-2xl bg-white border border-neutral-200 dark:bg-neutral-900 dark:border-neutral-800 shadow-xs space-y-3"
               >
-                <h4 className="font-bold text-sm text-neutral-850 dark:text-neutral-100 border-b border-neutral-100 dark:border-white/5 pb-2">
+                <h4 className="font-bold text-base text-neutral-850 dark:text-neutral-100 border-b border-neutral-100 dark:border-white/5 pb-2">
                   {row.criteria}
                 </h4>
                 <div>
                   <span className="text-[10px] font-bold text-brand-secondary dark:text-brand-accent uppercase tracking-widest block">
                     NXT Remote Standard
                   </span>
-                  <p className="text-xs text-neutral-700 dark:text-neutral-300 mt-1">
+                  <p className="text-sm text-neutral-700 dark:text-neutral-300 mt-1">
                     {row.nxt}
                   </p>
                 </div>
@@ -404,7 +404,7 @@ export function Pricing() {
                   <span className="text-[10px] font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-widest block">
                     General Freelance Markets
                   </span>
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
                     {row.market}
                   </p>
                 </div>

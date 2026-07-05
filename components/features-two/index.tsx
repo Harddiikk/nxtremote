@@ -36,13 +36,13 @@ export function FeaturesTwo() {
           <Heading as="h2" className="mt-2 mb-6">
             100% Digital Marketing Mastery.
           </Heading>
-          <p className="text-base text-neutral-600 dark:text-neutral-350 leading-relaxed mb-4">
+          <p className="text-lg text-neutral-600 dark:text-neutral-350 leading-relaxed mb-4">
             Most offshore staffing agencies handle everything from general data entry to accounting. They try to be everything to everyone—and end up providing surface-level generalists who don't know a pixel from a pillar page.
           </p>
-          <p className="text-base text-neutral-600 dark:text-neutral-350 leading-relaxed font-medium">
+          <p className="text-lg text-neutral-600 dark:text-neutral-350 leading-relaxed font-semibold">
             At NXT Remote, we do one thing passionately: We place elite offshore talent exclusively within the digital marketing domain.
           </p>
-          <p className="mt-4 text-sm text-neutral-500 dark:text-neutral-400">
+          <p className="mt-4 text-base text-neutral-550 dark:text-neutral-300 leading-relaxed">
             Our infrastructure is built for agency founders and marketing directors. We live and breathe performance marketing, conversion metrics (ROAS, LTV), search marketing, custom web building, content operations, and automation architecture.
           </p>
         </div>
@@ -196,7 +196,7 @@ function BeamCircle({ label, active }: { label: string; active?: boolean }) {
 
 function FeatureTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h3 className="mt-6 text-center text-sm font-semibold text-neutral-900 dark:text-neutral-100">
+    <h3 className="mt-6 text-center text-base md:text-lg font-semibold text-neutral-900 dark:text-neutral-100">
       {children}
     </h3>
   );
@@ -204,7 +204,7 @@ function FeatureTitle({ children }: { children: React.ReactNode }) {
 
 function FeatureDescription({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mx-auto mt-2 max-w-xs text-center text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
+    <p className="mx-auto mt-2 max-w-xs text-center text-sm leading-relaxed text-neutral-550 dark:text-neutral-400">
       {children}
     </p>
   );
@@ -233,12 +233,12 @@ function PillarCard({
               Pillar {number}
             </span>
           </div>
-          <h4 className="text-sm font-bold text-neutral-800 dark:text-neutral-100 mt-0.5">
+          <h4 className="text-base font-bold text-neutral-800 dark:text-neutral-100 mt-0.5">
             {title}
           </h4>
         </div>
       </div>
-      <p className="mt-3 text-xs leading-relaxed text-neutral-600 dark:text-neutral-400">
+      <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
         {description}
       </p>
     </div>
