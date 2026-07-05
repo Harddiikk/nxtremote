@@ -848,9 +848,9 @@ export function TestimonialsCanvas({
 
     // Initial tile calculation - deferred to avoid synchronous setState in effect
     updateTransform();
-    queueMicrotask(() => {
+    setTimeout(() => {
       updateVisibleTiles();
-    });
+    }, 0);
 
     // Start auto-pan after initial delay
     const initialTimer = setTimeout(() => {
