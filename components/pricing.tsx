@@ -129,7 +129,8 @@ export function Pricing() {
   ];
 
   return (
-    <Container as="section" className="flex w-full flex-col py-10 md:py-16">
+    <div className="bg-neutral-50/50 dark:bg-[#132655]/40 border-y border-neutral-100 dark:border-white/5 relative z-10 py-16 md:py-24">
+    <Container as="section" className="flex w-full flex-col">
       <div className="relative mx-auto flex w-full max-w-7xl flex-1 flex-col px-4 py-0">
         
         {/* Header */}
@@ -179,8 +180,12 @@ export function Pricing() {
               <div
                 key={plan.id}
                 className={cn(
-                  "relative rounded-xl bg-white border border-neutral-200 p-6 flex flex-col justify-between dark:bg-neutral-950 dark:border-neutral-800 shadow-xs transition-all duration-200 hover:border-brand-secondary/40",
-                  plan.featured && "ring-2 ring-brand-secondary border-transparent dark:bg-neutral-900/60"
+                  "relative rounded-xl bg-white border border-neutral-200 p-6 flex flex-col justify-between dark:bg-neutral-950 dark:border-neutral-800 shadow-sm transition-all duration-300 cursor-pointer",
+                  "hover:-translate-y-2 hover:scale-[1.02] hover:border-brand-secondary dark:hover:border-brand-accent",
+                  "hover:shadow-[0_20px_40px_rgba(11,117,226,0.08)] dark:hover:shadow-[0_20px_40px_rgba(0,229,170,0.12)]",
+                  plan.featured 
+                    ? "ring-2 ring-brand-secondary border-transparent dark:bg-[#132655]/60 shadow-[0_4px_20px_rgba(11,117,226,0.15)] dark:shadow-[0_4px_20px_rgba(0,229,170,0.15)]"
+                    : ""
                 )}
               >
                 {plan.featured && (
@@ -357,25 +362,36 @@ export function Pricing() {
           </div>
 
           {/* Desktop Table */}
-          <div className="hidden md:block overflow-hidden rounded-2xl border border-neutral-200 dark:border-white/5 bg-white dark:bg-neutral-900/40 shadow-xs">
+          <div className="hidden md:block overflow-hidden rounded-2xl border border-neutral-200 dark:border-white/10 bg-white/50 dark:bg-neutral-900/30 backdrop-blur-md shadow-lg">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="border-b border-neutral-200 dark:border-white/5 bg-neutral-50/50 dark:bg-neutral-950/20 text-sm font-bold uppercase tracking-wider text-neutral-500">
-                  <th className="px-6 py-4 w-1/4">Evaluation Criteria</th>
-                  <th className="px-6 py-4 bg-brand-secondary/5 dark:bg-brand-secondary/10 w-3/8 text-neutral-900 dark:text-neutral-100 font-bold border-x border-neutral-200/50 dark:border-neutral-800">
-                    NXT Remote (Our Standard)
+                <tr className="border-b border-neutral-200 dark:border-white/10 bg-neutral-100/50 dark:bg-neutral-950/40 text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+                  <th className="px-6 py-5 w-1/4">Evaluation Criteria</th>
+                  <th className="px-6 py-5 bg-[#0b75e2]/5 dark:bg-[#00e5aa]/5 w-3/8 text-neutral-950 dark:text-white font-extrabold border-x border-[#0b75e2]/15 dark:border-[#00e5aa]/10 text-sm">
+                    <span className="flex items-center gap-2">
+                      <ShieldCheck className="size-4 text-[#00E5AA] animate-pulse" />
+                      NXT Remote (Our Standard)
+                    </span>
                   </th>
-                  <th className="px-6 py-4 w-3/8">General Freelancers (Upwork, Fiverr)</th>
+                  <th className="px-6 py-5 w-3/8 text-neutral-600 dark:text-neutral-400 text-sm">General Freelancers (Upwork, Fiverr)</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-neutral-200 dark:divide-white/5 text-sm leading-relaxed">
+              <tbody className="divide-y divide-neutral-200/60 dark:divide-white/5 text-sm leading-relaxed">
                 {comparisonData.map((row) => (
-                  <tr key={row.criteria} className="hover:bg-neutral-50/30 dark:hover:bg-neutral-900/20">
-                    <td className="px-6 py-4 font-bold text-neutral-800 dark:text-neutral-200">{row.criteria}</td>
-                    <td className="px-6 py-4 bg-brand-secondary/5 dark:bg-brand-secondary/5 border-x border-neutral-200/50 dark:border-neutral-800 font-medium text-neutral-800 dark:text-neutral-200">
-                      {row.nxt}
+                  <tr key={row.criteria} className="hover:bg-neutral-50/50 dark:hover:bg-neutral-900/10 transition-colors">
+                    <td className="px-6 py-5 font-bold text-neutral-800 dark:text-neutral-200">{row.criteria}</td>
+                    <td className="px-6 py-5 bg-[#0b75e2]/5 dark:bg-[#00e5aa]/5 border-x border-[#0b75e2]/10 dark:border-[#00e5aa]/5 font-semibold text-neutral-950 dark:text-neutral-100">
+                      <div className="flex items-start gap-2.5">
+                        <ShieldCheck className="size-4 text-[#00E5AA] shrink-0 mt-0.5" />
+                        <span>{row.nxt}</span>
+                      </div>
                     </td>
-                    <td className="px-6 py-4 text-neutral-500 dark:text-neutral-400">{row.market}</td>
+                    <td className="px-6 py-5 text-neutral-500 dark:text-neutral-400">
+                      <div className="flex items-start gap-2.5">
+                        <X className="size-4 text-red-500 shrink-0 mt-0.5" />
+                        <span>{row.market}</span>
+                      </div>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -387,24 +403,28 @@ export function Pricing() {
             {comparisonData.map((row) => (
               <div 
                 key={row.criteria} 
-                className="p-5 rounded-2xl bg-white border border-neutral-200 dark:bg-neutral-900 dark:border-neutral-800 shadow-xs space-y-3"
+                className="p-6 rounded-2xl bg-white/70 dark:bg-neutral-900/40 border border-neutral-200 dark:border-white/5 backdrop-blur-md shadow-md space-y-4"
               >
-                <h4 className="font-bold text-base text-neutral-850 dark:text-neutral-100 border-b border-neutral-100 dark:border-white/5 pb-2">
+                <h4 className="font-extrabold text-base text-neutral-900 dark:text-white border-b border-neutral-100 dark:border-white/5 pb-2">
                   {row.criteria}
                 </h4>
-                <div>
-                  <span className="text-[10px] font-bold text-brand-secondary dark:text-brand-accent uppercase tracking-widest block">
+                
+                <div className="bg-[#0b75e2]/5 dark:bg-[#00e5aa]/5 p-4 rounded-xl border border-[#0b75e2]/10 dark:border-[#00e5aa]/10">
+                  <span className="flex items-center gap-1.5 text-[10px] font-black text-brand-secondary dark:text-brand-accent uppercase tracking-widest">
+                    <ShieldCheck className="size-3.5" />
                     NXT Remote Standard
                   </span>
-                  <p className="text-sm text-neutral-700 dark:text-neutral-300 mt-1">
+                  <p className="text-sm font-semibold text-neutral-900 dark:text-neutral-100 mt-2">
                     {row.nxt}
                   </p>
                 </div>
-                <div>
-                  <span className="text-[10px] font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-widest block">
+                
+                <div className="p-4 rounded-xl border border-neutral-100 dark:border-white/5 bg-neutral-50/50 dark:bg-neutral-950/20">
+                  <span className="flex items-center gap-1.5 text-[10px] font-black text-neutral-400 dark:text-neutral-550 uppercase tracking-widest">
+                    <X className="size-3.5 text-red-400" />
                     General Freelance Markets
                   </span>
-                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-2">
                     {row.market}
                   </p>
                 </div>
@@ -415,5 +435,6 @@ export function Pricing() {
 
       </div>
     </Container>
+    </div>
   );
 }

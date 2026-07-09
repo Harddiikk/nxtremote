@@ -200,21 +200,13 @@ const Logo = () => {
   return (
     <Link
       href="/"
-      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-bold"
+      className="relative z-20 mr-4 flex items-center py-1"
     >
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="size-5 text-brand-secondary"
-      >
-        <path d="M4 20V4l12 16V4" className="stroke-brand-secondary" />
-        <circle cx="18" cy="18" r="2" className="fill-brand-accent stroke-brand-accent" />
-      </svg>
-      <span className="font-bold text-black dark:text-white">NXT Remote</span>
+      <img
+        src="/NXT Remote Logo.png"
+        alt="NXT Remote Logo"
+        className="h-7 w-auto object-contain dark:[filter:invert(1)_hue-rotate(180deg)]"
+      />
     </Link>
   );
 };

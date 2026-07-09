@@ -3,7 +3,7 @@ import { FAQs } from "@/components/faqs";
 import { FeaturesOne } from "@/components/features-one";
 import { FeaturesTwo } from "@/components/features-two";
 import Hero from "@/components/hero";
-import { LogoCloud } from "@/components/logo-cloud";
+import { IntegrationsBento } from "@/components/integrations-bento";
 import { Pricing } from "@/components/pricing";
 import { Testimonials } from "@/components/testimonials";
 import { Metadata } from "next";
@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <main className="">
       <Hero />
-      <LogoCloud />
+      <IntegrationsBento />
       <FeaturesOne />
       <Testimonials />
       <FeaturesTwo />

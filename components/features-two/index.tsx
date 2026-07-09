@@ -6,9 +6,6 @@ import { Heading } from "../heading";
 import { Subheading } from "../subheading";
 import { AnimatedBeamPathIllustration } from "./animated-path";
 import { SecuritySkeleton } from "./security-skeleton";
-import { MacbookSkeleton } from "./macbook-skeleton";
-import { IPhoneSkeleton } from "./iphone-skeleton";
-import { IPadSkeleton } from "./ipad-skeleton";
 import { EdgeComputing } from "./edge-computing";
 import { Compliance } from "./compliance";
 import { 
@@ -26,6 +23,7 @@ import {
 
 export function FeaturesTwo() {
   return (
+    <div className="bg-white dark:bg-brand-primary relative z-10 border-t border-neutral-100 dark:border-white/5">
     <Container className="px-4 py-10 md:py-20 lg:py-32">
       {/* Hyper-Specialization Section */}
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center mb-24 md:mb-32">
@@ -36,13 +34,13 @@ export function FeaturesTwo() {
           <Heading as="h2" className="mt-2 mb-6">
             100% Digital Marketing Mastery.
           </Heading>
-          <p className="text-lg text-neutral-600 dark:text-neutral-350 leading-relaxed mb-4">
+          <p className="text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed mb-4">
             Most offshore staffing agencies handle everything from general data entry to accounting. They try to be everything to everyone—and end up providing surface-level generalists who don't know a pixel from a pillar page.
           </p>
-          <p className="text-lg text-neutral-600 dark:text-neutral-350 leading-relaxed font-semibold">
+          <p className="text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed font-semibold">
             At NXT Remote, we do one thing passionately: We place elite offshore talent exclusively within the digital marketing domain.
           </p>
-          <p className="mt-4 text-base text-neutral-550 dark:text-neutral-300 leading-relaxed">
+          <p className="mt-4 text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">
             Our infrastructure is built for agency founders and marketing directors. We live and breathe performance marketing, conversion metrics (ROAS, LTV), search marketing, custom web building, content operations, and automation architecture.
           </p>
         </div>
@@ -82,32 +80,7 @@ export function FeaturesTwo() {
         </p>
       </div>
 
-      {/* Infrastructure Pillars Skeletons Row */}
-      <div className="mx-auto mb-16 grid w-full grid-cols-1 items-center gap-10 overflow-hidden py-4 md:grid-cols-3 md:flex-row md:items-end md:justify-center md:py-10">
-        <FeatureItem>
-          <MacbookSkeleton />
-          <FeatureTitle>7. Hardware Standards</FeatureTitle>
-          <FeatureDescription>
-            High-performance hardware verified for heavy design rendering, data handling, and multitasking.
-          </FeatureDescription>
-        </FeatureItem>
-
-        <FeatureItem>
-          <IPhoneSkeleton />
-          <FeatureTitle>8. Communication Gear</FeatureTitle>
-          <FeatureDescription>
-            Noise-cancellation headsets and HD capture tools for crisp daily stand-ups and client calls.
-          </FeatureDescription>
-        </FeatureItem>
-
-        <FeatureItem>
-          <IPadSkeleton />
-          <FeatureTitle>9. Power & Internet Backups</FeatureTitle>
-          <FeatureDescription>
-            Mandatory secondary power backups (UPS/Inverters) and backup internet lines for 99.9% uptime.
-          </FeatureDescription>
-        </FeatureItem>
-      </div>
+      {/* Sourcing & Vetting Pillars Grid Intro */}
 
       {/* The 10 Mandatory Sourcing Pillars Grid */}
       <div className="mx-auto mt-16 max-w-6xl">
@@ -168,6 +141,7 @@ export function FeaturesTwo() {
         </div>
       </div>
     </Container>
+    </div>
   );
 }
 

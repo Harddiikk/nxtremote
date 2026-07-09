@@ -9,7 +9,7 @@ import { Badge } from "./badge";
 
 export default function Hero() {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-white dark:bg-neutral-950">
+    <div className="relative min-h-screen w-full overflow-hidden bg-background text-foreground">
       <LinesGradientShader
         className="absolute inset-0 bg-transparent dark:bg-transparent"
         bandSpacing={40}

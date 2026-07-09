@@ -11,28 +11,28 @@ import { useRef } from "react";
 
 const images = [
   {
-    src: "https://assets.aceternity.com/components/pricing-minimal.webp",
-    alt: "Creative product workspace",
+    src: "/resume1.jpg",
+    alt: "Candidate Resume 1",
   },
   {
-    src: "https://assets.aceternity.com/components/contact-section-with-shader.webp",
-    alt: "Team collaboration desk setup",
+    src: "/resume2.jpeg",
+    alt: "Candidate Resume 2",
   },
   {
-    src: "https://assets.aceternity.com/components/feature-section-with-bento-skeletons.webp",
-    alt: "Developer dashboard on laptop",
+    src: "/resume3.jpeg",
+    alt: "Candidate Resume 3",
   },
   {
-    src: "https://assets.aceternity.com/components/features-with-isometric-blocks.webp",
-    alt: "Design system components layout",
+    src: "/resume4.jpeg",
+    alt: "Candidate Resume 4",
   },
   {
-    src: "https://assets.aceternity.com/components/illustrations.webp",
-    alt: "Code editor with app interface",
+    src: "/resume5.jpg",
+    alt: "Candidate Resume 5",
   },
   {
-    src: "https://assets.aceternity.com/components/globe-3.webp",
-    alt: "UI mockups and product visuals",
+    src: "/resume6.avif",
+    alt: "Candidate Resume 6",
   },
 ];
 

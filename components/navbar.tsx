@@ -37,7 +37,7 @@ const DesktopNav = ({ navItems }: { navItems: any[] }) => {
   return (
     <motion.div
       className={cn(
-        "relative z-50 mx-auto hidden w-full flex-row items-center justify-between rounded-full border border-neutral-200/50 bg-white/80 backdrop-blur-md px-6 py-3 lg:flex dark:border-neutral-800/50 dark:bg-neutral-950/80 shadow-md",
+        "relative z-50 mx-auto hidden w-full flex-row items-center justify-between rounded-full border border-neutral-200/40 bg-white/70 backdrop-blur-lg px-6 py-3 lg:flex dark:border-white/5 dark:bg-[#0B1D45]/70 shadow-lg",
       )}
     >
       <Logo />
@@ -103,7 +103,7 @@ const MobileNav = ({ navItems }: { navItems: any[] }) => {
       <motion.div
         animate={{ borderRadius: open ? "16px" : "9999px" }}
         key={String(open)}
-        className="relative mx-auto flex w-full flex-col items-center justify-between border border-neutral-200/50 bg-white/95 backdrop-blur-md px-6 py-4 dark:border-neutral-800/50 dark:bg-neutral-950/95 shadow-md"
+        className="relative mx-auto flex w-full flex-col items-center justify-between border border-neutral-200/40 bg-white/75 backdrop-blur-lg px-6 py-4 dark:border-white/5 dark:bg-[#0B1D45]/75 shadow-lg"
       >
         <div className="flex w-full flex-row items-center justify-between">
           <Logo />
@@ -214,14 +214,13 @@ const Logo = () => {
   return (
     <Link
       href="/"
-      className="relative z-20 flex items-center space-x-2"
+      className="relative z-20 flex items-center"
     >
-      <div className="h-7 w-7 rounded-lg bg-linear-to-br from-brand-secondary to-brand-accent flex items-center justify-center text-white font-black text-xs shadow-md">
-        NXT
-      </div>
-      <span className="font-black text-[#0B1D45] dark:text-white text-lg tracking-tight">
-        NXT <span className="text-brand-secondary dark:text-brand-accent">Remote</span>
-      </span>
+      <img
+        src="/NXT Remote Logo.png"
+        alt="NXT Remote Logo"
+        className="h-8 md:h-9 w-auto object-contain dark:[filter:invert(1)_hue-rotate(180deg)]"
+      />
     </Link>
   );
 };
