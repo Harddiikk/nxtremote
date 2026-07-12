@@ -256,7 +256,7 @@ export default function AdminPage() {
           </div>
           <button 
             onClick={handleLogout}
-            className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold border border-neutral-350 dark:border-neutral-800 rounded-full text-neutral-600 hover:text-red-500 dark:text-neutral-400 dark:hover:text-red-400 bg-white dark:bg-neutral-900 cursor-pointer transition-colors self-start sm:self-center"
+            className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold border border-neutral-300 dark:border-neutral-800 rounded-full text-neutral-600 hover:text-red-500 dark:text-neutral-400 dark:hover:text-red-400 bg-white dark:bg-neutral-900 cursor-pointer transition-colors self-start sm:self-center"
           >
             <LogOut className="size-3.5" /> Log Out
           </button>
@@ -301,7 +301,7 @@ export default function AdminPage() {
                       <Users className="size-5 text-brand-secondary dark:text-brand-accent" />
                     </div>
                     <p className="text-3xl font-black text-neutral-900 dark:text-white mt-4">{stats.apps}</p>
-                    <p className="text-xs text-neutral-500 dark:text-neutral-450 mt-1">
+                    <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
                       <span className="font-semibold text-brand-secondary dark:text-brand-accent">{stats.pendingApps}</span> pending review
                     </p>
                   </div>
@@ -312,7 +312,7 @@ export default function AdminPage() {
                       <Activity className="size-5 text-brand-secondary dark:text-brand-accent" />
                     </div>
                     <p className="text-3xl font-black text-neutral-900 dark:text-white mt-4">{stats.leads}</p>
-                    <p className="text-xs text-neutral-500 dark:text-neutral-450 mt-1">
+                    <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
                       <span className="font-semibold text-brand-secondary dark:text-brand-accent">{stats.newLeads}</span> new inquiries
                     </p>
                   </div>
@@ -323,7 +323,7 @@ export default function AdminPage() {
                       <Briefcase className="size-5 text-brand-secondary dark:text-brand-accent" />
                     </div>
                     <p className="text-3xl font-black text-neutral-900 dark:text-white mt-4">{stats.jobs}</p>
-                    <p className="text-xs text-neutral-500 dark:text-neutral-450 mt-1">Listed on open roles list</p>
+                    <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">Listed on open roles list</p>
                   </div>
                 </div>
 
@@ -401,7 +401,7 @@ export default function AdminPage() {
                         <tr key={app.id} className="hover:bg-neutral-50/30 dark:hover:bg-neutral-900/10">
                           <td className="px-6 py-4">
                             <p className="font-bold text-neutral-900 dark:text-white">{app.fullName}</p>
-                            <p className="text-xs text-neutral-500 dark:text-neutral-450 mt-0.5">{app.email}</p>
+                            <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">{app.email}</p>
                           </td>
                           <td className="px-6 py-4 font-medium text-neutral-800 dark:text-neutral-250">
                             {app.role}
@@ -477,7 +477,7 @@ export default function AdminPage() {
                         <tr key={lead.id} className="hover:bg-neutral-50/30 dark:hover:bg-neutral-900/10">
                           <td className="px-6 py-4">
                             <p className="font-bold text-neutral-900 dark:text-white">{lead.companyName}</p>
-                            <p className="text-xs text-neutral-500 dark:text-neutral-450 mt-0.5">{lead.contactName}</p>
+                            <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">{lead.contactName}</p>
                           </td>
                           <td className="px-6 py-4 text-neutral-600 dark:text-neutral-400">
                             <p>{lead.email}</p>
@@ -657,7 +657,7 @@ export default function AdminPage() {
                         <h4 className="font-bold text-lg text-neutral-900 dark:text-white">{job.title}</h4>
                         <p className="text-xs text-neutral-400">{job.location}</p>
                         
-                        <div className="pt-2 text-xs text-neutral-600 dark:text-neutral-350 space-y-1">
+                        <div className="pt-2 text-xs text-neutral-600 dark:text-neutral-300 space-y-1">
                           <p><strong>Description:</strong> {job.description}</p>
                           <p><strong>Requirements:</strong> {job.requirements}</p>
                         </div>

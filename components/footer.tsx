@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { ModeToggle } from "./mode-toggle";
+import { whatsappLink } from "@/lib/site";
 
 export function Footer() {
   const pages = [
@@ -51,16 +51,16 @@ export function Footer() {
   const contact = [
     {
       title: "Book Discovery Call",
-      href: "https://wa.me/1234567890?text=Hi%20NXT%20Remote,%20I'd%20like%20to%20schedule%20a%20discovery%20call.",
+      href: whatsappLink("Hi NXT Remote, I'd like to schedule a discovery call."),
     },
     {
       title: "WhatsApp Direct",
-      href: "https://wa.me/1234567890",
+      href: whatsappLink("Hi NXT Remote!"),
     },
   ];
 
   return (
-    <div className="relative w-full overflow-hidden border-t border-neutral-100 bg-white px-8 pt-20 dark:border-white/10 dark:bg-neutral-950">
+    <div className="relative w-full overflow-hidden border-t border-neutral-100 bg-white px-8 pt-20 dark:border-white/10 dark:bg-background">
       <div className="mx-auto flex max-w-7xl flex-col items-start justify-between text-sm text-neutral-500 sm:flex-row md:px-8">
         <div>
           <div className="mr-0 mb-4 md:mr-4 md:flex">
@@ -90,7 +90,7 @@ export function Footer() {
           </div>
 
           <div className="mt-4 ml-2 text-neutral-500 dark:text-neutral-400">
-            &copy; copyright NXT Remote 2026. All rights reserved.
+            &copy; 2026 NXT Remote. All rights reserved.
           </div>
         </div>
         <div className="mt-10 grid grid-cols-2 items-start gap-10 sm:mt-0 md:mt-0 lg:grid-cols-4">
@@ -170,11 +170,11 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="relative mt-20 h-[calc(clamp(3rem,18vw,20rem)*0.75)] w-full overflow-hidden">
+      <div className="relative mt-20 h-[calc(clamp(2.5rem,11vw,11rem)*0.78)] w-full overflow-hidden">
         <p
-          className="absolute inset-x-0 top-0 w-full text-center leading-none font-bold text-transparent dark:block"
+          className="font-display absolute inset-x-0 top-0 w-full text-center leading-none font-bold whitespace-nowrap text-transparent dark:block"
           style={{
-            fontSize: "clamp(3rem, 18vw, 20rem)",
+            fontSize: "clamp(2.5rem, 11vw, 11rem)",
             letterSpacing: "-0.02em",
           }}
         >

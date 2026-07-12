@@ -4,7 +4,8 @@ import React from "react";
 import { cn } from "@/lib/utils";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "default" | "outline";
+  variant?: "default" | "outline" | "ghost";
+  size?: "sm" | "md" | "lg";
   children: React.ReactNode;
   ref?: React.Ref<HTMLButtonElement>;
 }
@@ -12,6 +13,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export function Button({
   className,
   variant = "default",
+  size = "md",
   children,
   ref,
   ...props
@@ -20,22 +22,26 @@ export function Button({
     <button
       ref={ref}
       className={cn(
-        "relative inline-flex cursor-pointer items-center justify-center rounded-md px-6 py-3 text-base font-medium transition-all duration-200 active:scale-[0.98]",
+        "relative inline-flex cursor-pointer items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 active:scale-[0.98]",
+        size === "sm" && "px-4 py-2 text-xs",
+        size === "md" && "px-6 py-3 text-sm",
+        size === "lg" && "px-8 py-3.5 text-base",
         variant === "default" && [
-          "from-brand-secondary to-brand-primary bg-linear-to-b",
-          "text-white",
-          "[text-shadow:0_1px_2px_rgba(0,0,0,0.2)]",
-          "hover:from-brand-secondary hover:to-brand-primary",
-          "hover:shadow-[0_1px_2px_rgba(0,0,0,0.1),0_3px_5px_rgba(11,117,226,0.5),inset_0_1px_0_rgba(255,255,255,0.25)]",
+          "bg-brand-secondary text-white",
+          "shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_1px_2px_rgba(0,0,0,0.2)]",
+          "hover:bg-[#1a83f0]",
+          "hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.25),0_4px_16px_rgba(11,117,226,0.45)]",
         ],
         variant === "outline" && [
-          "bg-white",
-          "text-neutral-700",
+          "bg-white text-neutral-700",
           "ring-1 ring-neutral-200",
           "shadow-[0_1px_2px_rgba(0,0,0,0.05)]",
-          "hover:bg-neutral-50",
-          "hover:ring-neutral-300",
-          "dark:bg-neutral-800 dark:text-neutral-200 dark:ring-neutral-700 dark:hover:bg-neutral-700 dark:hover:ring-neutral-600",
+          "hover:bg-neutral-50 hover:ring-neutral-300",
+          "dark:bg-white/5 dark:text-neutral-100 dark:ring-white/15 dark:hover:bg-white/10 dark:hover:ring-white/25",
+        ],
+        variant === "ghost" && [
+          "bg-transparent text-neutral-700 hover:bg-neutral-100",
+          "dark:text-neutral-200 dark:hover:bg-white/5",
         ],
         className,
       )}

@@ -198,7 +198,7 @@ const MobileChildNavItems = ({ navItem }: { navItem: any }) => {
               <Link
                 key={`child-${childIdx}`}
                 href={child.link}
-                className="relative text-xs font-medium text-neutral-600 hover:text-brand-secondary dark:text-neutral-450 dark:hover:text-brand-accent block py-1"
+                className="relative text-xs font-medium text-neutral-600 hover:text-brand-secondary dark:text-neutral-400 dark:hover:text-brand-accent block py-1"
               >
                 <motion.span className="block">{child.name}</motion.span>
               </Link>

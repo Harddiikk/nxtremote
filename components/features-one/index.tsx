@@ -8,8 +8,8 @@ import { Award, Coins, Briefcase } from "lucide-react";
 
 export function FeaturesOne() {
   return (
-    <div className="bg-white dark:bg-brand-primary relative z-10 border-t border-neutral-100 dark:border-white/5">
-      <Container as="section" id="product" className="py-10 md:py-20 lg:py-32">
+    <div className="bg-white dark:bg-background relative z-10 border-t border-neutral-100 dark:border-white/5">
+      <Container as="section" id="product" className="section-pad">
         <div className="mx-auto max-w-3xl text-center mb-12">
           <Subheading className="text-brand-secondary font-semibold uppercase tracking-wider text-xs">
             The Scaling Dilemma
@@ -65,7 +65,7 @@ export function FeaturesOne() {
               ].map((item, idx) => (
                 <div key={idx} className="flex flex-col p-2.5 rounded-xl bg-neutral-50 dark:bg-neutral-950 border border-neutral-100 dark:border-white/5">
                   <span className="text-xs font-bold text-neutral-800 dark:text-neutral-200">{item.region}</span>
-                  <span className="text-[10px] text-neutral-550 dark:text-neutral-400 mt-0.5">{item.overlap}</span>
+                  <span className="text-[10px] text-neutral-500 dark:text-neutral-400 mt-0.5">{item.overlap}</span>
                 </div>
               ))}
             </div>
@@ -91,7 +91,7 @@ export function FeaturesOne() {
                     <span className="text-xs md:text-sm font-bold text-neutral-800 dark:text-neutral-200">{item.name}</span>
                     <span className="text-[9px] text-brand-accent font-semibold uppercase">{item.status}</span>
                   </div>
-                  <p className="text-[10px] md:text-xs text-neutral-550 dark:text-neutral-400 mt-1">{item.desc}</p>
+                  <p className="text-[10px] md:text-xs text-neutral-500 dark:text-neutral-400 mt-1">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -154,7 +154,7 @@ function Card({
   return (
     <div
       className={cn(
-        "rounded-2xl bg-white shadow-sm ring-1 shadow-black/10 ring-black/10 dark:bg-neutral-900 dark:shadow-white/5 dark:ring-white/10",
+        "rounded-2xl bg-white shadow-sm ring-1 shadow-black/10 ring-black/10 dark:bg-card dark:shadow-white/5 dark:ring-white/10",
         className,
       )}
     >
@@ -243,7 +243,7 @@ function FeatureCard({
   description: string;
 }) {
   return (
-    <div className="group rounded-2xl bg-white p-6 dark:bg-neutral-900">
+    <div className="group rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-card dark:ring-white/10">
       {icon}
       <h3 className="mt-4 text-base font-semibold text-neutral-900 dark:text-white">
         {title}

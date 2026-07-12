@@ -1,13 +1,13 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Login | Simplistic",
+  title: "Login | NXT Remote",
   description:
-    "Sign in to your Simplistic account. Access your dashboard, manage your projects, and stay productive.",
+    "Sign in to your NXT Remote account to manage placements, applications, and leads.",
   openGraph: {
-    title: "Login | Simplistic",
+    title: "Login | NXT Remote",
     description:
-      "Sign in to your Simplistic account. Access your dashboard, manage your projects, and stay productive.",
+      "Sign in to your NXT Remote account to manage placements, applications, and leads.",
     type: "website",
   },
 };

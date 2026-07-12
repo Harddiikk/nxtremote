@@ -4,20 +4,20 @@ import { Pricing } from "@/components/pricing";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pricing - Simplistic",
+  title: "Pricing | NXT Remote",
   description:
-    "Simple, transparent pricing for AI agent deployment. Choose a plan that works best for you and your team. No hidden fees.",
+    "Flat-rate monthly pricing for pre-vetted offshore marketing specialists. No recruiter fees, no hidden costs.",
   openGraph: {
-    title: "Pricing - Simplistic",
+    title: "Pricing | NXT Remote",
     description:
-      "Simple, transparent pricing for AI agent deployment. Choose a plan that works best for you and your team.",
+      "Flat-rate monthly pricing for pre-vetted offshore marketing specialists. No recruiter fees, no hidden costs.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pricing - Simplistic",
+    title: "Pricing | NXT Remote",
     description:
-      "Simple, transparent pricing for AI agent deployment. Choose a plan that works best for you and your team.",
+      "Flat-rate monthly pricing for pre-vetted offshore marketing specialists. No recruiter fees, no hidden costs.",
   },
 };
 

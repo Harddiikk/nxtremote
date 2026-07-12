@@ -67,7 +67,7 @@ function LogoFallback({ baseName, alt, fallbackText, brandColor, glowColor }: Lo
 
 export function IntegrationsBento() {
   return (
-    <section className="relative overflow-hidden py-16 md:py-24 lg:py-32 border-t border-neutral-100 dark:border-white/5 bg-neutral-50/10 dark:bg-brand-primary/20">
+    <section className="relative overflow-hidden section-pad border-t border-neutral-100 dark:border-white/5 bg-neutral-50/10 dark:bg-transparent">
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-secondary/5 blur-[120px] pointer-events-none" />
       
@@ -267,7 +267,7 @@ export function IntegrationsBento() {
             </CardContent>
           </GlassBentoCard>
 
-          {/* Card 4: Project Management - Slack, ClickUp, Trello, & Jira */}
+          {/* Card 4: Project Management - Slack, ClickUp, Asana & Jira */}
           <GlassBentoCard className="md:col-span-2 relative overflow-hidden group">
             {/* Background Glow */}
             <div className="absolute -left-10 -bottom-10 -z-10 size-48 rounded-full bg-emerald-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
@@ -299,13 +299,13 @@ export function IntegrationsBento() {
                 </div>
                 <div className="flex flex-col items-center gap-2">
                   <LogoFallback 
-                    baseName="trellologo" 
-                    alt="Trello" 
-                    fallbackText="TR" 
-                    brandColor="bg-[#0079BF]"
-                    glowColor="group-hover:shadow-[0_0_20px_rgba(0,121,191,0.4)]"
+                    baseName="asanalogo" 
+                    alt="Asana" 
+                    fallbackText="AS" 
+                    brandColor="bg-[#F06A6A]"
+                    glowColor="group-hover:shadow-[0_0_20px_rgba(240,106,106,0.4)]"
                   />
-                  <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">Trello</span>
+                  <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">Asana</span>
                 </div>
                 <div className="flex flex-col items-center gap-2">
                   <LogoFallback 
@@ -335,7 +335,7 @@ export function IntegrationsBento() {
                     Operations & Projects
                   </span>
                   <CardTitle className="text-left mt-1 text-lg font-bold">
-                    Slack, ClickUp, Trello, & Jira
+                    Slack, ClickUp, Asana & Jira
                   </CardTitle>
                   <CardDescription className="text-left mt-2 max-w-lg">
                     Perfect alignment with your sprint routines and communication protocols. Minimize friction and ensure zero missed tasks.
@@ -368,7 +368,7 @@ function GlassBentoCard({
       transition={{ duration: 0.3, ease: "easeOut" }}
       className={cn(
         "group relative flex flex-col justify-between gap-2.5 rounded-2xl p-5 md:p-6 overflow-hidden",
-        "bg-white/40 dark:bg-[#132655]/40 backdrop-blur-xl",
+        "bg-white/40 dark:bg-card/60 backdrop-blur-xl",
         "border border-neutral-200/60 dark:border-white/5",
         "shadow-[0_8px_30px_rgb(0,0,0,0.02)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.15)]",
         "hover:shadow-[0_20px_50px_rgba(11,117,226,0.06)] dark:hover:shadow-[0_20px_50px_rgba(0,229,170,0.06)]",
@@ -392,7 +392,7 @@ function CardSkeleton({
   className?: string;
 }) {
   return (
-    <div className={cn("flex items-center justify-center rounded-xl bg-neutral-100/50 dark:bg-brand-primary/40 border border-neutral-200/30 dark:border-white/5 overflow-hidden", className)}>
+    <div className={cn("flex items-center justify-center rounded-xl bg-neutral-100/50 dark:bg-white/[0.03] border border-neutral-200/30 dark:border-white/5 overflow-hidden", className)}>
       {children}
     </div>
   );

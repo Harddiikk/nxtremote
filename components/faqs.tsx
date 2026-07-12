@@ -99,7 +99,7 @@ export function FAQs() {
   };
 
   return (
-    <div className="mx-auto max-w-4xl overflow-hidden px-4 py-20 md:px-8 md:py-32">
+    <div className="mx-auto max-w-4xl overflow-hidden px-4 section-pad md:px-8">
       <div className="text-center">
         <Heading as="h2">Frequently Asked Questions</Heading>
         <Subheading className="mx-auto mt-4 max-w-2xl">
@@ -127,8 +127,8 @@ export function FAQs() {
                     className={cn(
                       "relative rounded-lg transition-all duration-200",
                       isActive
-                        ? "bg-white shadow-sm ring-1 shadow-black/10 ring-black/10 dark:bg-neutral-900 dark:shadow-white/5 dark:ring-white/10"
-                        : "hover:bg-neutral-50 dark:hover:bg-neutral-900",
+                        ? "bg-white shadow-sm ring-1 shadow-black/10 ring-black/10 dark:bg-card dark:shadow-white/5 dark:ring-white/10"
+                        : "hover:bg-neutral-50 dark:hover:bg-white/5",
                     )}
                   >
                     {isActive && (

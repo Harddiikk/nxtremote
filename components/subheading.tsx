@@ -17,12 +17,31 @@ export function Subheading({
   return (
     <Tag
       className={cn(
-        "text-base text-neutral-600 md:text-lg lg:text-xl dark:text-neutral-400",
+        "text-base leading-relaxed text-neutral-600 md:text-lg dark:text-neutral-400",
         className,
       )}
       {...props}
     >
       {children}
     </Tag>
+  );
+}
+
+/** Small uppercase label that sits above section headings. */
+export function Eyebrow({
+  children,
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLParagraphElement>) {
+  return (
+    <p
+      className={cn(
+        "font-mono text-[11px] font-semibold tracking-[0.2em] uppercase text-brand-secondary dark:text-brand-accent",
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </p>
   );
 }

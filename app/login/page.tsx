@@ -109,7 +109,7 @@ function Logo() {
         className="size-6"
         priority
       />
-      <span className="text-lg font-semibold">Simplistic</span>
+      <span className="text-lg font-semibold">NXT Remote</span>
     </Link>
   );
 }

@@ -12,6 +12,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-plus-jakarta), sans-serif;
+  --font-display: var(--font-bricolage), var(--font-plus-jakarta), sans-serif;
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -93,18 +94,18 @@
 }
 
 .dark {
-  --background: #0B1D45;
-  --foreground: #FFFFFF;
-  --card: #132655;
-  --card-foreground: #FFFFFF;
+  --background: #060F26;
+  --foreground: #F3F6FC;
+  --card: #0D1B3E;
+  --card-foreground: #F3F6FC;
   --popover: #0B1D45;
-  --popover-foreground: #FFFFFF;
+  --popover-foreground: #F3F6FC;
   --primary: #0B75E2;
   --primary-foreground: #FFFFFF;
   --secondary: #132655;
   --secondary-foreground: #FFFFFF;
   --muted: #132655;
-  --muted-foreground: #94A3B8;
+  --muted-foreground: #9FB0CC;
   --accent: #00E5AA;
   --accent-foreground: #0B1D45;
   --destructive: #EF4444;
@@ -131,12 +132,21 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground font-sans tracking-normal leading-relaxed antialiased;
+    @apply bg-background text-foreground font-sans tracking-normal antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-bold tracking-tight text-[#0B1D45] dark:text-white;
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight text-foreground;
+    line-height: 1.12;
   }
-  p {
-    @apply text-neutral-600 dark:text-neutral-300 leading-relaxed;
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  /* Shared vertical rhythm for landing sections */
+  .section-pad {
+    @apply py-20 md:py-28;
   }
 }

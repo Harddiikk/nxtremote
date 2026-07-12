@@ -23,8 +23,8 @@ import {
 
 export function FeaturesTwo() {
   return (
-    <div className="bg-white dark:bg-brand-primary relative z-10 border-t border-neutral-100 dark:border-white/5">
-    <Container className="px-4 py-10 md:py-20 lg:py-32">
+    <div className="bg-white dark:bg-background relative z-10 border-t border-neutral-100 dark:border-white/5">
+    <Container className="px-4 section-pad">
       {/* Hyper-Specialization Section */}
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center mb-24 md:mb-32">
         <div className="max-w-xl">
@@ -128,8 +128,8 @@ export function FeaturesTwo() {
           <PillarCard
             icon={<Sparkles className="size-5 text-[#00E5AA]" />}
             number="VI"
-            title="Continuous AI Upgradation"
-            description="Pre-audited on adaptation to prompt engineering, programmatic SEO, and advanced buying algorithms."
+            title="AI-Ready Workflows"
+            description="Assessed on modern AI tooling: prompt-driven ad copy, programmatic SEO, and automated reporting."
           />
           {/* Pillar 10 (Compliance) */}
           <PillarCard
@@ -178,7 +178,7 @@ function FeatureTitle({ children }: { children: React.ReactNode }) {
 
 function FeatureDescription({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mx-auto mt-2 max-w-xs text-center text-sm leading-relaxed text-neutral-550 dark:text-neutral-400">
+    <p className="mx-auto mt-2 max-w-xs text-center text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
       {children}
     </p>
   );
@@ -196,7 +196,7 @@ function PillarCard({
   description: string;
 }) {
   return (
-    <div className="group relative rounded-xl border border-neutral-200 bg-white p-5 shadow-xs transition-all duration-200 hover:border-brand-accent dark:border-neutral-800 dark:bg-neutral-900/60">
+    <div className="group relative rounded-xl border border-neutral-200 bg-white p-5 shadow-xs transition-all duration-200 hover:border-brand-accent dark:border-white/10 dark:bg-card">
       <div className="flex items-center gap-3">
         <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-50 dark:bg-neutral-800/80 group-hover:bg-[#0B75E2]/10 transition-colors">
           {icon}

@@ -54,7 +54,7 @@ export default function AboutPage() {
             <Heading as="h2" className="mt-2 mb-6 text-3xl md:text-4xl font-bold">
               Built by Marketers, For Marketers
             </Heading>
-            <div className="space-y-4 text-lg text-neutral-600 dark:text-neutral-350 leading-relaxed">
+            <div className="space-y-4 text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">
               <p>
                 At NXT Remote, we don't believe in generic virtual assistants. We know that a high-growth digital marketing agency needs specialized technical execution to thrive. That’s why we built a dedicated offshore staffing solution focused exclusively on the digital marketing domain.
               </p>

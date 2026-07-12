@@ -115,7 +115,7 @@ export default function ServicesPage() {
           <Heading as="h1" className="mt-4 text-4xl md:text-6xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 leading-tight">
             On-Demand Offshore Staffing for Every Marketing Vertical
           </Heading>
-          <p className="mt-6 text-xl md:text-2xl text-neutral-600 dark:text-neutral-350 max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-6 text-xl md:text-2xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto leading-relaxed">
             From media buyers to technical SEOs, we source the exact skill sets you need to deliver exceptional client results.
           </p>
         </Container>

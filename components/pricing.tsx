@@ -10,6 +10,7 @@ import { Subheading } from "./subheading";
 import { Button } from "./button";
 import { X, HelpCircle, ArrowRight, ShieldCheck, AlertCircle } from "lucide-react";
 import Link from "next/link";
+import { whatsappLink } from "@/lib/site";
 
 type BillingCycle = "monthly" | "quarterly" | "half-yearly" | "annual";
 
@@ -45,7 +46,7 @@ export function Pricing() {
         "Strict Hardware & Power Audit Checked"
       ],
       buttonText: "Book Call to Hire",
-      link: "https://wa.me/1234567890?text=Hi%20NXT%20Remote,%20I'd%20like%20to%20discuss%20the%20Growth%20tier."
+      link: whatsappLink("Hi NXT Remote, I'd like to discuss the Growth tier.")
     },
     {
       id: "scale",
@@ -63,7 +64,7 @@ export function Pricing() {
       ],
       featured: true,
       buttonText: "Scale Your Team",
-      link: "https://wa.me/1234567890?text=Hi%20NXT%20Remote,%20I'd%20like%20to%20discuss%20the%20Scale%20tier."
+      link: whatsappLink("Hi NXT Remote, I'd like to discuss the Scale tier.")
     },
     {
       id: "enterprise",
@@ -81,7 +82,7 @@ export function Pricing() {
         "Dedicated Coordinator Support Uptime"
       ],
       buttonText: "Contact Enterprise",
-      link: "https://wa.me/1234567890?text=Hi%20NXT%20Remote,%20I'd%20like%20to%20discuss%20the%20Enterprise%20custom%20tier."
+      link: whatsappLink("Hi NXT Remote, I'd like to discuss the Enterprise custom tier.")
     }
   ];
 
@@ -129,7 +130,7 @@ export function Pricing() {
   ];
 
   return (
-    <div className="bg-neutral-50/50 dark:bg-[#132655]/40 border-y border-neutral-100 dark:border-white/5 relative z-10 py-16 md:py-24">
+    <div className="bg-neutral-50/50 dark:bg-white/[0.02] border-y border-neutral-100 dark:border-white/5 relative z-10 section-pad">
     <Container as="section" className="flex w-full flex-col">
       <div className="relative mx-auto flex w-full max-w-7xl flex-1 flex-col px-4 py-0">
         
@@ -144,7 +145,7 @@ export function Pricing() {
           >
             Predictable, Transparent Pricing. No Hidden Hiring Fees.
           </Heading>
-          <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-350 max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto leading-relaxed">
             Stop paying 20%–30% recruitment fees. Choose a flexible monthly subscription model built around your agency's scaling velocity.
           </p>
         </div>
@@ -159,12 +160,12 @@ export function Pricing() {
                 "relative px-4 py-2 text-xs font-semibold rounded-full border transition-all duration-200 cursor-pointer",
                 billingCycle === cycle.id
                   ? "bg-brand-primary text-white border-brand-primary dark:bg-brand-secondary dark:border-brand-secondary shadow-sm"
-                  : "bg-white text-neutral-600 border-neutral-200 hover:border-neutral-300 dark:bg-neutral-900 dark:text-neutral-300 dark:border-neutral-800"
+                  : "bg-white text-neutral-600 border-neutral-200 hover:border-neutral-300 dark:bg-white/5 dark:text-neutral-300 dark:border-white/10"
               )}
             >
               {cycle.label}
               {cycle.labelBadge && (
-                <span className="ml-1.5 px-1.5 py-0.5 text-[9px] font-bold text-white bg-brand-accent text-neutral-900 rounded-full">
+                <span className="ml-1.5 px-1.5 py-0.5 text-[9px] font-bold bg-brand-accent text-neutral-900 rounded-full">
                   {cycle.labelBadge}
                 </span>
               )}
@@ -180,11 +181,11 @@ export function Pricing() {
               <div
                 key={plan.id}
                 className={cn(
-                  "relative rounded-xl bg-white border border-neutral-200 p-6 flex flex-col justify-between dark:bg-neutral-950 dark:border-neutral-800 shadow-sm transition-all duration-300 cursor-pointer",
+                  "relative rounded-xl bg-white border border-neutral-200 p-6 flex flex-col justify-between dark:bg-card dark:border-white/10 shadow-sm transition-all duration-300 cursor-pointer",
                   "hover:-translate-y-2 hover:scale-[1.02] hover:border-brand-secondary dark:hover:border-brand-accent",
                   "hover:shadow-[0_20px_40px_rgba(11,117,226,0.08)] dark:hover:shadow-[0_20px_40px_rgba(0,229,170,0.12)]",
                   plan.featured 
-                    ? "ring-2 ring-brand-secondary border-transparent dark:bg-[#132655]/60 shadow-[0_4px_20px_rgba(11,117,226,0.15)] dark:shadow-[0_4px_20px_rgba(0,229,170,0.15)]"
+                    ? "ring-2 ring-brand-secondary border-transparent dark:bg-card shadow-[0_4px_20px_rgba(11,117,226,0.15)] dark:shadow-[0_4px_20px_rgba(0,229,170,0.15)]"
                     : ""
                 )}
               >
@@ -232,7 +233,7 @@ export function Pricing() {
                         <div className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-brand-accent/20 dark:bg-brand-accent/15">
                           <IconCheck className="h-3 w-3 stroke-[4px] text-[#00E5AA]" />
                         </div>
-                        <span className="text-sm text-neutral-600 dark:text-neutral-350">
+                        <span className="text-sm text-neutral-600 dark:text-neutral-300">
                           {feature}
                         </span>
                       </div>
@@ -256,7 +257,7 @@ export function Pricing() {
         </div>
 
         {/* The Hidden Cost Comparison Section */}
-        <div className="mt-20 rounded-2xl bg-neutral-950 p-6 md:p-10 border border-neutral-800 text-white relative overflow-hidden">
+        <div className="mt-20 rounded-2xl bg-[#081633] p-6 md:p-10 border border-white/10 text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 transform translate-x-12 -translate-y-12 opacity-5 pointer-events-none">
             <HelpCircle className="size-96" />
           </div>
@@ -337,7 +338,7 @@ export function Pricing() {
                 </p>
               </div>
               <Link 
-                href="https://wa.me/1234567890?text=Hi%20NXT%20Remote,%20I'd%20like%20to%20discuss%20hiring%20specialists%20and%20saving%2078k%20annually." 
+                href={whatsappLink("Hi NXT Remote, I'd like to discuss hiring specialists and saving 78k annually.")}
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="mt-4 md:mt-0"
@@ -369,7 +370,7 @@ export function Pricing() {
                   <th className="px-6 py-5 w-1/4">Evaluation Criteria</th>
                   <th className="px-6 py-5 bg-[#0b75e2]/5 dark:bg-[#00e5aa]/5 w-3/8 text-neutral-950 dark:text-white font-extrabold border-x border-[#0b75e2]/15 dark:border-[#00e5aa]/10 text-sm">
                     <span className="flex items-center gap-2">
-                      <ShieldCheck className="size-4 text-[#00E5AA] animate-pulse" />
+                      <ShieldCheck className="size-4 text-[#00E5AA]" />
                       NXT Remote (Our Standard)
                     </span>
                   </th>
@@ -420,7 +421,7 @@ export function Pricing() {
                 </div>
                 
                 <div className="p-4 rounded-xl border border-neutral-100 dark:border-white/5 bg-neutral-50/50 dark:bg-neutral-950/20">
-                  <span className="flex items-center gap-1.5 text-[10px] font-black text-neutral-400 dark:text-neutral-550 uppercase tracking-widest">
+                  <span className="flex items-center gap-1.5 text-[10px] font-black text-neutral-400 dark:text-neutral-500 uppercase tracking-widest">
                     <X className="size-3.5 text-red-400" />
                     General Freelance Markets
                   </span>
