@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import { ModeToggle } from "./mode-toggle";
 import { whatsappLink } from "@/lib/site";
 
 export function Footer() {
@@ -86,7 +85,6 @@ export function Footer() {
             >
               <LinkedInIcon className="size-5" />
             </Link>
-            <ModeToggle />
           </div>
 
           <div className="mt-4 ml-2 text-neutral-500 dark:text-neutral-400">
