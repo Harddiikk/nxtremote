@@ -217,9 +217,9 @@ const Logo = () => {
       className="relative z-20 flex items-center"
     >
       <img
-        src="/NXT Remote Logo.png"
-        alt="NXT Remote Logo"
-        className="h-8 md:h-9 w-auto object-contain dark:[filter:invert(1)_hue-rotate(180deg)]"
+        src="/logo-dark.png"
+        alt="NXT Remote"
+        className="h-7 md:h-8 w-auto object-contain"
       />
     </Link>
   );

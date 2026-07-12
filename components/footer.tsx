@@ -201,9 +201,9 @@ const Logo = () => {
       className="relative z-20 mr-4 flex items-center py-1"
     >
       <img
-        src="/NXT Remote Logo.png"
-        alt="NXT Remote Logo"
-        className="h-7 w-auto object-contain dark:[filter:invert(1)_hue-rotate(180deg)]"
+        src="/logo-dark.png"
+        alt="NXT Remote"
+        className="h-7 w-auto object-contain"
       />
     </Link>
   );
