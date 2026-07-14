@@ -89,7 +89,7 @@ export function IntegrationsBento() {
           </h2>
 
           <p className="mt-4 text-base md:text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed">
-            Our pre-vetted marketing talent arrives fully operational from day one. Expert-level execution mapped across your agency's core software stack.
+            Day-one fluency in the tools your agency already runs on.
           </p>
         </motion.div>
 
@@ -146,7 +146,7 @@ export function IntegrationsBento() {
                     HubSpot & GoHighLevel
                   </CardTitle>
                   <CardDescription className="text-left mt-2 max-w-lg">
-                    Build customized pipelines, capture lead flows, and sync sales processes flawlessly with pre-vetted specialists.
+                    Pipelines, lead capture, and CRM sync — handled.
                   </CardDescription>
                 </div>
                 <div className="hidden sm:flex size-10 rounded-full border border-amber-500/20 bg-amber-500/5 items-center justify-center text-amber-500">
@@ -213,7 +213,7 @@ export function IntegrationsBento() {
                     Klaviyo & Brevo
                   </CardTitle>
                   <CardDescription className="text-left mt-2">
-                    Maximize client retention and subscription LTV. From abandoned cart drip flows to targeted newsletter segmenting.
+                    Flows and segments that grow client LTV.
                   </CardDescription>
                 </div>
               </div>
@@ -266,7 +266,7 @@ export function IntegrationsBento() {
                     GA4 & Campaign Manager 360
                   </CardTitle>
                   <CardDescription className="text-left mt-2">
-                    Optimize attribution models, configure custom conversions, and analyze cross-channel audience metrics with certified specialists.
+                    Attribution, conversions, and reporting — done right.
                   </CardDescription>
                 </div>
               </div>
@@ -344,7 +344,7 @@ export function IntegrationsBento() {
                     Slack, ClickUp, Asana & Jira
                   </CardTitle>
                   <CardDescription className="text-left mt-2 max-w-lg">
-                    Perfect alignment with your sprint routines and communication protocols. Minimize friction and ensure zero missed tasks.
+                    Slots straight into your sprints. Zero missed tasks.
                   </CardDescription>
                 </div>
                 <div className="hidden sm:flex size-10 rounded-full border border-emerald-500/20 bg-emerald-500/5 items-center justify-center text-emerald-500">

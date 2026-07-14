@@ -58,6 +58,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <MotionConfig reducedMotion="user">
+            <div className="mesh" aria-hidden />
             <Navbar />
             {children}
             <Footer />

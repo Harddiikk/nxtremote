@@ -81,7 +81,7 @@ const TESTIMONIALS: Testimonial[] = [
 
 export function Testimonials() {
   return (
-    <section className="relative z-10 border-t border-neutral-100 bg-white section-pad dark:border-white/5 dark:bg-background">
+    <section className="relative z-10 border-t border-neutral-100 bg-white section-pad dark:border-white/5 dark:bg-transparent">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <Eyebrow>Agencies that switched</Eyebrow>

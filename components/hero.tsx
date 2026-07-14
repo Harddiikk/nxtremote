@@ -26,7 +26,7 @@ const rise = {
 
 export default function Hero() {
   return (
-    <div className="relative w-full overflow-hidden bg-background text-foreground">
+    <div className="relative w-full overflow-hidden text-foreground">
       {/* Flowing gradient bands — the visible hero background animation */}
       <LinesGradientShader
         className="absolute inset-0 bg-transparent opacity-50"

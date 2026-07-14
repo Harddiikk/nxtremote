@@ -8,7 +8,7 @@ import { Award, Coins, Briefcase } from "lucide-react";
 
 export function FeaturesOne() {
   return (
-    <div className="bg-white dark:bg-background relative z-10 border-t border-neutral-100 dark:border-white/5">
+    <div className="bg-white dark:bg-transparent relative z-10 border-t border-neutral-100 dark:border-white/5">
       <Container as="section" id="product" className="section-pad">
         <div className="mx-auto max-w-3xl text-center mb-12">
           <Subheading className="text-brand-secondary font-semibold uppercase tracking-wider text-xs">
@@ -17,8 +17,9 @@ export function FeaturesOne() {
           <Heading className="mt-2 text-neutral-900 dark:text-neutral-100">
             High Local Salaries Shouldn't Stall Your Agency’s Growth
           </Heading>
-          <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed">
-            Finding skilled media buyers, SEO strategists, and account managers in local markets is becoming unsustainably expensive. NXT Remote solves this by sourcing, vetting, and embedding top-tier offshore digital marketing talent directly into your workflow.
+          <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+            Same senior output. Up to 70% less payroll. Embedded in your
+            workflow by day eight.
           </p>
         </div>
 
@@ -128,17 +129,17 @@ export function FeaturesOne() {
         <FeatureCard
           icon={<Award className="text-brand-secondary dark:text-brand-accent size-6" />}
           title="Pre-Vetted Expertise"
-          description="Only the top 3% of marketing professionals pass our rigorous technical and communication assessments."
+          description="Only the top 3% pass our technical and communication audits."
         />
         <FeatureCard
           icon={<Coins className="text-brand-secondary dark:text-brand-accent size-6" />}
           title="Up to 70% Cost Efficiency"
-          description="Reinvest your overhead savings directly into client acquisition and scaling your agency operations."
+          description="Reinvest the savings straight into growing your agency."
         />
         <FeatureCard
           icon={<Briefcase className="text-brand-secondary dark:text-brand-accent size-6" />}
           title="Zero HR Overhead"
-          description="We handle the sourcing, payroll, and compliance, so you can focus entirely on strategy and delivery."
+          description="Sourcing, payroll, and compliance — all handled by us."
         />
       </div>
     </Container>
@@ -258,8 +259,10 @@ function FeatureCard({
 }) {
   return (
     <div className="group rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-card dark:ring-white/10">
-      {icon}
-      <h3 className="mt-4 text-base font-semibold text-neutral-900 dark:text-white">
+      <div className="glass-tile flex size-14 items-center justify-center rounded-2xl">
+        {icon}
+      </div>
+      <h3 className="mt-5 text-base font-semibold text-neutral-900 dark:text-white">
         {title}
       </h3>
       <p className="mt-2 text-base text-balance text-neutral-600 dark:text-neutral-400 leading-relaxed">

@@ -124,9 +124,7 @@ export function Pricing() {
             Your Team, Your Terms. Scoped on a Single Call.
           </Heading>
           <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto leading-relaxed">
-            Stop paying 20%–30% recruitment fees. Every engagement is a flat monthly
-            rate tailored to the roles you need — tell us your stack on a 30-minute
-            discovery call and get your custom quote the same day.
+            One flat monthly rate. Zero recruiter fees. Quoted on a single 30-minute call.
           </p>
         </div>
 

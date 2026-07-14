@@ -23,7 +23,7 @@ import {
 
 export function FeaturesTwo() {
   return (
-    <div className="bg-white dark:bg-background relative z-10 border-t border-neutral-100 dark:border-white/5">
+    <div className="bg-white dark:bg-transparent relative z-10 border-t border-neutral-100 dark:border-white/5">
     <Container className="px-4 section-pad">
       {/* Hyper-Specialization Section */}
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center mb-24 md:mb-32">
