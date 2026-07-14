@@ -373,12 +373,13 @@ function GlassBentoCard({
       whileHover={{ y: -4, scale: 1.01 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
       className={cn(
+        // Site runs forced-dark; card-premium is a custom class so it can't
+        // sit behind a dark: variant (Tailwind variants only compose real
+        // utilities) — apply it directly.
         "group relative flex flex-col justify-between gap-2.5 rounded-2xl p-5 md:p-6 overflow-hidden",
-        "bg-white/40 backdrop-blur-xl dark:card-premium",
-        "border border-neutral-200/60 dark:border-transparent",
-        "shadow-[0_8px_30px_rgb(0,0,0,0.02)] dark:shadow-[0_16px_48px_rgba(2,8,26,0.6)]",
-        "hover:shadow-[0_20px_50px_rgba(11,117,226,0.06)] dark:hover:shadow-[0_24px_64px_rgba(0,229,170,0.12)]",
-        "hover:border-neutral-300",
+        "card-premium",
+        "shadow-[0_16px_48px_rgba(2,8,26,0.6)]",
+        "hover:shadow-[0_24px_64px_rgba(0,229,170,0.12)]",
         "transition-all duration-300",
         className
       )}
@@ -398,7 +399,7 @@ function CardSkeleton({
   className?: string;
 }) {
   return (
-    <div className={cn("flex items-center justify-center rounded-xl bg-neutral-100/50 dark:bg-white/[0.03] border border-neutral-200/30 dark:border-white/5 overflow-hidden", className)}>
+    <div className={cn("flex items-center justify-center rounded-xl bg-[#060E24] border border-white/5 overflow-hidden", className)}>
       {children}
     </div>
   );

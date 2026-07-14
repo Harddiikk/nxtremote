@@ -5,6 +5,7 @@ import { Button } from "@/components/button";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { IconArrowRight } from "@tabler/icons-react";
+import { LinesGradientShader } from "./lines-gradient-shader";
 import { BOOKING_URL } from "@/lib/site";
 
 const STATS = [
@@ -26,6 +27,14 @@ const rise = {
 export default function Hero() {
   return (
     <div className="relative w-full overflow-hidden bg-background text-foreground">
+      {/* Flowing gradient bands — the visible hero background animation */}
+      <LinesGradientShader
+        className="absolute inset-0 bg-transparent opacity-50"
+        bandSpacing={44}
+        bandThickness={110}
+        waveAmplitude={0.22}
+        speed={1}
+      />
       {/* Ambient aurora — slow drifting glow orbs */}
       <motion.div
         aria-hidden

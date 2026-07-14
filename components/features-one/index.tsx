@@ -31,6 +31,7 @@ export function FeaturesOne() {
                 We vet candidates specifically for digital agency roles—no generic VAs allowed.
               </CardDescription>
             </CardHeader>
+            <CardPortrait src="/talent/talent-dark-5.jpg" alt="Vetted marketing specialist" />
             <div className="flex flex-col gap-3 w-full px-6 pb-6 mt-auto">
               {[
                 { label: "Marketing Skill Audit", badge: "Technical" },
@@ -80,6 +81,7 @@ export function FeaturesOne() {
                 Candidates are fully operational from Day 1 in your Slack, ClickUp, or Asana environments.
               </CardDescription>
             </CardHeader>
+            <CardPortrait src="/talent/talent-dark-2.jpg" alt="Specialist embedded in your workspace" />
             <div className="flex flex-col gap-3 w-full px-6 pb-6 mt-auto">
               {[
                 { name: "Slack & Messaging", status: "Active Connection", desc: "Real-time communication & daily stand-ups" },
@@ -231,6 +233,18 @@ function CardSkeleton({
   className?: string;
 }) {
   return <div className={cn(className)}>{children}</div>;
+}
+
+// Fills the flexible middle of the tall row-span-2 cards with a rim-lit
+// portrait that melts into the card surface on both edges.
+function CardPortrait({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="relative mx-6 min-h-40 flex-1 overflow-hidden rounded-xl">
+      <img src={src} alt={alt} className="absolute inset-0 h-full w-full object-cover object-top" loading="lazy" />
+      <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-card to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-card to-transparent" />
+    </div>
+  );
 }
 
 function FeatureCard({
