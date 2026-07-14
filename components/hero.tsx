@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 import { LinesGradientShader } from "./lines-gradient-shader";
 import { Badge } from "./badge";
 import { IconArrowRight, IconCircleCheckFilled } from "@tabler/icons-react";
-import { whatsappLink } from "@/lib/site";
+import { BOOKING_URL } from "@/lib/site";
 
 const STATS = [
   { value: "Top 3%", label: "acceptance rate" },
@@ -15,6 +15,16 @@ const STATS = [
   { value: "70%", label: "payroll savings" },
   { value: "Day 8", label: "interview-ready" },
 ];
+
+// Orchestrated entrance: each hero element rises in sequence.
+const rise = {
+  hidden: { opacity: 0, y: 18 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: 0.1 + i * 0.12, duration: 0.55, ease: [0.21, 0.65, 0.36, 1] as const },
+  }),
+};
 
 export default function Hero() {
   return (
@@ -32,22 +42,42 @@ export default function Hero() {
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-4 pt-36 pb-20 md:px-8 md:pt-44 md:pb-28 lg:grid-cols-[1.1fr_0.9fr]">
         {/* Left: message */}
         <div>
-          <Badge href="/about">Built exclusively for digital marketing agencies</Badge>
+          <motion.div variants={rise} initial="hidden" animate="visible" custom={0}>
+            <Badge href="/about">Built exclusively for digital marketing agencies</Badge>
+          </motion.div>
 
-          <h1 className="font-display mt-6 max-w-2xl text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl">
+          <motion.h1
+            variants={rise}
+            initial="hidden"
+            animate="visible"
+            custom={1}
+            className="font-display mt-6 max-w-2xl text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl"
+          >
             Elite offshore marketing talent,{" "}
             <span className="bg-gradient-to-r from-brand-secondary to-brand-accent bg-clip-text text-transparent">
               vetted like it&apos;s your own hire
             </span>
-          </h1>
+          </motion.h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-neutral-600 md:text-xl dark:text-neutral-300">
+          <motion.p
+            variants={rise}
+            initial="hidden"
+            animate="visible"
+            custom={2}
+            className="mt-6 max-w-xl text-lg leading-relaxed text-neutral-600 md:text-xl dark:text-neutral-300"
+          >
             Skip the local hiring crunch. We place pre-vetted media buyers, SEO
             strategists, and automation specialists into your agency — full
             timezone overlap, audited home offices, a fraction of the cost.
-          </p>
+          </motion.p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4">
+          <motion.div
+            variants={rise}
+            initial="hidden"
+            animate="visible"
+            custom={3}
+            className="mt-8 flex flex-wrap items-center gap-4"
+          >
             <Link href="/hire">
               <Button size="lg">
                 Find your next hire <IconArrowRight className="size-4" />
@@ -58,11 +88,22 @@ export default function Hero() {
                 Explore roles
               </Button>
             </Link>
-          </div>
+          </motion.div>
 
-          <dl className="mt-12 grid max-w-xl grid-cols-2 gap-x-8 gap-y-6 border-t border-neutral-200 pt-8 sm:grid-cols-4 dark:border-white/10">
-            {STATS.map((stat) => (
-              <div key={stat.label}>
+          <motion.dl
+            variants={rise}
+            initial="hidden"
+            animate="visible"
+            custom={4}
+            className="mt-12 grid max-w-xl grid-cols-2 gap-x-8 gap-y-6 border-t border-neutral-200 pt-8 sm:grid-cols-4 dark:border-white/10"
+          >
+            {STATS.map((stat, statIdx) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.75 + statIdx * 0.1, duration: 0.45, ease: "easeOut" }}
+              >
                 <dt className="sr-only">{stat.label}</dt>
                 <dd className="font-display text-2xl font-bold text-neutral-900 dark:text-white">
                   {stat.value}
@@ -70,9 +111,9 @@ export default function Hero() {
                 <dd className="mt-1 font-mono text-[10px] tracking-[0.15em] text-neutral-500 uppercase dark:text-neutral-400">
                   {stat.label}
                 </dd>
-              </div>
+              </motion.div>
             ))}
-          </dl>
+          </motion.dl>
         </div>
 
         {/* Right: the vetting dossier */}
@@ -163,7 +204,7 @@ function DossierCard() {
         </div>
 
         <Link
-          href={whatsappLink("Hi NXT Remote, I'd like to meet a shortlist of vetted specialists.")}
+          href={BOOKING_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-6 flex items-center justify-between rounded-xl bg-brand-primary px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-primary/90 dark:bg-white dark:text-brand-primary dark:hover:bg-neutral-100"

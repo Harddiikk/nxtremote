@@ -1,42 +1,24 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { IconCheck, IconPlus } from "@tabler/icons-react";
-import React, { useState } from "react";
+import { IconCheck } from "@tabler/icons-react";
+import React from "react";
+import { motion } from "motion/react";
 import { Container } from "./container";
-import { GridLineHorizontal, GridLineVertical } from "./grid-lines";
 import { Heading } from "./heading";
 import { Subheading } from "./subheading";
 import { Button } from "./button";
-import { X, HelpCircle, ArrowRight, ShieldCheck, AlertCircle } from "lucide-react";
+import { X, ShieldCheck, AlertCircle, CalendarCheck, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { whatsappLink } from "@/lib/site";
-
-type BillingCycle = "monthly" | "quarterly" | "half-yearly" | "annual";
+import { BOOKING_URL } from "@/lib/site";
 
 export function Pricing() {
-  const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
-
-  const cycles = [
-    { id: "monthly", label: "Monthly Billing", discount: 0 },
-    { id: "quarterly", label: "Quarterly Billing", labelBadge: "Save 10%", discount: 0.10 },
-    { id: "half-yearly", label: "Half Yearly", labelBadge: "Save 12%", discount: 0.12 },
-    { id: "annual", label: "Annual Billing", labelBadge: "Save 15%", discount: 0.15 }
-  ];
-
-  const getPrice = (basePrice: number) => {
-    const cycle = cycles.find((c) => c.id === billingCycle);
-    if (!cycle) return basePrice;
-    const discounted = Math.round(basePrice * (1 - cycle.discount));
-    return discounted;
-  };
-
   const plans = [
     {
       id: "growth",
-      name: "Growth (1-2 Specialists)",
+      name: "Growth",
+      teamSize: "1–2 Specialists",
       description: "Ideal for boutique agencies hiring their first offshore specialist.",
-      basePrice: 1799,
       features: [
         "1:1 Pre-vetted matching",
         "30-Day Free Replacement Guarantee",
@@ -45,14 +27,13 @@ export function Pricing() {
         "Slack & PM Tool Native Integration",
         "Strict Hardware & Power Audit Checked"
       ],
-      buttonText: "Book Call to Hire",
-      link: whatsappLink("Hi NXT Remote, I'd like to discuss the Growth tier.")
+      buttonText: "Book a Discovery Call"
     },
     {
       id: "scale",
-      name: "Scale (3-5 Specialists)",
+      name: "Scale",
+      teamSize: "3–5 Specialists",
       description: "Ideal for mid-sized agencies scaling up specific service verticals.",
-      basePrice: 1599,
       features: [
         "1:1 Pre-vetted matching",
         "90-Day Free Replacement Guarantee",
@@ -63,15 +44,13 @@ export function Pricing() {
         "Prioritized Discovery & Placement Support"
       ],
       featured: true,
-      buttonText: "Scale Your Team",
-      link: whatsappLink("Hi NXT Remote, I'd like to discuss the Scale tier.")
+      buttonText: "Book a Discovery Call"
     },
     {
       id: "enterprise",
-      name: "Enterprise (Custom Team)",
+      name: "Enterprise",
+      teamSize: "Custom Team",
       description: "Ideal for large agencies looking to build a full backend execution engine.",
-      basePrice: 0,
-      customQuote: true,
       features: [
         "Dedicated Account Director + Custom Vetting",
         "Lifetime Replacement Protection",
@@ -81,8 +60,7 @@ export function Pricing() {
         "Strict Hardware & Power Audit Checked",
         "Dedicated Coordinator Support Uptime"
       ],
-      buttonText: "Contact Enterprise",
-      link: whatsappLink("Hi NXT Remote, I'd like to discuss the Enterprise custom tier.")
+      buttonText: "Book an Enterprise Call"
     }
   ];
 
@@ -133,166 +111,139 @@ export function Pricing() {
     <div className="bg-neutral-50/50 dark:bg-white/[0.02] border-y border-neutral-100 dark:border-white/5 relative z-10 section-pad">
     <Container as="section" className="flex w-full flex-col">
       <div className="relative mx-auto flex w-full max-w-7xl flex-1 flex-col px-4 py-0">
-        
+
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-14">
           <Subheading className="text-brand-secondary font-semibold uppercase tracking-wider text-xs">
-            Predictable, Flat-Rate Model
+            Flat-Rate Engagements, Zero Recruiter Fees
           </Subheading>
           <Heading
             as="h2"
             className="pt-2 text-2xl font-bold tracking-tight text-neutral-900 md:text-4xl dark:text-neutral-100"
           >
-            Predictable, Transparent Pricing. No Hidden Hiring Fees.
+            Your Team, Your Terms. Scoped on a Single Call.
           </Heading>
           <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto leading-relaxed">
-            Stop paying 20%–30% recruitment fees. Choose a flexible monthly subscription model built around your agency's scaling velocity.
+            Stop paying 20%–30% recruitment fees. Every engagement is a flat monthly
+            rate tailored to the roles you need — tell us your stack on a 30-minute
+            discovery call and get your custom quote the same day.
           </p>
         </div>
 
-        {/* Pricing Flexibility Billing Switch */}
-        <div className="flex justify-center items-center flex-wrap gap-2 mb-12">
-          {cycles.map((cycle) => (
-            <button
-              key={cycle.id}
-              onClick={() => setBillingCycle(cycle.id as BillingCycle)}
+        {/* Engagement Cards */}
+        <div className="relative grid w-full grid-cols-1 gap-6 overflow-hidden p-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {plans.map((plan, planIdx) => (
+            <motion.div
+              key={plan.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "0px 0px -80px 0px" }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: planIdx * 0.1 }}
               className={cn(
-                "relative px-4 py-2 text-xs font-semibold rounded-full border transition-all duration-200 cursor-pointer",
-                billingCycle === cycle.id
-                  ? "bg-brand-primary text-white border-brand-primary dark:bg-brand-secondary dark:border-brand-secondary shadow-sm"
-                  : "bg-white text-neutral-600 border-neutral-200 hover:border-neutral-300 dark:bg-white/5 dark:text-neutral-300 dark:border-white/10"
+                "relative rounded-xl bg-white border border-neutral-200 p-6 flex flex-col justify-between dark:bg-card dark:border-white/10 shadow-sm transition-all duration-300",
+                "hover:-translate-y-2 hover:scale-[1.02] hover:border-brand-secondary dark:hover:border-brand-accent",
+                "hover:shadow-[0_20px_40px_rgba(11,117,226,0.08)] dark:hover:shadow-[0_20px_40px_rgba(0,229,170,0.12)]",
+                plan.featured
+                  ? "ring-2 ring-brand-secondary border-transparent dark:bg-card shadow-[0_4px_20px_rgba(11,117,226,0.15)] dark:shadow-[0_4px_20px_rgba(0,229,170,0.15)]"
+                  : ""
               )}
             >
-              {cycle.label}
-              {cycle.labelBadge && (
-                <span className="ml-1.5 px-1.5 py-0.5 text-[9px] font-bold bg-brand-accent text-neutral-900 rounded-full">
-                  {cycle.labelBadge}
-                </span>
+              {plan.featured && (
+                <div className="absolute -top-3 right-6 rounded-full bg-brand-secondary px-3 py-0.5 text-[10px] font-bold tracking-widest uppercase text-white">
+                  Most Popular
+                </div>
               )}
-            </button>
+
+              <div>
+                <div className="flex items-baseline justify-between">
+                  <p className="text-lg font-bold text-neutral-900 dark:text-white">
+                    {plan.name}
+                  </p>
+                  <span className="rounded-full bg-brand-secondary/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-secondary dark:bg-brand-accent/10 dark:text-brand-accent">
+                    {plan.teamSize}
+                  </span>
+                </div>
+                <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400 min-h-8">
+                  {plan.description}
+                </p>
+
+                <div className="my-6 flex items-center gap-3 border-y border-neutral-100 dark:border-white/5 py-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-secondary/10 dark:bg-brand-accent/10">
+                    <CalendarCheck className="size-5 text-brand-secondary dark:text-brand-accent" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-neutral-900 dark:text-white">
+                      Flat monthly rate
+                    </p>
+                    <p className="text-xs text-neutral-500 dark:text-neutral-400">
+                      Custom quote on your discovery call
+                    </p>
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  {plan.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-start gap-2.5">
+                      <div className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-brand-accent/20 dark:bg-brand-accent/15">
+                        <IconCheck className="h-3 w-3 stroke-[4px] text-[#00E5AA]" />
+                      </div>
+                      <span className="text-sm text-neutral-600 dark:text-neutral-300">
+                        {feature}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-8">
+                <Link href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                  <Button
+                    variant={plan.featured ? "default" : "outline"}
+                    className="w-full justify-center text-xs py-2.5"
+                  >
+                    {plan.buttonText}
+                  </Button>
+                </Link>
+              </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* Plan Cards */}
-        <div className="relative grid w-full grid-cols-1 gap-6 overflow-hidden p-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {plans.map((plan) => {
-            const price = plan.customQuote ? 0 : getPrice(plan.basePrice);
-            return (
-              <div
-                key={plan.id}
-                className={cn(
-                  "relative rounded-xl bg-white border border-neutral-200 p-6 flex flex-col justify-between dark:bg-card dark:border-white/10 shadow-sm transition-all duration-300 cursor-pointer",
-                  "hover:-translate-y-2 hover:scale-[1.02] hover:border-brand-secondary dark:hover:border-brand-accent",
-                  "hover:shadow-[0_20px_40px_rgba(11,117,226,0.08)] dark:hover:shadow-[0_20px_40px_rgba(0,229,170,0.12)]",
-                  plan.featured 
-                    ? "ring-2 ring-brand-secondary border-transparent dark:bg-card shadow-[0_4px_20px_rgba(11,117,226,0.15)] dark:shadow-[0_4px_20px_rgba(0,229,170,0.15)]"
-                    : ""
-                )}
-              >
-                {plan.featured && (
-                  <div className="absolute -top-3 right-6 rounded-full bg-brand-secondary px-3 py-0.5 text-[10px] font-bold tracking-widest uppercase text-white">
-                    Most Popular
-                  </div>
-                )}
-                
-                <div>
-                  <div className="flex items-start justify-between">
-                    <p className="text-lg font-bold text-neutral-900 dark:text-white">
-                      {plan.name}
-                    </p>
-                  </div>
-                  <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400 min-h-8">
-                    {plan.description}
-                  </p>
-                  
-                  <div className="my-6 border-y border-neutral-100 dark:border-white/5 py-4">
-                    {plan.customQuote ? (
-                      <span className="text-3xl font-extrabold text-neutral-900 dark:text-neutral-50">
-                        Custom Quote
-                      </span>
-                    ) : (
-                      <div className="flex items-baseline">
-                        <span className="text-4xl font-extrabold text-neutral-900 dark:text-neutral-50">
-                          ${price.toLocaleString()}
-                        </span>
-                        <span className="ml-2 text-xs text-neutral-500 dark:text-neutral-400">
-                          / month per role
-                        </span>
-                      </div>
-                    )}
-                    {!plan.customQuote && billingCycle !== "monthly" && (
-                      <span className="text-[10px] font-semibold text-brand-accent mt-1 block">
-                        Calculated at {cycles.find(c => c.id === billingCycle)?.labelBadge} savings
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="space-y-3">
-                    {plan.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5">
-                        <div className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-brand-accent/20 dark:bg-brand-accent/15">
-                          <IconCheck className="h-3 w-3 stroke-[4px] text-[#00E5AA]" />
-                        </div>
-                        <span className="text-sm text-neutral-600 dark:text-neutral-300">
-                          {feature}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mt-8">
-                  <Link href={plan.link} target="_blank" rel="noopener noreferrer">
-                    <Button 
-                      variant={plan.featured ? "default" : "outline"} 
-                      className="w-full justify-center text-xs py-2.5"
-                    >
-                      {plan.buttonText}
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
         {/* The Hidden Cost Comparison Section */}
-        <div className="mt-20 rounded-2xl bg-[#081633] p-6 md:p-10 border border-white/10 text-white relative overflow-hidden">
-          <div className="absolute top-0 right-0 transform translate-x-12 -translate-y-12 opacity-5 pointer-events-none">
-            <HelpCircle className="size-96" />
-          </div>
-          
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mt-20 rounded-2xl bg-[#081633] p-6 md:p-10 border border-white/10 text-white relative overflow-hidden"
+        >
           <div className="relative z-10">
             <Subheading className="text-brand-accent font-semibold tracking-wider text-xs uppercase">
-              Cost Arbitrage Calculator
+              The Offshore Advantage
             </Subheading>
             <Heading as="h3" className="text-2xl md:text-3xl font-bold mt-2 text-white">
               Why Agency Founders Choose NXT Remote Over Local US/UK Hires
             </Heading>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 border-t border-white/10 pt-8">
               {/* Local Hire Column */}
               <div className="bg-white/5 rounded-xl p-6 border border-white/5">
                 <div className="flex items-center gap-2 text-red-400 mb-4">
                   <AlertCircle className="size-4" />
-                  <span className="font-semibold text-base">Hiring Digital Marketer Locally</span>
+                  <span className="font-semibold text-base">Hiring a Digital Marketer Locally</span>
                 </div>
                 <ul className="space-y-3 text-base text-neutral-300">
-                  <li className="flex justify-between">
-                    <span>Base salary:</span>
-                    <span className="font-semibold">$6,500/month</span>
+                  <li className="flex items-start gap-2.5">
+                    <X className="size-4 text-red-400 shrink-0 mt-1" />
+                    <span>$75k–$95k+ yearly cost once salary, taxes and benefits stack up</span>
                   </li>
-                  <li className="flex justify-between">
-                    <span>Taxes & benefits:</span>
-                    <span className="font-semibold">$1,200/month</span>
+                  <li className="flex items-start gap-2.5">
+                    <X className="size-4 text-red-400 shrink-0 mt-1" />
+                    <span>Recruiter fees of 20%–30% before they've written a single ad</span>
                   </li>
-                  <li className="flex justify-between">
-                    <span>Upfront recruiting fees:</span>
-                    <span className="font-semibold">$5,000 (one-time)</span>
-                  </li>
-                  <li className="flex justify-between border-t border-white/10 pt-3 font-bold text-white text-lg">
-                    <span>Total Year 1 Cost:</span>
-                    <span>~$97,400</span>
+                  <li className="flex items-start gap-2.5">
+                    <X className="size-4 text-red-400 shrink-0 mt-1" />
+                    <span>Months of sourcing, interviewing and onboarding before output</span>
                   </li>
                 </ul>
               </div>
@@ -307,52 +258,55 @@ export function Pricing() {
                   <span className="font-semibold text-base">NXT Remote Dedicated Specialist</span>
                 </div>
                 <ul className="space-y-3 text-base text-neutral-300">
-                  <li className="flex justify-between">
-                    <span>Flat rate:</span>
-                    <span className="font-semibold">$1,599/month</span>
+                  <li className="flex items-start gap-2.5">
+                    <IconCheck className="size-4 stroke-[3px] text-[#00E5AA] shrink-0 mt-1" />
+                    <span>One flat monthly rate — up to 70% below a local hire's total cost</span>
                   </li>
-                  <li className="flex justify-between">
-                    <span>Tax & benefits:</span>
-                    <span className="font-semibold">$0</span>
+                  <li className="flex items-start gap-2.5">
+                    <IconCheck className="size-4 stroke-[3px] text-[#00E5AA] shrink-0 mt-1" />
+                    <span>Zero recruiting fees, zero payroll taxes, zero benefits admin</span>
                   </li>
-                  <li className="flex justify-between">
-                    <span>Recruiting fees:</span>
-                    <span className="font-semibold">$0</span>
-                  </li>
-                  <li className="flex justify-between border-t border-[#00E5AA]/20 pt-3 font-bold text-[#00E5AA] text-lg">
-                    <span>Total Year 1 Cost:</span>
-                    <span>~$19,188</span>
+                  <li className="flex items-start gap-2.5">
+                    <IconCheck className="size-4 stroke-[3px] text-[#00E5AA] shrink-0 mt-1" />
+                    <span>Interview-ready shortlist by day eight, fully vetted and audited</span>
                   </li>
                 </ul>
               </div>
             </div>
 
-            {/* Savings Callout */}
+            {/* Booking Callout */}
             <div className="mt-8 flex flex-col md:flex-row justify-between items-center bg-[#00E5AA]/10 rounded-xl p-6 border border-[#00E5AA]/20">
               <div>
                 <span className="text-[10px] font-bold text-[#00E5AA] uppercase tracking-wider">
-                  Annual Budget Efficiency
+                  30 Minutes, Zero Obligation
                 </span>
                 <p className="text-xl md:text-2xl font-black text-white mt-1">
-                  Net Annual Savings per Role: <span className="text-[#00E5AA]">$78,212</span>
+                  Get your custom flat rate on one discovery call.
                 </p>
               </div>
-              <Link 
-                href={whatsappLink("Hi NXT Remote, I'd like to discuss hiring specialists and saving 78k annually.")}
-                target="_blank" 
+              <Link
+                href={BOOKING_URL}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 md:mt-0"
               >
                 <Button className="bg-[#00E5AA] text-neutral-950 hover:bg-[#00E5AA]/90 py-2">
-                  Calculate My Team Savings
+                  Book Your Call
+                  <ArrowRight className="size-4" />
                 </Button>
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Evaluation Comparison Table */}
-        <div className="mt-20">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mt-20"
+        >
           <div className="mx-auto mb-10 max-w-3xl text-center">
             <Subheading className="text-brand-secondary font-semibold tracking-wider text-xs uppercase">
               Rigorous Evaluation
@@ -402,14 +356,14 @@ export function Pricing() {
           {/* Mobile Comparison Grid */}
           <div className="md:hidden space-y-6">
             {comparisonData.map((row) => (
-              <div 
-                key={row.criteria} 
+              <div
+                key={row.criteria}
                 className="p-6 rounded-2xl bg-white/70 dark:bg-neutral-900/40 border border-neutral-200 dark:border-white/5 backdrop-blur-md shadow-md space-y-4"
               >
                 <h4 className="font-extrabold text-base text-neutral-900 dark:text-white border-b border-neutral-100 dark:border-white/5 pb-2">
                   {row.criteria}
                 </h4>
-                
+
                 <div className="bg-[#0b75e2]/5 dark:bg-[#00e5aa]/5 p-4 rounded-xl border border-[#0b75e2]/10 dark:border-[#00e5aa]/10">
                   <span className="flex items-center gap-1.5 text-[10px] font-black text-brand-secondary dark:text-brand-accent uppercase tracking-widest">
                     <ShieldCheck className="size-3.5" />
@@ -419,7 +373,7 @@ export function Pricing() {
                     {row.nxt}
                   </p>
                 </div>
-                
+
                 <div className="p-4 rounded-xl border border-neutral-100 dark:border-white/5 bg-neutral-50/50 dark:bg-neutral-950/20">
                   <span className="flex items-center gap-1.5 text-[10px] font-black text-neutral-400 dark:text-neutral-500 uppercase tracking-widest">
                     <X className="size-3.5 text-red-400" />
@@ -432,7 +386,7 @@ export function Pricing() {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </Container>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
+import { MotionConfig } from "motion/react";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -56,9 +57,11 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          <Navbar />
-          {children}
-          <Footer />
+          <MotionConfig reducedMotion="user">
+            <Navbar />
+            {children}
+            <Footer />
+          </MotionConfig>
         </ThemeProvider>
       </body>
     </html>

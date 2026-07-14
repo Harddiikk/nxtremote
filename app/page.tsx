@@ -1,3 +1,4 @@
+import { Booking } from "@/components/booking";
 import { CTA } from "@/components/cta";
 import { FAQs } from "@/components/faqs";
 import { FeaturesOne } from "@/components/features-one";
@@ -35,8 +36,9 @@ export default function Home() {
       <Testimonials />
       <FeaturesTwo />
       <Pricing />
-      <FAQs />
       <CTA />
+      <Booking />
+      <FAQs />
     </main>
   );
 }

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { whatsappLink } from "@/lib/site";
+import { whatsappLink, BOOKING_URL } from "@/lib/site";
 
 export function Footer() {
   const pages = [
@@ -50,7 +50,7 @@ export function Footer() {
   const contact = [
     {
       title: "Book Discovery Call",
-      href: whatsappLink("Hi NXT Remote, I'd like to schedule a discovery call."),
+      href: BOOKING_URL,
     },
     {
       title: "WhatsApp Direct",

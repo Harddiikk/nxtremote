@@ -22,7 +22,7 @@ export function Button({
     <button
       ref={ref}
       className={cn(
-        "relative inline-flex cursor-pointer items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 active:scale-[0.98]",
+        "group/btn relative inline-flex cursor-pointer items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.98] [&_svg]:transition-transform [&_svg]:duration-200 hover:[&_svg]:translate-x-0.5",
         size === "sm" && "px-4 py-2 text-xs",
         size === "md" && "px-6 py-3 text-sm",
         size === "lg" && "px-8 py-3.5 text-base",

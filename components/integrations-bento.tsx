@@ -72,20 +72,26 @@ export function IntegrationsBento() {
       <div className="absolute top-1/2 left-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-secondary/5 blur-[120px] pointer-events-none" />
       
       <div className="mx-auto max-w-7xl px-4 md:px-8">
-        <div className="mx-auto max-w-3xl text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mx-auto max-w-3xl text-center mb-16"
+        >
           <div className="inline-flex items-center gap-1.5 rounded-full border border-brand-secondary/30 bg-brand-secondary/5 px-3 py-1 text-xs font-semibold text-brand-secondary dark:text-brand-accent backdrop-blur-md mb-4">
             <Sparkles className="size-3.5" />
             <span>Operational Stack Mastery</span>
           </div>
-          
+
           <h2 className="text-3xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-50 sm:text-4xl md:text-5xl">
             Integrated with Your Existing Workflows
           </h2>
-          
+
           <p className="mt-4 text-base md:text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed">
             Our pre-vetted marketing talent arrives fully operational from day one. Expert-level execution mapped across your agency's core software stack.
           </p>
-        </div>
+        </motion.div>
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">

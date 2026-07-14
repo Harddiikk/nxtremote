@@ -1,10 +1,12 @@
 // Central place for site-wide constants.
-// IMPORTANT: replace WHATSAPP_NUMBER with the real business number before launch.
-export const WHATSAPP_NUMBER = "1234567890";
+export const WHATSAPP_NUMBER = "919211925035";
 
 export function whatsappLink(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
+
+// cal.id booking page — every "book a call" CTA routes here.
+export const BOOKING_URL = "https://cal.id/nxtremote";
 
 export const SITE = {
   name: "NXT Remote",
