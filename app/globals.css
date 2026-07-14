@@ -94,7 +94,7 @@
 }
 
 .dark {
-  --background: #040A1C;
+  --background: #03060F;
   --foreground: #F3F6FC;
   --card: #101F4A;
   --card-foreground: #F3F6FC;
@@ -156,6 +156,11 @@
       linear-gradient(var(--card), var(--card)) padding-box,
       linear-gradient(140deg, rgba(11, 117, 226, 0.55), rgba(0, 229, 170, 0.35), rgba(255, 255, 255, 0.08)) border-box;
     border: 1px solid transparent;
+  }
+  /* Hollow display type (hero TOP 3%) */
+  .text-outline {
+    -webkit-text-stroke: 2.5px rgba(255, 255, 255, 0.92);
+    color: transparent;
   }
   /* Infinite logo marquee */
   .animate-marquee {

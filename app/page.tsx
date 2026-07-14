@@ -1,6 +1,6 @@
 import { Booking } from "@/components/booking";
-import { CTA } from "@/components/cta";
 import { FAQs } from "@/components/faqs";
+import { TalentShowcase } from "@/components/talent-showcase";
 import { FeaturesOne } from "@/components/features-one";
 import { FeaturesTwo } from "@/components/features-two";
 import Hero from "@/components/hero";
@@ -33,12 +33,12 @@ export default function Home() {
     <main className="">
       <Hero />
       <LogoMarquee />
+      <TalentShowcase />
       <IntegrationsBento />
       <FeaturesOne />
       <Testimonials />
       <FeaturesTwo />
       <Pricing />
-      <CTA />
       <Booking />
       <FAQs />
     </main>
