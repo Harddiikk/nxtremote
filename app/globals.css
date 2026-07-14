@@ -94,18 +94,18 @@
 }
 
 .dark {
-  --background: #060F26;
+  --background: #040A1C;
   --foreground: #F3F6FC;
-  --card: #0D1B3E;
+  --card: #101F4A;
   --card-foreground: #F3F6FC;
-  --popover: #0B1D45;
+  --popover: #0E1D45;
   --popover-foreground: #F3F6FC;
   --primary: #0B75E2;
   --primary-foreground: #FFFFFF;
-  --secondary: #132655;
+  --secondary: #16295C;
   --secondary-foreground: #FFFFFF;
-  --muted: #132655;
-  --muted-foreground: #9FB0CC;
+  --muted: #16295C;
+  --muted-foreground: #A5B6D2;
   --accent: #00E5AA;
   --accent-foreground: #0B1D45;
   --destructive: #EF4444;
@@ -149,4 +149,29 @@
   .section-pad {
     @apply py-20 md:py-28;
   }
+  /* Premium card: elevated surface + animated gradient rim on hover */
+  .card-premium {
+    position: relative;
+    background:
+      linear-gradient(var(--card), var(--card)) padding-box,
+      linear-gradient(140deg, rgba(11, 117, 226, 0.55), rgba(0, 229, 170, 0.35), rgba(255, 255, 255, 0.08)) border-box;
+    border: 1px solid transparent;
+  }
+  /* Infinite logo marquee */
+  .animate-marquee {
+    animation: marquee 36s linear infinite;
+  }
+  .marquee-mask {
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee {
+      animation: none;
+    }
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }

@@ -374,11 +374,11 @@ function GlassBentoCard({
       transition={{ duration: 0.3, ease: "easeOut" }}
       className={cn(
         "group relative flex flex-col justify-between gap-2.5 rounded-2xl p-5 md:p-6 overflow-hidden",
-        "bg-white/40 dark:bg-card/60 backdrop-blur-xl",
-        "border border-neutral-200/60 dark:border-white/5",
-        "shadow-[0_8px_30px_rgb(0,0,0,0.02)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.15)]",
-        "hover:shadow-[0_20px_50px_rgba(11,117,226,0.06)] dark:hover:shadow-[0_20px_50px_rgba(0,229,170,0.06)]",
-        "hover:border-neutral-300 dark:hover:border-white/10",
+        "bg-white/40 backdrop-blur-xl dark:card-premium",
+        "border border-neutral-200/60 dark:border-transparent",
+        "shadow-[0_8px_30px_rgb(0,0,0,0.02)] dark:shadow-[0_16px_48px_rgba(2,8,26,0.6)]",
+        "hover:shadow-[0_20px_50px_rgba(11,117,226,0.06)] dark:hover:shadow-[0_24px_64px_rgba(0,229,170,0.12)]",
+        "hover:border-neutral-300",
         "transition-all duration-300",
         className
       )}

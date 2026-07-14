@@ -5,6 +5,7 @@ import { FeaturesOne } from "@/components/features-one";
 import { FeaturesTwo } from "@/components/features-two";
 import Hero from "@/components/hero";
 import { IntegrationsBento } from "@/components/integrations-bento";
+import { LogoMarquee } from "@/components/logo-marquee";
 import { Pricing } from "@/components/pricing";
 import { Testimonials } from "@/components/testimonials";
 import { Metadata } from "next";
@@ -31,6 +32,7 @@ export default function Home() {
   return (
     <main className="">
       <Hero />
+      <LogoMarquee />
       <IntegrationsBento />
       <FeaturesOne />
       <Testimonials />

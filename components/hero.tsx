@@ -36,8 +36,25 @@ export default function Hero() {
         waveAmplitude={0.2}
         speed={1}
       />
-      {/* Soft radial glow behind the dossier */}
-      <div className="pointer-events-none absolute top-1/3 right-[-10%] -z-0 h-[560px] w-[560px] rounded-full bg-brand-secondary/15 blur-[140px]" />
+      {/* Ambient aurora — slow drifting glow orbs give the hero visible life */}
+      <motion.div
+        aria-hidden
+        animate={{ x: [0, 60, -30, 0], y: [0, -40, 30, 0], scale: [1, 1.15, 0.95, 1] }}
+        transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
+        className="pointer-events-none absolute top-1/3 right-[-10%] -z-0 h-[560px] w-[560px] rounded-full bg-brand-secondary/20 blur-[140px]"
+      />
+      <motion.div
+        aria-hidden
+        animate={{ x: [0, -50, 40, 0], y: [0, 35, -25, 0], scale: [1, 0.9, 1.1, 1] }}
+        transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
+        className="pointer-events-none absolute top-[10%] left-[-8%] -z-0 h-[420px] w-[420px] rounded-full bg-brand-accent/10 blur-[130px]"
+      />
+      <motion.div
+        aria-hidden
+        animate={{ x: [0, 40, -40, 0], opacity: [0.5, 0.9, 0.6, 0.5] }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+        className="pointer-events-none absolute bottom-[-10%] left-1/3 -z-0 h-[380px] w-[380px] rounded-full bg-brand-highlight/10 blur-[120px]"
+      />
 
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-4 pt-36 pb-20 md:px-8 md:pt-44 md:pb-28 lg:grid-cols-[1.1fr_0.9fr]">
         {/* Left: message */}
@@ -152,9 +169,11 @@ function DossierCard() {
         </div>
 
         <div className="mt-5 flex items-center gap-4">
-          <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-secondary to-brand-primary font-display text-sm font-bold text-white">
-            SM
-          </div>
+          <img
+            src="/talent/talent-3.jpg"
+            alt="Vetted senior media buyer"
+            className="size-12 shrink-0 rounded-full border border-brand-accent/40 object-cover shadow-[0_0_16px_rgba(0,229,170,0.25)]"
+          />
           <div>
             <p className="font-display text-lg font-bold text-neutral-900 dark:text-white">
               Senior Media Buyer

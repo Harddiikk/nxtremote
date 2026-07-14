@@ -32,12 +32,10 @@ export function Booking() {
   const [embedFailed, setEmbedFailed] = useState(false);
 
   useEffect(() => {
-    if (initialized.current) return;
-    initialized.current = true;
-
-    // Cal's embed posts messages once the booker actually renders; if none
-    // arrive (script blocked, Cloudflare challenge, network), swap to the
-    // fallback card instead of an endless spinner.
+    // Watchdog runs per-mount (and is cleaned per-mount) so it never fires a
+    // setState against an unmounted StrictMode tree. Cal's embed posts
+    // messages once the booker renders; if none arrive (script blocked,
+    // Cloudflare challenge, network), swap to the fallback card.
     let gotCalMessage = false;
     const onMessage = (e: MessageEvent) => {
       if (typeof e.origin === "string" && e.origin.includes("cal.id")) {
@@ -48,56 +46,58 @@ export function Booking() {
     const timeout = window.setTimeout(() => {
       if (!gotCalMessage) setEmbedFailed(true);
     }, 15000);
-    const cleanup = () => {
+
+    // The Cal loader + inline mount must only ever run once (a second
+    // Cal("inline") call would embed a duplicate calendar).
+    if (!initialized.current) {
+      initialized.current = true;
+
+      // Cal.com's official loader stub (queues calls until embed.js arrives).
+      (function (C: Window, A: string, L: string) {
+        const p = function (a: { q: unknown[] }, ar: unknown) {
+          a.q.push(ar);
+        };
+        const d = C.document;
+        C.Cal =
+          C.Cal ||
+          function (...args: unknown[]) {
+            const cal = C.Cal!;
+            if (!cal.loaded) {
+              cal.ns = {};
+              cal.q = cal.q || [];
+              d.head.appendChild(d.createElement("script")).setAttribute("src", A);
+              cal.loaded = true;
+            }
+            if (args[0] === L) {
+              const api = function (...apiArgs: unknown[]) {
+                p(api as unknown as { q: unknown[] }, apiArgs);
+              };
+              (api as unknown as { q: unknown[] }).q = [];
+              const namespace = args[1];
+              if (typeof namespace === "string") {
+                (cal.ns as Record<string, unknown>)[namespace] = api;
+                p(cal as unknown as { q: unknown[] }, args);
+              } else {
+                p(cal as unknown as { q: unknown[] }, args);
+              }
+              return;
+            }
+            p(cal as unknown as { q: unknown[] }, args);
+          };
+      })(window, CAL_EMBED_JS, "init");
+
+      window.Cal!("init", { origin: CAL_ORIGIN });
+      window.Cal!("inline", {
+        elementOrSelector: "#cal-inline-booking",
+        calLink: CAL_LINK,
+        config: { theme: "dark" },
+      });
+    }
+
+    return () => {
       window.removeEventListener("message", onMessage);
       window.clearTimeout(timeout);
     };
-
-    // Cal.com's official loader stub (queues calls until embed.js arrives).
-    (function (C: Window, A: string, L: string) {
-      const p = function (a: { q: unknown[] }, ar: unknown) {
-        a.q.push(ar);
-      };
-      const d = C.document;
-      C.Cal =
-        C.Cal ||
-        function (...args: unknown[]) {
-          const cal = C.Cal!;
-          if (!cal.loaded) {
-            cal.ns = {};
-            cal.q = cal.q || [];
-            const script = d.createElement("script");
-            script.src = A;
-            script.onerror = () => setEmbedFailed(true);
-            d.head.appendChild(script);
-            cal.loaded = true;
-          }
-          if (args[0] === L) {
-            const api = function (...apiArgs: unknown[]) {
-              p(api as unknown as { q: unknown[] }, apiArgs);
-            };
-            (api as unknown as { q: unknown[] }).q = [];
-            const namespace = args[1];
-            if (typeof namespace === "string") {
-              (cal.ns as Record<string, unknown>)[namespace] = api;
-              p(cal as unknown as { q: unknown[] }, args);
-            } else {
-              p(cal as unknown as { q: unknown[] }, args);
-            }
-            return;
-          }
-          p(cal as unknown as { q: unknown[] }, args);
-        };
-    })(window, CAL_EMBED_JS, "init");
-
-    window.Cal!("init", { origin: CAL_ORIGIN });
-    window.Cal!("inline", {
-      elementOrSelector: "#cal-inline-booking",
-      calLink: CAL_LINK,
-      config: { theme: "dark" },
-    });
-
-    return cleanup;
   }, []);
 
   return (
