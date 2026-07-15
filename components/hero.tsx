@@ -57,7 +57,7 @@ export default function Hero() {
           custom={0}
           className="font-display text-4xl font-bold tracking-tight text-balance text-white sm:text-6xl md:text-7xl"
         >
-          Elite offshore marketing talent
+          Elite offshore <span className="text-gradient-brand">digital marketing</span> talent
         </motion.h1>
 
         <motion.p

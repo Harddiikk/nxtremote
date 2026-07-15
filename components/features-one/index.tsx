@@ -32,7 +32,7 @@ export function FeaturesOne() {
                 We vet candidates specifically for digital agency roles—no generic VAs allowed.
               </CardDescription>
             </CardHeader>
-            <CardPortrait src="/talent/talent-dark-5.jpg" alt="Vetted marketing specialist" />
+            <CardPortrait src="/talent/clean-2.jpg" alt="Vetted marketing specialist" />
             <div className="flex flex-col gap-3 w-full px-6 pb-6 mt-auto">
               {[
                 { label: "Marketing Skill Audit", badge: "Technical" },
@@ -82,7 +82,7 @@ export function FeaturesOne() {
                 Candidates are fully operational from Day 1 in your Slack, ClickUp, or Asana environments.
               </CardDescription>
             </CardHeader>
-            <CardPortrait src="/talent/talent-dark-2.jpg" alt="Specialist embedded in your workspace" />
+            <CardPortrait src="/talent/clean-9.jpg" alt="Specialist embedded in your workspace" />
             <div className="flex flex-col gap-3 w-full px-6 pb-6 mt-auto">
               {[
                 { name: "Slack & Messaging", status: "Active Connection", desc: "Real-time communication & daily stand-ups" },

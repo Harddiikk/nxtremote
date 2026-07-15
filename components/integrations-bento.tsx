@@ -337,7 +337,7 @@ export function IntegrationsBento() {
             <CardContent>
               <div className="flex items-start justify-between">
                 <div>
-                  <span className="text-[10px] font-bold tracking-widest uppercase text-emerald-500 dark:text-emerald-400">
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-teal-500 dark:text-teal-400">
                     Operations & Projects
                   </span>
                   <CardTitle className="text-left mt-1 text-lg font-bold">
@@ -349,6 +349,61 @@ export function IntegrationsBento() {
                 </div>
                 <div className="hidden sm:flex size-10 rounded-full border border-emerald-500/20 bg-emerald-500/5 items-center justify-center text-emerald-500">
                   <CheckSquare className="size-5" />
+                </div>
+              </div>
+            </CardContent>
+          </GlassBentoCard>
+
+          {/* Card 5: Design & Creative - Canva, Photoshop, Adobe Express */}
+          <GlassBentoCard className="md:col-span-3 relative overflow-hidden group">
+            <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-fuchsia-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
+
+            <CardSkeleton className="h-32 relative flex-col justify-center items-center gap-3">
+              <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+
+              <div className="grid grid-cols-3 gap-6 md:gap-14 relative z-10">
+                {[
+                  { base: "logos/canva", alt: "Canva", fb: "CV", color: "bg-[#00C4CC]" },
+                  { base: "logos/adobephotoshop", alt: "Photoshop", fb: "PS", color: "bg-[#31A8FF]" },
+                  { base: "logos/adobe", alt: "Adobe Express", fb: "AE", color: "bg-[#FF0000]" },
+                ].map((t) => (
+                  <div key={t.alt} className="flex flex-col items-center gap-2">
+                    <LogoFallback
+                      baseName={t.base}
+                      alt={t.alt}
+                      fallbackText={t.fb}
+                      brandColor={t.color}
+                      glowColor="group-hover:shadow-[0_0_20px_rgba(139,92,246,0.35)]"
+                    />
+                    <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">{t.alt}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex gap-1.5 relative z-10 flex-wrap justify-center">
+                {["Ad Creatives", "Brand Kits", "Static & Motion Assets"].map((tag) => (
+                  <span key={tag} className="text-[10px] md:text-xs font-semibold px-2.5 py-1 rounded-full bg-fuchsia-500/5 text-fuchsia-500 dark:text-fuchsia-400 border border-fuchsia-500/10 backdrop-blur-md">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </CardSkeleton>
+
+            <CardContent>
+              <div className="flex items-start justify-between">
+                <div>
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-fuchsia-500 dark:text-fuchsia-400">
+                    Design & Creative
+                  </span>
+                  <CardTitle className="text-left mt-1 text-lg font-bold">
+                    Canva, Photoshop & Adobe Express
+                  </CardTitle>
+                  <CardDescription className="text-left mt-2 max-w-lg">
+                    Scroll-stopping creatives, on brand, on schedule.
+                  </CardDescription>
+                </div>
+                <div className="hidden sm:flex size-10 rounded-full border border-fuchsia-500/20 bg-fuchsia-500/5 items-center justify-center text-fuchsia-500">
+                  <Layers className="size-5" />
                 </div>
               </div>
             </CardContent>
