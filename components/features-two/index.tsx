@@ -5,6 +5,7 @@ import { Container } from "../container";
 import { Heading } from "../heading";
 import { Subheading } from "../subheading";
 import { AnimatedBeamPathIllustration } from "./animated-path";
+import { WorldMapSkeleton } from "../features-one/world-map-skeleton";
 import { SecuritySkeleton } from "./security-skeleton";
 import { EdgeComputing } from "./edge-computing";
 import { Compliance } from "./compliance";
@@ -45,8 +46,23 @@ export function FeaturesTwo() {
           </p>
         </div>
         
-        {/* Visual decoration showing specialized connections */}
-        <div className="relative flex h-80 w-full items-center justify-center rounded-2xl bg-neutral-50/50 dark:bg-neutral-900/20 border border-neutral-200/50 dark:border-white/5 overflow-hidden">
+        {/* Global talent map + specialized connections */}
+        <div className="flex w-full flex-col gap-6">
+        <div className="relative w-full overflow-hidden rounded-2xl border border-neutral-200/50 bg-neutral-50/50 p-4 dark:border-white/5 dark:bg-neutral-900/20">
+          <WorldMapSkeleton
+            className="w-full"
+            pins={[
+              { id: "latam", image: "/talent/clean-9.jpg", name: "Camila · LATAM", location: { lat: -12.05, lng: -77.04 } },
+              { id: "ee", image: "/talent/clean-7.jpg", name: "Lukas · Eastern Europe", location: { lat: 50.45, lng: 30.52 } },
+              { id: "apac", image: "/talent/clean-16.jpg", name: "Dario · APAC", location: { lat: 14.6, lng: 121.0 } },
+              { id: "hq", image: "/talent/clean-1.jpg", name: "Your Agency · US/UK", location: { lat: 40.71, lng: -74.0 } },
+            ]}
+          />
+          <p className="mt-2 text-center font-mono text-[10px] tracking-[0.2em] text-neutral-500 uppercase">
+            Vetted specialists across LATAM, Eastern Europe & APAC
+          </p>
+        </div>
+        <div className="relative flex h-56 w-full items-center justify-center rounded-2xl bg-neutral-50/50 dark:bg-neutral-900/20 border border-neutral-200/50 dark:border-white/5 overflow-hidden">
           <div className="absolute top-1/2 left-[calc(100%/6)] z-10 -translate-x-1/2 -translate-y-1/2">
             <BeamCircle label="Meta Ads" />
           </div>
@@ -62,6 +78,7 @@ export function FeaturesTwo() {
           <div className="absolute top-1/2 left-[calc(300%/6)] w-[calc(200%/6)] -translate-y-1/2">
             <AnimatedBeamPathIllustration delay={1.4} />
           </div>
+        </div>
         </div>
       </div>
 
