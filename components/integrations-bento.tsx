@@ -41,7 +41,7 @@ function LogoFallback({ baseName, alt, fallbackText, brandColor, glowColor }: Lo
   return (
     <div 
       className={cn(
-        "relative flex items-center justify-center size-16 md:size-20 rounded-2xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-white/95 backdrop-blur-md transition-all duration-300 shadow-lg animate-[logoFloat_5s_ease-in-out_infinite]",
+        "relative flex items-center justify-center size-12 md:size-14 rounded-xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-white/95 backdrop-blur-md transition-all duration-300 shadow-md animate-[logoFloat_5s_ease-in-out_infinite]",
         "group-hover:scale-105 group-hover:border-white/20",
         glowColor
       )}
@@ -71,13 +71,13 @@ export function IntegrationsBento() {
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-secondary/5 blur-[120px] pointer-events-none" />
       
-      <div className="mx-auto max-w-7xl px-4 md:px-8">
+      <div className="mx-auto max-w-6xl px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "0px 0px -80px 0px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mx-auto max-w-3xl text-center mb-16"
+          className="mx-auto max-w-3xl text-center mb-10"
         >
           <div className="inline-flex items-center gap-1.5 rounded-full border border-brand-secondary/30 bg-brand-secondary/5 px-3 py-1 text-xs font-semibold text-brand-secondary dark:text-brand-accent backdrop-blur-md mb-4">
             <Sparkles className="size-3.5" />
@@ -94,14 +94,14 @@ export function IntegrationsBento() {
         </motion.div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           
           {/* Card 1: CRM - HubSpot & GoHighLevel */}
           <GlassBentoCard className="md:col-span-2 relative overflow-hidden group">
             {/* Background Glow */}
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-amber-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
             
-            <CardSkeleton className="min-h-36 py-5 flex-col justify-center items-center gap-3 relative">
+            <CardSkeleton className="py-4 flex-col justify-center items-center gap-3 relative">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
               
               {/* Dynamic Connection Path Visual */}
@@ -161,7 +161,7 @@ export function IntegrationsBento() {
             {/* Background Glow */}
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-violet-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
             
-            <CardSkeleton className="min-h-36 py-5 relative flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
               
               {/* Stacked Flow Visual */}
@@ -225,7 +225,7 @@ export function IntegrationsBento() {
             {/* Background Glow */}
             <div className="absolute -left-10 -bottom-10 -z-10 size-48 rounded-full bg-blue-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
             
-            <CardSkeleton className="min-h-36 py-5 relative flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
               
               {/* Horizontal layout */}
@@ -278,7 +278,7 @@ export function IntegrationsBento() {
             {/* Background Glow */}
             <div className="absolute -left-10 -bottom-10 -z-10 size-48 rounded-full bg-emerald-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
             
-            <CardSkeleton className="min-h-36 py-5 relative flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
               
               {/* Horizontal grid with connectors */}
@@ -358,10 +358,10 @@ export function IntegrationsBento() {
           <GlassBentoCard className="md:col-span-3 relative overflow-hidden group">
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-fuchsia-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
-            <CardSkeleton className="min-h-36 py-5 relative flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
-              <div className="grid grid-cols-3 gap-6 md:gap-14 relative z-10">
+              <div className="grid grid-cols-3 gap-6 md:gap-10 relative z-10">
                 {[
                   { base: "logos/canva", alt: "Canva", fb: "CV", color: "bg-[#00C4CC]" },
                   { base: "logos/adobephotoshop", alt: "Photoshop", fb: "PS", color: "bg-[#31A8FF]" },
