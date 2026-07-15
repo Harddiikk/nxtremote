@@ -15,7 +15,7 @@ export function FeaturesOne() {
             The Scaling Dilemma
           </Subheading>
           <Heading className="mt-2 text-neutral-900 dark:text-neutral-100">
-            High Local Salaries Shouldn't Stall Your Agency’s Growth
+            High Local Salaries Shouldn't Stall Your <span className="text-gradient-brand">Agency’s Growth</span>
           </Heading>
           <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed">
             Same senior output. Up to 70% less payroll. Embedded in your

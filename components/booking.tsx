@@ -130,7 +130,7 @@ export function Booking() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "0px 0px -80px 0px" }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-          className="relative mx-auto mt-12 max-w-5xl overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-xl dark:border-white/10 dark:bg-[#0A1834]"
+          className="card-premium relative mx-auto mt-12 max-w-5xl overflow-hidden rounded-2xl shadow-[0_24px_64px_rgba(2,8,26,0.6)]"
         >
           {/* Cal's script owns this node's children — never unmount it, or its
               <cal-inline> element gets re-parented into whatever replaces it. */}

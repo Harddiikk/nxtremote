@@ -85,55 +85,55 @@ export function FeaturesTwo() {
       {/* The 10 Mandatory Sourcing Pillars Grid */}
       <div className="mx-auto mt-16 max-w-6xl">
         <h3 className="text-center font-semibold text-lg text-neutral-800 dark:text-neutral-200 mb-8">
-          The 10 Mandatory Sourcing & Vetting Pillars
+          Our Sourcing & Vetting Pillars
         </h3>
         
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {/* Pillar 1 */}
           <PillarCard
-            icon={<Cpu className="size-5 text-[#00E5AA]" />}
+            icon={<Cpu className="size-5 text-[#8B5CF6]" />}
             number="I"
             title="Domain Industry Experience"
             description="Verified history of working utilizing technical skills within digital agencies or e-commerce brands."
           />
           {/* Pillar 2 */}
           <PillarCard
-            icon={<Terminal className="size-5 text-[#00E5AA]" />}
+            icon={<Terminal className="size-5 text-[#8B5CF6]" />}
             number="II"
             title="Marketing Stack Fluency"
             description="Fully operational from Day 1 across Meta Business Manager, HubSpot, Klaviyo, and Google Ads."
           />
           {/* Pillar 3 */}
           <PillarCard
-            icon={<FileText className="size-5 text-[#00E5AA]" />}
+            icon={<FileText className="size-5 text-[#8B5CF6]" />}
             number="III"
             title="Portfolio Verification"
             description="Manual reviews of previous project portfolio links, campaign dashboards, and case study files."
           />
           {/* Pillar 4 */}
           <PillarCard
-            icon={<MessagesSquare className="size-5 text-[#00E5AA]" />}
+            icon={<MessagesSquare className="size-5 text-[#8B5CF6]" />}
             number="IV"
             title="Communication Nuance"
             description="Rigorously tested for Western client alignment, conceptual speech, and asynchronous copywriting."
           />
           {/* Pillar 5 */}
           <PillarCard
-            icon={<GitBranch className="size-5 text-[#00E5AA]" />}
+            icon={<GitBranch className="size-5 text-[#8B5CF6]" />}
             number="V"
             title="Project Management Mastery"
             description="Native fluency in agile team tools including Jira, Asana, Slack, and ClickUp workflows."
           />
           {/* Pillar 6 */}
           <PillarCard
-            icon={<Sparkles className="size-5 text-[#00E5AA]" />}
+            icon={<Sparkles className="size-5 text-[#8B5CF6]" />}
             number="VI"
             title="AI-Ready Workflows"
             description="Assessed on modern AI tooling: prompt-driven ad copy, programmatic SEO, and automated reporting."
           />
           {/* Pillar 10 (Compliance) */}
           <PillarCard
-            icon={<ShieldCheck className="size-5 text-[#00E5AA]" />}
+            icon={<ShieldCheck className="size-5 text-[#8B5CF6]" />}
             number="X"
             title="GDPR & Data Protection"
             description="Contractually bound to NDA terms, credential vault practices (1Password/LastPass), and security training."

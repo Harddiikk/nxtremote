@@ -88,7 +88,8 @@ export default function Hero() {
             </span>
           </p>
           <p className="font-display mt-4 text-2xl font-semibold text-white sm:text-3xl md:text-4xl">
-            Marketing <span className="font-normal text-neutral-300">Specialists</span>
+            <span className="text-gradient-brand">Digital Marketing</span>{" "}
+            <span className="font-normal text-neutral-300">Specialists</span>
           </p>
           <p className="mt-4 text-sm text-neutral-400 md:text-base">
             26 months average specialist tenure.

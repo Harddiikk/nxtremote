@@ -41,7 +41,7 @@ function LogoFallback({ baseName, alt, fallbackText, brandColor, glowColor }: Lo
   return (
     <div 
       className={cn(
-        "relative flex items-center justify-center size-12 md:size-14 rounded-xl border border-neutral-200 dark:border-white/10 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md transition-all duration-300 shadow-sm",
+        "relative flex items-center justify-center size-16 md:size-20 rounded-2xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-white/95 backdrop-blur-md transition-all duration-300 shadow-lg animate-[logoFloat_5s_ease-in-out_infinite]",
         "group-hover:scale-105 group-hover:border-white/20",
         glowColor
       )}
@@ -85,7 +85,7 @@ export function IntegrationsBento() {
           </div>
 
           <h2 className="text-3xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-50 sm:text-4xl md:text-5xl">
-            Integrated with Your Existing Workflows
+            Integrated with Your <span className="text-gradient-brand">Existing Workflows</span>
           </h2>
 
           <p className="mt-4 text-base md:text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed">
@@ -107,7 +107,7 @@ export function IntegrationsBento() {
               {/* Dynamic Connection Path Visual */}
               <div className="flex items-center gap-4 md:gap-12 relative z-10">
                 <LogoFallback 
-                  baseName="crm1-Photoroom" 
+                  baseName="logos/hubspot" 
                   alt="HubSpot" 
                   fallbackText="HS" 
                   brandColor="bg-[#FF7A59]"
@@ -118,7 +118,7 @@ export function IntegrationsBento() {
                 <div className="w-8 md:w-16 h-[1px] bg-neutral-200 dark:bg-neutral-800" />
 
                 <LogoFallback 
-                  baseName="crm2-Photoroom" 
+                  baseName="logos/gohighlevel" 
                   alt="GoHighLevel" 
                   fallbackText="GHL" 
                   brandColor="bg-[#188BF6]"
@@ -167,7 +167,7 @@ export function IntegrationsBento() {
               {/* Stacked Flow Visual */}
               <div className="flex items-center gap-4 relative z-10">
                 <LogoFallback 
-                  baseName="klaviologo" 
+                  baseName="logos/klaviyo" 
                   alt="Klaviyo" 
                   fallbackText="KL" 
                   brandColor="bg-[#2B1A4A]"
@@ -186,11 +186,11 @@ export function IntegrationsBento() {
                 </div>
 
                 <LogoFallback 
-                  baseName="em2-Photoroom" 
+                  baseName="logos/brevo" 
                   alt="Brevo" 
                   fallbackText="BV" 
-                  brandColor="bg-[#00E5AA]"
-                  glowColor="group-hover:shadow-[0_0_20px_rgba(0,229,170,0.3)]"
+                  brandColor="bg-[#8B5CF6]"
+                  glowColor="group-hover:shadow-[0_0_20px_rgba(139,92,246,0.3)]"
                 />
               </div>
 
@@ -231,7 +231,7 @@ export function IntegrationsBento() {
               {/* Horizontal layout */}
               <div className="flex items-center gap-3 relative z-10">
                 <LogoFallback 
-                  baseName="ads3-Photoroom" 
+                  baseName="logos/googleanalytics" 
                   alt="GA4" 
                   fallbackText="GA4" 
                   brandColor="bg-[#E37400]"
@@ -239,7 +239,7 @@ export function IntegrationsBento() {
                 />
                 <div className="w-6 h-[1px] bg-neutral-200 dark:bg-neutral-800" />
                 <LogoFallback 
-                  baseName="cm360logo" 
+                  baseName="logos/googlemarketingplatform" 
                   alt="Campaign Manager 360" 
                   fallbackText="CM" 
                   brandColor="bg-[#4285F4]"
@@ -285,7 +285,7 @@ export function IntegrationsBento() {
               <div className="grid grid-cols-4 gap-4 md:gap-8 relative z-10">
                 <div className="flex flex-col items-center gap-2">
                   <LogoFallback 
-                    baseName="slacklogo" 
+                    baseName="logos/slack" 
                     alt="Slack" 
                     fallbackText="SL" 
                     brandColor="bg-[#4A154B]"
@@ -295,7 +295,7 @@ export function IntegrationsBento() {
                 </div>
                 <div className="flex flex-col items-center gap-2">
                   <LogoFallback 
-                    baseName="clickuplogo" 
+                    baseName="logos/clickup" 
                     alt="ClickUp" 
                     fallbackText="CU" 
                     brandColor="bg-[#7B68EE]"
@@ -305,7 +305,7 @@ export function IntegrationsBento() {
                 </div>
                 <div className="flex flex-col items-center gap-2">
                   <LogoFallback 
-                    baseName="asanalogo" 
+                    baseName="logos/asana" 
                     alt="Asana" 
                     fallbackText="AS" 
                     brandColor="bg-[#F06A6A]"
@@ -315,7 +315,7 @@ export function IntegrationsBento() {
                 </div>
                 <div className="flex flex-col items-center gap-2">
                   <LogoFallback 
-                    baseName="jiralogo" 
+                    baseName="logos/jira" 
                     alt="Jira" 
                     fallbackText="JR" 
                     brandColor="bg-[#0052CC]"
@@ -379,7 +379,7 @@ function GlassBentoCard({
         "group relative flex flex-col justify-between gap-2.5 rounded-2xl p-5 md:p-6 overflow-hidden",
         "card-premium",
         "shadow-[0_16px_48px_rgba(2,8,26,0.6)]",
-        "hover:shadow-[0_24px_64px_rgba(0,229,170,0.12)]",
+        "hover:shadow-[0_24px_64px_rgba(139,92,246,0.12)]",
         "transition-all duration-300",
         className
       )}

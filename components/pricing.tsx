@@ -140,9 +140,9 @@ export function Pricing() {
               className={cn(
                 "relative rounded-xl bg-white border border-neutral-200 p-6 flex flex-col justify-between dark:bg-card dark:border-white/10 shadow-sm transition-all duration-300",
                 "hover:-translate-y-2 hover:scale-[1.02] hover:border-brand-secondary dark:hover:border-brand-accent",
-                "hover:shadow-[0_20px_40px_rgba(11,117,226,0.08)] dark:hover:shadow-[0_20px_40px_rgba(0,229,170,0.12)]",
+                "hover:shadow-[0_20px_40px_rgba(11,117,226,0.08)] dark:hover:shadow-[0_20px_40px_rgba(139,92,246,0.12)]",
                 plan.featured
-                  ? "ring-2 ring-brand-secondary border-transparent dark:bg-card shadow-[0_4px_20px_rgba(11,117,226,0.15)] dark:shadow-[0_4px_20px_rgba(0,229,170,0.15)]"
+                  ? "ring-2 ring-brand-secondary border-transparent dark:bg-card shadow-[0_4px_20px_rgba(11,117,226,0.15)] dark:shadow-[0_4px_20px_rgba(139,92,246,0.15)]"
                   : ""
               )}
             >
@@ -183,7 +183,7 @@ export function Pricing() {
                   {plan.features.map((feature, idx) => (
                     <div key={idx} className="flex items-start gap-2.5">
                       <div className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-brand-accent/20 dark:bg-brand-accent/15">
-                        <IconCheck className="h-3 w-3 stroke-[4px] text-[#00E5AA]" />
+                        <IconCheck className="h-3 w-3 stroke-[4px] text-[#8B5CF6]" />
                       </div>
                       <span className="text-sm text-neutral-600 dark:text-neutral-300">
                         {feature}
@@ -251,21 +251,21 @@ export function Pricing() {
                 <div className="absolute -top-3 left-6 rounded-full bg-brand-accent px-3 py-0.5 text-[9px] font-extrabold tracking-widest uppercase text-neutral-900">
                   The Efficient Alternative
                 </div>
-                <div className="flex items-center gap-2 text-[#00E5AA] mb-4">
+                <div className="flex items-center gap-2 text-[#8B5CF6] mb-4">
                   <ShieldCheck className="size-4" />
                   <span className="font-semibold text-base">NXT Remote Dedicated Specialist</span>
                 </div>
                 <ul className="space-y-3 text-base text-neutral-300">
                   <li className="flex items-start gap-2.5">
-                    <IconCheck className="size-4 stroke-[3px] text-[#00E5AA] shrink-0 mt-1" />
+                    <IconCheck className="size-4 stroke-[3px] text-[#8B5CF6] shrink-0 mt-1" />
                     <span>One flat monthly rate — up to 70% below a local hire's total cost</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <IconCheck className="size-4 stroke-[3px] text-[#00E5AA] shrink-0 mt-1" />
+                    <IconCheck className="size-4 stroke-[3px] text-[#8B5CF6] shrink-0 mt-1" />
                     <span>Zero recruiting fees, zero payroll taxes, zero benefits admin</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <IconCheck className="size-4 stroke-[3px] text-[#00E5AA] shrink-0 mt-1" />
+                    <IconCheck className="size-4 stroke-[3px] text-[#8B5CF6] shrink-0 mt-1" />
                     <span>Interview-ready shortlist by day eight, fully vetted and audited</span>
                   </li>
                 </ul>
@@ -273,9 +273,9 @@ export function Pricing() {
             </div>
 
             {/* Booking Callout */}
-            <div className="mt-8 flex flex-col md:flex-row justify-between items-center bg-[#00E5AA]/10 rounded-xl p-6 border border-[#00E5AA]/20">
+            <div className="mt-8 flex flex-col md:flex-row justify-between items-center bg-[#8B5CF6]/10 rounded-xl p-6 border border-[#8B5CF6]/20">
               <div>
-                <span className="text-[10px] font-bold text-[#00E5AA] uppercase tracking-wider">
+                <span className="text-[10px] font-bold text-[#8B5CF6] uppercase tracking-wider">
                   30 Minutes, Zero Obligation
                 </span>
                 <p className="text-xl md:text-2xl font-black text-white mt-1">
@@ -288,7 +288,7 @@ export function Pricing() {
                 rel="noopener noreferrer"
                 className="mt-4 md:mt-0"
               >
-                <Button className="bg-[#00E5AA] text-neutral-950 hover:bg-[#00E5AA]/90 py-2">
+                <Button className="bg-[#8B5CF6] text-neutral-950 hover:bg-[#8B5CF6]/90 py-2">
                   Book Your Call
                   <ArrowRight className="size-4" />
                 </Button>
@@ -320,9 +320,9 @@ export function Pricing() {
               <thead>
                 <tr className="border-b border-neutral-200 dark:border-white/10 bg-neutral-100/50 dark:bg-neutral-950/40 text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
                   <th className="px-6 py-5 w-1/4">Evaluation Criteria</th>
-                  <th className="px-6 py-5 bg-[#0b75e2]/5 dark:bg-[#00e5aa]/5 w-3/8 text-neutral-950 dark:text-white font-extrabold border-x border-[#0b75e2]/15 dark:border-[#00e5aa]/10 text-sm">
+                  <th className="px-6 py-5 bg-[#0b75e2]/5 dark:bg-[#8b5cf6]/5 w-3/8 text-neutral-950 dark:text-white font-extrabold border-x border-[#0b75e2]/15 dark:border-[#8b5cf6]/10 text-sm">
                     <span className="flex items-center gap-2">
-                      <ShieldCheck className="size-4 text-[#00E5AA]" />
+                      <ShieldCheck className="size-4 text-[#8B5CF6]" />
                       NXT Remote (Our Standard)
                     </span>
                   </th>
@@ -333,9 +333,9 @@ export function Pricing() {
                 {comparisonData.map((row) => (
                   <tr key={row.criteria} className="hover:bg-neutral-50/50 dark:hover:bg-neutral-900/10 transition-colors">
                     <td className="px-6 py-5 font-bold text-neutral-800 dark:text-neutral-200">{row.criteria}</td>
-                    <td className="px-6 py-5 bg-[#0b75e2]/5 dark:bg-[#00e5aa]/5 border-x border-[#0b75e2]/10 dark:border-[#00e5aa]/5 font-semibold text-neutral-950 dark:text-neutral-100">
+                    <td className="px-6 py-5 bg-[#0b75e2]/5 dark:bg-[#8b5cf6]/5 border-x border-[#0b75e2]/10 dark:border-[#8b5cf6]/5 font-semibold text-neutral-950 dark:text-neutral-100">
                       <div className="flex items-start gap-2.5">
-                        <ShieldCheck className="size-4 text-[#00E5AA] shrink-0 mt-0.5" />
+                        <ShieldCheck className="size-4 text-[#8B5CF6] shrink-0 mt-0.5" />
                         <span>{row.nxt}</span>
                       </div>
                     </td>
@@ -362,7 +362,7 @@ export function Pricing() {
                   {row.criteria}
                 </h4>
 
-                <div className="bg-[#0b75e2]/5 dark:bg-[#00e5aa]/5 p-4 rounded-xl border border-[#0b75e2]/10 dark:border-[#00e5aa]/10">
+                <div className="bg-[#0b75e2]/5 dark:bg-[#8b5cf6]/5 p-4 rounded-xl border border-[#0b75e2]/10 dark:border-[#8b5cf6]/10">
                   <span className="flex items-center gap-1.5 text-[10px] font-black text-brand-secondary dark:text-brand-accent uppercase tracking-widest">
                     <ShieldCheck className="size-3.5" />
                     NXT Remote Standard

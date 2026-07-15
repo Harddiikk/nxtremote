@@ -176,18 +176,7 @@ export function Footer() {
             letterSpacing: "-0.02em",
           }}
         >
-          <span
-            className="dark:hidden"
-            style={{ WebkitTextStroke: "1px var(--color-neutral-200)" }}
-          >
-            NXT Remote
-          </span>
-          <span
-            className="hidden dark:inline"
-            style={{ WebkitTextStroke: "1px var(--color-neutral-700)" }}
-          >
-            NXT Remote
-          </span>
+          <span className="text-gradient-brand opacity-80">NXT Remote</span>
         </p>
       </div>
     </div>
