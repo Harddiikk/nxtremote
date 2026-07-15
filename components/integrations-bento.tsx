@@ -24,7 +24,7 @@ interface LogoFallbackProps {
 }
 
 function LogoFallback({ baseName, alt, fallbackText, brandColor, glowColor }: LogoFallbackProps) {
-  const formats = [".png", ".svg", ".webp", ".jpg", ".jpeg"];
+  const formats = [".svg", ".png", ".webp", ".jpg", ".jpeg"];
   const [formatIndex, setFormatIndex] = useState(0);
   const [failed, setFailed] = useState(false);
 
