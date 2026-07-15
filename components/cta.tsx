@@ -111,7 +111,7 @@ export function CTA() {
         </Heading>
         <Subheading className="mt-6 max-w-lg">
           Skip the scrolling, the ghosting, and the onboarding headaches. Tell
-          us which specialist your agency is missing — we&apos;ll bring you an
+          us which specialist your agency is missing. We&apos;ll bring you an
           interview-ready shortlist by day eight.
         </Subheading>
         <Link

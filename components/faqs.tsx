@@ -53,9 +53,9 @@ const faqData: FAQSection[] = [
           "NXT Remote operates with WhatsApp Velocity. We don't hide behind slow email support tickets or clunky portals. You communicate directly with your dedicated account coordinators and specialists on the messaging app you use daily."
       },
       {
-        question: "What is your replacement guarantee?",
+        question: "What if a placement does not work out?",
         answer:
-          "We provide a 30-Day Free Replacement Guarantee on our Growth tier, a 90-Day Guarantee on our Scale tier, and lifetime replacement protection on custom Enterprise builds. If a candidate doesn't work out technically or culturally, we replace them immediately."
+          "We replace them free of charge: within 30 days on the Growth tier, 90 days on Scale, and on an ongoing basis for Enterprise builds. If a candidate does not fit technically or culturally, we find you a new one right away."
       }
     ]
   },
@@ -63,7 +63,7 @@ const faqData: FAQSection[] = [
     title: "Infrastructure & Legal",
     items: [
       {
-        question: "How do you guarantee 99.9% work shift uptime?",
+        question: "How do you keep work shifts reliable?",
         answer:
           "We mandate physical audits of candidate workstations. Every resource must operate on a machine tailored for heavy multitasking, hold a professional noise-canceling headset, and keep secondary power backups (UPS/inverters) plus a secondary high-speed internet source."
       },

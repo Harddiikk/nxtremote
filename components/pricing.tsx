@@ -21,7 +21,7 @@ export function Pricing() {
       description: "Ideal for boutique agencies hiring their first offshore specialist.",
       features: [
         "1:1 Pre-vetted matching",
-        "30-Day Free Replacement Guarantee",
+        "Free replacement within 30 days",
         "HR & Payroll Administration Included",
         "Flexible Timezone Alignment (up to 4 hours overlap)",
         "Slack & PM Tool Native Integration",
@@ -36,7 +36,7 @@ export function Pricing() {
       description: "Ideal for mid-sized agencies scaling up specific service verticals.",
       features: [
         "1:1 Pre-vetted matching",
-        "90-Day Free Replacement Guarantee",
+        "Free replacement within 90 days",
         "HR & Payroll Administration Included",
         "Dedicated Shift Overlap (Full 8-hour overlap)",
         "Slack & PM Tool Native Integration",
@@ -53,7 +53,7 @@ export function Pricing() {
       description: "Ideal for large agencies looking to build a full backend execution engine.",
       features: [
         "Dedicated Account Director + Custom Vetting",
-        "Lifetime Replacement Protection",
+        "Ongoing free replacement",
         "HR & Payroll Administration Included",
         "Custom Shift Schedules Tailored",
         "Enterprise-grade Security Integration",
@@ -102,7 +102,7 @@ export function Pricing() {
     },
     {
       criteria: "Risk Protection",
-      nxt: "30 to 90 Day Free Replacement. If a placement does not fit technically or culturally, we replace them immediately at no cost.",
+      nxt: "Free replacement in the first 30 to 90 days. If a placement does not fit, we replace them at no cost.",
       market: "No Security. If a freelancer ghosts, you lose weeks of operational progress and have to restart the search from scratch."
     }
   ];
@@ -237,7 +237,7 @@ export function Pricing() {
                   </li>
                   <li className="flex items-start gap-2.5">
                     <X className="size-4 text-red-400 shrink-0 mt-1" />
-                    <span>Recruiter fees of 20%–30% before they've written a single ad</span>
+                    <span>Recruiter fees of 20% to 30% before they've written a single ad</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <X className="size-4 text-red-400 shrink-0 mt-1" />
@@ -258,7 +258,7 @@ export function Pricing() {
                 <ul className="space-y-3 text-base text-neutral-300">
                   <li className="flex items-start gap-2.5">
                     <IconCheck className="size-4 stroke-[3px] text-[#8B5CF6] shrink-0 mt-1" />
-                    <span>One flat monthly rate — up to 70% below a local hire's total cost</span>
+                    <span>One flat monthly rate, up to 70% below a local hire's total cost</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <IconCheck className="size-4 stroke-[3px] text-[#8B5CF6] shrink-0 mt-1" />
@@ -332,7 +332,7 @@ export function Pricing() {
               <tbody className="divide-y divide-neutral-200/60 dark:divide-white/5 text-sm leading-relaxed">
                 {comparisonData.map((row) => (
                   <tr key={row.criteria} className="hover:bg-neutral-50/50 dark:hover:bg-neutral-900/10 transition-colors">
-                    <td className="px-6 py-5 font-bold text-neutral-800 dark:text-neutral-200">{row.criteria}</td>
+                    <td className="px-6 py-5 font-display text-base font-bold text-neutral-800 md:text-lg dark:text-white">{row.criteria}</td>
                     <td className="px-6 py-5 bg-[#0b75e2]/5 dark:bg-[#8b5cf6]/5 border-x border-[#0b75e2]/10 dark:border-[#8b5cf6]/5 font-semibold text-neutral-950 dark:text-neutral-100">
                       <div className="flex items-start gap-2.5">
                         <ShieldCheck className="size-4 text-[#8B5CF6] shrink-0 mt-0.5" />
@@ -358,7 +358,7 @@ export function Pricing() {
                 key={row.criteria}
                 className="p-6 rounded-2xl bg-white/70 dark:bg-neutral-900/40 border border-neutral-200 dark:border-white/5 backdrop-blur-md shadow-md space-y-4"
               >
-                <h4 className="font-extrabold text-base text-neutral-900 dark:text-white border-b border-neutral-100 dark:border-white/5 pb-2">
+                <h4 className="font-extrabold text-lg text-neutral-900 dark:text-white border-b border-neutral-100 dark:border-white/5 pb-2">
                   {row.criteria}
                 </h4>
 

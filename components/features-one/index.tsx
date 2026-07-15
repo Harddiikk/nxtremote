@@ -29,7 +29,7 @@ export function FeaturesOne() {
             <CardHeader>
               <CardTitle>Strict Technical Sourcing</CardTitle>
               <CardDescription>
-                We vet candidates specifically for digital agency roles—no generic VAs allowed.
+                We vet candidates specifically for digital agency roles. No generic VAs allowed.
               </CardDescription>
             </CardHeader>
             <CardPortrait src="/talent/clean-2.jpg" alt="Vetted marketing specialist" />
@@ -139,7 +139,7 @@ export function FeaturesOne() {
         <FeatureCard
           icon={<Briefcase className="text-brand-secondary dark:text-brand-accent size-6" />}
           title="Zero HR Overhead"
-          description="Sourcing, payroll, and compliance — all handled by us."
+          description="Sourcing, payroll, and compliance, all handled by us."
         />
       </div>
     </Container>

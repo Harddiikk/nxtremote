@@ -31,7 +31,7 @@ const TESTIMONIALS: Testimonial[] = [
   {
     title: "The vetting is the real product",
     quote:
-      "Every candidate we interviewed was already tested on GHL and HubSpot. We hired the first shortlist they sent — eight days after the discovery call.",
+      "Every candidate we interviewed was already tested on GHL and HubSpot. We hired the first shortlist they sent, eight days after the discovery call.",
     name: "Louis B.",
     role: "Managing Director · London",
   },
@@ -59,7 +59,7 @@ const TESTIMONIALS: Testimonial[] = [
   {
     title: "Replaced in 48 hours",
     quote:
-      "One placement wasn't a culture fit. NXT swapped in a new specialist within two days, free, mid-quarter. That guarantee is real.",
+      "One placement wasn't a culture fit. NXT swapped in a new specialist within two days, free, mid-quarter.",
     name: "Marcus D.",
     role: "CEO, paid social agency · Chicago",
   },

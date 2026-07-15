@@ -35,7 +35,7 @@ export function FeaturesTwo() {
             100% Digital Marketing Mastery.
           </Heading>
           <p className="text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed mb-4">
-            Most offshore staffing agencies handle everything from general data entry to accounting. They try to be everything to everyone—and end up providing surface-level generalists who don't know a pixel from a pillar page.
+            Most offshore staffing agencies handle everything from general data entry to accounting. They try to be everything to everyone, and end up providing surface-level generalists who don't know a pixel from a pillar page.
           </p>
           <p className="text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed font-semibold">
             At NXT Remote, we do one thing passionately: We place elite offshore talent exclusively within the digital marketing domain.

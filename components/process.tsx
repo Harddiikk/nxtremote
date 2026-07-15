@@ -13,7 +13,7 @@ const STEPS = [
     icon: <ClipboardCheck className="size-6 text-white" />,
     step: "01",
     title: "We Audit",
-    detail: "Portfolio, campaign history, and infrastructure — verified before anyone talks to you.",
+    detail: "Portfolio, campaign history, and infrastructure, verified before anyone talks to you.",
   },
   {
     icon: <MessagesSquare className="size-6 text-white" />,
@@ -25,7 +25,7 @@ const STEPS = [
     icon: <MonitorPlay className="size-6 text-white" />,
     step: "03",
     title: "We Test Live",
-    detail: "Hands-on exam in real tools — Meta, Google, GHL — not multiple-choice quizzes.",
+    detail: "Hands-on exam in real tools like Meta, Google, and GHL. Not multiple-choice quizzes.",
   },
   {
     icon: <Handshake className="size-6 text-white" />,
@@ -47,7 +47,7 @@ export function Process() {
           className="mx-auto max-w-3xl text-center"
         >
           <Subheading className="text-brand-secondary font-semibold uppercase tracking-wider text-xs">
-            The System Behind the Guarantee
+            The System Behind Every Placement
           </Subheading>
           <Heading as="h2" className="mt-2">
             Four Steps Before You Ever{" "}

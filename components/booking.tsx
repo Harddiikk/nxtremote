@@ -120,7 +120,7 @@ export function Booking() {
             Pick a Slot. Meet Your Shortlist.
           </Heading>
           <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">
-            Grab 30 minutes with our placement team — walk out with a custom
+            Grab 30 minutes with our placement team and walk out with a custom
             flat rate and a hiring plan for your first specialist.
           </p>
         </motion.div>
@@ -145,7 +145,7 @@ export function Booking() {
                 <CalendarCheck className="size-7 text-brand-secondary dark:text-brand-accent" />
               </div>
               <p className="max-w-sm text-center text-sm font-semibold text-neutral-600 dark:text-neutral-300">
-                The inline calendar couldn&apos;t load — book directly on our
+                The inline calendar couldn&apos;t load. Book directly on our
                 scheduling page instead.
               </p>
               <Link href={BOOKING_URL} target="_blank" rel="noopener noreferrer">

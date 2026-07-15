@@ -167,7 +167,7 @@ export function TalentShowcase() {
             Can&apos;t see the exact profile you need?
           </p>
           <p className="mx-auto mt-2 max-w-xl text-sm text-neutral-400 md:text-base">
-            Our talent network covers every marketing role — whatever the
+            Our talent network covers every marketing role, whatever the
             channel, however niche.{" "}
             <Link
               href={BOOKING_URL}

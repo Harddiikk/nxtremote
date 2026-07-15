@@ -101,7 +101,7 @@ export function IntegrationsBento() {
             {/* Background Glow */}
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-amber-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
             
-            <CardSkeleton className="h-32 flex-col justify-center items-center gap-3 relative">
+            <CardSkeleton className="min-h-36 py-5 flex-col justify-center items-center gap-3 relative">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
               
               {/* Dynamic Connection Path Visual */}
@@ -146,7 +146,7 @@ export function IntegrationsBento() {
                     HubSpot & GoHighLevel
                   </CardTitle>
                   <CardDescription className="text-left mt-2 max-w-lg">
-                    Pipelines, lead capture, and CRM sync — handled.
+                    Pipelines, lead capture, and CRM sync, handled.
                   </CardDescription>
                 </div>
                 <div className="hidden sm:flex size-10 rounded-full border border-amber-500/20 bg-amber-500/5 items-center justify-center text-amber-500">
@@ -161,7 +161,7 @@ export function IntegrationsBento() {
             {/* Background Glow */}
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-violet-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
             
-            <CardSkeleton className="h-32 relative flex-col justify-center items-center gap-3">
+            <CardSkeleton className="min-h-36 py-5 relative flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
               
               {/* Stacked Flow Visual */}
@@ -225,7 +225,7 @@ export function IntegrationsBento() {
             {/* Background Glow */}
             <div className="absolute -left-10 -bottom-10 -z-10 size-48 rounded-full bg-blue-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
             
-            <CardSkeleton className="h-32 relative flex-col justify-center items-center gap-3">
+            <CardSkeleton className="min-h-36 py-5 relative flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
               
               {/* Horizontal layout */}
@@ -266,7 +266,7 @@ export function IntegrationsBento() {
                     GA4 & Campaign Manager 360
                   </CardTitle>
                   <CardDescription className="text-left mt-2">
-                    Attribution, conversions, and reporting — done right.
+                    Attribution, conversions, and reporting, done right.
                   </CardDescription>
                 </div>
               </div>
@@ -278,7 +278,7 @@ export function IntegrationsBento() {
             {/* Background Glow */}
             <div className="absolute -left-10 -bottom-10 -z-10 size-48 rounded-full bg-emerald-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
             
-            <CardSkeleton className="h-32 relative flex-col justify-center items-center gap-3">
+            <CardSkeleton className="min-h-36 py-5 relative flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
               
               {/* Horizontal grid with connectors */}
@@ -358,7 +358,7 @@ export function IntegrationsBento() {
           <GlassBentoCard className="md:col-span-3 relative overflow-hidden group">
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-fuchsia-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
-            <CardSkeleton className="h-32 relative flex-col justify-center items-center gap-3">
+            <CardSkeleton className="min-h-36 py-5 relative flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
               <div className="grid grid-cols-3 gap-6 md:gap-14 relative z-10">
