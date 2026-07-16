@@ -55,7 +55,7 @@ const faqData: FAQSection[] = [
       {
         question: "What if a placement does not work out?",
         answer:
-          "We replace them free of charge: within 30 days on the Growth tier, 90 days on Scale, and on an ongoing basis for Enterprise builds. If a candidate does not fit technically or culturally, we find you a new one right away."
+          "We replace them free of charge: within 30 days on the Basic tier, 90 days on Growth, and on an ongoing basis for Enterprise builds. If a candidate does not fit technically or culturally, we find you a new one right away."
       }
     ]
   },

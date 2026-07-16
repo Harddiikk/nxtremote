@@ -15,8 +15,8 @@ import { BOOKING_URL } from "@/lib/site";
 export function Pricing() {
   const plans = [
     {
-      id: "growth",
-      name: "Growth",
+      id: "basic",
+      name: "Basic",
       teamSize: "1–2 Specialists",
       description: "Ideal for boutique agencies hiring their first offshore specialist.",
       features: [
@@ -30,8 +30,8 @@ export function Pricing() {
       buttonText: "Book a Discovery Call"
     },
     {
-      id: "scale",
-      name: "Scale",
+      id: "growth",
+      name: "Growth",
       teamSize: "3–5 Specialists",
       description: "Ideal for mid-sized agencies scaling up specific service verticals.",
       features: [
