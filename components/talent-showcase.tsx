@@ -167,15 +167,15 @@ export function TalentShowcase() {
             Can&apos;t see the exact profile you need?
           </p>
           <p className="mx-auto mt-2 max-w-xl text-sm text-neutral-400 md:text-base">
-            Our talent network covers every marketing role, whatever the
-            channel, however niche.{" "}
+            Our talent network covers every digital marketing profile,
+            whatever the business requirement demands.{" "}
             <Link
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-brand-accent underline-offset-4 hover:underline"
             >
-              Just tell us.
+              Just let us know.
             </Link>
           </p>
           <Link href={BOOKING_URL} target="_blank" rel="noopener noreferrer">

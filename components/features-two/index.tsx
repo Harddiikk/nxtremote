@@ -67,7 +67,7 @@ export function FeaturesTwo() {
             <BeamCircle label="Meta Ads" />
           </div>
           <div className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-            <BeamCircle label="NXT Elite" active />
+            <BeamCircle label="NXT Remote" active />
           </div>
           <div className="absolute top-1/2 left-[calc(500%/6)] z-10 -translate-x-1/2 -translate-y-1/2">
             <BeamCircle label="GoHighLevel" />

@@ -18,7 +18,7 @@ const FEATURED = {
     "We handed our Meta and Google accounts to an NXT media buyer in week one. ROAS is up 34% and I got my evenings back. Every candidate we interviewed was already tested on the exact stack we run.",
   name: "Daniel R.",
   role: "Founder, performance agency · Austin",
-  photo: "/talent/clean-4.jpg",
+  photo: "/talent/featured.jpg",
   stats: [
     { value: "+34%", label: "ROAS in one quarter" },
     { value: "Day 8", label: "from call to hire" },
