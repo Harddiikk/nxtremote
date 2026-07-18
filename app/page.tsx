@@ -4,6 +4,7 @@ import { FAQs } from "@/components/faqs";
 import { TalentShowcase } from "@/components/talent-showcase";
 import { FeaturesOne } from "@/components/features-one";
 import { FeaturesTwo } from "@/components/features-two";
+import { GlobeSection } from "@/components/globe-section";
 import Hero from "@/components/hero";
 import { IntegrationsBento } from "@/components/integrations-bento";
 import { LogoMarquee } from "@/components/logo-marquee";
@@ -40,6 +41,7 @@ export default function Home() {
       <FeaturesOne />
       <Process />
       <Testimonials />
+      <GlobeSection />
       <FeaturesTwo />
       <Pricing />
       <AiAcademy />
