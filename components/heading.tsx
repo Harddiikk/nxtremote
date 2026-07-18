@@ -17,7 +17,7 @@ export function Heading({
   return (
     <Tag
       className={cn(
-        "font-display text-3xl font-bold tracking-tight text-balance text-neutral-900 md:text-4xl lg:text-5xl dark:text-white",
+        "font-display text-3xl font-bold tracking-tight text-balance md:text-4xl lg:text-5xl",
         className,
       )}
       {...props}

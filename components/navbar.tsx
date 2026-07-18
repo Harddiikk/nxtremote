@@ -214,13 +214,11 @@ const Logo = () => {
   return (
     <Link
       href="/"
-      className="relative z-20 flex items-center"
+      aria-label="NXT Remote home"
+      className="relative z-20 flex items-baseline gap-1 font-display text-lg md:text-xl font-extrabold tracking-tight leading-none"
     >
-      <img
-        src="/logo-word-white.png"
-        alt="NXT Remote"
-        className="h-4 md:h-[18px] w-auto object-contain"
-      />
+      <span className="text-primary">NXT</span>
+      <span className="text-gradient-brand">Remote</span>
     </Link>
   );
 };

@@ -21,9 +21,9 @@ export function Pricing() {
       description: "Ideal for boutique agencies hiring their first offshore specialist.",
       features: [
         "1:1 Pre-vetted matching",
-        "Free replacement within 30 days",
+        "Free replacement within 15 to 30 days",
         "HR & Payroll Administration Included",
-        "Flexible Timezone Alignment (up to 4 hours overlap)",
+        "Flexible Timezone Alignment (Dedicated working-hours overlap)",
         "Slack & PM Tool Native Integration",
         "Strict Hardware & Power Audit Checked"
       ],
@@ -36,9 +36,9 @@ export function Pricing() {
       description: "Ideal for mid-sized agencies scaling up specific service verticals.",
       features: [
         "1:1 Pre-vetted matching",
-        "Free replacement within 90 days",
+        "Free replacement within 15 to 30 days",
         "HR & Payroll Administration Included",
-        "Dedicated Shift Overlap (Full 8-hour overlap)",
+        "Dedicated Shift Overlap (Working-hours overlap)",
         "Slack & PM Tool Native Integration",
         "Strict Hardware & Power Audit Checked",
         "Prioritized Discovery & Placement Support"
@@ -102,7 +102,7 @@ export function Pricing() {
     },
     {
       criteria: "Risk Protection",
-      nxt: "Free replacement in the first 30 to 90 days. If a placement does not fit, we replace them at no cost.",
+      nxt: "Free replacement within 15 to 30 days. If a placement does not fit, we replace them at no cost.",
       market: "No Security. If a freelancer ghosts, you lose weeks of operational progress and have to restart the search from scratch."
     }
   ];
@@ -266,7 +266,7 @@ export function Pricing() {
                   </li>
                   <li className="flex items-start gap-2.5">
                     <IconCheck className="size-4 stroke-[3px] text-[#8B5CF6] shrink-0 mt-1" />
-                    <span>Interview-ready shortlist by day eight, fully vetted and audited</span>
+                    <span>Interview-ready shortlist by day five, fully vetted and audited</span>
                   </li>
                 </ul>
               </div>
@@ -326,7 +326,7 @@ export function Pricing() {
                       NXT Remote (Our Standard)
                     </span>
                   </th>
-                  <th className="px-6 py-5 w-3/8 text-neutral-600 dark:text-neutral-400 text-sm">General Freelancers (Upwork, Fiverr)</th>
+                  <th className="px-6 py-5 w-3/8 text-neutral-600 dark:text-neutral-400 text-sm">Generalist Agencies</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-neutral-200/60 dark:divide-white/5 text-sm leading-relaxed">

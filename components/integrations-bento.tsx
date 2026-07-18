@@ -182,7 +182,7 @@ export function IntegrationsBento() {
                   >
                     <Mail className="size-3 text-brand-accent" />
                   </motion.div>
-                  <span className="text-[9px] text-neutral-400 font-mono">FLOW ACTIVE</span>
+                  <span className="text-[9px] text-muted-foreground font-mono">FLOW ACTIVE</span>
                 </div>
 
                 <LogoFallback 
@@ -433,8 +433,8 @@ function GlassBentoCard({
         // utilities) — apply it directly.
         "group relative flex flex-col justify-between gap-2.5 rounded-2xl p-5 md:p-6 overflow-hidden",
         "card-premium",
-        "shadow-[0_16px_48px_rgba(2,8,26,0.6)]",
-        "hover:shadow-[0_24px_64px_rgba(139,92,246,0.12)]",
+        "shadow-[0_16px_48px_rgba(32,28,103,0.08)]",
+        "hover:shadow-[0_24px_64px_rgba(79,47,229,0.12)]",
         "transition-all duration-300",
         className
       )}
@@ -454,7 +454,7 @@ function CardSkeleton({
   className?: string;
 }) {
   return (
-    <div className={cn("flex items-center justify-center rounded-xl bg-[#060E24] border border-white/5 overflow-hidden", className)}>
+    <div className={cn("flex items-center justify-center rounded-xl bg-muted border border-border overflow-hidden", className)}>
       {children}
     </div>
   );

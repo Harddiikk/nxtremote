@@ -33,14 +33,14 @@ export function Button({
           "hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.25),0_4px_16px_rgba(11,117,226,0.45)]",
         ],
         variant === "outline" && [
-          "bg-white text-neutral-700",
-          "ring-1 ring-neutral-200",
+          "bg-card text-foreground",
+          "ring-1 ring-border",
           "shadow-[0_1px_2px_rgba(0,0,0,0.05)]",
-          "hover:bg-neutral-50 hover:ring-neutral-300",
+          "hover:bg-muted hover:ring-brand-secondary/40",
           "dark:bg-white/5 dark:text-neutral-100 dark:ring-white/15 dark:hover:bg-white/10 dark:hover:ring-white/25",
         ],
         variant === "ghost" && [
-          "bg-transparent text-neutral-700 hover:bg-neutral-100",
+          "bg-transparent text-foreground hover:bg-muted",
           "dark:text-neutral-200 dark:hover:bg-white/5",
         ],
         className,

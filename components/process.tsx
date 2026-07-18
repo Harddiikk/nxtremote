@@ -10,34 +10,34 @@ import { BOOKING_URL } from "@/lib/site";
 
 const STEPS = [
   {
-    icon: <ClipboardCheck className="size-6 text-white" />,
+    icon: <ClipboardCheck className="size-6 text-brand-secondary" />,
     step: "01",
     title: "We Audit",
     detail: "Portfolio, campaign history, and infrastructure, verified before anyone talks to you.",
   },
   {
-    icon: <MessagesSquare className="size-6 text-white" />,
+    icon: <MessagesSquare className="size-6 text-brand-secondary" />,
     step: "02",
     title: "We Interview",
     detail: "Multiple expert rounds for skill, English fluency, and agency culture fit.",
   },
   {
-    icon: <MonitorPlay className="size-6 text-white" />,
+    icon: <MonitorPlay className="size-6 text-brand-secondary" />,
     step: "03",
     title: "We Test Live",
     detail: "Hands-on exam in real tools like Meta, Google, and GHL. Not multiple-choice quizzes.",
   },
   {
-    icon: <Handshake className="size-6 text-white" />,
+    icon: <Handshake className="size-6 text-brand-secondary" />,
     step: "04",
     title: "You Meet the Top 3%",
-    detail: "An interview-ready shortlist on your desk by day eight. You pick, we onboard.",
+    detail: "An interview-ready shortlist on your desk by day five. You pick, we onboard.",
   },
 ];
 
 export function Process() {
   return (
-    <section className="relative overflow-hidden border-t border-white/5 section-pad">
+    <section className="relative overflow-hidden border-t border-border section-pad">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -76,10 +76,10 @@ export function Process() {
               <p className="text-gradient-brand mt-4 font-mono text-sm font-bold tracking-[0.25em]">
                 {s.step}
               </p>
-              <h3 className="mt-1 font-display text-lg font-bold text-white">
+              <h3 className="mt-1 font-display text-lg font-bold text-foreground">
                 {s.title}
               </h3>
-              <p className="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-neutral-400">
+              <p className="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground">
                 {s.detail}
               </p>
             </motion.div>

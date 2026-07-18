@@ -90,7 +90,7 @@ export function Booking() {
       window.Cal!("inline", {
         elementOrSelector: "#cal-inline-booking",
         calLink: CAL_LINK,
-        config: { theme: "dark" },
+        config: { theme: "light" },
       });
     }
 
@@ -130,7 +130,7 @@ export function Booking() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "0px 0px -80px 0px" }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-          className="card-premium relative mx-auto mt-12 max-w-5xl overflow-hidden rounded-2xl shadow-[0_24px_64px_rgba(2,8,26,0.6)]"
+          className="card-premium relative mx-auto mt-12 max-w-5xl overflow-hidden rounded-2xl shadow-[0_24px_64px_rgba(32,28,103,0.12)]"
         >
           {/* Cal's script owns this node's children — never unmount it, or its
               <cal-inline> element gets re-parented into whatever replaces it. */}

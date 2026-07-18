@@ -21,7 +21,7 @@ const FEATURED = {
   photo: "/talent/featured.jpg",
   stats: [
     { value: "+34%", label: "ROAS in one quarter" },
-    { value: "Day 8", label: "from call to hire" },
+    { value: "Day 5", label: "from call to hire" },
     { value: "70%", label: "payroll saved" },
   ],
 };
@@ -93,7 +93,7 @@ export function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "0px 0px -80px 0px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="card-premium mt-12 grid grid-cols-1 overflow-hidden rounded-2xl shadow-[0_24px_64px_rgba(2,8,26,0.5)] md:grid-cols-[1fr_260px]"
+          className="card-premium mt-12 grid grid-cols-1 overflow-hidden rounded-2xl shadow-[0_24px_64px_rgba(32,28,103,0.12)] md:grid-cols-[1fr_260px]"
         >
           <div className="p-7 md:p-9">
             <span className="font-mono text-4xl leading-none text-gradient-brand">

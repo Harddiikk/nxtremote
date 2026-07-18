@@ -26,7 +26,7 @@ const TOOLS = [
 
 function ToolCard({ tool }: { tool: (typeof TOOLS)[number] }) {
   return (
-    <div className="flex w-52 shrink-0 items-center gap-3 rounded-full border border-neutral-200 bg-white px-5 py-3 shadow-[0_4px_16px_rgba(2,8,26,0.25)] transition-transform duration-200 hover:-translate-y-0.5">
+    <div className="flex w-52 shrink-0 items-center gap-3 rounded-full border border-border bg-card px-5 py-3 shadow-[0_4px_16px_rgba(32,28,103,0.12)] transition-transform duration-200 hover:-translate-y-0.5">
       <img src={tool.logo} alt={tool.name} className="size-6 shrink-0" loading="lazy" />
       <span className="truncate text-sm font-bold text-neutral-900">{tool.name}</span>
     </div>
@@ -39,8 +39,8 @@ export function LogoMarquee() {
   const rowB = TOOLS.slice(10);
 
   return (
-    <section className="border-t border-white/5 py-14">
-      <p className="mx-auto max-w-2xl px-4 text-center font-mono text-[11px] font-semibold tracking-[0.2em] text-neutral-400 uppercase">
+    <section className="border-t border-border py-14">
+      <p className="mx-auto max-w-2xl px-4 text-center font-mono text-[11px] font-semibold tracking-[0.2em] text-muted-foreground uppercase">
         Day-one fluency across your entire stack
       </p>
 

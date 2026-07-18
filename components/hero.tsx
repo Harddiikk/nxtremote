@@ -9,10 +9,9 @@ import { LinesGradientShader } from "./lines-gradient-shader";
 import { BOOKING_URL } from "@/lib/site";
 
 const STATS = [
-  { value: "Top 3%", label: "acceptance rate" },
-  { value: "8 hrs", label: "timezone overlap" },
+  { value: "Top 3%", label: "Vetted Candidates" },
   { value: "70%", label: "payroll savings" },
-  { value: "Day 8", label: "interview-ready" },
+  { value: "Day 5", label: "interview-ready" },
 ];
 
 const rise = {
@@ -55,7 +54,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={0}
-          className="font-display text-4xl font-bold tracking-tight text-balance text-white sm:text-6xl md:text-7xl"
+          className="font-display text-4xl font-bold tracking-tight text-balance text-primary sm:text-6xl md:text-7xl"
         >
           Elite offshore <span className="text-gradient-brand">digital marketing</span> talent
         </motion.h1>
@@ -65,7 +64,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={1}
-          className="mt-3 text-xl font-medium text-neutral-300 sm:text-2xl md:text-3xl"
+          className="mt-3 text-xl font-medium text-muted-foreground sm:text-2xl md:text-3xl"
         >
           Fully managed, vetted like it&apos;s your own hire
         </motion.p>
@@ -78,7 +77,7 @@ export default function Hero() {
           custom={2}
           className="mt-14"
         >
-          <p className="font-mono text-sm tracking-[0.3em] text-neutral-400 uppercase">
+          <p className="font-mono text-sm tracking-[0.3em] text-muted-foreground uppercase">
             Discover
           </p>
           <p className="font-display mt-2 text-7xl leading-none font-extrabold tracking-tight sm:text-8xl md:text-[9rem]">
@@ -87,13 +86,13 @@ export default function Hero() {
               3%
             </span>
           </p>
-          <p className="font-display mt-4 text-2xl font-semibold text-white sm:text-3xl md:text-4xl">
+          <p className="font-display mt-4 text-2xl font-semibold text-foreground sm:text-3xl md:text-4xl">
             <span className="text-gradient-brand">Digital Marketing</span>{" "}
-            <span className="font-normal text-neutral-300">Specialists</span>
+            <span className="font-normal text-muted-foreground">Specialists</span>
           </p>
-          <p className="mt-4 text-sm text-neutral-400 md:text-base">
+          <p className="mt-4 text-sm text-muted-foreground md:text-base">
             26 months average specialist tenure.
-            <br className="sm:hidden" /> Interview-ready shortlist in 8 days.
+            <br className="sm:hidden" /> Interview-ready shortlist in 5 days.
           </p>
         </motion.div>
 
@@ -114,9 +113,9 @@ export default function Hero() {
               Book a call today <IconArrowRight className="size-4" />
             </Button>
           </Link>
-          <p className="text-xs text-neutral-400">
-            <span className="font-semibold text-neutral-200">No commitment.</span>{" "}
-            30 minutes. Shortlist in 8 days.
+          <p className="text-xs text-muted-foreground">
+            <span className="font-semibold text-foreground">No commitment.</span>{" "}
+            30 minutes. Shortlist in 5 days.
           </p>
         </motion.div>
 
@@ -125,7 +124,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={4}
-          className="mt-16 grid w-full max-w-3xl grid-cols-2 gap-x-8 gap-y-6 border-t border-white/10 pt-8 sm:grid-cols-4"
+          className="mt-16 grid w-full max-w-3xl grid-cols-2 gap-x-8 gap-y-6 border-t border-border pt-8 sm:grid-cols-4"
         >
           {STATS.map((stat, statIdx) => (
             <motion.div
@@ -135,10 +134,10 @@ export default function Hero() {
               transition={{ delay: 0.9 + statIdx * 0.1, duration: 0.45, ease: "easeOut" }}
             >
               <dt className="sr-only">{stat.label}</dt>
-              <dd className="font-display text-2xl font-bold text-white md:text-3xl">
+              <dd className="font-display text-2xl font-bold text-foreground md:text-3xl">
                 {stat.value}
               </dd>
-              <dd className="mt-1 font-mono text-[10px] tracking-[0.15em] text-neutral-500 uppercase">
+              <dd className="mt-1 font-mono text-[10px] tracking-[0.15em] text-muted-foreground uppercase">
                 {stat.label}
               </dd>
             </motion.div>

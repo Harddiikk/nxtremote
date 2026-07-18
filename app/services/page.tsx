@@ -91,7 +91,7 @@ const timelineSteps = [
   {
     day: "Day 11+",
     title: "Onboarding & Integration",
-    description: "We manage contracts, payroll setup, and initial onboarding safeguards to guarantee a seamless transition into your Slack, ClickUp, or Asana workspaces.",
+    description: "We manage contracts, payroll setup, and initial onboarding safeguards for a seamless transition into your Slack, ClickUp, or Asana workspaces.",
     icon: <Activity className="size-5 text-[#0B1D45] dark:text-[#00E5AA]" />
   }
 ];
@@ -212,7 +212,7 @@ export default function ServicesPage() {
               Our Hiring Process Workflow
             </Heading>
             <p className="text-base text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed">
-              Our seamless onboarding structure guarantees that your new team member hits the ground running without disrupting your current operations.
+              Our seamless onboarding structure ensures your new team member hits the ground running without disrupting your current operations.
             </p>
           </div>
 

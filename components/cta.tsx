@@ -112,7 +112,7 @@ export function CTA() {
         <Subheading className="mt-6 max-w-lg">
           Skip the scrolling, the ghosting, and the onboarding headaches. Tell
           us which specialist your agency is missing. We&apos;ll bring you an
-          interview-ready shortlist by day eight.
+          interview-ready shortlist by day five.
         </Subheading>
         <Link
           href={BOOKING_URL}
@@ -155,7 +155,7 @@ function TalentCardItem({ talent }: { talent: TalentCard }) {
         {talent.photo ? (
           <img
             src={talent.photo}
-            alt={`${talent.name} — ${talent.role}`}
+            alt={`${talent.name}, ${talent.role}`}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
           />

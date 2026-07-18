@@ -18,8 +18,8 @@ export function FeaturesOne() {
             High Local Salaries Shouldn't Stall Your <span className="text-gradient-brand">Agency’s Growth</span>
           </Heading>
           <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed">
-            Same senior output. Up to 70% less payroll. Embedded in your
-            workflow by day eight.
+            Same creative output. Up to 70% less payroll. Embedded in your
+            workflow by day five.
           </p>
         </div>
 
@@ -27,7 +27,7 @@ export function FeaturesOne() {
         <Card className="md:row-span-2">
           <CardContent className="flex h-full flex-col">
             <CardHeader>
-              <CardTitle>Strict Technical Sourcing</CardTitle>
+              <CardTitle>Project-Led Technical Sourcing</CardTitle>
               <CardDescription>
                 We vet candidates specifically for digital agency roles. No generic VAs allowed.
               </CardDescription>
@@ -38,7 +38,7 @@ export function FeaturesOne() {
                 { label: "Marketing Skill Audit", badge: "Technical" },
                 { label: "Agency Stack Practical Exam", badge: "Hands-on" },
                 { label: "Physical Hardware Verification", badge: "Infrastructure" },
-                { label: "Western Culture & Copy Testing", badge: "Communication" }
+                { label: "Culture & Linguistic Readiness", badge: "Communication" }
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center justify-between p-3 rounded-xl bg-neutral-50 dark:bg-neutral-950 border border-neutral-100 dark:border-white/5">
                   <span className="text-xs md:text-sm font-semibold text-neutral-800 dark:text-neutral-200">{item.label}</span>

@@ -30,7 +30,7 @@ export function FeaturesTwo() {
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center mb-24 md:mb-32">
         <div className="max-w-xl">
           <Subheading className="text-brand-secondary font-semibold uppercase tracking-wider text-xs">
-            Zero Noise. Zero General VAs.
+            Zero Noise. Zero Generalists. No VAs.
           </Subheading>
           <Heading as="h2" className="mt-2 mb-6">
             100% Digital Marketing Mastery.
@@ -99,7 +99,7 @@ export function FeaturesTwo() {
 
       {/* Sourcing & Vetting Pillars Grid Intro */}
 
-      {/* The 10 Mandatory Sourcing Pillars Grid */}
+      {/* The 7 Mandatory Sourcing Pillars Grid */}
       <div className="mx-auto mt-16 max-w-6xl">
         <h3 className="text-center font-semibold text-lg text-neutral-800 dark:text-neutral-200 mb-8">
           Our Sourcing & Vetting Pillars
@@ -148,10 +148,10 @@ export function FeaturesTwo() {
             title="AI-Ready Workflows"
             description="Assessed on modern AI tooling: prompt-driven ad copy, programmatic SEO, and automated reporting."
           />
-          {/* Pillar 10 (Compliance) */}
+          {/* Pillar 7 (Compliance) */}
           <PillarCard
             icon={<ShieldCheck className="size-5 text-[#8B5CF6]" />}
-            number="X"
+            number="VII"
             title="GDPR & Data Protection"
             description="Contractually bound to NDA terms, credential vault practices (1Password/LastPass), and security training."
           />

@@ -45,7 +45,7 @@ const faqData: FAQSection[] = [
       {
         question: "How long does a placement typically take?",
         answer:
-          "Our placement time is highly optimized. Sourcing and role profiling takes 1-2 days, vetting takes 3-7 days, client shortlists are interview-ready by Day 8-10, and onboarding setup occurs from Day 11+."
+          "Our placement time is highly optimized. Sourcing and role profiling takes 1-2 days, vetting and live testing take 2-3 days, and an interview-ready shortlist reaches you by day 5. Onboarding setup follows right after."
       },
       {
         question: "What communication channels are used?",
@@ -55,7 +55,7 @@ const faqData: FAQSection[] = [
       {
         question: "What if a placement does not work out?",
         answer:
-          "We replace them free of charge: within 30 days on the Basic tier, 90 days on Growth, and on an ongoing basis for Enterprise builds. If a candidate does not fit technically or culturally, we find you a new one right away."
+          "We replace them free of charge within 15 to 30 days, and on an ongoing basis for Enterprise builds. If a candidate does not fit technically or culturally, we find you a new one right away."
       }
     ]
   },

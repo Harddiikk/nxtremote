@@ -66,7 +66,7 @@ export function TalentShowcase() {
   const visible = SPECIALISTS.filter((s) => s.category === active);
 
   return (
-    <section className="relative overflow-hidden bg-[#020409] section-pad">
+    <section className="relative overflow-hidden bg-background section-pad">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -75,25 +75,25 @@ export function TalentShowcase() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mx-auto max-w-3xl text-center"
         >
-          <h2 className="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+          <h2 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
             The <span className="text-gradient-brand">top 3%</span> looks like
             this
           </h2>
-          <p className="mt-4 text-base text-neutral-400 md:text-lg">
+          <p className="mt-4 text-base text-muted-foreground md:text-lg">
             Fully vetted. Fully managed. Agency-ready.
           </p>
         </motion.div>
 
         {/* Category tabs */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-1 border-b border-white/10 pb-px md:gap-2">
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-1 border-b border-border pb-px md:gap-2">
           {CATEGORIES.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActive(cat.id)}
               className={`relative flex cursor-pointer items-center gap-2 px-3 py-3 text-xs font-semibold transition-colors md:px-4 md:text-sm ${
                 active === cat.id
-                  ? "text-white"
-                  : "text-neutral-500 hover:text-neutral-300"
+                  ? "text-foreground"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {cat.icon}
@@ -140,7 +140,7 @@ export function TalentShowcase() {
                     </p>
                   </div>
                 </div>
-                <ul className="mt-3 space-y-2 font-mono text-xs text-neutral-300 md:text-[13px]">
+                <ul className="mt-3 space-y-2 font-mono text-xs text-muted-foreground md:text-[13px]">
                   <li className="flex items-center gap-2.5">
                     <span className="text-gradient-brand font-bold">&gt;_</span> {s.role}
                   </li>
@@ -163,10 +163,10 @@ export function TalentShowcase() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="mt-16 text-center"
         >
-          <p className="font-display text-xl font-bold text-white md:text-2xl">
+          <p className="font-display text-xl font-bold text-foreground md:text-2xl">
             Can&apos;t see the exact profile you need?
           </p>
-          <p className="mx-auto mt-2 max-w-xl text-sm text-neutral-400 md:text-base">
+          <p className="mx-auto mt-2 max-w-xl text-sm text-muted-foreground md:text-base">
             Our talent network covers every digital marketing profile,
             whatever the business requirement demands.{" "}
             <Link

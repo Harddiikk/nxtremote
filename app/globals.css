@@ -11,8 +11,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-plus-jakarta), sans-serif;
-  --font-display: var(--font-bricolage), var(--font-plus-jakarta), sans-serif;
+  --font-sans: var(--font-manrope), sans-serif;
+  --font-display: var(--font-manrope), sans-serif;
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -51,80 +51,82 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
 
-  --color-brand-primary: #0B1D45;
-  --color-brand-secondary: #0B75E2;
-  --color-brand-accent: #8B5CF6;
-  --color-brand-highlight: #4353FF;
-  --color-brand-bg-dark: #0B1D45;
+  /* Client brand spec (2026-07-16): indigo / violet / cyan on white */
+  --color-brand-primary: #201C67;
+  --color-brand-secondary: #4F2FE5;
+  --color-brand-accent: #09B4E4;
+  --color-brand-highlight: #4F2FE5;
+  --color-brand-ink: #3E495C;
+  --color-brand-bg-dark: #0F0F12;
 }
 
 :root {
   --radius: 0.625rem;
   --background: #FFFFFF;
-  --foreground: #0B1D45;
+  --foreground: #3E495C;
   --card: #FFFFFF;
-  --card-foreground: #0B1D45;
+  --card-foreground: #201C67;
   --popover: #FFFFFF;
-  --popover-foreground: #0B1D45;
-  --primary: #0B1D45;
+  --popover-foreground: #201C67;
+  --primary: #201C67;
   --primary-foreground: #FFFFFF;
-  --secondary: #0B75E2;
+  --secondary: #4F2FE5;
   --secondary-foreground: #FFFFFF;
-  --muted: #F0F4FC;
-  --muted-foreground: #475569;
-  --accent: #8B5CF6;
+  --muted: #F4F5FB;
+  --muted-foreground: #6B7488;
+  --accent: #09B4E4;
   --accent-foreground: #FFFFFF;
   --destructive: #EF4444;
-  --border: #E2E8F0;
-  --input: #E2E8F0;
-  --ring: #0B75E2;
-  --chart-1: #0B75E2;
-  --chart-2: #06BCB0;
-  --chart-3: #00E5AA;
-  --chart-4: #0B1D45;
-  --chart-5: #64748B;
+  --border: #E7E8F1;
+  --input: #E7E8F1;
+  --ring: #4F2FE5;
+  --chart-1: #4F2FE5;
+  --chart-2: #09B4E4;
+  --chart-3: #7C6CF0;
+  --chart-4: #201C67;
+  --chart-5: #6B7488;
   --sidebar: #FFFFFF;
-  --sidebar-foreground: #0B1D45;
-  --sidebar-primary: #0B1D45;
+  --sidebar-foreground: #201C67;
+  --sidebar-primary: #201C67;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #F0F4FC;
-  --sidebar-accent-foreground: #0B1D45;
-  --sidebar-border: #E2E8F0;
-  --sidebar-ring: #0B75E2;
+  --sidebar-accent: #F4F5FB;
+  --sidebar-accent-foreground: #201C67;
+  --sidebar-border: #E7E8F1;
+  --sidebar-ring: #4F2FE5;
 }
 
 .dark {
-  --background: #03060F;
-  --foreground: #F3F6FC;
-  --card: #101F4A;
-  --card-foreground: #F3F6FC;
-  --popover: #0E1D45;
-  --popover-foreground: #F3F6FC;
-  --primary: #0B75E2;
+  --background: #0F0F12;
+  --foreground: #F4F5FB;
+  --card: #17171E;
+  --card-foreground: #F4F5FB;
+  --popover: #17171E;
+  --popover-foreground: #F4F5FB;
+  --primary: #4F2FE5;
   --primary-foreground: #FFFFFF;
-  --secondary: #16295C;
+  --secondary: #201C67;
   --secondary-foreground: #FFFFFF;
-  --muted: #16295C;
-  --muted-foreground: #A5B6D2;
-  --accent: #8B5CF6;
-  --accent-foreground: #FFFFFF;
+  --muted: #1C1C24;
+  --muted-foreground: #A6ABBC;
+  --accent: #09B4E4;
+  --accent-foreground: #0F0F12;
   --destructive: #EF4444;
   --border: rgba(255, 255, 255, 0.1);
   --input: rgba(255, 255, 255, 0.15);
-  --ring: #8B5CF6;
-  --chart-1: #0B75E2;
-  --chart-2: #06BCB0;
-  --chart-3: #00E5AA;
-  --chart-4: #132655;
-  --chart-5: #94A3B8;
-  --sidebar: #132655;
-  --sidebar-foreground: #FFFFFF;
-  --sidebar-primary: #0B75E2;
+  --ring: #4F2FE5;
+  --chart-1: #4F2FE5;
+  --chart-2: #09B4E4;
+  --chart-3: #7C6CF0;
+  --chart-4: #201C67;
+  --chart-5: #A6ABBC;
+  --sidebar: #17171E;
+  --sidebar-foreground: #F4F5FB;
+  --sidebar-primary: #4F2FE5;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #1E356A;
-  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-accent: #1C1C24;
+  --sidebar-accent-foreground: #F4F5FB;
   --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #00E5AA;
+  --sidebar-ring: #09B4E4;
 }
 
 @layer base {
@@ -136,7 +138,8 @@
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    @apply font-bold tracking-tight text-foreground;
+    @apply font-bold tracking-tight;
+    color: var(--color-brand-primary);
     line-height: 1.12;
   }
 }
@@ -149,44 +152,45 @@
   .section-pad {
     @apply py-20 md:py-28;
   }
-  /* Premium card: elevated surface + animated gradient rim on hover */
+  /* Premium card: elevated white surface + animated gradient rim on hover */
   .card-premium {
     position: relative;
     background:
       linear-gradient(var(--card), var(--card)) padding-box,
-      linear-gradient(140deg, rgba(16, 144, 224, 0.55), rgba(122, 59, 255, 0.4), rgba(255, 255, 255, 0.08)) border-box;
+      linear-gradient(140deg, rgba(79, 47, 229, 0.55), rgba(9, 180, 228, 0.4), rgba(32, 28, 103, 0.06)) border-box;
     border: 1px solid transparent;
+    box-shadow: 0 12px 34px rgba(32, 28, 103, 0.08);
   }
-  /* Glassy 3D icon tile — gradient body, inner light, lifted shadow */
+  /* Glassy 3D icon tile — gradient body, inner light, lifted shadow (light theme) */
   .glass-tile {
     background:
-      linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.02) 45%),
-      linear-gradient(160deg, rgba(16, 144, 224, 0.38), rgba(122, 59, 255, 0.16));
-    border: 1px solid rgba(255, 255, 255, 0.14);
+      linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5) 45%),
+      linear-gradient(160deg, rgba(79, 47, 229, 0.16), rgba(9, 180, 228, 0.1));
+    border: 1px solid rgba(79, 47, 229, 0.18);
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.25),
-      0 12px 28px rgba(2, 8, 26, 0.55),
-      0 2px 8px rgba(11, 117, 226, 0.25);
+      inset 0 1px 0 rgba(255, 255, 255, 0.8),
+      0 12px 28px rgba(32, 28, 103, 0.14),
+      0 2px 8px rgba(79, 47, 229, 0.12);
     transform: rotate(-4deg);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   .group:hover .glass-tile {
     transform: rotate(0deg) translateY(-2px) scale(1.05);
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.3),
-      0 18px 36px rgba(2, 8, 26, 0.6),
-      0 4px 14px rgba(122, 59, 255, 0.32);
+      inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      0 18px 36px rgba(32, 28, 103, 0.18),
+      0 4px 14px rgba(9, 180, 228, 0.22);
   }
-  /* Logo-X gradient sweep for headline words & big marks */
+  /* Brand gradient sweep for headline words & big marks (violet → cyan) */
   .text-gradient-brand {
-    background: linear-gradient(100deg, #1090e0 0%, #4040e0 55%, #7a3bff 100%);
+    background: linear-gradient(100deg, #4f2fe5 0%, #09b4e4 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
-  /* Hollow display type (hero TOP 3%) */
+  /* Hollow display type (hero TOP 3%) — indigo stroke on white */
   .text-outline {
-    -webkit-text-stroke: 2.5px rgba(255, 255, 255, 0.92);
+    -webkit-text-stroke: 2.5px rgba(32, 28, 103, 0.85);
     color: transparent;
   }
   /* Infinite logo marquee */
@@ -221,8 +225,8 @@
   position: fixed;
   inset: -20% -10% -10% -10%;
   z-index: -2;
-  filter: blur(70px) saturate(120%);
-  opacity: 0.5;
+  filter: blur(80px) saturate(115%);
+  opacity: 0.55;
   pointer-events: none;
 }
 .mesh::before,
@@ -231,16 +235,16 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(38% 42% at 18% 22%, rgba(16, 144, 224, 0.4), transparent 60%),
-    radial-gradient(32% 36% at 82% 18%, rgba(122, 59, 255, 0.18), transparent 60%),
-    radial-gradient(44% 48% at 70% 78%, rgba(64, 64, 224, 0.34), transparent 62%),
-    radial-gradient(34% 40% at 28% 84%, rgba(48, 32, 160, 0.24), transparent 60%);
+    radial-gradient(38% 42% at 18% 22%, rgba(9, 180, 228, 0.22), transparent 60%),
+    radial-gradient(32% 36% at 82% 18%, rgba(79, 47, 229, 0.16), transparent 60%),
+    radial-gradient(44% 48% at 70% 78%, rgba(79, 47, 229, 0.18), transparent 62%),
+    radial-gradient(34% 40% at 28% 84%, rgba(9, 180, 228, 0.14), transparent 60%);
   animation: meshDrift 26s ease-in-out infinite alternate;
 }
 .mesh::after {
   animation-duration: 36s;
   animation-direction: alternate-reverse;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 @keyframes meshDrift {
   0% { transform: translate3d(-3%, -2%, 0) scale(1); }
