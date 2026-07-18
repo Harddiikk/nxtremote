@@ -222,17 +222,12 @@ const Logo = () => {
       aria-label="NXT Remote home"
       className="relative z-20 flex items-center"
     >
-      {/* dark-text lockup for the light theme */}
+      {/* Same wordmark in both themes (identical size); recolored white on dark
+          via filter since logo-light.png has a transparent background. */}
       <img
         src="/logo-light.png"
         alt="NXT Remote"
-        className="h-5 md:h-6 w-auto object-contain dark:hidden"
-      />
-      {/* white NXT REMOTE wordmark for the dark theme (matches the light lockup) */}
-      <img
-        src="/logo-dark-word.png"
-        alt="NXT Remote"
-        className="hidden h-5 md:h-6 w-auto object-contain dark:block"
+        className="h-5 md:h-6 w-auto object-contain dark:[filter:brightness(0)_invert(1)]"
       />
     </Link>
   );
