@@ -103,8 +103,16 @@ export function Booking() {
   return (
     <section
       id="book"
-      className="relative section-pad border-t border-neutral-100 dark:border-white/5"
+      className="relative overflow-hidden section-pad border-y border-white/10 bg-[#0A0C1E]"
     >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          background:
+            "radial-gradient(50% 55% at 20% 20%, rgba(79,47,229,0.22), transparent 60%), radial-gradient(45% 50% at 85% 85%, rgba(9,180,228,0.14), transparent 60%)",
+        }}
+      />
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -116,10 +124,10 @@ export function Booking() {
           <Subheading className="text-brand-secondary font-semibold uppercase tracking-wider text-xs">
             No Forms, No Waiting
           </Subheading>
-          <Heading as="h2" className="pt-2">
-            Pick a Slot. Meet Your Shortlist.
+          <Heading as="h2" className="pt-2 text-white">
+            Pick a Slot. <span className="text-gradient-brand">Meet Your Shortlist.</span>
           </Heading>
-          <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">
+          <p className="mt-4 text-lg text-white/65 leading-relaxed">
             Grab 30 minutes with our placement team and walk out with a custom
             flat rate and a hiring plan for your first specialist.
           </p>
@@ -158,7 +166,7 @@ export function Booking() {
           )}
         </motion.div>
 
-        <p className="mt-6 text-center text-xs text-neutral-500 dark:text-neutral-400">
+        <p className="mt-6 text-center text-xs text-white/45">
           Calendar not loading?{" "}
           <Link
             href={BOOKING_URL}

@@ -3,16 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-import { 
-  Network, 
-  Mail, 
-  BarChart3, 
-  CheckSquare, 
-  ArrowRight, 
-  Sparkles,
-  Layers,
-  ArrowUpRight
-} from "lucide-react";
+import { Sparkles, Layers } from "lucide-react";
 
 // Image Fallback Component
 interface LogoFallbackProps {
@@ -96,57 +87,43 @@ export function IntegrationsBento() {
         {/* Bento Grid */}
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           
-          {/* Card 1: CRM - HubSpot & GoHighLevel */}
-          <GlassBentoCard className="md:col-span-2 relative overflow-hidden group">
+          {/* Card 1: CRM - HubSpot, GoHighLevel & Zapier */}
+          <GlassBentoCard className="md:col-span-1 relative overflow-hidden group">
             {/* Background Glow */}
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-amber-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
-            
-            <CardSkeleton className="py-4 flex-col justify-center items-center gap-3 relative">
+
+            <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
-              
+
               {/* Layer 1: sub-section eyebrow label */}
               <span className="relative z-10 text-[9px] font-bold uppercase tracking-[0.15em] text-amber-500/80 dark:text-amber-400/80">
                 Connected Platforms
               </span>
 
               {/* Layer 2 + 3: logos with tool names */}
-              <div className="flex items-center gap-4 md:gap-12 relative z-10">
-                <div className="flex flex-col items-center gap-1.5">
-                  <LogoFallback
-                    baseName="logos/hubspot"
-                    alt="HubSpot"
-                    fallbackText="HS"
-                    brandColor="bg-[#FF7A59]"
-                    glowColor="group-hover:shadow-[0_0_20px_rgba(255,122,89,0.3)]"
-                  />
-                  <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">HubSpot</span>
-                </div>
-
-                {/* Connection line */}
-                <div className="w-8 md:w-16 h-[1px] bg-neutral-200 dark:bg-neutral-800 -translate-y-[11px]" />
-
-                <div className="flex flex-col items-center gap-1.5">
-                  <LogoFallback
-                    baseName="logos/gohighlevel"
-                    alt="GoHighLevel"
-                    fallbackText="GHL"
-                    brandColor="bg-[#188BF6]"
-                    glowColor="group-hover:shadow-[0_0_20px_rgba(24,139,246,0.3)]"
-                  />
-                  <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">GoHighLevel</span>
-                </div>
+              <div className="grid grid-cols-3 gap-3 md:gap-4 relative z-10">
+                {[
+                  { base: "logos/hubspot", alt: "HubSpot", fb: "HS", color: "bg-[#FF7A59]", glow: "group-hover:shadow-[0_0_20px_rgba(255,122,89,0.3)]" },
+                  { base: "logos/gohighlevel", alt: "GoHighLevel", fb: "GHL", color: "bg-[#188BF6]", glow: "group-hover:shadow-[0_0_20px_rgba(24,139,246,0.3)]" },
+                  { base: "logos/zapier", alt: "Zapier", fb: "ZP", color: "bg-[#FF4A00]", glow: "group-hover:shadow-[0_0_20px_rgba(255,74,0,0.3)]" },
+                ].map((t) => (
+                  <div key={t.alt} className="flex flex-col items-center gap-2">
+                    <LogoFallback baseName={t.base} alt={t.alt} fallbackText={t.fb} brandColor={t.color} glowColor={t.glow} />
+                    <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">{t.alt}</span>
+                  </div>
+                ))}
               </div>
-              
+
               {/* Feature mini indicators */}
-              <div className="flex gap-2 relative z-10 flex-wrap justify-center">
+              <div className="flex gap-1.5 relative z-10 flex-wrap justify-center">
                 {["Pipeline Automation", "Lead Distribution", "CRM Sync"].map((tag) => (
-                  <span key={tag} className="text-[10px] md:text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-500/5 text-amber-600 dark:text-amber-400 border border-amber-500/10 backdrop-blur-md">
+                  <span key={tag} className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-amber-500/5 text-amber-600 dark:text-amber-400 border border-amber-500/10 backdrop-blur-md">
                     {tag}
                   </span>
                 ))}
               </div>
             </CardSkeleton>
-            
+
             <CardContent>
               <div className="flex items-start justify-between">
                 <div>
@@ -154,69 +131,44 @@ export function IntegrationsBento() {
                     CRM & Pipelines
                   </span>
                   <CardTitle className="text-left mt-1 text-lg font-bold">
-                    HubSpot & GoHighLevel
+                    HubSpot, GoHighLevel & Zapier
                   </CardTitle>
-                  <CardDescription className="text-left mt-2 max-w-lg">
+                  <CardDescription className="text-left mt-2">
                     Pipelines, lead capture, and CRM sync, handled.
                   </CardDescription>
-                </div>
-                <div className="hidden sm:flex size-10 rounded-full border border-amber-500/20 bg-amber-500/5 items-center justify-center text-amber-500">
-                  <Network className="size-5" />
                 </div>
               </div>
             </CardContent>
           </GlassBentoCard>
 
-          {/* Card 2: Email Marketing - Klaviyo, Brevo */}
+          {/* Card 2: Retention - Klaviyo, Brevo & Mailchimp */}
           <GlassBentoCard className="md:col-span-1 relative overflow-hidden group">
             {/* Background Glow */}
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-violet-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
-            
+
             <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
-              
+
               {/* Layer 1: sub-section eyebrow label */}
               <span className="relative z-10 text-[9px] font-bold uppercase tracking-[0.15em] text-violet-500/80 dark:text-violet-400/80">
                 Lifecycle Flows
               </span>
 
               {/* Layer 2 + 3: logos with tool names */}
-              <div className="flex items-center gap-4 relative z-10">
-                <div className="flex flex-col items-center gap-1.5">
-                  <LogoFallback
-                    baseName="logos/klaviyo"
-                    alt="Klaviyo"
-                    fallbackText="KL"
-                    brandColor="bg-[#2B1A4A]"
-                    glowColor="group-hover:shadow-[0_0_20px_rgba(43,26,74,0.4)]"
-                  />
-                  <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">Klaviyo</span>
-                </div>
-
-                <div className="flex flex-col gap-1.5 justify-center items-center -translate-y-[11px]">
-                  <motion.div
-                    animate={{ scale: [1, 1.1, 1], y: [0, -3, 0] }}
-                    transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-                    className="size-6 rounded-full bg-brand-accent/10 border border-brand-accent/30 flex items-center justify-center"
-                  >
-                    <Mail className="size-3 text-brand-accent" />
-                  </motion.div>
-                  <span className="text-[9px] text-muted-foreground font-mono">FLOW ACTIVE</span>
-                </div>
-
-                <div className="flex flex-col items-center gap-1.5">
-                  <LogoFallback
-                    baseName="logos/brevo"
-                    alt="Brevo"
-                    fallbackText="BV"
-                    brandColor="bg-[#8B5CF6]"
-                    glowColor="group-hover:shadow-[0_0_20px_rgba(139,92,246,0.3)]"
-                  />
-                  <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">Brevo</span>
-                </div>
+              <div className="grid grid-cols-3 gap-3 md:gap-4 relative z-10">
+                {[
+                  { base: "logos/klaviyo", alt: "Klaviyo", fb: "KL", color: "bg-[#2B1A4A]", glow: "group-hover:shadow-[0_0_20px_rgba(43,26,74,0.4)]" },
+                  { base: "logos/brevo", alt: "Brevo", fb: "BV", color: "bg-[#8B5CF6]", glow: "group-hover:shadow-[0_0_20px_rgba(139,92,246,0.3)]" },
+                  { base: "logos/mailchimp", alt: "Mailchimp", fb: "MC", color: "bg-[#FFE01B]", glow: "group-hover:shadow-[0_0_20px_rgba(255,224,27,0.4)]" },
+                ].map((t) => (
+                  <div key={t.alt} className="flex flex-col items-center gap-2">
+                    <LogoFallback baseName={t.base} alt={t.alt} fallbackText={t.fb} brandColor={t.color} glowColor={t.glow} />
+                    <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">{t.alt}</span>
+                  </div>
+                ))}
               </div>
 
-              <div className="flex gap-1.5 relative z-10">
+              <div className="flex gap-1.5 relative z-10 flex-wrap justify-center">
                 {["Flows & Segments", "LTV Retention"].map((tag) => (
                   <span key={tag} className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-violet-500/5 text-violet-600 dark:text-violet-400 border border-violet-500/10 backdrop-blur-md">
                     {tag}
@@ -232,7 +184,7 @@ export function IntegrationsBento() {
                     Retention & Flows
                   </span>
                   <CardTitle className="text-left mt-1 text-lg font-bold">
-                    Klaviyo & Brevo
+                    Klaviyo, Brevo & Mailchimp
                   </CardTitle>
                   <CardDescription className="text-left mt-2">
                     Flows and segments that grow client LTV.
@@ -242,45 +194,34 @@ export function IntegrationsBento() {
             </CardContent>
           </GlassBentoCard>
 
-          {/* Card 3: Analytics - GA4 & Campaign Manager 360 */}
+          {/* Card 3: Analytics - GA4, CM360 & Search Console */}
           <GlassBentoCard className="md:col-span-1 relative overflow-hidden group">
             {/* Background Glow */}
             <div className="absolute -left-10 -bottom-10 -z-10 size-48 rounded-full bg-blue-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
-            
+
             <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
-              
+
               {/* Layer 1: sub-section eyebrow label */}
               <span className="relative z-10 text-[9px] font-bold uppercase tracking-[0.15em] text-blue-500/80 dark:text-blue-400/80">
                 Measurement Stack
               </span>
 
               {/* Layer 2 + 3: logos with tool names */}
-              <div className="flex items-center gap-3 relative z-10">
-                <div className="flex flex-col items-center gap-1.5">
-                  <LogoFallback
-                    baseName="logos/googleanalytics"
-                    alt="GA4"
-                    fallbackText="GA4"
-                    brandColor="bg-[#E37400]"
-                    glowColor="group-hover:shadow-[0_0_20px_rgba(227,116,0,0.4)]"
-                  />
-                  <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">GA4</span>
-                </div>
-                <div className="w-6 h-[1px] bg-neutral-200 dark:bg-neutral-800 -translate-y-[11px]" />
-                <div className="flex flex-col items-center gap-1.5">
-                  <LogoFallback
-                    baseName="logos/googlemarketingplatform"
-                    alt="Campaign Manager 360"
-                    fallbackText="CM"
-                    brandColor="bg-[#4285F4]"
-                    glowColor="group-hover:shadow-[0_0_20px_rgba(66,133,244,0.4)]"
-                  />
-                  <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">CM360</span>
-                </div>
+              <div className="grid grid-cols-3 gap-3 md:gap-4 relative z-10">
+                {[
+                  { base: "logos/googleanalytics", alt: "GA4", fb: "GA4", color: "bg-[#E37400]", glow: "group-hover:shadow-[0_0_20px_rgba(227,116,0,0.4)]" },
+                  { base: "logos/googlemarketingplatform", alt: "CM360", fb: "CM", color: "bg-[#4285F4]", glow: "group-hover:shadow-[0_0_20px_rgba(66,133,244,0.4)]" },
+                  { base: "logos/googlesearchconsole", alt: "Search Console", fb: "SC", color: "bg-[#458CF5]", glow: "group-hover:shadow-[0_0_20px_rgba(69,140,245,0.4)]" },
+                ].map((t) => (
+                  <div key={t.alt} className="flex flex-col items-center gap-2">
+                    <LogoFallback baseName={t.base} alt={t.alt} fallbackText={t.fb} brandColor={t.color} glowColor={t.glow} />
+                    <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">{t.alt}</span>
+                  </div>
+                ))}
               </div>
-              
-              <div className="flex gap-1.5 relative z-10">
+
+              <div className="flex gap-1.5 relative z-10 flex-wrap justify-center">
                 {["GA4 Config", "CM360 Tracking"].map((tag) => (
                   <span key={tag} className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-blue-500/5 text-blue-600 dark:text-blue-400 border border-blue-500/10 backdrop-blur-md">
                     {tag}
@@ -296,7 +237,7 @@ export function IntegrationsBento() {
                     Analytics & Performance
                   </span>
                   <CardTitle className="text-left mt-1 text-lg font-bold">
-                    GA4 & Campaign Manager 360
+                    GA4, CM360 & Search Console
                   </CardTitle>
                   <CardDescription className="text-left mt-2">
                     Attribution, conversions, and reporting, done right.
@@ -306,66 +247,36 @@ export function IntegrationsBento() {
             </CardContent>
           </GlassBentoCard>
 
-          {/* Card 4: Project Management - Slack, ClickUp, Asana & Jira */}
-          <GlassBentoCard className="md:col-span-2 relative overflow-hidden group">
+          {/* Card 4: Operations - Slack, ClickUp & Asana */}
+          <GlassBentoCard className="md:col-span-1 relative overflow-hidden group">
             {/* Background Glow */}
             <div className="absolute -left-10 -bottom-10 -z-10 size-48 rounded-full bg-emerald-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
-            
+
             <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
-              
+
               {/* Layer 1: sub-section eyebrow label */}
               <span className="relative z-10 text-[9px] font-bold uppercase tracking-[0.15em] text-teal-500/80 dark:text-teal-400/80">
                 Delivery Workflow
               </span>
 
               {/* Layer 2 + 3: logos with tool names */}
-              <div className="grid grid-cols-4 gap-4 md:gap-8 relative z-10">
-                <div className="flex flex-col items-center gap-2">
-                  <LogoFallback 
-                    baseName="logos/slack" 
-                    alt="Slack" 
-                    fallbackText="SL" 
-                    brandColor="bg-[#4A154B]"
-                    glowColor="group-hover:shadow-[0_0_20px_rgba(74,21,75,0.4)]"
-                  />
-                  <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">Slack</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <LogoFallback 
-                    baseName="logos/clickup" 
-                    alt="ClickUp" 
-                    fallbackText="CU" 
-                    brandColor="bg-[#7B68EE]"
-                    glowColor="group-hover:shadow-[0_0_20px_rgba(123,104,238,0.4)]"
-                  />
-                  <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">ClickUp</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <LogoFallback 
-                    baseName="logos/asana" 
-                    alt="Asana" 
-                    fallbackText="AS" 
-                    brandColor="bg-[#F06A6A]"
-                    glowColor="group-hover:shadow-[0_0_20px_rgba(240,106,106,0.4)]"
-                  />
-                  <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">Asana</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <LogoFallback 
-                    baseName="logos/jira" 
-                    alt="Jira" 
-                    fallbackText="JR" 
-                    brandColor="bg-[#0052CC]"
-                    glowColor="group-hover:shadow-[0_0_20px_rgba(0,82,204,0.4)]"
-                  />
-                  <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">Jira</span>
-                </div>
+              <div className="grid grid-cols-3 gap-3 md:gap-4 relative z-10">
+                {[
+                  { base: "logos/slack", alt: "Slack", fb: "SL", color: "bg-[#4A154B]", glow: "group-hover:shadow-[0_0_20px_rgba(74,21,75,0.4)]" },
+                  { base: "logos/clickup", alt: "ClickUp", fb: "CU", color: "bg-[#7B68EE]", glow: "group-hover:shadow-[0_0_20px_rgba(123,104,238,0.4)]" },
+                  { base: "logos/asana", alt: "Asana", fb: "AS", color: "bg-[#F06A6A]", glow: "group-hover:shadow-[0_0_20px_rgba(240,106,106,0.4)]" },
+                ].map((t) => (
+                  <div key={t.alt} className="flex flex-col items-center gap-2">
+                    <LogoFallback baseName={t.base} alt={t.alt} fallbackText={t.fb} brandColor={t.color} glowColor={t.glow} />
+                    <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">{t.alt}</span>
+                  </div>
+                ))}
               </div>
 
               <div className="flex gap-1.5 relative z-10 flex-wrap justify-center">
-                {["Sprint Delivery", "Asynchronous Comm", "Agile Task Allocation"].map((tag) => (
-                  <span key={tag} className="text-[10px] md:text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-500/5 text-emerald-600 dark:text-emerald-400 border border-emerald-500/10 backdrop-blur-md">
+                {["Sprint Delivery", "Async Comm", "Task Allocation"].map((tag) => (
+                  <span key={tag} className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/5 text-emerald-600 dark:text-emerald-400 border border-emerald-500/10 backdrop-blur-md">
                     {tag}
                   </span>
                 ))}
@@ -379,21 +290,18 @@ export function IntegrationsBento() {
                     Operations & Projects
                   </span>
                   <CardTitle className="text-left mt-1 text-lg font-bold">
-                    Slack, ClickUp, Asana & Jira
+                    Slack, ClickUp & Asana
                   </CardTitle>
-                  <CardDescription className="text-left mt-2 max-w-lg">
+                  <CardDescription className="text-left mt-2">
                     Slots straight into your sprints. Zero missed tasks.
                   </CardDescription>
-                </div>
-                <div className="hidden sm:flex size-10 rounded-full border border-emerald-500/20 bg-emerald-500/5 items-center justify-center text-emerald-500">
-                  <CheckSquare className="size-5" />
                 </div>
               </div>
             </CardContent>
           </GlassBentoCard>
 
-          {/* Card 5: Design & Creative - Canva, Photoshop, Adobe Express */}
-          <GlassBentoCard className="md:col-span-3 relative overflow-hidden group">
+          {/* Card 5: Design & Creative - Canva, Photoshop, Illustrator & Adobe Express */}
+          <GlassBentoCard className="md:col-span-2 relative overflow-hidden group">
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-fuchsia-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
             <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">

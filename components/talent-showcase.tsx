@@ -134,11 +134,6 @@ export function TalentShowcase() {
                   <span className="absolute top-2.5 right-2.5 rounded-full border border-white/20 bg-[#050C21]/70 px-2 py-0.5 font-mono text-[8px] font-semibold tracking-[0.15em] text-white uppercase backdrop-blur-sm">
                     Vetted
                   </span>
-                  {/* Transparency: representative portraits are AI-generated (client request) */}
-                  <span className="absolute right-2.5 bottom-2.5 z-10 inline-flex items-center gap-1 rounded-full border border-white/15 bg-black/45 px-1.5 py-0.5 font-mono text-[7px] font-semibold tracking-wider text-white/85 backdrop-blur-sm">
-                    <svg viewBox="0 0 24 24" className="size-2" fill="currentColor" aria-hidden><path d="M12 2l2.09 6.26L20 10l-5.91 1.74L12 18l-2.09-6.26L4 10l5.91-1.74L12 2z"/></svg>
-                    Gemini AI
-                  </span>
                   <div className="absolute inset-x-0 bottom-0 p-4 pb-3">
                     <p className="truncate font-display text-lg font-bold text-white">
                       {s.name}
