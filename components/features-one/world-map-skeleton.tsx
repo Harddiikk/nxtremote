@@ -35,20 +35,6 @@ const DEFAULT_PINS: Pin[] = [
   },
 ];
 
-function latLngToPosition(
-  lat: number,
-  lng: number,
-  width: number,
-  height: number
-): { x: number; y: number } {
-  const x = ((lng + 180) / 360) * width;
-  const latRad = (lat * Math.PI) / 180;
-  const mercN = Math.log(Math.tan(Math.PI / 4 + latRad / 2));
-  const y = height / 2 - (mercN * width) / (2 * Math.PI);
-
-  return { x, y };
-}
-
 export function WorldMapSkeleton({
   pins = DEFAULT_PINS,
   className,
@@ -64,8 +50,8 @@ export function WorldMapSkeleton({
   height?: number;
   mapSamples?: number;
 }) {
-  const { points, xStep, yToRowIndex } = useMemo(() => {
-    const { points } = createMap({
+  const { points, xStep, yToRowIndex, addMarkers } = useMemo(() => {
+    const { points, addMarkers } = createMap({
       width,
       height,
       mapSamples,
@@ -90,20 +76,29 @@ export function WorldMapSkeleton({
       prevXInRow = p.x;
     }
 
-    return { points, xStep: step || 1, yToRowIndex: rowMap };
+    return { points, xStep: step || 1, yToRowIndex: rowMap, addMarkers };
   }, [width, height, mapSamples]);
 
+  // Project pins with the map's OWN projection (via addMarkers) so avatars
+  // land on land, not in the ocean.
   const pinPositions = useMemo(() => {
-    return pins.map((pin) => {
-      const pos = latLngToPosition(
-        pin.location.lat,
-        pin.location.lng,
-        width,
-        height
-      );
-      return { ...pin, x: pos.x, y: pos.y };
-    });
-  }, [pins, width, height]);
+    const projected = addMarkers(
+      pins.map((pin) => ({
+        lat: pin.location.lat,
+        lng: pin.location.lng,
+        id: pin.id,
+        image: pin.image,
+        name: pin.name,
+      }))
+    );
+    return projected as Array<{
+      x: number;
+      y: number;
+      id: string;
+      image: string;
+      name?: string;
+    }>;
+  }, [pins, addMarkers]);
 
   return (
     <div

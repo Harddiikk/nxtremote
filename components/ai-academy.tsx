@@ -111,7 +111,7 @@ export function AiAcademy() {
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 font-mono text-[10px] font-bold tracking-[0.15em] text-brand-secondary uppercase">
                   <FileText className="size-3" /> Free PDF Playbook
                 </span>
-                <h3 className="mt-2 font-display text-lg font-bold text-brand-primary">
+                <h3 className="mt-2 font-display text-lg font-bold text-brand-primary dark:text-white">
                   How to Build a High-Performance Remote Marketing Team
                 </h3>
               </div>
@@ -122,7 +122,7 @@ export function AiAcademy() {
                 <span className="mx-auto flex size-11 items-center justify-center rounded-full bg-gradient-to-br from-[#4f2fe5] to-[#09b4e4]">
                   <Check className="size-5 text-white" strokeWidth={3} />
                 </span>
-                <p className="mt-3 font-display text-base font-bold text-brand-primary">
+                <p className="mt-3 font-display text-base font-bold text-brand-primary dark:text-white">
                   Your playbook is downloading.
                 </p>
                 <p className="mt-1 text-sm text-muted-foreground">

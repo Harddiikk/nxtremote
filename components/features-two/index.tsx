@@ -243,14 +243,14 @@ function SpecializationCompare() {
               100% Digital Marketing
             </span>
           </div>
-          <h3 className="mt-3 font-display text-lg font-bold text-brand-primary">
+          <h3 className="mt-3 font-display text-lg font-bold text-brand-primary dark:text-white">
             One domain, mastered end to end
           </h3>
           <div className="mt-5 flex flex-wrap gap-2">
             {NXT_ROLES.map((r) => (
               <span
                 key={r}
-                className="rounded-full border border-brand-secondary/25 bg-brand-secondary/5 px-3 py-1.5 text-xs font-semibold text-brand-primary"
+                className="rounded-full border border-brand-secondary/25 bg-brand-secondary/5 px-3 py-1.5 text-xs font-semibold text-brand-primary dark:border-brand-accent/40 dark:bg-brand-accent/10 dark:text-white"
               >
                 {r}
               </span>

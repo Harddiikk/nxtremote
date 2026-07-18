@@ -33,10 +33,36 @@ const POINTS = [
 
 const RINGS = [{ lat: INDIA.lat, lng: INDIA.lng }];
 
+// City labels so the globe names where we deploy.
+const LABELS = [
+  { lat: INDIA.lat, lng: INDIA.lng, text: "India", color: "#c9c2ff", size: 1.1 },
+  ...HUBS.map((h) => ({ lat: h.lat, lng: h.lng, text: h.label, color: "#a9e9fb", size: 0.85 })),
+];
+
 export function GlobeViz() {
   const wrapRef = useRef<HTMLDivElement>(null);
   const globeRef = useRef<any>(null);
   const [size, setSize] = useState(520);
+  const [countries, setCountries] = useState<any[]>([]);
+
+  // Load the low-res world polygons for the hex-dotted continents.
+  useEffect(() => {
+    let alive = true;
+    fetch("/geo/countries-110m.geojson")
+      .then((r) => r.json())
+      .then((geo) => {
+        if (!alive) return;
+        setCountries(
+          (geo.features || []).filter(
+            (f: any) => f.properties?.ISO_A2 !== "AQ" // drop Antarctica
+          )
+        );
+      })
+      .catch(() => {});
+    return () => {
+      alive = false;
+    };
+  }, []);
 
   // Solid indigo ocean sphere passed as a prop (no external texture).
   const globeMaterial = useMemo(
@@ -90,6 +116,22 @@ export function GlobeViz() {
           atmosphereColor="#4F2FE5"
           atmosphereAltitude={0.22}
           showGraticules
+          hexPolygonsData={countries}
+          hexPolygonResolution={3}
+          hexPolygonMargin={0.55}
+          hexPolygonUseDots
+          hexPolygonAltitude={0.006}
+          hexPolygonColor={() => "rgba(150,170,255,0.55)"}
+          labelsData={LABELS}
+          labelLat="lat"
+          labelLng="lng"
+          labelText="text"
+          labelColor="color"
+          labelSize="size"
+          labelDotRadius={0.34}
+          labelDotOrientation={() => "right"}
+          labelResolution={2}
+          labelAltitude={0.012}
           arcsData={ARCS}
           arcColor={() => ["rgba(79,47,229,0.9)", "rgba(9,180,228,0.9)"]}
           arcAltitudeAutoScale={0.45}

@@ -142,6 +142,10 @@
     color: var(--color-brand-primary);
     line-height: 1.12;
   }
+  /* Dark theme: indigo headings would vanish on the near-black bg, lift them. */
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: #F4F5FB;
+  }
 }
 
 @layer utilities {

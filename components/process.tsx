@@ -164,7 +164,7 @@ export function Process() {
                     >
                       {s.day}
                     </span>
-                    <h3 className="mt-1.5 font-display text-lg font-bold text-brand-primary">
+                    <h3 className="mt-1.5 font-display text-lg font-bold text-brand-primary dark:text-white">
                       {s.title}
                     </h3>
                     <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
