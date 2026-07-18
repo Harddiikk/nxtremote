@@ -5,6 +5,7 @@ import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { AmbientField } from "@/components/ambient-field";
 import { SITE } from "@/lib/site";
 
 // Brand font — Manrope for both display and body (client brand spec 2026-07-16)
@@ -53,6 +54,7 @@ export default function RootLayout({
         >
           <MotionConfig reducedMotion="user">
             <div className="mesh" aria-hidden />
+            <AmbientField />
             <Navbar />
             {children}
             <Footer />
