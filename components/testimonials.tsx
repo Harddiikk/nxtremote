@@ -137,40 +137,60 @@ export function Testimonials() {
           </div>
         </motion.figure>
 
-        {/* Uniform quote grid */}
-        <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {TESTIMONIALS.map((t, index) => (
-            <motion.figure
-              key={t.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "0px 0px -60px 0px" }}
-              transition={{ duration: 0.45, ease: "easeOut", delay: (index % 3) * 0.1 }}
-              className="flex flex-col rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-accent/40 dark:border-white/10 dark:bg-card"
-            >
-              <p className="font-display text-base font-bold text-neutral-900 dark:text-white">
-                &ldquo;{t.title}&rdquo;
-              </p>
-              <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">
-                {t.quote}
-              </blockquote>
-              <figcaption className="mt-5 flex items-center gap-3 border-t border-neutral-100 pt-4 dark:border-white/5">
-                <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#1090e0] to-[#7a3bff] font-mono text-[10px] font-bold text-white">
-                  {t.name.split(" ").map((part) => part[0]).join("")}
-                </div>
-                <div>
-                  <p className="text-xs font-semibold text-neutral-800 dark:text-neutral-100">
-                    {t.name}
-                  </p>
-                  <p className="text-[11px] text-neutral-500 dark:text-neutral-400">
-                    {t.role}
-                  </p>
-                </div>
-              </figcaption>
-            </motion.figure>
-          ))}
+        {/* Auto-scrolling testimonial carousel. Hover or focus inside to pause
+            and read; motion stops entirely for prefers-reduced-motion users. */}
+        <div
+          className="marquee-pause marquee-mask group relative mt-6 overflow-hidden"
+          tabIndex={0}
+          role="group"
+          aria-roledescription="carousel"
+          aria-label="What agency owners say. Hover or focus to pause the scroll."
+        >
+          <div
+            className="animate-marquee flex w-max gap-5 py-2"
+            style={{ animationDuration: "55s" }}
+          >
+            {[...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => (
+              <TestimonialCard
+                key={`${t.name}-${i}`}
+                testimonial={t}
+                aria-hidden={i >= TESTIMONIALS.length}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function TestimonialCard({
+  testimonial: t,
+  "aria-hidden": ariaHidden,
+}: {
+  testimonial: Testimonial;
+  "aria-hidden"?: boolean;
+}) {
+  return (
+    <figure
+      aria-hidden={ariaHidden}
+      className="flex w-[300px] shrink-0 flex-col rounded-2xl border border-border bg-white p-6 shadow-sm transition-colors duration-300 hover:border-brand-accent/40 sm:w-[330px] lg:w-[350px]"
+    >
+      <p className="font-display text-base font-bold text-neutral-900">
+        &ldquo;{t.title}&rdquo;
+      </p>
+      <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-neutral-600">
+        {t.quote}
+      </blockquote>
+      <figcaption className="mt-5 flex items-center gap-3 border-t border-neutral-100 pt-4">
+        <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#4f2fe5] to-[#09b4e4] font-mono text-[10px] font-bold text-white">
+          {t.name.split(" ").map((part) => part[0]).join("")}
+        </div>
+        <div>
+          <p className="text-xs font-semibold text-neutral-800">{t.name}</p>
+          <p className="text-[11px] text-neutral-500">{t.role}</p>
+        </div>
+      </figcaption>
+    </figure>
   );
 }

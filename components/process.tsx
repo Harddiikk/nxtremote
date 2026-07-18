@@ -1,8 +1,15 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
-import { ClipboardCheck, MessagesSquare, MonitorPlay, Handshake, ArrowRight } from "lucide-react";
+import {
+  ClipboardCheck,
+  MessagesSquare,
+  MonitorPlay,
+  ListChecks,
+  Handshake,
+  ArrowRight,
+} from "lucide-react";
 import { Heading } from "./heading";
 import { Subheading } from "./subheading";
 import { Button } from "./button";
@@ -10,37 +17,50 @@ import { BOOKING_URL } from "@/lib/site";
 
 const STEPS = [
   {
-    icon: <ClipboardCheck className="size-6 text-brand-secondary" />,
-    step: "01",
-    title: "We Audit",
-    detail: "Portfolio, campaign history, and infrastructure, verified before anyone talks to you.",
+    day: "Day 1",
+    icon: ClipboardCheck,
+    title: "Audit & Sourcing",
+    detail:
+      "We verify portfolios, campaign history, and infrastructure before anyone reaches you.",
   },
   {
-    icon: <MessagesSquare className="size-6 text-brand-secondary" />,
-    step: "02",
-    title: "We Interview",
-    detail: "Multiple expert rounds for skill, English fluency, and agency culture fit.",
+    day: "Day 2",
+    icon: MessagesSquare,
+    title: "Expert Interviews",
+    detail:
+      "Multiple expert rounds test real skill, English fluency, and agency culture fit.",
   },
   {
-    icon: <MonitorPlay className="size-6 text-brand-secondary" />,
-    step: "03",
-    title: "We Test Live",
-    detail: "Hands-on exam in real tools like Meta, Google, and GHL. Not multiple-choice quizzes.",
+    day: "Day 3",
+    icon: MonitorPlay,
+    title: "Live Skills Test",
+    detail:
+      "A hands-on exam inside real tools like Meta, Google, and GHL. Not quizzes.",
   },
   {
-    icon: <Handshake className="size-6 text-brand-secondary" />,
-    step: "04",
+    day: "Day 4",
+    icon: ListChecks,
+    title: "Shortlist Prep",
+    detail:
+      "We score, reference check, and package only the strongest candidates for you.",
+  },
+  {
+    day: "Day 5",
+    icon: Handshake,
     title: "You Meet the Top 3%",
-    detail: "An interview-ready shortlist on your desk by day five. You pick, we onboard.",
+    detail:
+      "Your interview-ready shortlist lands. You pick, and we onboard your hire.",
   },
 ];
 
 export function Process() {
+  const reduce = useReducedMotion();
+
   return (
     <section className="relative overflow-hidden border-t border-border section-pad">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={reduce ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "0px 0px -80px 0px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -50,48 +70,119 @@ export function Process() {
             The System Behind Every Placement
           </Subheading>
           <Heading as="h2" className="mt-2">
-            Four Steps Before You Ever{" "}
-            <span className="text-gradient-brand">Meet a Candidate</span>
+            Five Days From Brief to Your{" "}
+            <span className="text-gradient-brand">Top 3% Shortlist</span>
           </Heading>
         </motion.div>
 
-        <div className="relative mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {/* connector line (desktop) */}
+        {/* Day-by-day timeline */}
+        <div className="relative mx-auto mt-16 max-w-4xl">
+          {/* Animated gradient spine that draws down on scroll */}
           <div
             aria-hidden
-            className="absolute top-7 right-[12%] left-[12%] hidden h-px bg-gradient-to-r from-[#1090e0] via-[#4040e0] to-[#7a3bff] opacity-40 lg:block"
-          />
-          {STEPS.map((s, i) => (
+            className="pointer-events-none absolute top-2 bottom-2 left-[27px] w-0.5 -translate-x-1/2 overflow-hidden rounded-full md:left-1/2"
+          >
+            {/* faint track */}
+            <div className="absolute inset-0 rounded-full bg-border" />
+            {/* growing gradient fill */}
             <motion.div
-              key={s.step}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "0px 0px -60px 0px" }}
-              transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.12 }}
-              className="group relative text-center"
-            >
-              <div className="glass-tile relative z-10 mx-auto flex size-14 items-center justify-center rounded-2xl">
-                {s.icon}
-              </div>
-              <p className="text-gradient-brand mt-4 font-mono text-sm font-bold tracking-[0.25em]">
-                {s.step}
-              </p>
-              <h3 className="mt-1 font-display text-lg font-bold text-foreground">
-                {s.title}
-              </h3>
-              <p className="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground">
-                {s.detail}
-              </p>
-            </motion.div>
-          ))}
+              initial={reduce ? false : { scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true, margin: "0px 0px -120px 0px" }}
+              transition={{ duration: 1.3, ease: "easeInOut" }}
+              style={{ originY: 0 }}
+              className="absolute inset-0 rounded-full bg-gradient-to-b from-[#4F2FE5] via-[#6E5CEC] to-[#09B4E4]"
+            />
+          </div>
+
+          <ol className="relative space-y-10 md:space-y-0">
+            {STEPS.map((s, i) => {
+              const Icon = s.icon;
+              const leftSide = i % 2 === 0; // desktop alternation
+              return (
+                <li
+                  key={s.day}
+                  className="group relative md:grid md:min-h-[132px] md:grid-cols-2 md:items-center"
+                >
+                  {/* Circular day node sitting on the spine */}
+                  <motion.div
+                    initial={reduce ? false : { scale: 0, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true, margin: "0px 0px -80px 0px" }}
+                    transition={{
+                      duration: 0.5,
+                      ease: [0.34, 1.56, 0.64, 1],
+                      delay: reduce ? 0 : 0.25 + i * 0.18,
+                    }}
+                    className="absolute top-0 left-0 z-10 -translate-x-1/2 md:top-1/2 md:left-1/2 md:-translate-y-1/2"
+                  >
+                    <div className="glass-tile flex size-14 items-center justify-center rounded-full">
+                      <Icon className="size-6 text-brand-secondary" />
+                    </div>
+                    {/* sequential glow pulse */}
+                    {!reduce && (
+                      <motion.span
+                        aria-hidden
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{
+                          opacity: [0, 0.55, 0],
+                          scale: [0.8, 1.6, 1.9],
+                        }}
+                        viewport={{ once: true, margin: "0px 0px -80px 0px" }}
+                        transition={{
+                          duration: 1.1,
+                          ease: "easeOut",
+                          delay: 0.35 + i * 0.18,
+                        }}
+                        className="absolute inset-0 rounded-full bg-brand-accent/40"
+                      />
+                    )}
+                  </motion.div>
+
+                  {/* Card */}
+                  <motion.div
+                    initial={reduce ? false : { opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "0px 0px -70px 0px" }}
+                    transition={{
+                      duration: 0.5,
+                      ease: "easeOut",
+                      delay: reduce ? 0 : 0.35 + i * 0.18,
+                    }}
+                    className={[
+                      "card-premium relative ml-16 rounded-2xl bg-card p-5 md:ml-0 md:max-w-sm",
+                      leftSide
+                        ? "md:col-start-1 md:mr-auto md:justify-self-end md:pr-6 md:text-right"
+                        : "md:col-start-2 md:ml-auto md:justify-self-start md:pl-6 md:text-left",
+                    ].join(" ")}
+                  >
+                    <span
+                      className={[
+                        "text-gradient-brand inline-flex font-mono text-xs font-bold tracking-[0.25em] uppercase",
+                        leftSide ? "md:justify-end" : "",
+                      ].join(" ")}
+                    >
+                      {s.day}
+                    </span>
+                    <h3 className="mt-1.5 font-display text-lg font-bold text-brand-primary">
+                      {s.title}
+                    </h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                      {s.detail}
+                    </p>
+                  </motion.div>
+                </li>
+              );
+            })}
+          </ol>
         </div>
 
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={reduce ? false : { opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-14 text-center"
+          className="mt-16 text-center"
         >
           <Link href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
             <Button size="lg">

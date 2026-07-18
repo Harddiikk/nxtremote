@@ -68,42 +68,42 @@ export function Pricing() {
     {
       criteria: "Industry Specialization",
       nxt: "100% Digital Marketing Focus. Sourcing and vetting only for agency roles like Media Buyers, SEOs, and Automators.",
-      market: "Generalist Marketplaces. Competing for attention alongside plumbing contractors, transcriptionists, and coders."
+      market: "Generalist Staffing. They place VAs, admins, and bookkeepers for every industry, not vetted digital marketing specialists."
     },
     {
       criteria: "Vetting Rigor",
       nxt: "Triple-Vetted (Top 3%). Hands-on marketing skill audits, portfolio validation, and hardware/uptime diagnostic screening.",
-      market: "Self-Vetted Profiles. Anyone can claim experience, upload unverified screenshots, or ghost before project starts."
+      market: "Loose Screening. Anyone on their bench can be labelled experienced, with no hands-on marketing skill audit or portfolio validation."
     },
     {
       criteria: "Communication Channels",
       nxt: "WhatsApp Velocity. Direct, frictionless access to coordinators and specialists on the app you already live in daily.",
-      market: "Restricted Ecosystems. Forced to use rigid, laggy built-in chats. Sharing contact details can trigger account bans."
+      market: "Layered Account Managers. Requests pass through slow email threads and coordinators before reaching the person actually doing the work."
     },
     {
       criteria: "Infrastructure Redundancy",
       nxt: "Audited Setup. Mandatory secondary high-speed internet, power backups (UPS/Inverter), and noise-cancelling equipment.",
-      market: "Zero Overlooks. Frequent sudden power drops, laggy bandwidth, and distracting background noise on client-facing calls."
+      market: "Unaudited Setups. No mandatory power backups or backup internet, so calls drop and deadlines slip during client crunch."
     },
     {
       criteria: "Data Protection & Legal",
       nxt: "Full GDPR Compliance. Ironclad corporate NDAs, secure credential sharing vaults (LastPass/1Password), and background checks.",
-      market: "High Liability. No unified data safeguards. High risk of contractors mishandling credential keys or client tracking lists."
+      market: "Thin Safeguards. Generic paperwork with no marketing-specific NDAs or secure credential vaults for client ad and CRM access."
     },
     {
       criteria: "Integration & Tools",
       nxt: "Agency Tool Fluent. Fully operational from Day 1 in Asana, Jira, Slack, ClickUp, GoHighLevel, and HubSpot.",
-      market: "High Training Overhead. Weeks of onboarding required just to align them to modern project management tools and tasks."
+      market: "High Training Overhead. Jack-of-all-trades staff know tools only at surface level and need weeks to learn GoHighLevel, HubSpot, and your stack."
     },
     {
       criteria: "Retention & Stability",
       nxt: "Dedicated & Full-Time. Integrated entirely into your brand culture, working exclusively on your agency accounts.",
-      market: "Split Focus. Freelancers routinely juggle 3 to 5 clients at once, leading to missed deadlines during client crunch times."
+      market: "Split Focus. Staff are rotated across many unrelated roles and accounts at once, leading to missed deadlines during client crunch times."
     },
     {
       criteria: "Risk Protection",
       nxt: "Free replacement within 15 to 30 days. If a placement does not fit, we replace them at no cost.",
-      market: "No Security. If a freelancer ghosts, you lose weeks of operational progress and have to restart the search from scratch."
+      market: "Slow Recovery. If a placement drops off, you reopen a ticket and wait through their queue while operational progress stalls."
     }
   ];
 
@@ -375,7 +375,7 @@ export function Pricing() {
                 <div className="p-4 rounded-xl border border-neutral-100 dark:border-white/5 bg-neutral-50/50 dark:bg-neutral-950/20">
                   <span className="flex items-center gap-1.5 text-[10px] font-black text-neutral-400 dark:text-neutral-500 uppercase tracking-widest">
                     <X className="size-3.5 text-red-400" />
-                    General Freelance Markets
+                    Generalist Agencies
                   </span>
                   <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-2">
                     {row.market}

@@ -99,7 +99,7 @@ export default function AboutPage() {
 
             <div className="p-6 rounded-2xl bg-neutral-50/50 dark:bg-neutral-900/40 border border-neutral-200/50 dark:border-white/5 shadow-xs">
               <div className="flex gap-4 items-start">
-                <div className="h-10 w-10 shrink-0 flex items-center justify-center rounded-xl bg-[#06BCB0]/10 text-[#06BCB0]">
+                <div className="h-10 w-10 shrink-0 flex items-center justify-center rounded-xl bg-[#09B4E4]/10 text-[#09B4E4]">
                   <Heart className="size-5" />
                 </div>
                 <div>

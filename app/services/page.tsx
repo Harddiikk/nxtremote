@@ -22,7 +22,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Dedicated Remote Marketing Specialists & Media Buyers | NXT Remote",
   description:
-    "On-demand offshore staffing for every marketing vertical. Hire pre-vetted remote media buyers, SEO strategists, designers, and HubSpot/GoHighLevel architects. Placement in 7-14 days.",
+    "On-demand offshore staffing for every marketing vertical. Hire pre-vetted remote media buyers, SEO strategists, designers, and HubSpot/GoHighLevel architects. Interview-ready shortlist in 5 days.",
   keywords: [
     "offshore staffing solutions",
     "digital marketing remote talent",
@@ -42,29 +42,29 @@ const specializations = [
   {
     role: "Paid Media & Performance",
     competencies: "Meta Ads, Google PPC, TikTok Ads, ROAS Optimization, Media Buying",
-    time: "7 to 14 Days",
-    icon: <Megaphone className="size-5 text-[#00E5AA]" />,
+    time: "3 to 5 Days",
+    icon: <Megaphone className="size-5 text-[#09B4E4]" />,
     color: "border-[#0B75E2]/30 dark:border-[#0B75E2]/15"
   },
   {
     role: "SEO & Content Strategy",
     competencies: "Technical Audits, Link Building, On-Page SEO, Content Operations",
-    time: "10 to 14 Days",
-    icon: <Search className="size-5 text-[#00E5AA]" />,
+    time: "Within 5 Days",
+    icon: <Search className="size-5 text-[#09B4E4]" />,
     color: "border-[#06BCB0]/30 dark:border-[#06BCB0]/15"
   },
   {
     role: "Social & Creative",
     competencies: "Brand Strategy, Copywriting, Video Editing (Short-form), Design",
-    time: "7 to 10 Days",
-    icon: <Palette className="size-5 text-[#00E5AA]" />,
+    time: "3 to 5 Days",
+    icon: <Palette className="size-5 text-[#09B4E4]" />,
     color: "border-purple-500/30 dark:border-purple-500/15"
   },
   {
     role: "Operations & Tech",
     competencies: "Hubspot/GoHighLevel Architecture, Marketing Automation, Data Analytics",
-    time: "12 to 15 Days",
-    icon: <Settings2 className="size-5 text-[#00E5AA]" />,
+    time: "Within 5 Days",
+    icon: <Settings2 className="size-5 text-[#09B4E4]" />,
     color: "border-pink-500/30 dark:border-pink-500/15"
   }
 ];
@@ -74,25 +74,25 @@ const timelineSteps = [
     day: "Day 1-2",
     title: "Discovery & Role Profiling",
     description: "We analyze your agency's tech stack, current client deliverables, and workflow dynamics to map out the ideal candidate persona.",
-    icon: <SearchCode className="size-5 text-[#0B1D45] dark:text-[#00E5AA]" />
+    icon: <SearchCode className="size-5 text-[#0B1D45] dark:text-[#09B4E4]" />
   },
   {
     day: "Day 3-7",
     title: "Rigorous Vetting & Screening",
     description: "Our industry experts screen candidates through multi-stage technical assessments, live portfolio reviews, and communication evaluations.",
-    icon: <UserCheck className="size-5 text-[#0B1D45] dark:text-[#00E5AA]" />
+    icon: <UserCheck className="size-5 text-[#0B1D45] dark:text-[#09B4E4]" />
   },
   {
     day: "Day 8-10",
     title: "Curated Shortlist Interviews",
     description: "You interview the top 2-3 handpicked candidates who perfectly match your culture and skill requirements.",
-    icon: <Users className="size-5 text-[#0B1D45] dark:text-[#00E5AA]" />
+    icon: <Users className="size-5 text-[#0B1D45] dark:text-[#09B4E4]" />
   },
   {
     day: "Day 11+",
     title: "Onboarding & Integration",
     description: "We manage contracts, payroll setup, and initial onboarding safeguards for a seamless transition into your Slack, ClickUp, or Asana workspaces.",
-    icon: <Activity className="size-5 text-[#0B1D45] dark:text-[#00E5AA]" />
+    icon: <Activity className="size-5 text-[#0B1D45] dark:text-[#09B4E4]" />
   }
 ];
 
@@ -223,7 +223,7 @@ export default function ServicesPage() {
                 className="relative group p-6 rounded-2xl bg-white border border-neutral-200 dark:bg-neutral-900 dark:border-neutral-800 shadow-xs flex flex-col gap-4"
               >
                 <div className="flex justify-between items-start">
-                  <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-neutral-100 dark:bg-neutral-800 text-[#0B1D45] dark:text-[#00E5AA] group-hover:bg-[#0B75E2]/10 group-hover:text-[#0B75E2] transition-colors">
+                  <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-neutral-100 dark:bg-neutral-800 text-[#0B1D45] dark:text-[#09B4E4] group-hover:bg-[#0B75E2]/10 group-hover:text-[#0B75E2] transition-colors">
                     {step.icon}
                   </div>
                   <span className="text-xs font-bold px-3 py-1 rounded-full bg-brand-secondary/10 text-brand-secondary">

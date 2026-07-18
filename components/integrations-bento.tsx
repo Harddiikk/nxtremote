@@ -104,26 +104,37 @@ export function IntegrationsBento() {
             <CardSkeleton className="py-4 flex-col justify-center items-center gap-3 relative">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
               
-              {/* Dynamic Connection Path Visual */}
-              <div className="flex items-center gap-4 md:gap-12 relative z-10">
-                <LogoFallback 
-                  baseName="logos/hubspot" 
-                  alt="HubSpot" 
-                  fallbackText="HS" 
-                  brandColor="bg-[#FF7A59]"
-                  glowColor="group-hover:shadow-[0_0_20px_rgba(255,122,89,0.3)]"
-                />
-                
-                {/* Connection line */}
-                <div className="w-8 md:w-16 h-[1px] bg-neutral-200 dark:bg-neutral-800" />
+              {/* Layer 1: sub-section eyebrow label */}
+              <span className="relative z-10 text-[9px] font-bold uppercase tracking-[0.15em] text-amber-500/80 dark:text-amber-400/80">
+                Connected Platforms
+              </span>
 
-                <LogoFallback 
-                  baseName="logos/gohighlevel" 
-                  alt="GoHighLevel" 
-                  fallbackText="GHL" 
-                  brandColor="bg-[#188BF6]"
-                  glowColor="group-hover:shadow-[0_0_20px_rgba(24,139,246,0.3)]"
-                />
+              {/* Layer 2 + 3: logos with tool names */}
+              <div className="flex items-center gap-4 md:gap-12 relative z-10">
+                <div className="flex flex-col items-center gap-1.5">
+                  <LogoFallback
+                    baseName="logos/hubspot"
+                    alt="HubSpot"
+                    fallbackText="HS"
+                    brandColor="bg-[#FF7A59]"
+                    glowColor="group-hover:shadow-[0_0_20px_rgba(255,122,89,0.3)]"
+                  />
+                  <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">HubSpot</span>
+                </div>
+
+                {/* Connection line */}
+                <div className="w-8 md:w-16 h-[1px] bg-neutral-200 dark:bg-neutral-800 -translate-y-[11px]" />
+
+                <div className="flex flex-col items-center gap-1.5">
+                  <LogoFallback
+                    baseName="logos/gohighlevel"
+                    alt="GoHighLevel"
+                    fallbackText="GHL"
+                    brandColor="bg-[#188BF6]"
+                    glowColor="group-hover:shadow-[0_0_20px_rgba(24,139,246,0.3)]"
+                  />
+                  <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">GoHighLevel</span>
+                </div>
               </div>
               
               {/* Feature mini indicators */}
@@ -164,17 +175,25 @@ export function IntegrationsBento() {
             <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
               
-              {/* Stacked Flow Visual */}
+              {/* Layer 1: sub-section eyebrow label */}
+              <span className="relative z-10 text-[9px] font-bold uppercase tracking-[0.15em] text-violet-500/80 dark:text-violet-400/80">
+                Lifecycle Flows
+              </span>
+
+              {/* Layer 2 + 3: logos with tool names */}
               <div className="flex items-center gap-4 relative z-10">
-                <LogoFallback 
-                  baseName="logos/klaviyo" 
-                  alt="Klaviyo" 
-                  fallbackText="KL" 
-                  brandColor="bg-[#2B1A4A]"
-                  glowColor="group-hover:shadow-[0_0_20px_rgba(43,26,74,0.4)]"
-                />
-                
-                <div className="flex flex-col gap-1.5 justify-center items-center">
+                <div className="flex flex-col items-center gap-1.5">
+                  <LogoFallback
+                    baseName="logos/klaviyo"
+                    alt="Klaviyo"
+                    fallbackText="KL"
+                    brandColor="bg-[#2B1A4A]"
+                    glowColor="group-hover:shadow-[0_0_20px_rgba(43,26,74,0.4)]"
+                  />
+                  <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">Klaviyo</span>
+                </div>
+
+                <div className="flex flex-col gap-1.5 justify-center items-center -translate-y-[11px]">
                   <motion.div
                     animate={{ scale: [1, 1.1, 1], y: [0, -3, 0] }}
                     transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
@@ -185,13 +204,16 @@ export function IntegrationsBento() {
                   <span className="text-[9px] text-muted-foreground font-mono">FLOW ACTIVE</span>
                 </div>
 
-                <LogoFallback 
-                  baseName="logos/brevo" 
-                  alt="Brevo" 
-                  fallbackText="BV" 
-                  brandColor="bg-[#8B5CF6]"
-                  glowColor="group-hover:shadow-[0_0_20px_rgba(139,92,246,0.3)]"
-                />
+                <div className="flex flex-col items-center gap-1.5">
+                  <LogoFallback
+                    baseName="logos/brevo"
+                    alt="Brevo"
+                    fallbackText="BV"
+                    brandColor="bg-[#8B5CF6]"
+                    glowColor="group-hover:shadow-[0_0_20px_rgba(139,92,246,0.3)]"
+                  />
+                  <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">Brevo</span>
+                </div>
               </div>
 
               <div className="flex gap-1.5 relative z-10">
@@ -228,23 +250,34 @@ export function IntegrationsBento() {
             <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
               
-              {/* Horizontal layout */}
+              {/* Layer 1: sub-section eyebrow label */}
+              <span className="relative z-10 text-[9px] font-bold uppercase tracking-[0.15em] text-blue-500/80 dark:text-blue-400/80">
+                Measurement Stack
+              </span>
+
+              {/* Layer 2 + 3: logos with tool names */}
               <div className="flex items-center gap-3 relative z-10">
-                <LogoFallback 
-                  baseName="logos/googleanalytics" 
-                  alt="GA4" 
-                  fallbackText="GA4" 
-                  brandColor="bg-[#E37400]"
-                  glowColor="group-hover:shadow-[0_0_20px_rgba(227,116,0,0.4)]"
-                />
-                <div className="w-6 h-[1px] bg-neutral-200 dark:bg-neutral-800" />
-                <LogoFallback 
-                  baseName="logos/googlemarketingplatform" 
-                  alt="Campaign Manager 360" 
-                  fallbackText="CM" 
-                  brandColor="bg-[#4285F4]"
-                  glowColor="group-hover:shadow-[0_0_20px_rgba(66,133,244,0.4)]"
-                />
+                <div className="flex flex-col items-center gap-1.5">
+                  <LogoFallback
+                    baseName="logos/googleanalytics"
+                    alt="GA4"
+                    fallbackText="GA4"
+                    brandColor="bg-[#E37400]"
+                    glowColor="group-hover:shadow-[0_0_20px_rgba(227,116,0,0.4)]"
+                  />
+                  <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">GA4</span>
+                </div>
+                <div className="w-6 h-[1px] bg-neutral-200 dark:bg-neutral-800 -translate-y-[11px]" />
+                <div className="flex flex-col items-center gap-1.5">
+                  <LogoFallback
+                    baseName="logos/googlemarketingplatform"
+                    alt="Campaign Manager 360"
+                    fallbackText="CM"
+                    brandColor="bg-[#4285F4]"
+                    glowColor="group-hover:shadow-[0_0_20px_rgba(66,133,244,0.4)]"
+                  />
+                  <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">CM360</span>
+                </div>
               </div>
               
               <div className="flex gap-1.5 relative z-10">
@@ -281,7 +314,12 @@ export function IntegrationsBento() {
             <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
               
-              {/* Horizontal grid with connectors */}
+              {/* Layer 1: sub-section eyebrow label */}
+              <span className="relative z-10 text-[9px] font-bold uppercase tracking-[0.15em] text-teal-500/80 dark:text-teal-400/80">
+                Delivery Workflow
+              </span>
+
+              {/* Layer 2 + 3: logos with tool names */}
               <div className="grid grid-cols-4 gap-4 md:gap-8 relative z-10">
                 <div className="flex flex-col items-center gap-2">
                   <LogoFallback 
@@ -361,6 +399,12 @@ export function IntegrationsBento() {
             <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
+              {/* Layer 1: sub-section eyebrow label */}
+              <span className="relative z-10 text-[9px] font-bold uppercase tracking-[0.15em] text-fuchsia-500/80 dark:text-fuchsia-400/80">
+                Creative Production
+              </span>
+
+              {/* Layer 2 + 3: logos with tool names */}
               <div className="grid grid-cols-3 gap-6 md:gap-10 relative z-10">
                 {[
                   { base: "logos/canva", alt: "Canva", fb: "CV", color: "bg-[#00C4CC]" },

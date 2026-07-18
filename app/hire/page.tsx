@@ -22,6 +22,9 @@ export default function HirePage() {
     details: ""
   });
 
+  const [countryCode, setCountryCode] = useState("+1");
+  const [phoneNumber, setPhoneNumber] = useState("");
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
@@ -31,7 +34,11 @@ export default function HirePage() {
     setLoading(true);
     setError(null);
 
-    const res = await submitLead(formData);
+    const combinedPhone = phoneNumber.trim()
+      ? `${countryCode} ${phoneNumber.trim()}`
+      : "";
+
+    const res = await submitLead({ ...formData, phone: combinedPhone });
     setLoading(false);
 
     if (res.success) {
@@ -46,7 +53,25 @@ export default function HirePage() {
     "SEO & Content Strategy",
     "Social & Creative",
     "Operations & Tech",
-    "Multiple Roles (Scale Team)"
+    "Multiple Roles (Scale Team)",
+    "Others"
+  ];
+
+  const countryCodes = [
+    { code: "+1", label: "+1 US/Canada" },
+    { code: "+44", label: "+44 UK" },
+    { code: "+61", label: "+61 Australia" },
+    { code: "+65", label: "+65 Singapore" },
+    { code: "+971", label: "+971 UAE" },
+    { code: "+49", label: "+49 Germany" },
+    { code: "+91", label: "+91 India" },
+    { code: "+27", label: "+27 South Africa" },
+    { code: "+353", label: "+353 Ireland" },
+    { code: "+64", label: "+64 New Zealand" },
+    { code: "+31", label: "+31 Netherlands" },
+    { code: "+33", label: "+33 France" },
+    { code: "+55", label: "+55 Brazil" },
+    { code: "+63", label: "+63 Philippines" }
   ];
 
   const budgets = [
@@ -169,14 +194,29 @@ export default function HirePage() {
                   <label htmlFor="phone" className="block text-xs font-bold text-neutral-700 dark:text-neutral-300 mb-1.5 uppercase tracking-wide">
                     Phone / WhatsApp Number
                   </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="+1 555-0199"
-                    className="block w-full rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-900 outline-none focus:border-brand-secondary dark:border-neutral-800 dark:bg-neutral-950 dark:text-white dark:focus:border-brand-accent transition-colors"
-                  />
+                  <div className="flex gap-2">
+                    <select
+                      id="countryCode"
+                      aria-label="Country code"
+                      value={countryCode}
+                      onChange={(e) => setCountryCode(e.target.value)}
+                      className="w-24 shrink-0 rounded-lg border border-neutral-200 bg-white px-2 py-3 text-sm text-neutral-900 outline-none focus:border-brand-secondary dark:border-neutral-800 dark:bg-neutral-950 dark:text-white dark:focus:border-brand-accent transition-colors cursor-pointer"
+                    >
+                      {countryCodes.map((c) => (
+                        <option key={c.code} value={c.code}>
+                          {c.label}
+                        </option>
+                      ))}
+                    </select>
+                    <input
+                      type="tel"
+                      id="phone"
+                      value={phoneNumber}
+                      onChange={(e) => setPhoneNumber(e.target.value)}
+                      placeholder="555-0199"
+                      className="block w-full min-w-0 rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-900 outline-none focus:border-brand-secondary dark:border-neutral-800 dark:bg-neutral-950 dark:text-white dark:focus:border-brand-accent transition-colors"
+                    />
+                  </div>
                 </div>
               </div>
 

@@ -1,3 +1,4 @@
+import { AiAcademy } from "@/components/ai-academy";
 import { Booking } from "@/components/booking";
 import { FAQs } from "@/components/faqs";
 import { TalentShowcase } from "@/components/talent-showcase";
@@ -41,6 +42,7 @@ export default function Home() {
       <Testimonials />
       <FeaturesTwo />
       <Pricing />
+      <AiAcademy />
       <Booking />
       <FAQs />
     </main>

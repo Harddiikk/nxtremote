@@ -101,7 +101,7 @@ export function TalentShowcase() {
               {active === cat.id && (
                 <motion.span
                   layoutId="talent-tab-underline"
-                  className="absolute inset-x-2 -bottom-px h-0.5 rounded-full bg-gradient-to-r from-[#1090e0] to-[#7a3bff]"
+                  className="absolute inset-x-2 -bottom-px h-0.5 rounded-full bg-gradient-to-r from-[#4f2fe5] to-[#09b4e4]"
                 />
               )}
             </button>
@@ -123,7 +123,7 @@ export function TalentShowcase() {
               >
                 <div className="relative overflow-hidden rounded-2xl">
                   {/* brand gradient backdrop behind the clean portrait */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#1090e0]/50 via-[#4040e0]/35 to-[#7a3bff]/45" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#4f2fe5]/45 via-[#4f2fe5]/30 to-[#09b4e4]/45" />
                   <img
                     src={s.photo}
                     alt={`${s.name} — ${s.role}`}

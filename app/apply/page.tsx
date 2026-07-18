@@ -67,7 +67,7 @@ export default function ApplyPage() {
 
         {success ? (
           <div className="rounded-2xl border border-neutral-200 bg-white/80 dark:border-neutral-800 dark:bg-neutral-900/80 p-8 md:p-12 text-center backdrop-blur-md shadow-lg animate-in fade-in zoom-in-95 duration-300">
-            <div className="mx-auto h-16 w-16 bg-[#00E5AA]/10 rounded-full flex items-center justify-center text-[#00E5AA] mb-6">
+            <div className="mx-auto h-16 w-16 bg-[#09B4E4]/10 rounded-full flex items-center justify-center text-[#09B4E4] mb-6">
               <CheckCircle2 className="size-10 stroke-[2.5]" />
             </div>
             <Heading as="h2" className="text-2xl md:text-3xl font-black mb-4">

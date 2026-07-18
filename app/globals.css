@@ -200,6 +200,12 @@
   .marquee-mask {
     mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
   }
+  /* Pause the marquee when the user hovers or keyboard-focuses inside it,
+     so they can stop and actually read the cards. */
+  .marquee-pause:hover .animate-marquee,
+  .marquee-pause:focus-within .animate-marquee {
+    animation-play-state: paused;
+  }
   @media (prefers-reduced-motion: reduce) {
     .animate-marquee {
       animation: none;

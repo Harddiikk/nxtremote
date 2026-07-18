@@ -17,9 +17,11 @@ import {
   MessagesSquare, 
   GitBranch, 
   Sparkles, 
-  HardDrive, 
-  Headphones, 
-  Power 
+  HardDrive,
+  Headphones,
+  Power,
+  Check,
+  X
 } from "lucide-react";
 
 export function FeaturesTwo() {
@@ -82,6 +84,8 @@ export function FeaturesTwo() {
         </div>
       </div>
 
+      <SpecializationCompare />
+
       <div className="border-t border-neutral-100 dark:border-white/5 my-12" />
 
       {/* Triple Vetted standard */}
@@ -108,49 +112,49 @@ export function FeaturesTwo() {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {/* Pillar 1 */}
           <PillarCard
-            icon={<Cpu className="size-5 text-[#8B5CF6]" />}
+            icon={<Cpu className="size-5 text-brand-secondary" />}
             number="I"
             title="Domain Industry Experience"
             description="Verified history of working utilizing technical skills within digital agencies or e-commerce brands."
           />
           {/* Pillar 2 */}
           <PillarCard
-            icon={<Terminal className="size-5 text-[#8B5CF6]" />}
+            icon={<Terminal className="size-5 text-brand-secondary" />}
             number="II"
             title="Marketing Stack Fluency"
             description="Fully operational from Day 1 across Meta Business Manager, HubSpot, Klaviyo, and Google Ads."
           />
           {/* Pillar 3 */}
           <PillarCard
-            icon={<FileText className="size-5 text-[#8B5CF6]" />}
+            icon={<FileText className="size-5 text-brand-secondary" />}
             number="III"
             title="Portfolio Verification"
             description="Manual reviews of previous project portfolio links, campaign dashboards, and case study files."
           />
           {/* Pillar 4 */}
           <PillarCard
-            icon={<MessagesSquare className="size-5 text-[#8B5CF6]" />}
+            icon={<MessagesSquare className="size-5 text-brand-secondary" />}
             number="IV"
             title="Communication Nuance"
             description="Rigorously tested for Western client alignment, conceptual speech, and asynchronous copywriting."
           />
           {/* Pillar 5 */}
           <PillarCard
-            icon={<GitBranch className="size-5 text-[#8B5CF6]" />}
+            icon={<GitBranch className="size-5 text-brand-secondary" />}
             number="V"
             title="Project Management Mastery"
             description="Native fluency in agile team tools including Jira, Asana, Slack, and ClickUp workflows."
           />
           {/* Pillar 6 */}
           <PillarCard
-            icon={<Sparkles className="size-5 text-[#8B5CF6]" />}
+            icon={<Sparkles className="size-5 text-brand-secondary" />}
             number="VI"
             title="AI-Ready Workflows"
             description="Assessed on modern AI tooling: prompt-driven ad copy, programmatic SEO, and automated reporting."
           />
           {/* Pillar 7 (Compliance) */}
           <PillarCard
-            icon={<ShieldCheck className="size-5 text-[#8B5CF6]" />}
+            icon={<ShieldCheck className="size-5 text-brand-secondary" />}
             number="VII"
             title="GDPR & Data Protection"
             description="Contractually bound to NDA terms, credential vault practices (1Password/LastPass), and security training."
@@ -158,6 +162,105 @@ export function FeaturesTwo() {
         </div>
       </div>
     </Container>
+    </div>
+  );
+}
+
+const GENERALIST_ROLES = [
+  "Virtual Assistants",
+  "Data Entry",
+  "Bookkeeping",
+  "Cold Calling",
+  "Transcription",
+  "Admin Support",
+  "Customer Service",
+  "General SEO",
+  "Web Design",
+];
+
+const NXT_ROLES = [
+  "Paid Media",
+  "SEO & Content",
+  "Email & Retention",
+  "Creative & Design",
+  "Analytics",
+  "Automation",
+];
+
+function SpecializationCompare() {
+  return (
+    <div className="mb-24 md:mb-32">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-[1fr_auto_1fr] md:items-stretch">
+        {/* Generalist agencies */}
+        <div className="rounded-2xl border border-border bg-muted/60 p-6 md:p-8">
+          <div className="flex items-center gap-2">
+            <span className="flex size-6 items-center justify-center rounded-full bg-neutral-300/70 text-neutral-600">
+              <X className="size-3.5" strokeWidth={3} />
+            </span>
+            <span className="font-mono text-[10px] font-bold tracking-[0.18em] text-muted-foreground uppercase">
+              Generalist Agencies
+            </span>
+          </div>
+          <h3 className="mt-3 font-display text-lg font-bold text-neutral-500">
+            A little of everything, mastery of nothing
+          </h3>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {GENERALIST_ROLES.map((r) => (
+              <span
+                key={r}
+                className="rounded-full border border-border bg-white px-3 py-1.5 text-xs font-medium text-neutral-400 line-through decoration-neutral-300"
+              >
+                {r}
+              </span>
+            ))}
+          </div>
+          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+            Every role under one roof, so no one is truly vetted for your
+            marketing stack. You supervise the gaps.
+          </p>
+        </div>
+
+        {/* Divider */}
+        <div className="flex items-center justify-center">
+          <span className="flex size-11 items-center justify-center rounded-full bg-gradient-to-br from-[#4f2fe5] to-[#09b4e4] font-display text-sm font-extrabold text-white shadow-md">
+            vs
+          </span>
+        </div>
+
+        {/* NXT Remote */}
+        <div className="card-premium relative overflow-hidden rounded-2xl p-6 md:p-8">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="flex size-6 items-center justify-center rounded-full bg-gradient-to-br from-[#4f2fe5] to-[#09b4e4] text-white">
+                <Check className="size-3.5" strokeWidth={3} />
+              </span>
+              <span className="font-mono text-[10px] font-bold tracking-[0.18em] text-brand-secondary uppercase">
+                NXT Remote
+              </span>
+            </div>
+            <span className="rounded-full bg-gradient-to-r from-[#4f2fe5] to-[#09b4e4] px-2.5 py-1 text-[10px] font-bold tracking-wide text-white uppercase">
+              100% Digital Marketing
+            </span>
+          </div>
+          <h3 className="mt-3 font-display text-lg font-bold text-brand-primary">
+            One domain, mastered end to end
+          </h3>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {NXT_ROLES.map((r) => (
+              <span
+                key={r}
+                className="rounded-full border border-brand-secondary/25 bg-brand-secondary/5 px-3 py-1.5 text-xs font-semibold text-brand-primary"
+              >
+                {r}
+              </span>
+            ))}
+          </div>
+          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+            Every specialist is vetted, tested, and placed exclusively within
+            digital marketing. No VAs, no filler.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
@@ -215,7 +318,7 @@ function PillarCard({
   return (
     <div className="group relative rounded-xl border border-neutral-200 bg-white p-5 shadow-xs transition-all duration-200 hover:border-brand-accent dark:border-white/10 dark:bg-card">
       <div className="flex items-center gap-3">
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-50 dark:bg-neutral-800/80 group-hover:bg-[#0B75E2]/10 transition-colors">
+        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-50 dark:bg-neutral-800/80 group-hover:bg-brand-secondary/10 transition-colors">
           {icon}
         </div>
         <div className="flex-1">
