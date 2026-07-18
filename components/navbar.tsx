@@ -5,6 +5,7 @@ import { IconChevronDown, IconMenu2, IconX } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import React, { useState } from "react";
+import { ModeToggle } from "./mode-toggle";
 
 export function Navbar() {
   const navItems = [
@@ -37,7 +38,7 @@ const DesktopNav = ({ navItems }: { navItems: any[] }) => {
   return (
     <motion.div
       className={cn(
-        "relative z-50 mx-auto hidden w-full flex-row items-center justify-between rounded-full border border-neutral-200/40 bg-white/70 backdrop-blur-lg px-6 py-3 lg:flex dark:border-white/5 dark:bg-[#0B1D45]/70 shadow-lg",
+        "relative z-50 mx-auto hidden w-full flex-row items-center justify-between rounded-full border border-neutral-200/40 bg-white/70 backdrop-blur-lg px-6 py-3 lg:flex dark:border-white/5 dark:bg-[#17171E]/80 shadow-lg",
       )}
     >
       <Logo />
@@ -79,12 +80,13 @@ const DesktopNav = ({ navItems }: { navItems: any[] }) => {
       </div>
 
       <div className="flex items-center gap-4">
+        <ModeToggle />
         <Link href="/apply">
           <span className="text-xs font-bold text-neutral-600 hover:text-brand-secondary dark:text-neutral-300 dark:hover:text-brand-accent transition-colors px-4 py-2 cursor-pointer border border-neutral-300 dark:border-neutral-700 rounded-full bg-transparent hover:bg-neutral-50 dark:hover:bg-neutral-900">
             Apply as Talent
           </span>
         </Link>
-        
+
         <Link href="/hire">
           <button className="rounded-full bg-brand-primary text-xs px-5 py-2.5 font-bold text-white shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.4)_inset] dark:bg-white dark:text-black hover:opacity-90 transition-opacity cursor-pointer">
             Hire Talent
@@ -103,20 +105,23 @@ const MobileNav = ({ navItems }: { navItems: any[] }) => {
       <motion.div
         animate={{ borderRadius: open ? "16px" : "9999px" }}
         key={String(open)}
-        className="relative mx-auto flex w-full flex-col items-center justify-between border border-neutral-200/40 bg-white/75 backdrop-blur-lg px-6 py-4 dark:border-white/5 dark:bg-[#0B1D45]/75 shadow-lg"
+        className="relative mx-auto flex w-full flex-col items-center justify-between border border-neutral-200/40 bg-white/75 backdrop-blur-lg px-6 py-4 dark:border-white/5 dark:bg-[#17171E]/80 shadow-lg"
       >
         <div className="flex w-full flex-row items-center justify-between">
           <Logo />
-          <button 
-            onClick={() => setOpen(!open)}
-            className="text-neutral-900 dark:text-white focus:outline-none cursor-pointer"
-          >
-            {open ? (
-              <IconX className="h-6 w-6" />
-            ) : (
-              <IconMenu2 className="h-6 w-6" />
-            )}
-          </button>
+          <div className="flex items-center gap-4">
+            <ModeToggle />
+            <button
+              onClick={() => setOpen(!open)}
+              className="text-neutral-900 dark:text-white focus:outline-none cursor-pointer"
+            >
+              {open ? (
+                <IconX className="h-6 w-6" />
+              ) : (
+                <IconMenu2 className="h-6 w-6" />
+              )}
+            </button>
+          </div>
         </div>
 
         <AnimatePresence>
@@ -215,10 +220,20 @@ const Logo = () => {
     <Link
       href="/"
       aria-label="NXT Remote home"
-      className="relative z-20 flex items-baseline gap-1 font-display text-lg md:text-xl font-extrabold tracking-tight leading-none"
+      className="relative z-20 flex items-center"
     >
-      <span className="text-primary">NXT</span>
-      <span className="text-gradient-brand">Remote</span>
+      {/* dark-text lockup for the light theme */}
+      <img
+        src="/logo-light.png"
+        alt="NXT Remote"
+        className="h-5 md:h-6 w-auto object-contain dark:hidden"
+      />
+      {/* white-text lockup for the dark theme */}
+      <img
+        src="/logo-dark.png"
+        alt="NXT Remote"
+        className="hidden h-5 md:h-6 w-auto object-contain dark:block"
+      />
     </Link>
   );
 };

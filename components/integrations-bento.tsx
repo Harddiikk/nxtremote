@@ -405,11 +405,12 @@ export function IntegrationsBento() {
               </span>
 
               {/* Layer 2 + 3: logos with tool names */}
-              <div className="grid grid-cols-3 gap-6 md:gap-10 relative z-10">
+              <div className="grid grid-cols-4 gap-5 md:gap-8 relative z-10">
                 {[
                   { base: "logos/canva", alt: "Canva", fb: "CV", color: "bg-[#00C4CC]" },
-                  { base: "logos/adobephotoshop", alt: "Photoshop", fb: "PS", color: "bg-[#31A8FF]" },
-                  { base: "logos/adobe", alt: "Adobe Express", fb: "AE", color: "bg-[#FF0000]" },
+                  { base: "logos/adobephotoshop", alt: "Photoshop", fb: "PS", color: "bg-[#001E36]" },
+                  { base: "logos/illustrator", alt: "Illustrator", fb: "Ai", color: "bg-[#330000]" },
+                  { base: "logos/adobe", alt: "Adobe Express", fb: "AE", color: "bg-[#0D0E1A]" },
                 ].map((t) => (
                   <div key={t.alt} className="flex flex-col items-center gap-2">
                     <LogoFallback
@@ -440,7 +441,7 @@ export function IntegrationsBento() {
                     Design & Creative
                   </span>
                   <CardTitle className="text-left mt-1 text-lg font-bold">
-                    Canva, Photoshop & Adobe Express
+                    Canva, Photoshop, Illustrator & Adobe Express
                   </CardTitle>
                   <CardDescription className="text-left mt-2 max-w-lg">
                     Scroll-stopping creatives, on brand, on schedule.

@@ -35,7 +35,7 @@ export function FeaturesTwo() {
             Zero Noise. Zero Generalists. No VAs.
           </Subheading>
           <Heading as="h2" className="mt-2 mb-6">
-            100% Digital Marketing Mastery.
+            100% <span className="text-gradient-brand">Digital Marketing Mastery</span>.
           </Heading>
           <p className="text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed mb-4">
             Most offshore staffing agencies handle everything from general data entry to accounting. They try to be everything to everyone, and end up providing surface-level generalists who don't know a pixel from a pillar page.
@@ -94,7 +94,8 @@ export function FeaturesTwo() {
           Rigorous Sourcing Standard
         </Subheading>
         <Heading as="h2" className="mt-2 mb-4">
-          We Don't Just Vet Their Skills. We Audit Their Infrastructure.
+          We Don't Just Vet Their Skills. We Audit Their{" "}
+          <span className="text-gradient-brand">Infrastructure</span>.
         </Heading>
         <p className="text-base text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed">
           Every candidate undergoes a grueling 3-stage technical, operational, and physical audit before joining a client shortlist. Skip the resume scrolling and avoid administrative friction.

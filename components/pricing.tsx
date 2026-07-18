@@ -121,7 +121,7 @@ export function Pricing() {
             as="h2"
             className="pt-2 text-2xl font-bold tracking-tight text-neutral-900 md:text-4xl dark:text-neutral-100"
           >
-            Your Team, Your Terms. Scoped on a Single Call.
+            Your Team, <span className="text-gradient-brand">Your Terms</span>. Scoped on a <span className="text-gradient-brand">Single Call</span>.
           </Heading>
           <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto leading-relaxed">
             One flat monthly rate. Zero recruiter fees. Quoted on a single 30-minute call.
@@ -310,7 +310,7 @@ export function Pricing() {
               Rigorous Evaluation
             </Subheading>
             <Heading as="h3" className="text-2xl md:text-3xl font-bold mt-2">
-              Comparison Chart for Services We Offer
+              Comparison Chart for <span className="text-gradient-brand">Services We Offer</span>
             </Heading>
           </div>
 

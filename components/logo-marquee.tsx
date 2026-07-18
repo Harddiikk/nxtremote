@@ -16,6 +16,7 @@ const TOOLS = [
   { name: "Mailchimp", logo: "/logos/mailchimp.svg" },
   { name: "Canva", logo: "/logos/canva.svg" },
   { name: "Photoshop", logo: "/logos/adobephotoshop.svg" },
+  { name: "Illustrator", logo: "/logos/illustrator.svg" },
   { name: "Adobe Express", logo: "/logos/adobe.svg" },
   { name: "Slack", logo: "/logos/slack.svg" },
   { name: "ClickUp", logo: "/logos/clickup.svg" },
