@@ -124,11 +124,12 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={4}
-          className="mt-16 grid w-full max-w-3xl grid-cols-2 gap-x-8 gap-y-6 border-t border-border pt-8 sm:grid-cols-4"
+          className="mx-auto mt-16 grid w-full max-w-xl grid-cols-3 gap-x-8 gap-y-6 border-t border-border pt-8"
         >
           {STATS.map((stat, statIdx) => (
             <motion.div
               key={stat.label}
+              className="text-center"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 + statIdx * 0.1, duration: 0.45, ease: "easeOut" }}

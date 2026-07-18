@@ -228,9 +228,9 @@ const Logo = () => {
         alt="NXT Remote"
         className="h-5 md:h-6 w-auto object-contain dark:hidden"
       />
-      {/* white-text lockup for the dark theme */}
+      {/* white NXT REMOTE wordmark for the dark theme (matches the light lockup) */}
       <img
-        src="/logo-dark.png"
+        src="/logo-dark-word.png"
         alt="NXT Remote"
         className="hidden h-5 md:h-6 w-auto object-contain dark:block"
       />
