@@ -197,6 +197,10 @@
     -webkit-text-stroke: 2.5px rgba(32, 28, 103, 0.85);
     color: transparent;
   }
+  /* Dark theme: an indigo stroke vanishes on the near-black bg, use white. */
+  .dark .text-outline {
+    -webkit-text-stroke: 2.5px rgba(255, 255, 255, 0.92);
+  }
   /* Infinite logo marquee */
   .animate-marquee {
     animation: marquee 36s linear infinite;
