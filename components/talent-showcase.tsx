@@ -35,30 +35,30 @@ type Specialist = {
 
 const SPECIALISTS: Specialist[] = [
   // Paid Media
-  { name: "Ethan Kowalski", role: "Senior Media Buyer", years: "8+ Years experience", stack: "Meta, Google, TikTok Ads", photo: "/talent/clean-1.jpg", category: "paid-media" },
-  { name: "Marcus Bellweather", role: "Google Ads Strategist", years: "7+ Years experience", stack: "Google Ads, CM360, GA4", photo: "/talent/clean-2.jpg", category: "paid-media" },
-  { name: "Rohan Mehta", role: "Meta Ads Lead", years: "6+ Years experience", stack: "Meta, CAPI, AEM", photo: "/talent/clean-3.jpg", category: "paid-media" },
-  { name: "Carlos Ferreira", role: "Performance Lead", years: "9+ Years experience", stack: "Cross-channel, MMM, Triple Whale", photo: "/talent/clean-4.jpg", category: "paid-media" },
+  { name: "Arjun Mehta", role: "Senior Media Buyer", years: "8+ Years experience", stack: "Meta, Google, TikTok Ads", photo: "/talent/in-01.jpg", category: "paid-media" },
+  { name: "Vikram Nair", role: "Google Ads Strategist", years: "7+ Years experience", stack: "Google Ads, CM360, GA4", photo: "/talent/in-02.jpg", category: "paid-media" },
+  { name: "Rohan Kapoor", role: "Meta Ads Lead", years: "6+ Years experience", stack: "Meta, CAPI, AEM", photo: "/talent/in-03.jpg", category: "paid-media" },
+  { name: "Aditya Rao", role: "Performance Lead", years: "9+ Years experience", stack: "Cross-channel, MMM, Triple Whale", photo: "/talent/in-04.jpg", category: "paid-media" },
   // SEO & Content
-  { name: "Priya Nandakumar", role: "Technical SEO Lead", years: "9+ Years experience", stack: "Ahrefs, GSC, Screaming Frog", photo: "/talent/clean-5.jpg", category: "seo" },
-  { name: "Tomás Rivera", role: "Content Strategist", years: "6+ Years experience", stack: "Surfer, Semrush, Clearscope", photo: "/talent/clean-6.jpg", category: "seo" },
-  { name: "Lukas Meyer", role: "Technical SEO Engineer", years: "7+ Years experience", stack: "Log analysis, Schema, CWV", photo: "/talent/clean-7.jpg", category: "seo" },
-  { name: "Sarah Whitfield", role: "Content Operations Lead", years: "8+ Years experience", stack: "Editorial ops, briefs, AI workflows", photo: "/talent/clean-8.jpg", category: "seo" },
+  { name: "Priya Nandakumar", role: "Technical SEO Lead", years: "9+ Years experience", stack: "Ahrefs, GSC, Screaming Frog", photo: "/talent/in-05.jpg", category: "seo" },
+  { name: "Ananya Iyer", role: "Content Strategist", years: "6+ Years experience", stack: "Surfer, Semrush, Clearscope", photo: "/talent/in-06.jpg", category: "seo" },
+  { name: "Karan Malhotra", role: "Technical SEO Engineer", years: "7+ Years experience", stack: "Log analysis, Schema, CWV", photo: "/talent/in-07.jpg", category: "seo" },
+  { name: "Sneha Reddy", role: "Content Operations Lead", years: "8+ Years experience", stack: "Editorial ops, briefs, AI workflows", photo: "/talent/in-08.jpg", category: "seo" },
   // Retention & Email
-  { name: "Camila Duarte", role: "Retention & Email Lead", years: "6+ Years experience", stack: "Klaviyo, Brevo, HubSpot", photo: "/talent/clean-9.jpg", category: "retention" },
-  { name: "Maria Gonzalez", role: "Lifecycle Marketing Lead", years: "10+ Years experience", stack: "Klaviyo, Braze, segments", photo: "/talent/clean-10.jpg", category: "retention" },
-  { name: "Leila Haddad", role: "Email Designer", years: "5+ Years experience", stack: "Figma, MJML, Litmus", photo: "/talent/clean-11.jpg", category: "retention" },
-  { name: "Aiko Tanaka", role: "CRM Specialist", years: "6+ Years experience", stack: "HubSpot, GHL, journeys", photo: "/talent/clean-12.jpg", category: "retention" },
+  { name: "Meera Joshi", role: "Retention & Email Lead", years: "6+ Years experience", stack: "Klaviyo, Brevo, HubSpot", photo: "/talent/in-09.jpg", category: "retention" },
+  { name: "Kavya Menon", role: "Lifecycle Marketing Lead", years: "10+ Years experience", stack: "Klaviyo, Braze, segments", photo: "/talent/in-10.jpg", category: "retention" },
+  { name: "Ishaan Verma", role: "Email Designer", years: "5+ Years experience", stack: "Figma, MJML, Litmus", photo: "/talent/in-11.jpg", category: "retention" },
+  { name: "Divya Krishnan", role: "CRM Specialist", years: "6+ Years experience", stack: "HubSpot, GHL, journeys", photo: "/talent/in-12.jpg", category: "retention" },
   // Creative
-  { name: "Miguel Santos", role: "Brand Designer", years: "7+ Years experience", stack: "Canva, Photoshop, Illustrator", photo: "/talent/clean-13.jpg", category: "creative" },
-  { name: "Amara Okafor", role: "Graphic Designer", years: "5+ Years experience", stack: "Adobe Express, Canva Pro", photo: "/talent/clean-14.jpg", category: "creative" },
-  { name: "Emma Novak", role: "UGC Creative Lead", years: "4+ Years experience", stack: "Hooks, scripts, iterations", photo: "/talent/clean-15.jpg", category: "creative" },
-  { name: "Dario Rossi", role: "Short-form Video Editor", years: "5+ Years experience", stack: "Premiere, CapCut, After Effects", photo: "/talent/clean-16.jpg", category: "creative" },
+  { name: "Aditya Sharma", role: "Brand Designer", years: "7+ Years experience", stack: "Canva, Photoshop, Illustrator", photo: "/talent/in-13.jpg", category: "creative" },
+  { name: "Neha Gupta", role: "Graphic Designer", years: "5+ Years experience", stack: "Adobe Express, Canva Pro", photo: "/talent/in-14.jpg", category: "creative" },
+  { name: "Riya Desai", role: "UGC Creative Lead", years: "4+ Years experience", stack: "Hooks, scripts, iterations", photo: "/talent/in-15.jpg", category: "creative" },
+  { name: "Aryan Khanna", role: "Short-form Video Editor", years: "5+ Years experience", stack: "Premiere, CapCut, After Effects", photo: "/talent/in-16.jpg", category: "creative" },
   // Ops & Automation
-  { name: "Irina Volkova", role: "Automation Engineer", years: "7+ Years experience", stack: "GHL, Zapier, n8n", photo: "/talent/clean-17.jpg", category: "ops" },
-  { name: "Ben Cooper", role: "GHL Architect", years: "6+ Years experience", stack: "Snapshots, workflows, A2P", photo: "/talent/clean-18.jpg", category: "ops" },
-  { name: "Freya Lindqvist", role: "RevOps Specialist", years: "8+ Years experience", stack: "HubSpot ops, attribution", photo: "/talent/clean-19.jpg", category: "ops" },
-  { name: "Zoe Chen", role: "Integrations Engineer", years: "5+ Years experience", stack: "APIs, webhooks, Make, n8n", photo: "/talent/clean-20.jpg", category: "ops" },
+  { name: "Sanya Kapoor", role: "Automation Engineer", years: "7+ Years experience", stack: "GHL, Zapier, n8n", photo: "/talent/in-17.jpg", category: "ops" },
+  { name: "Rahul Bhatt", role: "GHL Architect", years: "6+ Years experience", stack: "Snapshots, workflows, A2P", photo: "/talent/in-18.jpg", category: "ops" },
+  { name: "Pooja Nair", role: "RevOps Specialist", years: "8+ Years experience", stack: "HubSpot ops, attribution", photo: "/talent/in-19.jpg", category: "ops" },
+  { name: "Nikhil Menon", role: "Integrations Engineer", years: "5+ Years experience", stack: "APIs, webhooks, Make, n8n", photo: "/talent/in-20.jpg", category: "ops" },
 ];
 
 export function TalentShowcase() {
@@ -126,13 +126,18 @@ export function TalentShowcase() {
                   <div className="absolute inset-0 bg-gradient-to-br from-[#4f2fe5]/45 via-[#4f2fe5]/30 to-[#09b4e4]/45" />
                   <img
                     src={s.photo}
-                    alt={`${s.name} — ${s.role}`}
+                    alt={`${s.name}, ${s.role}`}
                     className="relative aspect-[4/4.6] w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                     loading="lazy"
                   />
                   <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#020409]/90 to-transparent" />
                   <span className="absolute top-2.5 right-2.5 rounded-full border border-white/20 bg-[#050C21]/70 px-2 py-0.5 font-mono text-[8px] font-semibold tracking-[0.15em] text-white uppercase backdrop-blur-sm">
                     Vetted
+                  </span>
+                  {/* Transparency: representative portraits are AI-generated (client request) */}
+                  <span className="absolute right-2.5 bottom-2.5 z-10 inline-flex items-center gap-1 rounded-full border border-white/15 bg-black/45 px-1.5 py-0.5 font-mono text-[7px] font-semibold tracking-wider text-white/85 backdrop-blur-sm">
+                    <svg viewBox="0 0 24 24" className="size-2" fill="currentColor" aria-hidden><path d="M12 2l2.09 6.26L20 10l-5.91 1.74L12 18l-2.09-6.26L4 10l5.91-1.74L12 2z"/></svg>
+                    Gemini AI
                   </span>
                   <div className="absolute inset-x-0 bottom-0 p-4 pb-3">
                     <p className="truncate font-display text-lg font-bold text-white">
