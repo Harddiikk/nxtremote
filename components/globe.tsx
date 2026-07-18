@@ -35,8 +35,8 @@ const RINGS = [{ lat: INDIA.lat, lng: INDIA.lng }];
 
 // City labels so the globe names where we deploy.
 const LABELS = [
-  { lat: INDIA.lat, lng: INDIA.lng, text: "India", color: "#c9c2ff", size: 1.1 },
-  ...HUBS.map((h) => ({ lat: h.lat, lng: h.lng, text: h.label, color: "#a9e9fb", size: 0.85 })),
+  { lat: INDIA.lat, lng: INDIA.lng, text: "India", color: "#ffffff", size: 1.9 },
+  ...HUBS.map((h) => ({ lat: h.lat, lng: h.lng, text: h.label, color: "#bdeeff", size: 1.5 })),
 ];
 
 export function GlobeViz() {
@@ -128,10 +128,11 @@ export function GlobeViz() {
           labelText="text"
           labelColor="color"
           labelSize="size"
-          labelDotRadius={0.34}
+          labelDotRadius={0.5}
           labelDotOrientation={() => "right"}
-          labelResolution={2}
-          labelAltitude={0.012}
+          labelResolution={3}
+          labelAltitude={0.015}
+          labelIncludeDot
           arcsData={ARCS}
           arcColor={() => ["rgba(79,47,229,0.9)", "rgba(9,180,228,0.9)"]}
           arcAltitudeAutoScale={0.45}
