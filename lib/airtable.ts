@@ -9,7 +9,10 @@ export function isAirtableConfigured() {
   return Boolean(AIRTABLE_API_KEY && AIRTABLE_BASE_ID);
 }
 
-export async function createAirtableRecord(fields: Record<string, unknown>) {
+export async function createAirtableRecord(
+  fields: Record<string, unknown>,
+  tableName: string = AIRTABLE_TABLE_NAME
+) {
   if (!isAirtableConfigured()) {
     throw new Error(
       "Airtable is not configured — set AIRTABLE_API_KEY and AIRTABLE_BASE_ID."
@@ -17,7 +20,7 @@ export async function createAirtableRecord(fields: Record<string, unknown>) {
   }
 
   const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(
-    AIRTABLE_TABLE_NAME
+    tableName
   )}`;
 
   const res = await fetch(url, {

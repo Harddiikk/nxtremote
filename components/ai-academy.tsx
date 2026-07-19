@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import { Download, FileText, Check, ArrowRight } from "lucide-react";
 import { Heading } from "./heading";
 import { Subheading, Eyebrow } from "./subheading";
-import { submitLead } from "@/lib/actions";
+import { submitPlaybookLead } from "@/lib/actions";
 
 const PLAYBOOK_PDF = "/nxt-remote-agency-playbook.pdf";
 
@@ -39,17 +39,8 @@ export function AiAcademy() {
       return;
     }
     setStatus("loading");
-    // Reuse the existing lead pipeline, tagged as an Academy download.
-    const res = await submitLead({
-      companyName: "Academy Download",
-      contactName: name.trim(),
-      email: email.trim(),
-      phone: "",
-      roleNeeded: "Resource: Agency Playbook",
-      budget: "",
-      timeline: "",
-      details: "Downloaded the NXT Academy playbook: How to Build a High-Performance Remote Marketing Team.",
-    });
+    // Record the download in the Airtable "Playbook Downloads" table.
+    const res = await submitPlaybookLead({ name: name.trim(), email: email.trim() });
     if (!res.success) {
       setStatus("idle");
       setError(res.error || "Something went wrong. Please try again.");

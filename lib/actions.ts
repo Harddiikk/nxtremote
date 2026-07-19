@@ -1,16 +1,17 @@
 "use server";
 
-import { 
-  addApplication, 
-  addLead, 
-  getDb, 
-  updateApplicationStatus, 
-  deleteApplication, 
-  updateLeadStatus, 
-  deleteLead, 
-  addJob, 
-  deleteJob 
+import {
+  addApplication,
+  addLead,
+  getDb,
+  updateApplicationStatus,
+  deleteApplication,
+  updateLeadStatus,
+  deleteLead,
+  addJob,
+  deleteJob
 } from "./db";
+import { createAirtableRecord } from "./airtable";
 
 // Public actions
 export async function submitApplication(data: {
@@ -70,6 +71,31 @@ export async function submitLead(data: {
     return { success: true };
   } catch (error: any) {
     return { success: false, error: error.message || "Failed to submit request." };
+  }
+}
+
+// Playbook / NXT Academy lead magnet — writes straight to the Airtable
+// "Playbook Downloads" table so downloads land in the CRM.
+export async function submitPlaybookLead(data: { name: string; email: string }) {
+  if (!data.name?.trim() || !data.email?.trim()) {
+    return { success: false, error: "Please add your name and work email." };
+  }
+
+  try {
+    await createAirtableRecord(
+      {
+        Name: data.name.trim(),
+        Email: data.email.trim(),
+        Resource: "Agency Playbook: High-Performance Remote Marketing Team",
+        Source: "NXT Academy download",
+        "Downloaded At": new Date().toISOString(),
+      },
+      "Playbook Downloads"
+    );
+    return { success: true };
+  } catch (error: any) {
+    // Never block the user's download on a CRM hiccup — surface but still let them proceed.
+    return { success: false, error: error?.message || "Could not record the download." };
   }
 }
 
