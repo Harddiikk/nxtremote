@@ -38,10 +38,10 @@ const SPECIALISTS: Specialist[] = [
   { name: "Arjun Mehta", role: "Senior Media Buyer", years: "8+ Years experience", stack: "Meta, Google, TikTok Ads", photo: "/talent/in-01.jpg", category: "paid-media" },
   { name: "Vikram Nair", role: "Google Ads Strategist", years: "7+ Years experience", stack: "Google Ads, CM360, GA4", photo: "/talent/in-02.jpg", category: "paid-media" },
   { name: "Rohan Kapoor", role: "Meta Ads Lead", years: "6+ Years experience", stack: "Meta, CAPI, AEM", photo: "/talent/in-03.jpg", category: "paid-media" },
-  { name: "Aditya Rao", role: "Performance Lead", years: "9+ Years experience", stack: "Cross-channel, MMM, Triple Whale", photo: "/talent/in-04.jpg", category: "paid-media" },
+  { name: "Ananya Iyer", role: "Performance Lead", years: "9+ Years experience", stack: "Cross-channel, MMM, Triple Whale", photo: "/talent/in-06.jpg", category: "paid-media" },
   // SEO & Content
   { name: "Priya Nandakumar", role: "Technical SEO Lead", years: "9+ Years experience", stack: "Ahrefs, GSC, Screaming Frog", photo: "/talent/in-05.jpg", category: "seo" },
-  { name: "Ananya Iyer", role: "Content Strategist", years: "6+ Years experience", stack: "Surfer, Semrush, Clearscope", photo: "/talent/in-06.jpg", category: "seo" },
+  { name: "Aditya Rao", role: "Content Strategist", years: "6+ Years experience", stack: "Surfer, Semrush, Clearscope", photo: "/talent/in-04.jpg", category: "seo" },
   { name: "Karan Malhotra", role: "Technical SEO Engineer", years: "7+ Years experience", stack: "Log analysis, Schema, CWV", photo: "/talent/in-07.jpg", category: "seo" },
   { name: "Sneha Reddy", role: "Content Operations Lead", years: "8+ Years experience", stack: "Editorial ops, briefs, AI workflows", photo: "/talent/in-08.jpg", category: "seo" },
   // Retention & Email
