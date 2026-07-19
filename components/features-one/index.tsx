@@ -240,8 +240,8 @@ function CardSkeleton({
 // portrait that melts into the card surface on both edges.
 function CardPortrait({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="relative mx-6 min-h-40 flex-1 overflow-hidden rounded-xl">
-      <img src={src} alt={alt} className="absolute inset-0 h-full w-full object-cover object-top" loading="lazy" />
+    <div className="relative mx-6 min-h-64 flex-1 overflow-hidden rounded-xl md:min-h-40">
+      <img src={src} alt={alt} className="absolute inset-0 h-full w-full object-cover object-[center_22%]" loading="lazy" />
       <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-card to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-card to-transparent" />
     </div>

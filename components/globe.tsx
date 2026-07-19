@@ -104,7 +104,9 @@ export function GlobeViz() {
 
   return (
     <div ref={wrapRef} className="flex w-full items-center justify-center">
-      <div style={{ width: size, height: size }}>
+      {/* pointer-events-none so touch/scroll passes through to the page on
+          mobile (the globe auto-rotates and needs no user interaction). */}
+      <div style={{ width: size, height: size }} className="pointer-events-none">
         <Globe
           ref={globeRef}
           onGlobeReady={handleReady}

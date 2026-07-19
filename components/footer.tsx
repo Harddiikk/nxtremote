@@ -189,10 +189,16 @@ const Logo = () => {
       href="/"
       className="relative z-20 mr-4 flex items-center py-1"
     >
+      {/* Full wordmark, theme-aware (same as navbar) so it reads on white */}
       <img
-        src="/logo-mark-white.png"
+        src="/logo-light.png"
         alt="NXT Remote"
-        className="h-9 w-auto object-contain"
+        className="h-6 w-auto object-contain dark:hidden"
+      />
+      <img
+        src="/logo-light-white.png"
+        alt="NXT Remote"
+        className="hidden h-6 w-auto object-contain dark:block"
       />
     </Link>
   );
