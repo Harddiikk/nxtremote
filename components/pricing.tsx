@@ -150,8 +150,8 @@ export function Pricing() {
     },
     {
       criteria: "Infrastructure Redundancy",
-      nxt: "Audited Setup. Mandatory secondary high-speed internet, power backups (UPS/Inverter), and noise-cancelling equipment.",
-      market: "Unaudited Setups. No mandatory power backups or backup internet, so calls drop and deadlines slip during client crunch."
+      nxt: "Verified Setup. Mandatory secondary high-speed internet, power backups (UPS/Inverter), and noise-cancelling equipment.",
+      market: "Unverified Setups. No mandatory power backups or backup internet, so calls drop and deadlines slip during client crunch."
     },
     {
       criteria: "Data Protection & Compliances",
