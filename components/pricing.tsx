@@ -86,7 +86,7 @@ export function Pricing() {
       market: "Unaudited Setups. No mandatory power backups or backup internet, so calls drop and deadlines slip during client crunch."
     },
     {
-      criteria: "Data Protection & Legal",
+      criteria: "Data Protection & Compliances",
       nxt: "Full GDPR Compliance. Ironclad corporate NDAs, secure credential sharing vaults (LastPass/1Password), and background checks.",
       market: "Thin Safeguards. Generic paperwork with no marketing-specific NDAs or secure credential vaults for client ad and CRM access."
     },
@@ -233,15 +233,15 @@ export function Pricing() {
                 <ul className="space-y-3 text-base text-neutral-300">
                   <li className="flex items-start gap-2.5">
                     <X className="size-4 text-red-400 shrink-0 mt-1" />
-                    <span>$75k–$95k+ yearly cost once salary, taxes and benefits stack up</span>
+                    <span>$75k–$95k+ yearly, before a single ad runs</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <X className="size-4 text-red-400 shrink-0 mt-1" />
-                    <span>Recruiter fees of 20% to 30% before they've written a single ad</span>
+                    <span>20-30% recruiter fees on top</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <X className="size-4 text-red-400 shrink-0 mt-1" />
-                    <span>Months of sourcing, interviewing and onboarding before output</span>
+                    <span>Months of sourcing, interviewing, onboarding</span>
                   </li>
                 </ul>
               </div>

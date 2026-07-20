@@ -4,24 +4,32 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import {
-  Megaphone,
-  Search,
-  Mail,
+  Palette,
+  Code2,
   Clapperboard,
-  Workflow,
+  Bot,
+  Megaphone,
   ArrowRight,
 } from "lucide-react";
 import { Button } from "./button";
 import { BOOKING_URL } from "@/lib/site";
 
-type Category = "paid-media" | "seo" | "retention" | "creative" | "ops";
+type Category = "creative" | "web" | "multimedia" | "ai" | "digital";
 
 const CATEGORIES: { id: Category; label: string; icon: React.ReactNode }[] = [
-  { id: "paid-media", label: "Paid Media", icon: <Megaphone className="size-4" /> },
-  { id: "seo", label: "SEO & Content", icon: <Search className="size-4" /> },
-  { id: "retention", label: "Retention & Email", icon: <Mail className="size-4" /> },
-  { id: "creative", label: "Creative", icon: <Clapperboard className="size-4" /> },
-  { id: "ops", label: "Ops & Automation", icon: <Workflow className="size-4" /> },
+  { id: "creative", label: "Creative", icon: <Palette className="size-4" /> },
+  { id: "web", label: "Web & App Development", icon: <Code2 className="size-4" /> },
+  { id: "multimedia", label: "Multimedia & Animation", icon: <Clapperboard className="size-4" /> },
+  { id: "ai", label: "AI Automation", icon: <Bot className="size-4" /> },
+  { id: "digital", label: "Digital Marketing", icon: <Megaphone className="size-4" /> },
+];
+
+// Per-card gradient so the profile cards read as distinct gradient tiles.
+const CARD_GRADIENTS = [
+  "from-[#7C3AED] via-[#6D28D9] to-[#4F2FE5]", // violet
+  "from-[#0EA5B7] via-[#0D9488] to-[#0F766E]", // teal
+  "from-[#2563EB] via-[#3B82F6] to-[#1D4ED8]", // blue
+  "from-[#DB2777] via-[#E11D74] to-[#9D174D]", // pink
 ];
 
 type Specialist = {
@@ -34,35 +42,35 @@ type Specialist = {
 };
 
 const SPECIALISTS: Specialist[] = [
-  // Paid Media
-  { name: "Arjun Mehta", role: "Senior Media Buyer", years: "8+ Years experience", stack: "Meta, Google, TikTok Ads", photo: "/talent/in-01.jpg", category: "paid-media" },
-  { name: "Vikram Nair", role: "Google Ads Strategist", years: "7+ Years experience", stack: "Google Ads, CM360, GA4", photo: "/talent/in-02.jpg", category: "paid-media" },
-  { name: "Rohan Kapoor", role: "Meta Ads Lead", years: "6+ Years experience", stack: "Meta, CAPI, AEM", photo: "/talent/in-03.jpg", category: "paid-media" },
-  { name: "Ananya Iyer", role: "Performance Lead", years: "9+ Years experience", stack: "Cross-channel, MMM, Triple Whale", photo: "/talent/in-06.jpg", category: "paid-media" },
-  // SEO & Content
-  { name: "Priya Nandakumar", role: "Technical SEO Lead", years: "9+ Years experience", stack: "Ahrefs, GSC, Screaming Frog", photo: "/talent/in-05.jpg", category: "seo" },
-  { name: "Aditya Rao", role: "Content Strategist", years: "6+ Years experience", stack: "Surfer, Semrush, Clearscope", photo: "/talent/in-04.jpg", category: "seo" },
-  { name: "Karan Malhotra", role: "Technical SEO Engineer", years: "7+ Years experience", stack: "Log analysis, Schema, CWV", photo: "/talent/in-07.jpg", category: "seo" },
-  { name: "Sneha Reddy", role: "Content Operations Lead", years: "8+ Years experience", stack: "Editorial ops, briefs, AI workflows", photo: "/talent/in-08.jpg", category: "seo" },
-  // Retention & Email
-  { name: "Meera Joshi", role: "Retention & Email Lead", years: "6+ Years experience", stack: "Klaviyo, Brevo, HubSpot", photo: "/talent/in-09.jpg", category: "retention" },
-  { name: "Kavya Menon", role: "Lifecycle Marketing Lead", years: "10+ Years experience", stack: "Klaviyo, Braze, segments", photo: "/talent/in-10.jpg", category: "retention" },
-  { name: "Ishaan Verma", role: "Email Designer", years: "5+ Years experience", stack: "Figma, MJML, Litmus", photo: "/talent/in-11.jpg", category: "retention" },
-  { name: "Divya Krishnan", role: "CRM Specialist", years: "6+ Years experience", stack: "HubSpot, GHL, journeys", photo: "/talent/in-12.jpg", category: "retention" },
   // Creative
-  { name: "Aditya Sharma", role: "Brand Designer", years: "7+ Years experience", stack: "Canva, Photoshop, Illustrator", photo: "/talent/in-13.jpg", category: "creative" },
-  { name: "Neha Gupta", role: "Graphic Designer", years: "5+ Years experience", stack: "Adobe Express, Canva Pro", photo: "/talent/in-14.jpg", category: "creative" },
-  { name: "Riya Desai", role: "UGC Creative Lead", years: "4+ Years experience", stack: "Hooks, scripts, iterations", photo: "/talent/in-15.jpg", category: "creative" },
-  { name: "Aryan Khanna", role: "Short-form Video Editor", years: "5+ Years experience", stack: "Premiere, CapCut, After Effects", photo: "/talent/in-16.jpg", category: "creative" },
-  // Ops & Automation
-  { name: "Sanya Kapoor", role: "Automation Engineer", years: "7+ Years experience", stack: "GHL, Zapier, n8n", photo: "/talent/in-17.jpg", category: "ops" },
-  { name: "Rahul Bhatt", role: "GHL Architect", years: "6+ Years experience", stack: "Snapshots, workflows, A2P", photo: "/talent/in-18.jpg", category: "ops" },
-  { name: "Pooja Nair", role: "RevOps Specialist", years: "8+ Years experience", stack: "HubSpot ops, attribution", photo: "/talent/in-19.jpg", category: "ops" },
-  { name: "Nikhil Menon", role: "Integrations Engineer", years: "5+ Years experience", stack: "APIs, webhooks, Make, n8n", photo: "/talent/in-20.jpg", category: "ops" },
+  { name: "Arjun Mehta", role: "Brand Designer", years: "8+ Years experience", stack: "Figma, Illustrator, Photoshop", photo: "/talent/in-01.jpg", category: "creative" },
+  { name: "Priya Nandakumar", role: "Art Director", years: "9+ Years experience", stack: "Brand systems, Figma, Adobe CC", photo: "/talent/in-05.jpg", category: "creative" },
+  { name: "Neha Gupta", role: "Graphic Designer", years: "5+ Years experience", stack: "Canva Pro, Photoshop, Illustrator", photo: "/talent/in-14.jpg", category: "creative" },
+  { name: "Aditya Sharma", role: "Visual Designer", years: "7+ Years experience", stack: "Figma, Adobe Express, brand kits", photo: "/talent/in-13.jpg", category: "creative" },
+  // Web & App Development
+  { name: "Vikram Nair", role: "Frontend Developer", years: "7+ Years experience", stack: "React, Next.js, Tailwind", photo: "/talent/in-02.jpg", category: "web" },
+  { name: "Karan Malhotra", role: "Full-Stack Developer", years: "8+ Years experience", stack: "Node, Next.js, Postgres", photo: "/talent/in-07.jpg", category: "web" },
+  { name: "Sneha Reddy", role: "UI Engineer", years: "6+ Years experience", stack: "React, Framer, TypeScript", photo: "/talent/in-08.jpg", category: "web" },
+  { name: "Divya Krishnan", role: "Shopify Developer", years: "6+ Years experience", stack: "Shopify, Liquid, custom themes", photo: "/talent/in-12.jpg", category: "web" },
+  // Multimedia & Animation
+  { name: "Rohan Kapoor", role: "Video Editor", years: "6+ Years experience", stack: "Premiere Pro, DaVinci, CapCut", photo: "/talent/in-03.jpg", category: "multimedia" },
+  { name: "Riya Desai", role: "Motion Designer", years: "5+ Years experience", stack: "After Effects, Premiere, CapCut", photo: "/talent/in-15.jpg", category: "multimedia" },
+  { name: "Meera Joshi", role: "Animator", years: "6+ Years experience", stack: "After Effects, Lottie, DaVinci", photo: "/talent/in-09.jpg", category: "multimedia" },
+  { name: "Nikhil Menon", role: "VFX Artist", years: "7+ Years experience", stack: "After Effects, Blender, DaVinci", photo: "/talent/in-20.jpg", category: "multimedia" },
+  // AI Automation
+  { name: "Aditya Rao", role: "Automation Engineer", years: "7+ Years experience", stack: "Zapier, Make, n8n", photo: "/talent/in-04.jpg", category: "ai" },
+  { name: "Sanya Kapoor", role: "AI Workflow Specialist", years: "6+ Years experience", stack: "ChatGPT API, n8n, Pabbly", photo: "/talent/in-17.jpg", category: "ai" },
+  { name: "Ishaan Verma", role: "Integration Engineer", years: "5+ Years experience", stack: "APIs, webhooks, n8n, Make", photo: "/talent/in-11.jpg", category: "ai" },
+  { name: "Kavya Menon", role: "Prompt Engineer", years: "5+ Years experience", stack: "LLMs, prompt design, RAG", photo: "/talent/in-10.jpg", category: "ai" },
+  // Digital Marketing
+  { name: "Ananya Iyer", role: "Performance Marketer", years: "9+ Years experience", stack: "Meta, Google, TikTok Ads", photo: "/talent/in-06.jpg", category: "digital" },
+  { name: "Pooja Nair", role: "SEO Specialist", years: "8+ Years experience", stack: "Ahrefs, GSC, Semrush", photo: "/talent/in-19.jpg", category: "digital" },
+  { name: "Rahul Bhatt", role: "Email & CRM", years: "6+ Years experience", stack: "Klaviyo, HubSpot, GHL", photo: "/talent/in-18.jpg", category: "digital" },
+  { name: "Aryan Khanna", role: "Content Strategist", years: "5+ Years experience", stack: "Content ops, SEO, briefs", photo: "/talent/in-16.jpg", category: "digital" },
 ];
 
 export function TalentShowcase() {
-  const [active, setActive] = useState<Category>("paid-media");
+  const [active, setActive] = useState<Category>("creative");
   const visible = SPECIALISTS.filter((s) => s.category === active);
 
   return (
@@ -121,23 +129,36 @@ export function TalentShowcase() {
                 transition={{ duration: 0.45, ease: "easeOut", delay: i * 0.08 }}
                 className="group"
               >
-                <div className="relative overflow-hidden rounded-2xl">
-                  {/* brand gradient backdrop behind the clean portrait */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#4f2fe5]/45 via-[#4f2fe5]/30 to-[#09b4e4]/45" />
-                  <img
-                    src={s.photo}
-                    alt={`${s.name}, ${s.role}`}
-                    className="relative aspect-[4/4.6] w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#020409]/90 to-transparent" />
-                  <span className="absolute top-2.5 right-2.5 rounded-full border border-white/20 bg-[#050C21]/70 px-2 py-0.5 font-mono text-[8px] font-semibold tracking-[0.15em] text-white uppercase backdrop-blur-sm">
-                    Vetted
-                  </span>
-                  <div className="absolute inset-x-0 bottom-0 p-4 pb-3">
-                    <p className="truncate font-display text-lg font-bold text-white">
-                      {s.name}
-                    </p>
+                {/* Gradient tile: colored frame + colour-cast on the portrait */}
+                <div
+                  className={`relative overflow-hidden rounded-2xl bg-gradient-to-br p-[3px] shadow-lg ${
+                    CARD_GRADIENTS[i % CARD_GRADIENTS.length]
+                  }`}
+                >
+                  <div className="relative overflow-hidden rounded-[15px]">
+                    <img
+                      src={s.photo}
+                      alt={`${s.name}, ${s.role}`}
+                      className="relative aspect-[4/4.6] w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                      loading="lazy"
+                    />
+                    <div
+                      className={`pointer-events-none absolute inset-0 bg-gradient-to-br opacity-25 mix-blend-soft-light ${
+                        CARD_GRADIENTS[i % CARD_GRADIENTS.length]
+                      }`}
+                    />
+                    <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/80 to-transparent" />
+                    <span className="absolute top-2.5 right-2.5 rounded-full border border-white/25 bg-black/40 px-2 py-0.5 font-mono text-[8px] font-semibold tracking-[0.15em] text-white uppercase backdrop-blur-sm">
+                      Vetted
+                    </span>
+                    <div className="absolute inset-x-0 bottom-0 p-4 pb-3">
+                      <p className="truncate font-display text-lg font-bold text-white">
+                        {s.name}
+                      </p>
+                      <p className="truncate font-mono text-[10px] tracking-wide text-white/75">
+                        {s.role}
+                      </p>
+                    </div>
                   </div>
                 </div>
                 <ul className="mt-3 space-y-2 font-mono text-xs text-muted-foreground md:text-[13px]">

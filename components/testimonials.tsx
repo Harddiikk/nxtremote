@@ -63,7 +63,7 @@ const TESTIMONIALS: Testimonial[] = [
     role: "CEO, paid social agency · Chicago",
   },
   {
-    title: "Email revenue up 41%",
+    title: "Email Open Rate up 41%",
     quote:
       "Our Klaviyo specialist rebuilt every flow in the first month. Retention revenue is now our fastest-growing line item.",
     name: "Hannah S.",

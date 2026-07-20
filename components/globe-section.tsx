@@ -2,9 +2,9 @@ import { GlobeViz } from "./globe";
 import { Subheading, Eyebrow } from "./subheading";
 
 const STATS = [
-  { value: "3", label: "continents deployed" },
-  { value: "12 hrs", label: "working-hours coverage" },
-  { value: "1", label: "flat monthly rate" },
+  { value: "Global", label: "reach across continents" },
+  { value: "Zero", label: "timezone friction" },
+  { value: "70%+", label: "cost saving vs local" },
 ];
 
 export function GlobeSection() {
@@ -29,7 +29,7 @@ export function GlobeSection() {
           </h2>
           <Subheading className="mt-4 max-w-xl text-white/65">
             One vetted talent hub, deployed into agencies across the US, UK,
-            Europe, the Middle East, and APAC, matched to your working hours and
+            Europe, the Middle East, and Australia, matched to your working hours and
             embedded in your stack.
           </Subheading>
 

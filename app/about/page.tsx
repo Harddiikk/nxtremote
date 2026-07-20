@@ -122,7 +122,7 @@ export default function AboutPage() {
           <Subheading className="text-brand-accent font-semibold tracking-wider text-xs uppercase">
             Our Philosophy
           </Subheading>
-          <blockquote className="mt-6 text-xl md:text-3xl font-medium tracking-tight text-neutral-800 dark:text-neutral-250 leading-relaxed max-w-3xl mx-auto">
+          <blockquote className="mt-6 text-xl md:text-3xl font-medium tracking-tight text-neutral-900 dark:text-neutral-100 leading-relaxed max-w-3xl mx-auto">
             "Local strategy paired with global execution creates the ultimate competitive advantage for modern digital marketing agencies."
           </blockquote>
           <div className="mt-8 flex items-center justify-center gap-3">

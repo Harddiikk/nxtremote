@@ -48,7 +48,7 @@ const specializations = [
   },
   {
     role: "SEO & Content Strategy",
-    competencies: "Technical Audits, Link Building, On-Page SEO, Content Operations",
+    competencies: "Technical Screening, Link Building, On-Page SEO, Content Operations",
     time: "Within 5 Days",
     icon: <Search className="size-5 text-[#09B4E4]" />,
     color: "border-[#06BCB0]/30 dark:border-[#06BCB0]/15"
@@ -74,25 +74,29 @@ const timelineSteps = [
     day: "Day 1-2",
     title: "Discovery & Role Profiling",
     description: "We analyze your agency's tech stack, current client deliverables, and workflow dynamics to map out the ideal candidate persona.",
-    icon: <SearchCode className="size-5 text-[#0B1D45] dark:text-[#09B4E4]" />
+    icon: <SearchCode className="size-5 text-[#0B1D45] dark:text-[#09B4E4]" />,
+    gradient: "bg-gradient-to-br from-brand-secondary/10 to-brand-accent/10 border-brand-secondary/20 dark:from-brand-secondary/15 dark:to-brand-accent/10 dark:border-brand-secondary/25"
   },
   {
-    day: "Day 3-7",
+    day: "Day 3",
     title: "Rigorous Vetting & Screening",
     description: "Our industry experts screen candidates through multi-stage technical assessments, live portfolio reviews, and communication evaluations.",
-    icon: <UserCheck className="size-5 text-[#0B1D45] dark:text-[#09B4E4]" />
+    icon: <UserCheck className="size-5 text-[#0B1D45] dark:text-[#09B4E4]" />,
+    gradient: "bg-gradient-to-br from-brand-secondary/12 to-brand-accent/12 border-brand-secondary/20 dark:from-brand-secondary/18 dark:to-brand-accent/12 dark:border-brand-secondary/25"
   },
   {
-    day: "Day 8-10",
+    day: "Day 4",
     title: "Curated Shortlist Interviews",
     description: "You interview the top 2-3 handpicked candidates who perfectly match your culture and skill requirements.",
-    icon: <Users className="size-5 text-[#0B1D45] dark:text-[#09B4E4]" />
+    icon: <Users className="size-5 text-[#0B1D45] dark:text-[#09B4E4]" />,
+    gradient: "bg-gradient-to-br from-brand-secondary/10 to-brand-accent/14 border-brand-accent/20 dark:from-brand-secondary/15 dark:to-brand-accent/16 dark:border-brand-accent/25"
   },
   {
-    day: "Day 11+",
+    day: "Day 5",
     title: "Onboarding & Integration",
     description: "We manage contracts, payroll setup, and initial onboarding safeguards for a seamless transition into your Slack, ClickUp, or Asana workspaces.",
-    icon: <Activity className="size-5 text-[#0B1D45] dark:text-[#09B4E4]" />
+    icon: <Activity className="size-5 text-[#0B1D45] dark:text-[#09B4E4]" />,
+    gradient: "bg-gradient-to-br from-brand-secondary/8 to-brand-accent/16 border-brand-accent/20 dark:from-brand-secondary/12 dark:to-brand-accent/18 dark:border-brand-accent/25"
   }
 ];
 
@@ -218,15 +222,15 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
             {timelineSteps.map((step, idx) => (
-              <div 
-                key={step.title} 
-                className="relative group p-6 rounded-2xl bg-white border border-neutral-200 dark:bg-neutral-900 dark:border-neutral-800 shadow-xs flex flex-col gap-4"
+              <div
+                key={step.title}
+                className={`relative group p-6 rounded-2xl border shadow-xs flex flex-col gap-4 ${step.gradient}`}
               >
                 <div className="flex justify-between items-start">
-                  <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-neutral-100 dark:bg-neutral-800 text-[#0B1D45] dark:text-[#09B4E4] group-hover:bg-[#0B75E2]/10 group-hover:text-[#0B75E2] transition-colors">
+                  <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-white/70 dark:bg-white/10 text-[#0B1D45] dark:text-[#09B4E4] group-hover:bg-[#0B75E2]/10 group-hover:text-[#0B75E2] transition-colors">
                     {step.icon}
                   </div>
-                  <span className="text-xs font-bold px-3 py-1 rounded-full bg-brand-secondary/10 text-brand-secondary">
+                  <span className="text-xs font-bold px-3 py-1 rounded-full bg-brand-secondary/15 text-brand-secondary dark:bg-brand-secondary/20 dark:text-brand-accent">
                     {step.day}
                   </span>
                 </div>

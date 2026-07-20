@@ -30,7 +30,7 @@ const faqData: FAQSection[] = [
       {
         question: "Are candidates experienced in agency environments?",
         answer:
-          "Yes. Our talent is sourced specifically for digital agency environments and is fully operational from day one. They are natively trained in workflows like Asana, ClickUp, Jira, and Slack, and have background records working with western agency brands."
+          "Yes. Our talent is sourced specifically for digital agency environments and is fully operational from day one. They are natively trained in workflows like Asana, ClickUp, Jira, and Slack, and have background records working within agency environments."
       },
       {
         question: "What specific marketing roles can I hire?",
@@ -55,7 +55,7 @@ const faqData: FAQSection[] = [
       {
         question: "What if a placement does not work out?",
         answer:
-          "We replace them free of charge within 15 to 30 days, and on an ongoing basis for Enterprise builds. If a candidate does not fit technically or culturally, we find you a new one right away."
+          "We replace them free of charge within 15 to 45 days, and on an ongoing basis for Enterprise builds. If a candidate does not fit technically or culturally, we find you a new one right away."
       }
     ]
   },
@@ -65,7 +65,7 @@ const faqData: FAQSection[] = [
       {
         question: "How do you keep work shifts reliable?",
         answer:
-          "We mandate physical audits of candidate workstations. Every resource must operate on a machine tailored for heavy multitasking, hold a professional noise-canceling headset, and keep secondary power backups (UPS/inverters) plus a secondary high-speed internet source."
+          "We validate candidate workstations. Every resource operates on a machine tailored to your business requirements, as discussed in the interview sessions, holds a professional noise-canceling headset, and keeps secondary power backups (UPS/inverters) plus a secondary high-speed internet source."
       },
       {
         question: "How is my proprietary data protected?",

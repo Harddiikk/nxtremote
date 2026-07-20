@@ -19,7 +19,7 @@ const STEPS = [
   {
     day: "Day 1",
     icon: ClipboardCheck,
-    title: "Audit & Sourcing",
+    title: "Screening & Sourcing",
     detail:
       "We verify portfolios, campaign history, and infrastructure before anyone reaches you.",
   },
@@ -40,7 +40,7 @@ const STEPS = [
   {
     day: "Day 4",
     icon: ListChecks,
-    title: "Shortlist Prep",
+    title: "Shortlisted Portfolios",
     detail:
       "We score, reference check, and package only the strongest candidates for you.",
   },

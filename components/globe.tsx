@@ -12,11 +12,13 @@ const INDIA = { lat: 12.97, lng: 77.59, label: "India (Talent Hub)" };
 const HUBS = [
   { lat: 40.71, lng: -74.0, label: "New York" },
   { lat: 51.5, lng: -0.12, label: "London" },
-  { lat: -33.86, lng: 151.2, label: "Sydney" },
-  { lat: 25.2, lng: 55.27, label: "Dubai" },
-  { lat: 43.65, lng: -79.38, label: "Toronto" },
   { lat: 52.52, lng: 13.4, label: "Berlin" },
+  { lat: 43.65, lng: -79.38, label: "Toronto" },
+  { lat: 25.2, lng: 55.27, label: "Dubai" },
   { lat: 1.35, lng: 103.8, label: "Singapore" },
+  { lat: -23.55, lng: -46.63, label: "São Paulo" },
+  { lat: -33.92, lng: 18.42, label: "Cape Town" },
+  { lat: -33.86, lng: 151.2, label: "Sydney" },
 ];
 
 const ARCS = HUBS.map((h) => ({

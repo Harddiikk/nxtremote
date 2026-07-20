@@ -94,11 +94,11 @@ export function FeaturesTwo() {
           Rigorous Sourcing Standard
         </Subheading>
         <Heading as="h2" className="mt-2 mb-4">
-          We Don't Just Vet Their Skills. We Audit Their{" "}
+          We Don't Just Vet Their Skills. We Validate Their{" "}
           <span className="text-gradient-brand">Infrastructure</span>.
         </Heading>
         <p className="text-base text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed">
-          Every candidate undergoes a grueling 3-stage technical, operational, and physical audit before joining a client shortlist. Skip the resume scrolling and avoid administrative friction.
+          Every candidate undergoes a grueling 3-stage technical, operational, and physical screening before joining a client shortlist. Skip the resume scrolling and avoid administrative friction.
         </p>
       </div>
 

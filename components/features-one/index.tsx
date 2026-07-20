@@ -35,7 +35,7 @@ export function FeaturesOne() {
             <CardPortrait src="/talent/clean-2.jpg" alt="Vetted marketing specialist" />
             <div className="flex flex-col gap-3 w-full px-6 pb-6 mt-auto">
               {[
-                { label: "Marketing Skill Audit", badge: "Technical" },
+                { label: "Marketing Skill Screening", badge: "Technical" },
                 { label: "Agency Stack Practical Exam", badge: "Hands-on" },
                 { label: "Physical Hardware Verification", badge: "Infrastructure" },
                 { label: "Culture & Linguistic Readiness", badge: "Communication" }
@@ -62,8 +62,7 @@ export function FeaturesOne() {
             <div className="flex flex-col gap-3.5 w-full px-6 pb-6 mt-auto">
               {[
                 { region: "Latin America (LATAM)", overlap: "Full US EST/CST overlap" },
-                { region: "Eastern Europe", overlap: "Full UK/Europe overlap" },
-                { region: "Southeast Asia (APAC)", overlap: "Flexible afternoon overlap" }
+                { region: "Eastern Europe", overlap: "Full UK/Europe overlap" }
               ].map((item, idx) => (
                 <div key={idx} className="flex flex-col p-2.5 rounded-xl bg-neutral-50 dark:bg-neutral-950 border border-neutral-100 dark:border-white/5">
                   <span className="text-xs font-bold text-neutral-800 dark:text-neutral-200">{item.region}</span>
@@ -128,18 +127,24 @@ export function FeaturesOne() {
       <div className="mx-auto mt-12 grid grid-cols-1 gap-4 md:mt-16 md:grid-cols-3">
         <FeatureCard
           icon={<Award className="text-brand-secondary dark:text-brand-accent size-6" />}
+          metric="3x Faster"
+          metricLabel="time-to-hire"
           title="Pre-Vetted Expertise"
-          description="Only the top 3% pass our technical and communication audits."
+          description="Only the top 3% pass our technical and communication screening."
         />
         <FeatureCard
           icon={<Coins className="text-brand-secondary dark:text-brand-accent size-6" />}
+          metric="40%"
+          metricLabel="annual cost savings"
           title="Up to 70% Cost Efficiency"
           description="Reinvest the savings straight into growing your agency."
         />
         <FeatureCard
           icon={<Briefcase className="text-brand-secondary dark:text-brand-accent size-6" />}
+          metric="18+ Months"
+          metricLabel="ongoing team tenure"
           title="Zero HR Overhead"
-          description="Sourcing, payroll, and compliance, all handled by us."
+          description="Long-term embedded talent that stays and scales with you."
         />
       </div>
     </Container>
@@ -250,10 +255,14 @@ function CardPortrait({ src, alt }: { src: string; alt: string }) {
 
 function FeatureCard({
   icon,
+  metric,
+  metricLabel,
   title,
   description,
 }: {
   icon: React.ReactNode;
+  metric: string;
+  metricLabel: string;
   title: string;
   description: string;
 }) {
@@ -262,7 +271,15 @@ function FeatureCard({
       <div className="glass-tile flex size-14 items-center justify-center rounded-2xl">
         {icon}
       </div>
-      <h3 className="mt-5 text-base font-semibold text-neutral-900 dark:text-white">
+      <div className="mt-5 flex items-baseline gap-2">
+        <span className="text-gradient-brand text-3xl md:text-4xl font-bold leading-none">
+          {metric}
+        </span>
+        <span className="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+          {metricLabel}
+        </span>
+      </div>
+      <h3 className="mt-3 text-base font-semibold text-neutral-900 dark:text-white">
         {title}
       </h3>
       <p className="mt-2 text-base text-balance text-neutral-600 dark:text-neutral-400 leading-relaxed">
