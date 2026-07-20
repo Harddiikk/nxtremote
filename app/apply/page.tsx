@@ -74,7 +74,7 @@ export default function ApplyPage() {
               Application Submitted!
             </Heading>
             <p className="text-base text-neutral-600 dark:text-neutral-300 max-w-md mx-auto leading-relaxed mb-8">
-              Thank you for applying to NXT Remote. Our operations team will review your portfolio and stack competency. If you pass our initial audit, we will reach out within 24 to 48 hours for a discovery video call.
+              Thank you for applying to NXT Remote. Our operations team will review your portfolio and stack competency. If you pass our initial screening, we will reach out within 24 to 48 hours for a discovery video call.
             </p>
             <Link href="/">
               <Button>Return Home</Button>
@@ -90,7 +90,7 @@ export default function ApplyPage() {
                 Join Our Elite Global Roster
               </Heading>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-8 leading-relaxed">
-                Only the top 3% of global digital marketing candidates pass our audits. Share your portfolio and show us your technical capabilities.
+                Only the top 3% of global digital marketing candidates pass our screening. Share your portfolio and show us your technical capabilities.
               </p>
             </div>
 

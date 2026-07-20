@@ -25,7 +25,7 @@ const faqData: FAQSection[] = [
       {
         question: "How does the NXT Remote vetting process work?",
         answer:
-          "Every specialist undergoes a rigorous 3-stage vetting process: domain-specific portfolio checks, advanced English & cultural nuance communication audits, and diagnostic reviews of their physical remote infrastructure (redundant power, secondary internet lines, hardware specifications)."
+          "Every specialist undergoes a rigorous 3-stage vetting process: domain-specific portfolio checks, advanced English & cultural nuance communication screening, and diagnostic reviews of their physical remote infrastructure (redundant power, secondary internet lines, hardware specifications)."
       },
       {
         question: "Are candidates experienced in agency environments?",
@@ -60,7 +60,7 @@ const faqData: FAQSection[] = [
     ]
   },
   {
-    title: "Infrastructure & Legal",
+    title: "Infrastructure & Compliances",
     items: [
       {
         question: "How do you keep work shifts reliable?",

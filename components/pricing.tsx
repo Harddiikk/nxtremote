@@ -25,7 +25,7 @@ export function Pricing() {
         "HR & Payroll Administration Included",
         "Flexible Timezone Alignment (Dedicated working-hours overlap)",
         "Slack & PM Tool Native Integration",
-        "Strict Hardware & Power Audit Checked"
+        "Strict Hardware & Power Screening"
       ],
       buttonText: "Book a Discovery Call"
     },
@@ -40,7 +40,7 @@ export function Pricing() {
         "HR & Payroll Administration Included",
         "Dedicated Shift Overlap (Working-hours overlap)",
         "Slack & PM Tool Native Integration",
-        "Strict Hardware & Power Audit Checked",
+        "Strict Hardware & Power Screening",
         "Prioritized Discovery & Placement Support"
       ],
       featured: true,
@@ -57,7 +57,7 @@ export function Pricing() {
         "HR & Payroll Administration Included",
         "Custom Shift Schedules Tailored",
         "Enterprise-grade Security Integration",
-        "Strict Hardware & Power Audit Checked",
+        "Strict Hardware & Power Screening",
         "Dedicated Coordinator Support Uptime"
       ],
       buttonText: "Book an Enterprise Call"
@@ -140,8 +140,8 @@ export function Pricing() {
     },
     {
       criteria: "Vetting Rigor",
-      nxt: "Triple-Vetted (Top 3%). Hands-on marketing skill audits, portfolio validation, and hardware/uptime diagnostic screening.",
-      market: "Loose Screening. Anyone on their bench can be labelled experienced, with no hands-on marketing skill audit or portfolio validation."
+      nxt: "Triple-Vetted (Top 3%). Hands-on marketing skill screening, portfolio validation, and hardware/uptime diagnostic screening.",
+      market: "Loose Screening. Anyone on their bench can be labelled experienced, with no hands-on marketing skill screening or portfolio validation."
     },
     {
       criteria: "Communication Channels",
@@ -428,7 +428,7 @@ export function Pricing() {
                   </li>
                   <li className="flex items-start gap-2.5">
                     <IconCheck className="size-4 stroke-[3px] text-[#8B5CF6] shrink-0 mt-1" />
-                    <span>Interview-ready shortlist by day five, fully vetted and audited</span>
+                    <span>Interview-ready shortlist by day five, fully vetted and screened</span>
                   </li>
                 </ul>
               </div>
