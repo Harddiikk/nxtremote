@@ -93,7 +93,7 @@ export function Footer() {
         </div>
         <div className="mt-10 grid grid-cols-2 items-start gap-10 sm:mt-0 md:mt-0 lg:grid-cols-4">
           <div className="flex w-full flex-col justify-center gap-4">
-            <p className="font-bold text-neutral-600 transition-colors hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-white">
+            <p className="font-extrabold uppercase tracking-wide text-brand-secondary">
               Pages
             </p>
             <ul className="flex list-none flex-col gap-4 text-neutral-600 transition-colors dark:text-neutral-300">
@@ -111,7 +111,7 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col justify-center gap-4">
-            <p className="font-bold text-neutral-600 transition-colors hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-white">
+            <p className="font-extrabold uppercase tracking-wide text-brand-secondary">
               Socials
             </p>
             <ul className="flex list-none flex-col gap-4 text-neutral-600 transition-colors dark:text-neutral-300">
@@ -131,8 +131,8 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col justify-center gap-4">
-            <p className="font-bold text-neutral-600 transition-colors hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-white">
-              Legal
+            <p className="font-extrabold uppercase tracking-wide text-brand-secondary">
+              Policies
             </p>
             <ul className="flex list-none flex-col gap-4 text-neutral-600 transition-colors dark:text-neutral-300">
               {legals.map((legal, idx) => (
@@ -148,7 +148,7 @@ export function Footer() {
             </ul>
           </div>
           <div className="flex flex-col justify-center gap-4">
-            <p className="font-bold text-neutral-600 transition-colors hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-white">
+            <p className="font-extrabold uppercase tracking-wide text-brand-secondary">
               Contact
             </p>
             <ul className="flex list-none flex-col gap-4 text-neutral-600 transition-colors dark:text-neutral-300">
@@ -168,16 +168,17 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="relative mt-20 h-[calc(clamp(2.5rem,11vw,11rem)*0.78)] w-full overflow-hidden">
-        <p
-          className="font-display absolute inset-x-0 top-0 w-full text-center leading-none font-bold whitespace-nowrap text-transparent dark:block"
-          style={{
-            fontSize: "clamp(2.5rem, 11vw, 11rem)",
-            letterSpacing: "-0.02em",
-          }}
-        >
-          <span className="text-gradient-brand opacity-80">NXT Remote</span>
-        </p>
+      <div className="mt-16 flex w-full justify-center px-6 pb-10">
+        <img
+          src="/brand/nxt-logo-new.png"
+          alt="NXT Remote — Connecting Talent, Creating Impact"
+          className="w-full max-w-lg object-contain opacity-95 dark:hidden"
+        />
+        <img
+          src="/logo-nxr-full-white.png"
+          alt="NXT Remote — Connecting Talent, Creating Impact"
+          className="hidden w-full max-w-lg object-contain opacity-95 dark:block"
+        />
       </div>
     </div>
   );
@@ -189,16 +190,16 @@ const Logo = () => {
       href="/"
       className="relative z-20 mr-4 flex items-center py-1"
     >
-      {/* Full wordmark, theme-aware (same as navbar) so it reads on white */}
+      {/* New nXtRemote logo, theme-aware */}
       <img
-        src="/logo-light.png"
+        src="/logo-nxr.png"
         alt="NXT Remote"
-        className="h-6 w-auto object-contain dark:hidden"
+        className="h-7 w-auto object-contain dark:hidden"
       />
       <img
-        src="/logo-light-white.png"
+        src="/logo-nxr-white.png"
         alt="NXT Remote"
-        className="hidden h-6 w-auto object-contain dark:block"
+        className="hidden h-7 w-auto object-contain dark:block"
       />
     </Link>
   );

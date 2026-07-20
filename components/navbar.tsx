@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { IconChevronDown, IconMenu2, IconX } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { ModeToggle } from "./mode-toggle";
 
@@ -216,24 +217,30 @@ const MobileChildNavItems = ({ navItem }: { navItem: any }) => {
 };
 
 const Logo = () => {
+  const router = useRouter();
   return (
     <Link
       href="/"
       aria-label="NXT Remote home"
+      // A framer-motion ancestor preventDefaults the click, which makes Next's
+      // Link skip navigation. Force it via the router so the logo always goes home.
+      onClick={(e) => {
+        e.preventDefault();
+        router.push("/");
+      }}
       className="relative z-20 flex items-center"
     >
-      {/* Light theme: dark text + gradient X */}
+      {/* New nXtRemote logo — dark wordmark (light theme) */}
       <img
-        src="/logo-light.png"
+        src="/logo-nxr.png"
         alt="NXT Remote"
-        className="h-5 md:h-6 w-auto object-contain dark:hidden"
+        className="h-6 md:h-7 w-auto object-contain dark:hidden"
       />
-      {/* Dark theme: same wordmark, text recolored white, gradient X kept
-          (same 3508x360 source so the size is identical to the light one) */}
+      {/* white version (dark theme), gradient X + R kept */}
       <img
-        src="/logo-light-white.png"
+        src="/logo-nxr-white.png"
         alt="NXT Remote"
-        className="hidden h-5 md:h-6 w-auto object-contain dark:block"
+        className="hidden h-6 md:h-7 w-auto object-contain dark:block"
       />
     </Link>
   );
