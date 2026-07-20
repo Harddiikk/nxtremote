@@ -171,12 +171,12 @@ export function Footer() {
       <div className="mt-16 flex w-full justify-center px-6 pb-10">
         <img
           src="/brand/nxt-logo-new.png"
-          alt="NXT Remote — Connecting Talent, Creating Impact"
+          alt="NXT Remote, Connecting Talent and Creating Impact"
           className="w-full max-w-lg object-contain opacity-95 dark:hidden"
         />
         <img
           src="/logo-nxr-full-white.png"
-          alt="NXT Remote — Connecting Talent, Creating Impact"
+          alt="NXT Remote, Connecting Talent and Creating Impact"
           className="hidden w-full max-w-lg object-contain opacity-95 dark:block"
         />
       </div>
