@@ -4,7 +4,6 @@ import { motion } from "motion/react";
 import { Container } from "../container";
 import { Heading } from "../heading";
 import { Subheading } from "../subheading";
-import { AnimatedBeamPathIllustration } from "./animated-path";
 import { WorldMapSkeleton } from "../features-one/world-map-skeleton";
 import { SecuritySkeleton } from "./security-skeleton";
 import { EdgeComputing } from "./edge-computing";
@@ -54,37 +53,20 @@ export function FeaturesTwo() {
           <WorldMapSkeleton
             className="w-full"
             pins={[
-              { id: "latam", image: "/talent/clean-9.jpg", name: "Camila · LATAM", location: { lat: -12.05, lng: -77.04 } },
-              { id: "ee", image: "/talent/clean-7.jpg", name: "Lukas · Eastern Europe", location: { lat: 50.45, lng: 30.52 } },
-              { id: "apac", image: "/talent/clean-16.jpg", name: "Dario · APAC", location: { lat: 14.6, lng: 121.0 } },
-              { id: "hq", image: "/talent/clean-1.jpg", name: "Your Agency · US/UK", location: { lat: 40.71, lng: -74.0 } },
+              { id: "us", image: "/talent/in-01.jpg", name: "US Client", location: { lat: 40.71, lng: -74.0 } },
+              { id: "uk", image: "/talent/in-05.jpg", name: "UK Client", location: { lat: 51.5, lng: -0.12 } },
+              { id: "au", image: "/talent/in-03.jpg", name: "Australia Client", location: { lat: -33.86, lng: 151.2 } },
+              { id: "hub", image: "/talent/in-06.jpg", name: "India Talent Hub", location: { lat: 20.59, lng: 78.96 } },
             ]}
           />
           <p className="mt-2 text-center font-mono text-[10px] tracking-[0.2em] text-neutral-500 uppercase">
-            Vetted specialists across LATAM, Eastern Europe & APAC
+            Deployed from India to the US, UK & Australia
           </p>
-        </div>
-        <div className="relative flex h-56 w-full items-center justify-center rounded-2xl bg-neutral-50/50 dark:bg-neutral-900/20 border border-neutral-200/50 dark:border-white/5 overflow-hidden">
-          <div className="absolute top-1/2 left-[calc(100%/6)] z-10 -translate-x-1/2 -translate-y-1/2">
-            <BeamCircle label="Meta Ads" />
-          </div>
-          <div className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-            <BeamCircle label="NXT Remote" active />
-          </div>
-          <div className="absolute top-1/2 left-[calc(500%/6)] z-10 -translate-x-1/2 -translate-y-1/2">
-            <BeamCircle label="GoHighLevel" />
-          </div>
-          <div className="absolute top-1/2 left-[calc(100%/6)] w-[calc(200%/6)] -translate-y-1/2">
-            <AnimatedBeamPathIllustration />
-          </div>
-          <div className="absolute top-1/2 left-[calc(300%/6)] w-[calc(200%/6)] -translate-y-1/2">
-            <AnimatedBeamPathIllustration delay={1.4} />
-          </div>
         </div>
         </div>
       </div>
 
-      <SpecializationCompare />
+      <FocusComparison />
 
       <div className="border-t border-neutral-100 dark:border-white/5 my-12" />
 
@@ -188,78 +170,102 @@ const NXT_ROLES = [
   "Automation",
 ];
 
-function SpecializationCompare() {
+const OTHERS_SPOKES = [
+  "Branding", "Market Research", "Email Marketing", "Social Media Mgmt",
+  "Web Development", "SEO", "Content Writing", "Video Production",
+  "Graphic Design", "Offline Marketing",
+];
+const NXT_SPOKES = [
+  "SEO", "Social Media Ads", "Paid Advertising",
+  "Content Marketing", "Analytics",
+];
+
+function RadialHub({
+  spokes,
+  center1,
+  center2,
+  nxt = false,
+}: {
+  spokes: string[];
+  center1: string;
+  center2: string;
+  nxt?: boolean;
+}) {
+  const N = spokes.length;
+  const cx = 240, cy = 210, nodeR = 58, ring = 120;
+  return (
+    <svg viewBox="0 0 480 420" className="w-full overflow-visible">
+      <defs>
+        <linearGradient id="nxthub" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#4F2FE5" />
+          <stop offset="1" stopColor="#09B4E4" />
+        </linearGradient>
+      </defs>
+      {spokes.map((s, i) => {
+        const ang = (-90 + i * (360 / N)) * (Math.PI / 180);
+        const ex = cx + ring * Math.cos(ang);
+        const ey = cy + ring * Math.sin(ang);
+        const sx = cx + nodeR * Math.cos(ang);
+        const sy = cy + nodeR * Math.sin(ang);
+        const right = Math.cos(ang) >= 0;
+        return (
+          <g key={s}>
+            <line
+              x1={sx} y1={sy} x2={ex} y2={ey}
+              stroke={nxt ? "#4F2FE5" : "#cbd5e1"} strokeWidth={nxt ? 1.6 : 1}
+            />
+            <circle cx={ex} cy={ey} r={7} fill={nxt ? "#09B4E4" : "#e2e8f0"} stroke={nxt ? "#4F2FE5" : "#cbd5e1"} strokeWidth="1.5" />
+            <text
+              x={ex + (right ? 12 : -12)} y={ey + 3}
+              fontSize="11" fontWeight="600"
+              textAnchor={right ? "start" : "end"}
+              className="fill-neutral-600 dark:fill-neutral-300"
+            >
+              {s}
+            </text>
+          </g>
+        );
+      })}
+      <circle cx={cx} cy={cy} r={nodeR} fill={nxt ? "url(#nxthub)" : "currentColor"} className={nxt ? "" : "fill-neutral-100 dark:fill-neutral-800"} stroke={nxt ? "#4F2FE5" : "#cbd5e1"} strokeWidth="2" />
+      <text x={cx} y={cy - 3} textAnchor="middle" fontSize={nxt ? 15 : 13} fontWeight="800" className={nxt ? "fill-white" : "fill-neutral-600 dark:fill-neutral-200"}>
+        {center1}
+      </text>
+      <text x={cx} y={cy + 15} textAnchor="middle" fontSize="10" fontWeight="600" className={nxt ? "fill-white" : "fill-neutral-500 dark:fill-neutral-400"}>
+        {center2}
+      </text>
+    </svg>
+  );
+}
+
+function FocusComparison() {
   return (
     <div className="mb-24 md:mb-32">
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-[1fr_auto_1fr] md:items-stretch">
-        {/* Generalist agencies */}
-        <div className="rounded-2xl border border-border bg-muted/60 p-6 md:p-8">
-          <div className="flex items-center gap-2">
-            <span className="flex size-6 items-center justify-center rounded-full bg-neutral-300/70 text-neutral-600">
-              <X className="size-3.5" strokeWidth={3} />
-            </span>
-            <span className="font-mono text-[10px] font-bold tracking-[0.18em] text-muted-foreground uppercase">
-              Generalist Agencies
-            </span>
+      <div className="mx-auto mb-10 max-w-3xl text-center">
+        <Heading as="h2" className="text-2xl md:text-3xl">
+          Others do everything.{" "}
+          <span className="text-gradient-brand">NXT Remote</span> focuses on one thing.
+        </Heading>
+      </div>
+      <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
+        {/* Others */}
+        <div className="rounded-2xl border border-border bg-muted/40 p-4 md:p-6">
+          <div className="mx-auto mb-2 w-fit rounded-lg bg-neutral-800 px-4 py-1.5 text-center dark:bg-neutral-200">
+            <p className="text-xs font-bold uppercase tracking-wide text-white dark:text-neutral-900">
+              Others / Traditional Agencies
+            </p>
+            <p className="text-[10px] text-white/70 dark:text-neutral-500">Doing all the stuff</p>
           </div>
-          <h3 className="mt-3 font-display text-lg font-bold text-neutral-500">
-            A little of everything, mastery of nothing
-          </h3>
-          <div className="mt-5 flex flex-wrap gap-2">
-            {GENERALIST_ROLES.map((r) => (
-              <span
-                key={r}
-                className="rounded-full border border-border bg-white px-3 py-1.5 text-xs font-medium text-neutral-400 line-through decoration-neutral-300"
-              >
-                {r}
-              </span>
-            ))}
-          </div>
-          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-            Every role under one roof, so no one is truly vetted for your
-            marketing stack. You supervise the gaps.
-          </p>
+          <RadialHub spokes={OTHERS_SPOKES} center1="ALL" center2="ROLES" />
         </div>
-
-        {/* Divider */}
-        <div className="flex items-center justify-center">
-          <span className="flex size-11 items-center justify-center rounded-full bg-gradient-to-br from-[#4f2fe5] to-[#09b4e4] font-display text-sm font-extrabold text-white shadow-md">
-            vs
-          </span>
-        </div>
-
         {/* NXT Remote */}
-        <div className="card-premium relative overflow-hidden rounded-2xl p-6 md:p-8">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <span className="flex size-6 items-center justify-center rounded-full bg-gradient-to-br from-[#4f2fe5] to-[#09b4e4] text-white">
-                <Check className="size-3.5" strokeWidth={3} />
-              </span>
-              <span className="font-mono text-[10px] font-bold tracking-[0.18em] text-brand-secondary uppercase">
-                NXT Remote
-              </span>
-            </div>
-            <span className="rounded-full bg-gradient-to-r from-[#4f2fe5] to-[#09b4e4] px-2.5 py-1 text-[10px] font-bold tracking-wide text-white uppercase">
-              100% Digital Marketing
-            </span>
+        <div className="card-premium rounded-2xl p-4 md:p-6">
+          <div className="mx-auto mb-2 w-fit rounded-lg border border-brand-secondary/40 px-4 py-1.5 text-center">
+            <p className="text-xs font-bold uppercase tracking-wide text-brand-secondary">
+              NXT Remote
+            </p>
+            <p className="text-[10px] text-muted-foreground">Focused on one thing</p>
           </div>
-          <h3 className="mt-3 font-display text-lg font-bold text-brand-primary dark:text-white">
-            One domain, mastered end to end
-          </h3>
-          <div className="mt-5 flex flex-wrap gap-2">
-            {NXT_ROLES.map((r) => (
-              <span
-                key={r}
-                className="rounded-full border border-brand-secondary/25 bg-brand-secondary/5 px-3 py-1.5 text-xs font-semibold text-brand-primary dark:border-brand-accent/40 dark:bg-brand-accent/10 dark:text-white"
-              >
-                {r}
-              </span>
-            ))}
-          </div>
-          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-            Every specialist is vetted, tested, and placed exclusively within
-            digital marketing. No VAs, no filler.
-          </p>
+          <RadialHub spokes={NXT_SPOKES} center1="100%" center2="DIGITAL MKT" nxt />
         </div>
       </div>
     </div>

@@ -362,6 +362,128 @@ export function IntegrationsBento() {
             </CardContent>
           </GlassBentoCard>
 
+          {/* Card 6: Multimedia & Animation - DaVinci, Premiere Pro, After Effects & CapCut */}
+          <GlassBentoCard className="md:col-span-1 relative overflow-hidden group">
+            {/* Background Glow */}
+            <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-fuchsia-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
+
+            <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">
+              <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+
+              {/* Layer 1: sub-section eyebrow label */}
+              <span className="relative z-10 text-[9px] font-bold uppercase tracking-[0.15em] text-fuchsia-500/80 dark:text-fuchsia-400/80">
+                Video & Motion
+              </span>
+
+              {/* Layer 2 + 3: logos with tool names */}
+              <div className="grid grid-cols-2 gap-3 md:gap-4 relative z-10">
+                {[
+                  { base: "logos/davinci", alt: "DaVinci Resolve", fb: "DR", color: "bg-[#233A6C]" },
+                  { base: "logos/premierepro", alt: "Premiere Pro", fb: "Pr", color: "bg-[#00005B]" },
+                  { base: "logos/aftereffects", alt: "After Effects", fb: "Ae", color: "bg-[#00005B]" },
+                  { base: "logos/capcut", alt: "CapCut", fb: "CC", color: "bg-[#000000]" },
+                ].map((t) => (
+                  <div key={t.alt} className="flex flex-col items-center gap-2">
+                    <LogoFallback
+                      baseName={t.base}
+                      alt={t.alt}
+                      fallbackText={t.fb}
+                      brandColor={t.color}
+                      glowColor="group-hover:shadow-[0_0_20px_rgba(217,70,239,0.35)]"
+                    />
+                    <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">{t.alt}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex gap-1.5 relative z-10 flex-wrap justify-center">
+                {["Short-form Reels", "Motion Graphics", "Video Editing"].map((tag) => (
+                  <span key={tag} className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-fuchsia-500/5 text-fuchsia-600 dark:text-fuchsia-400 border border-fuchsia-500/10 backdrop-blur-md">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </CardSkeleton>
+
+            <CardContent>
+              <div className="flex items-start justify-between">
+                <div>
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-fuchsia-500 dark:text-fuchsia-400">
+                    Multimedia & Animation
+                  </span>
+                  <CardTitle className="text-left mt-1 text-lg font-bold">
+                    DaVinci, Premiere Pro, After Effects & CapCut
+                  </CardTitle>
+                  <CardDescription className="text-left mt-2">
+                    Scroll-stopping edits, reels, and motion graphics.
+                  </CardDescription>
+                </div>
+              </div>
+            </CardContent>
+          </GlassBentoCard>
+
+          {/* Card 7: AI Automation - Zapier, n8n, Make & GPT */}
+          <GlassBentoCard className="md:col-span-2 relative overflow-hidden group">
+            <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-indigo-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
+
+            <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">
+              <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+
+              {/* Layer 1: sub-section eyebrow label */}
+              <span className="relative z-10 text-[9px] font-bold uppercase tracking-[0.15em] text-indigo-500/80 dark:text-indigo-400/80">
+                Workflow Automation
+              </span>
+
+              {/* Layer 2 + 3: logos with tool names */}
+              <div className="grid grid-cols-4 gap-5 md:gap-8 relative z-10">
+                {[
+                  { base: "logos/zapier", alt: "Zapier", fb: "ZP", color: "bg-[#FF4A00]" },
+                  { base: "logos/n8n", alt: "n8n", fb: "n8n", color: "bg-[#EA4B71]" },
+                  { base: "logos/make", alt: "Make", fb: "Make", color: "bg-[#6D00CC]" },
+                  { base: "logos/chatgpt", alt: "ChatGPT", fb: "GPT", color: "bg-[#10A37F]" },
+                ].map((t) => (
+                  <div key={t.alt} className="flex flex-col items-center gap-2">
+                    <LogoFallback
+                      baseName={t.base}
+                      alt={t.alt}
+                      fallbackText={t.fb}
+                      brandColor={t.color}
+                      glowColor="group-hover:shadow-[0_0_20px_rgba(99,102,241,0.35)]"
+                    />
+                    <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">{t.alt}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex gap-1.5 relative z-10 flex-wrap justify-center">
+                {["Lead Routing", "AI Ops", "No-Code Workflows"].map((tag) => (
+                  <span key={tag} className="text-[10px] md:text-xs font-semibold px-2.5 py-1 rounded-full bg-indigo-500/5 text-indigo-500 dark:text-indigo-400 border border-indigo-500/10 backdrop-blur-md">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </CardSkeleton>
+
+            <CardContent>
+              <div className="flex items-start justify-between">
+                <div>
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-indigo-500 dark:text-indigo-400">
+                    AI Automation
+                  </span>
+                  <CardTitle className="text-left mt-1 text-lg font-bold">
+                    Zapier, n8n, Make & GPT
+                  </CardTitle>
+                  <CardDescription className="text-left mt-2 max-w-lg">
+                    Automated workflows, lead routing, and AI ops.
+                  </CardDescription>
+                </div>
+                <div className="hidden sm:flex size-10 rounded-full border border-indigo-500/20 bg-indigo-500/5 items-center justify-center text-indigo-500">
+                  <Sparkles className="size-5" />
+                </div>
+              </div>
+            </CardContent>
+          </GlassBentoCard>
+
         </div>
       </div>
     </section>

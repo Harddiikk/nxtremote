@@ -11,14 +11,20 @@ const Globe = dynamic(() => import("react-globe.gl"), { ssr: false });
 const INDIA = { lat: 12.97, lng: 77.59, label: "India (Talent Hub)" };
 const HUBS = [
   { lat: 40.71, lng: -74.0, label: "New York" },
+  { lat: 34.05, lng: -118.24, label: "Los Angeles" },
   { lat: 51.5, lng: -0.12, label: "London" },
   { lat: 52.52, lng: 13.4, label: "Berlin" },
+  { lat: 48.85, lng: 2.35, label: "Paris" },
+  { lat: 52.37, lng: 4.9, label: "Amsterdam" },
   { lat: 43.65, lng: -79.38, label: "Toronto" },
   { lat: 25.2, lng: 55.27, label: "Dubai" },
   { lat: 1.35, lng: 103.8, label: "Singapore" },
+  { lat: 35.68, lng: 139.69, label: "Tokyo" },
   { lat: -23.55, lng: -46.63, label: "São Paulo" },
   { lat: -33.92, lng: 18.42, label: "Cape Town" },
+  { lat: -1.29, lng: 36.82, label: "Nairobi" },
   { lat: -33.86, lng: 151.2, label: "Sydney" },
+  { lat: -36.85, lng: 174.76, label: "Auckland" },
 ];
 
 const ARCS = HUBS.map((h) => ({

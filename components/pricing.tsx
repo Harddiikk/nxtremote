@@ -21,7 +21,7 @@ export function Pricing() {
       description: "Ideal for boutique agencies hiring their first offshore specialist.",
       features: [
         "1:1 Pre-vetted matching",
-        "Free replacement within 15 to 30 days",
+        "Free replacement within 15 days",
         "HR & Payroll Administration Included",
         "Flexible Timezone Alignment (Dedicated working-hours overlap)",
         "Slack & PM Tool Native Integration",
@@ -31,12 +31,12 @@ export function Pricing() {
     },
     {
       id: "growth",
-      name: "Growth",
+      name: "Standard",
       teamSize: "3–5 Specialists",
       description: "Ideal for mid-sized agencies scaling up specific service verticals.",
       features: [
         "1:1 Pre-vetted matching",
-        "Free replacement within 15 to 30 days",
+        "Free replacement within 30 days",
         "HR & Payroll Administration Included",
         "Dedicated Shift Overlap (Working-hours overlap)",
         "Slack & PM Tool Native Integration",
@@ -53,7 +53,7 @@ export function Pricing() {
       description: "Ideal for large agencies looking to build a full backend execution engine.",
       features: [
         "Dedicated Account Director + Custom Vetting",
-        "Ongoing free replacement",
+        "Free replacement within 45 days",
         "HR & Payroll Administration Included",
         "Custom Shift Schedules Tailored",
         "Enterprise-grade Security Integration",
@@ -63,6 +63,74 @@ export function Pricing() {
       buttonText: "Book an Enterprise Call"
     }
   ];
+
+  const featureTiers = [
+    { key: "basic", name: "Basic", subtitle: "1 Remote Marketing Specialist", featured: false },
+    { key: "standard", name: "Standard", subtitle: "2-5 Remote Specialists", featured: true },
+    { key: "enterprise", name: "Enterprise", subtitle: "5+ Remote Specialists", featured: false }
+  ];
+
+  // Each cell value is either a boolean (true = check, false = X) or a string label.
+  const featureMatrix: {
+    group: string;
+    rows: { label: string; values: [boolean | string, boolean | string, boolean | string] }[];
+  }[] = [
+    {
+      group: "Hiring",
+      rows: [
+        { label: "Pre-vetted Talent", values: [true, true, true] },
+        { label: "Hiring Timeline", values: ["7-10 Days", "5-7 Days", "Priority"] },
+        { label: "Specialists", values: ["1", "2-5", "5+"] },
+        { label: "Custom Hiring Process", values: [false, false, true] }
+      ]
+    },
+    {
+      group: "Management",
+      rows: [
+        { label: "HR & Payroll Management", values: [true, true, true] },
+        { label: "Timezone Alignment", values: [true, true, true] },
+        { label: "Recruitment Manager", values: [false, true, true] },
+        { label: "Account Director", values: [false, false, true] },
+        { label: "Weekly Performance Reviews", values: [false, false, true] },
+        { label: "Team Scaling Support", values: [false, true, true] }
+      ]
+    },
+    {
+      group: "Support",
+      rows: [
+        { label: "Free Replacement", values: ["15 days", "30 days", "45 days"] },
+        { label: "Priority Support", values: ["If Required", "Twice a Week", "Weekdays"] }
+      ]
+    },
+    {
+      group: "Security",
+      rows: [
+        { label: "Enterprise Security Compliance", values: [false, false, true] }
+      ]
+    }
+  ];
+
+  const renderFeatureCell = (value: boolean | string) => {
+    if (value === true) {
+      return (
+        <span className="inline-flex size-6 items-center justify-center rounded-full bg-brand-accent/20 dark:bg-brand-accent/15">
+          <IconCheck className="size-3.5 stroke-[4px] text-[#8B5CF6]" />
+        </span>
+      );
+    }
+    if (value === false) {
+      return (
+        <span className="inline-flex size-6 items-center justify-center rounded-full bg-neutral-100 dark:bg-white/5">
+          <X className="size-3.5 text-neutral-400 dark:text-neutral-600" />
+        </span>
+      );
+    }
+    return (
+      <span className="text-sm font-semibold text-neutral-800 dark:text-neutral-100">
+        {value}
+      </span>
+    );
+  };
 
   const comparisonData = [
     {
@@ -206,6 +274,100 @@ export function Pricing() {
             </motion.div>
           ))}
         </div>
+
+        {/* Tier Feature Comparison Matrix */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mt-20"
+        >
+          <div className="mx-auto mb-10 max-w-3xl text-center">
+            <Subheading className="text-brand-secondary font-semibold tracking-wider text-xs uppercase">
+              What Each Tier Includes
+            </Subheading>
+            <Heading as="h3" className="text-2xl md:text-3xl font-bold mt-2">
+              Compare <span className="text-gradient-brand">Every Feature</span> Across Tiers
+            </Heading>
+          </div>
+
+          {/* Horizontally scrollable so it never breaks page width on mobile */}
+          <div className="overflow-x-auto rounded-2xl border border-neutral-200 dark:border-white/10 bg-white/50 dark:bg-neutral-900/30 backdrop-blur-md shadow-lg">
+            <table className="w-full min-w-[640px] border-collapse text-left">
+              <thead>
+                <tr className="border-b border-neutral-200 dark:border-white/10 bg-neutral-100/50 dark:bg-neutral-950/40">
+                  <th className="px-6 py-5 align-bottom text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 w-[28%]">
+                    Features
+                  </th>
+                  {featureTiers.map((tier) => (
+                    <th
+                      key={tier.key}
+                      className={cn(
+                        "px-6 py-5 align-top text-center w-[24%]",
+                        tier.featured &&
+                          "bg-[#0b75e2]/5 dark:bg-[#8b5cf6]/5 border-x border-[#0b75e2]/15 dark:border-[#8b5cf6]/10"
+                      )}
+                    >
+                      {tier.featured && (
+                        <span className="mb-2 inline-block rounded-full bg-brand-secondary px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-widest text-white">
+                          Most Popular
+                        </span>
+                      )}
+                      <div
+                        className={cn(
+                          "text-base font-extrabold text-neutral-900 dark:text-white",
+                          tier.featured && "text-brand-secondary dark:text-brand-accent"
+                        )}
+                      >
+                        {tier.name}
+                      </div>
+                      <div className="mt-1 text-xs font-normal normal-case text-neutral-500 dark:text-neutral-400">
+                        {tier.subtitle}
+                      </div>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="text-sm">
+                {featureMatrix.map((section) => (
+                  <React.Fragment key={section.group}>
+                    <tr className="bg-neutral-50/70 dark:bg-white/[0.03] border-y border-neutral-200/70 dark:border-white/5">
+                      <td
+                        colSpan={4}
+                        className="px-6 py-2.5 text-[11px] font-black uppercase tracking-widest text-brand-secondary dark:text-brand-accent"
+                      >
+                        {section.group}
+                      </td>
+                    </tr>
+                    {section.rows.map((row) => (
+                      <tr
+                        key={row.label}
+                        className="border-b border-neutral-200/60 dark:border-white/5 last:border-0 hover:bg-neutral-50/50 dark:hover:bg-neutral-900/10 transition-colors"
+                      >
+                        <td className="px-6 py-4 font-semibold text-neutral-700 dark:text-neutral-200">
+                          {row.label}
+                        </td>
+                        {row.values.map((value, i) => (
+                          <td
+                            key={i}
+                            className={cn(
+                              "px-6 py-4 text-center",
+                              featureTiers[i].featured &&
+                                "bg-[#0b75e2]/5 dark:bg-[#8b5cf6]/5 border-x border-[#0b75e2]/10 dark:border-[#8b5cf6]/5"
+                            )}
+                          >
+                            {renderFeatureCell(value)}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </React.Fragment>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </motion.div>
 
         {/* The Hidden Cost Comparison Section */}
         <motion.div

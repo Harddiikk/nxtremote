@@ -24,13 +24,8 @@ const CATEGORIES: { id: Category; label: string; icon: React.ReactNode }[] = [
   { id: "digital", label: "Digital Marketing", icon: <Megaphone className="size-4" /> },
 ];
 
-// Per-card gradient so the profile cards read as distinct gradient tiles.
-const CARD_GRADIENTS = [
-  "from-[#7C3AED] via-[#6D28D9] to-[#4F2FE5]", // violet
-  "from-[#0EA5B7] via-[#0D9488] to-[#0F766E]", // teal
-  "from-[#2563EB] via-[#3B82F6] to-[#1D4ED8]", // blue
-  "from-[#DB2777] via-[#E11D74] to-[#9D174D]", // pink
-];
+// One consistent blue gradient across every candidate card (client reference).
+const CARD_GRADIENT = "from-[#0B2A6B] via-[#2563EB] to-[#38BDF8]";
 
 type Specialist = {
   name: string;
@@ -132,7 +127,7 @@ export function TalentShowcase() {
                 {/* Gradient tile: colored frame + colour-cast on the portrait */}
                 <div
                   className={`relative overflow-hidden rounded-2xl bg-gradient-to-br p-[3px] shadow-lg ${
-                    CARD_GRADIENTS[i % CARD_GRADIENTS.length]
+                    CARD_GRADIENT
                   }`}
                 >
                   <div className="relative overflow-hidden rounded-[15px]">
@@ -144,7 +139,7 @@ export function TalentShowcase() {
                     />
                     <div
                       className={`pointer-events-none absolute inset-0 bg-gradient-to-br opacity-25 mix-blend-soft-light ${
-                        CARD_GRADIENTS[i % CARD_GRADIENTS.length]
+                        CARD_GRADIENT
                       }`}
                     />
                     <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/80 to-transparent" />
@@ -161,10 +156,10 @@ export function TalentShowcase() {
                     </div>
                   </div>
                 </div>
-                <ul className="mt-3 space-y-2 font-mono text-xs text-muted-foreground md:text-[13px]">
-                  <li className="flex items-center gap-2.5">
-                    <span className="text-gradient-brand font-bold">&gt;_</span> {s.role}
-                  </li>
+                <p className="mt-3 font-display text-base font-bold text-brand-secondary">
+                  {s.role}
+                </p>
+                <ul className="mt-2 space-y-2 font-mono text-xs text-muted-foreground md:text-[13px]">
                   <li className="flex items-center gap-2.5">
                     <span className="text-gradient-brand font-bold">&gt;_</span> {s.years}
                   </li>
