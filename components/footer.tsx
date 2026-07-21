@@ -186,7 +186,10 @@ export function Footer() {
 
 const Logo = () => {
   return (
-    <Link
+    // Native anchor (not next/link) so the logo always does a real navigation
+    // to Home, immune to any client-router hiccup that was dropping the click.
+    // eslint-disable-next-line @next/next/no-html-link-for-pages
+    <a
       href="/"
       aria-label="NXT Remote home"
       className="relative z-20 mr-4 flex items-center py-1"
@@ -202,7 +205,7 @@ const Logo = () => {
         alt="NXT Remote"
         className="hidden h-7 w-auto object-contain dark:block"
       />
-    </Link>
+    </a>
   );
 };
 

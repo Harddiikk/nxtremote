@@ -217,10 +217,11 @@ const MobileChildNavItems = ({ navItem }: { navItem: any }) => {
 
 const Logo = () => {
   return (
-    // Plain Link: Next intercepts for client-side nav, and the native href="/"
-    // is a guaranteed fallback. (An earlier onClick+preventDefault killed that
-    // fallback, which is why the logo could silently fail to navigate.)
-    <Link
+    // Native anchor (not next/link): a Next Link preventDefaults the click and
+    // relies on the client router, which was silently failing to send the logo
+    // home. A plain href does a guaranteed browser navigation to Home.
+    // eslint-disable-next-line @next/next/no-html-link-for-pages
+    <a
       href="/"
       aria-label="NXT Remote home"
       className="relative z-20 flex items-center"
@@ -237,7 +238,7 @@ const Logo = () => {
         alt="NXT Remote"
         className="hidden h-6 md:h-7 w-auto object-contain dark:block"
       />
-    </Link>
+    </a>
   );
 };
 
