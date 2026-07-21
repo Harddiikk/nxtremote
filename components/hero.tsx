@@ -1,9 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/button";
 import Link from "next/link";
-import { motion } from "motion/react";
+import { motion, animate, useInView } from "motion/react";
 import {
   IconArrowRight,
   IconChartArrows,
@@ -15,11 +15,42 @@ import {
 } from "@tabler/icons-react";
 import { BOOKING_URL } from "@/lib/site";
 
+// Stats count up from 0 and stop at their real value (client request)
 const STATS = [
-  { value: "Top 3%", label: "Vetted Candidates" },
-  { value: "70%", label: "payroll savings" },
-  { value: "Day 5", label: "interview-ready" },
+  { prefix: "Top ", to: 3, suffix: "%", label: "Vetted Candidates" },
+  { prefix: "", to: 70, suffix: "%", label: "payroll savings" },
+  { prefix: "Day ", to: 5, suffix: "", label: "interview-ready" },
 ];
+
+function CountUp({
+  to,
+  prefix = "",
+  suffix = "",
+}: {
+  to: number;
+  prefix?: string;
+  suffix?: string;
+}) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-40px" });
+  const [val, setVal] = useState(0);
+  useEffect(() => {
+    if (!inView) return;
+    const controls = animate(0, to, {
+      duration: 1.8,
+      ease: [0.16, 0.8, 0.3, 1],
+      onUpdate: (v) => setVal(Math.round(v)),
+    });
+    return () => controls.stop();
+  }, [inView, to]);
+  return (
+    <span ref={ref}>
+      {prefix}
+      {val}
+      {suffix}
+    </span>
+  );
+}
 
 /* Floating specialist chips that frame the headline on desktop */
 const CHIPS = [
@@ -95,7 +126,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={0}
-          className="font-display text-4xl font-bold tracking-tight text-balance text-primary sm:text-6xl md:text-7xl"
+          className="font-display text-4xl font-bold tracking-tight text-balance text-white sm:text-6xl md:text-7xl"
         >
           Elite offshore <span className="text-gradient-brand">digital marketing</span> talent
         </motion.h1>
@@ -123,7 +154,7 @@ export default function Hero() {
           <p className="font-mono text-sm tracking-[0.3em] text-muted-foreground uppercase">
             Discover
           </p>
-          <p className="font-display mt-2 text-7xl leading-none font-extrabold tracking-tight sm:text-8xl md:text-[9rem]">
+          <p className="top-glow font-display mt-2 text-7xl leading-none font-extrabold tracking-tight sm:text-8xl md:text-[9rem]">
             <span className="text-outline">TOP</span>{" "}
             <span className="bg-gradient-to-r from-brand-secondary to-brand-accent bg-clip-text text-transparent">
               3%
@@ -179,7 +210,7 @@ export default function Hero() {
             >
               <dt className="sr-only">{stat.label}</dt>
               <dd className="font-display text-2xl font-bold text-foreground md:text-3xl">
-                {stat.value}
+                <CountUp to={stat.to} prefix={stat.prefix} suffix={stat.suffix} />
               </dd>
               <dd className="mt-1 font-mono text-[10px] tracking-[0.15em] text-muted-foreground uppercase">
                 {stat.label}

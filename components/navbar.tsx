@@ -5,7 +5,6 @@ import { IconChevronDown, IconMenu2, IconX } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import React, { useState } from "react";
-import { ModeToggle } from "./mode-toggle";
 
 export function Navbar() {
   const navItems = [
@@ -38,7 +37,7 @@ const DesktopNav = ({ navItems }: { navItems: any[] }) => {
   return (
     <motion.div
       className={cn(
-        "relative z-50 mx-auto hidden w-full flex-row items-center justify-between rounded-full border border-neutral-200/70 bg-white/85 backdrop-blur-xl px-6 py-3 lg:flex dark:border-white/10 dark:bg-[#1D1E2B]/85 shadow-lg",
+        "liquid-glass relative z-50 mx-auto hidden w-full flex-row items-center justify-between rounded-full px-6 py-3 lg:flex",
       )}
     >
       <Logo />
@@ -46,25 +45,25 @@ const DesktopNav = ({ navItems }: { navItems: any[] }) => {
       <div className="flex-1 flex flex-row items-center justify-center">
         <Menu setActive={setActive}>
           <Link href="/about" className="flex items-center">
-            <span className="cursor-pointer text-sm font-semibold text-neutral-700 hover:text-brand-secondary dark:text-neutral-300 dark:hover:text-brand-accent transition-colors px-3 py-1">
+            <span className="cursor-pointer text-sm font-semibold text-neutral-800 hover:text-brand-secondary transition-colors px-3 py-1">
               About Us
             </span>
           </Link>
           
           <Link href="/services#process" className="flex items-center">
-            <span className="cursor-pointer text-sm font-semibold text-neutral-700 hover:text-brand-secondary dark:text-neutral-300 dark:hover:text-brand-accent transition-colors px-3 py-1">
+            <span className="cursor-pointer text-sm font-semibold text-neutral-800 hover:text-brand-secondary transition-colors px-3 py-1">
               How We Hire
             </span>
           </Link>
 
           <Link href="/services" className="flex items-center">
-            <span className="cursor-pointer text-sm font-semibold text-neutral-700 hover:text-brand-secondary dark:text-neutral-300 dark:hover:text-brand-accent transition-colors px-3 py-1">
+            <span className="cursor-pointer text-sm font-semibold text-neutral-800 hover:text-brand-secondary transition-colors px-3 py-1">
               Hire Marketers
             </span>
           </Link>
 
           <Link href="/pricing" className="flex items-center">
-            <span className="cursor-pointer text-sm font-semibold text-neutral-700 hover:text-brand-secondary dark:text-neutral-300 dark:hover:text-brand-accent transition-colors px-3 py-1">
+            <span className="cursor-pointer text-sm font-semibold text-neutral-800 hover:text-brand-secondary transition-colors px-3 py-1">
               Pricing
             </span>
           </Link>
@@ -80,15 +79,14 @@ const DesktopNav = ({ navItems }: { navItems: any[] }) => {
       </div>
 
       <div className="flex items-center gap-4">
-        <ModeToggle />
         <Link href="/apply">
-          <span className="text-xs font-bold text-neutral-600 hover:text-brand-secondary dark:text-neutral-300 dark:hover:text-brand-accent transition-colors px-4 py-2 cursor-pointer border border-neutral-300 dark:border-neutral-700 rounded-full bg-transparent hover:bg-neutral-50 dark:hover:bg-neutral-900">
+          <span className="text-xs font-bold text-neutral-700 hover:text-brand-secondary transition-colors px-4 py-2 cursor-pointer border border-neutral-300 rounded-full bg-transparent hover:bg-neutral-100">
             Apply as Talent
           </span>
         </Link>
 
         <Link href="/hire">
-          <button className="rounded-full bg-brand-primary text-xs px-5 py-2.5 font-bold text-white shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.4)_inset] dark:bg-white dark:text-black hover:opacity-90 transition-opacity cursor-pointer">
+          <button className="rounded-full bg-brand-primary text-xs px-5 py-2.5 font-bold text-white shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.4)_inset] hover:opacity-90 transition-opacity cursor-pointer">
             Hire Talent
           </button>
         </Link>
@@ -105,15 +103,14 @@ const MobileNav = ({ navItems }: { navItems: any[] }) => {
       <motion.div
         animate={{ borderRadius: open ? "16px" : "9999px" }}
         key={String(open)}
-        className="relative mx-auto flex w-full flex-col items-center justify-between border border-neutral-200/70 bg-white/85 backdrop-blur-xl px-6 py-4 dark:border-white/10 dark:bg-[#1D1E2B]/85 shadow-lg"
+        className="liquid-glass relative mx-auto flex w-full flex-col items-center justify-between px-6 py-4"
       >
         <div className="flex w-full flex-row items-center justify-between">
           <Logo />
           <div className="flex items-center gap-4">
-            <ModeToggle />
-            <button
+                <button
               onClick={() => setOpen(!open)}
-              className="text-neutral-900 dark:text-white focus:outline-none cursor-pointer"
+              className="text-neutral-900 focus:outline-none cursor-pointer"
             >
               {open ? (
                 <IconX className="h-6 w-6" />
@@ -130,7 +127,7 @@ const MobileNav = ({ navItems }: { navItems: any[] }) => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="mt-6 flex w-full flex-col items-start justify-start gap-4 border-t border-neutral-100 pt-6 dark:border-neutral-800"
+              className="mt-6 flex w-full flex-col items-start justify-start gap-4 border-t border-neutral-200 pt-6"
             >
               {navItems.map((navItem: any, idx: number) => (
                 <div key={`navItem-${idx}`} className="w-full">
@@ -140,7 +137,7 @@ const MobileNav = ({ navItems }: { navItems: any[] }) => {
                     <Link
                       href={navItem.link}
                       onClick={() => setOpen(false)}
-                      className="relative text-sm font-semibold text-neutral-700 hover:text-brand-secondary dark:text-neutral-300 dark:hover:text-brand-accent block py-1.5"
+                      className="relative text-sm font-semibold text-neutral-800 hover:text-brand-secondary block py-1.5"
                     >
                       <motion.span className="block">
                         {navItem.name}
@@ -150,13 +147,13 @@ const MobileNav = ({ navItems }: { navItems: any[] }) => {
                 </div>
               ))}
               
-              <div className="flex flex-col gap-3 w-full mt-4 border-t border-neutral-100 pt-4 dark:border-neutral-800">
+              <div className="flex flex-col gap-3 w-full mt-4 border-t border-neutral-200 pt-4">
                 <Link 
                   href="/apply" 
                   onClick={() => setOpen(false)}
                   className="w-full"
                 >
-                  <button className="w-full rounded-lg border border-neutral-300 dark:border-neutral-700 py-2.5 font-semibold text-neutral-700 dark:text-neutral-300 text-sm cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors">
+                  <button className="w-full rounded-lg border border-neutral-300 py-2.5 font-semibold text-neutral-700 text-sm cursor-pointer hover:bg-neutral-100 transition-colors">
                     Apply as Talent
                   </button>
                 </Link>
@@ -166,7 +163,7 @@ const MobileNav = ({ navItems }: { navItems: any[] }) => {
                   onClick={() => setOpen(false)}
                   className="w-full"
                 >
-                  <button className="w-full rounded-lg bg-brand-primary py-2.5 font-bold text-white shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.4)_inset] dark:bg-white dark:text-black text-sm cursor-pointer hover:opacity-90 transition-opacity">
+                  <button className="w-full rounded-lg bg-brand-primary py-2.5 font-bold text-white shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.4)_inset] text-sm cursor-pointer hover:opacity-90 transition-opacity">
                     Hire Talent
                   </button>
                 </Link>
@@ -186,10 +183,10 @@ const MobileChildNavItems = ({ navItem }: { navItem: any }) => {
     <motion.div className="overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="relative flex w-full items-center justify-between text-sm font-semibold text-neutral-700 hover:text-brand-secondary dark:text-neutral-300 dark:hover:text-brand-accent py-1.5 cursor-pointer focus:outline-none"
+        className="relative flex w-full items-center justify-between text-sm font-semibold text-neutral-800 hover:text-brand-secondary py-1.5 cursor-pointer focus:outline-none"
       >
         <motion.span className="block">{navItem.name}</motion.span>
-        <IconChevronDown className={cn("h-4 w-4 text-neutral-500 dark:text-neutral-200 transition-transform duration-200", open && "rotate-180")} />
+        <IconChevronDown className={cn("h-4 w-4 text-neutral-500 transition-transform duration-200", open && "rotate-180")} />
       </button>
       <AnimatePresence>
         {open && (
@@ -197,13 +194,13 @@ const MobileChildNavItems = ({ navItem }: { navItem: any }) => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="pl-4 flex flex-col gap-2 mt-1.5 border-l border-neutral-100 dark:border-neutral-800 ml-1.5"
+            className="pl-4 flex flex-col gap-2 mt-1.5 border-l border-neutral-200 ml-1.5"
           >
             {navItem.children.map((child: any, childIdx: number) => (
               <Link
                 key={`child-${childIdx}`}
                 href={child.link}
-                className="relative text-xs font-medium text-neutral-600 hover:text-brand-secondary dark:text-neutral-200 dark:hover:text-brand-accent block py-1"
+                className="relative text-xs font-medium text-neutral-600 hover:text-brand-secondary block py-1"
               >
                 <motion.span className="block">{child.name}</motion.span>
               </Link>
@@ -226,17 +223,11 @@ const Logo = () => {
       aria-label="NXT Remote home"
       className="relative z-20 flex items-center"
     >
-      {/* New nXtRemote logo — dark wordmark (light theme) */}
+      {/* Dark wordmark on the white liquid-glass bar, sized up per client */}
       <img
         src="/logo-nxr.png"
         alt="NXT Remote"
-        className="h-6 md:h-7 w-auto object-contain dark:hidden"
-      />
-      {/* white version (dark theme), gradient X + R kept */}
-      <img
-        src="/logo-nxr-white.png"
-        alt="NXT Remote"
-        className="hidden h-6 md:h-7 w-auto object-contain dark:block"
+        className="h-8 md:h-9 w-auto object-contain"
       />
     </a>
   );
@@ -266,7 +257,7 @@ export const MenuItem = ({
     <div onMouseEnter={() => setActive(item)} className="relative">
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-sm font-semibold text-neutral-700 hover:text-brand-secondary dark:text-neutral-300 dark:hover:text-brand-accent transition-colors px-3 py-1 flex items-center gap-1"
+        className="cursor-pointer text-sm font-semibold text-neutral-800 hover:text-brand-secondary transition-colors px-3 py-1 flex items-center gap-1"
       >
         {item}
         <IconChevronDown className={cn("h-3.5 w-3.5 transition-transform duration-200", active === item && "rotate-180")} />
@@ -283,7 +274,7 @@ export const MenuItem = ({
                 <motion.div
                   transition={transition}
                   layoutId="active" // layoutId ensures smooth animation
-                  className="overflow-hidden rounded-2xl bg-white shadow-xl backdrop-blur-sm dark:bg-neutral-950 border border-neutral-100 dark:border-neutral-800"
+                  className="overflow-hidden rounded-2xl bg-white shadow-xl backdrop-blur-sm border border-neutral-200"
                 >
                   <motion.div
                     layout // layout ensures smooth animation
@@ -339,10 +330,10 @@ export const ProductItem = ({
         className="flex-shrink-0 rounded-md shadow-2xl"
       />
       <div>
-        <h4 className="mb-1 text-base font-normal text-black dark:text-white">
+        <h4 className="mb-1 text-base font-normal text-black">
           {title}
         </h4>
-        <p className="max-w-[10rem] text-sm text-neutral-700 dark:text-neutral-300">
+        <p className="max-w-[10rem] text-sm text-neutral-700">
           {description}
         </p>
       </div>
@@ -354,7 +345,7 @@ export const HoveredLink = ({ children, ...rest }: any) => {
   return (
     <Link
       {...rest}
-      className="text-neutral-600 hover:text-brand-secondary dark:text-neutral-200 dark:hover:text-brand-accent transition-colors block py-0.5"
+      className="text-neutral-600 hover:text-brand-secondary transition-colors block py-0.5"
     >
       {children}
     </Link>
