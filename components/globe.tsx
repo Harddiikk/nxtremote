@@ -101,7 +101,7 @@ export function GlobeViz() {
     try {
       const controls = g.controls();
       controls.autoRotate = true;
-      controls.autoRotateSpeed = 0.55;
+      controls.autoRotateSpeed = 1.1;
       controls.enableZoom = false;
       controls.enablePan = false;
       g.pointOfView({ lat: 18, lng: 40, altitude: 2.4 }, 0);

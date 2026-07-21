@@ -41,7 +41,7 @@ export function SecuritySkeleton({ className }: { className?: string }) {
           {/* Lock Icon Container */}
           <div className="relative z-10 shrink-0">
             <div className="flex size-10 items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-black/5 dark:bg-neutral-900 dark:ring-white/10">
-              <Lock className="size-4 text-neutral-600" />
+              <Lock className="size-4 text-neutral-600 dark:text-neutral-300" />
             </div>
           </div>
 

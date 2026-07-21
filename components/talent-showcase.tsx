@@ -24,8 +24,8 @@ const CATEGORIES: { id: Category; label: string; icon: React.ReactNode }[] = [
   { id: "digital", label: "Digital Marketing", icon: <Megaphone className="size-4" /> },
 ];
 
-// One consistent blue gradient across every candidate card (client reference).
-const CARD_GRADIENT = "from-[#0B2A6B] via-[#2563EB] to-[#38BDF8]";
+// One consistent purple-to-blue gradient across every candidate card (client ref image 31).
+const CARD_GRADIENT = "from-[#646FE5] via-[#5B8AEA] to-[#8EE3F9]";
 
 type Specialist = {
   name: string;

@@ -426,7 +426,7 @@ export function IntegrationsBento() {
           <GlassBentoCard className="md:col-span-2 relative overflow-hidden group">
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-indigo-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
-            <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-6 relative flex-1 flex-col justify-center items-center gap-4">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
               {/* Layer 1: sub-section eyebrow label */}
@@ -435,12 +435,13 @@ export function IntegrationsBento() {
               </span>
 
               {/* Layer 2 + 3: logos with tool names */}
-              <div className="grid grid-cols-4 gap-5 md:gap-8 relative z-10">
+              <div className="grid grid-cols-5 gap-4 md:gap-8 relative z-10">
                 {[
                   { base: "logos/zapier", alt: "Zapier", fb: "ZP", color: "bg-[#FF4A00]" },
                   { base: "logos/n8n", alt: "n8n", fb: "n8n", color: "bg-[#EA4B71]" },
                   { base: "logos/make", alt: "Make", fb: "Make", color: "bg-[#6D00CC]" },
                   { base: "logos/chatgpt", alt: "ChatGPT", fb: "GPT", color: "bg-[#10A37F]" },
+                  { base: "logos/claude", alt: "Claude", fb: "Cl", color: "bg-[#C15F3C]" },
                 ].map((t) => (
                   <div key={t.alt} className="flex flex-col items-center gap-2">
                     <LogoFallback
@@ -471,7 +472,7 @@ export function IntegrationsBento() {
                     AI Automation
                   </span>
                   <CardTitle className="text-left mt-1 text-lg font-bold">
-                    Zapier, n8n, Make & GPT
+                    Zapier, n8n, Make, GPT & Claude
                   </CardTitle>
                   <CardDescription className="text-left mt-2 max-w-lg">
                     Automated workflows, lead routing, and AI ops.

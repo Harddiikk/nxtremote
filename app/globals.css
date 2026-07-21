@@ -136,9 +136,10 @@
   body {
     @apply bg-background text-foreground font-sans tracking-normal antialiased;
   }
+  /* Consistent bold treatment for every section heading (client request). */
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    @apply font-bold tracking-tight;
+    @apply font-extrabold tracking-tight;
     color: var(--color-brand-primary);
     line-height: 1.12;
   }

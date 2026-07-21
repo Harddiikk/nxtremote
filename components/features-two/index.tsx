@@ -211,26 +211,29 @@ function RadialHub({
         return (
           <g key={s}>
             <line
-              x1={sx} y1={sy} x2={ex} y2={ey}
-              stroke={nxt ? "#4F2FE5" : "#cbd5e1"} strokeWidth={nxt ? 1.6 : 1}
+              x1={sx} y1={sy} x2={ex} y2={ey} strokeWidth={nxt ? 1.6 : 1.2}
+              className={nxt ? "stroke-[#4F2FE5]" : "stroke-neutral-300 dark:stroke-neutral-500"}
             />
-            <circle cx={ex} cy={ey} r={7} fill={nxt ? "#09B4E4" : "#e2e8f0"} stroke={nxt ? "#4F2FE5" : "#cbd5e1"} strokeWidth="1.5" />
+            <circle
+              cx={ex} cy={ey} r={7} strokeWidth="1.5"
+              className={nxt ? "fill-[#09B4E4] stroke-[#4F2FE5]" : "fill-neutral-200 stroke-neutral-300 dark:fill-neutral-400 dark:stroke-neutral-500"}
+            />
             <text
               x={ex + (right ? 12 : -12)} y={ey + 3}
               fontSize="11" fontWeight="600"
               textAnchor={right ? "start" : "end"}
-              className="fill-neutral-600 dark:fill-neutral-300"
+              className="fill-neutral-600 dark:fill-neutral-200"
             >
               {s}
             </text>
           </g>
         );
       })}
-      <circle cx={cx} cy={cy} r={nodeR} fill={nxt ? "url(#nxthub)" : "currentColor"} className={nxt ? "" : "fill-neutral-100 dark:fill-neutral-800"} stroke={nxt ? "#4F2FE5" : "#cbd5e1"} strokeWidth="2" />
-      <text x={cx} y={cy - 3} textAnchor="middle" fontSize={nxt ? 15 : 13} fontWeight="800" className={nxt ? "fill-white" : "fill-neutral-600 dark:fill-neutral-200"}>
+      <circle cx={cx} cy={cy} r={nodeR} fill={nxt ? "url(#nxthub)" : undefined} strokeWidth="2" className={nxt ? "stroke-[#4F2FE5]" : "fill-neutral-200 stroke-neutral-300 dark:fill-neutral-600 dark:stroke-neutral-500"} />
+      <text x={cx} y={cy - 3} textAnchor="middle" fontSize={nxt ? 15 : 13} fontWeight="800" className={nxt ? "fill-white" : "fill-neutral-700 dark:fill-white"}>
         {center1}
       </text>
-      <text x={cx} y={cy + 15} textAnchor="middle" fontSize="10" fontWeight="600" className={nxt ? "fill-white" : "fill-neutral-500 dark:fill-neutral-400"}>
+      <text x={cx} y={cy + 15} textAnchor="middle" fontSize="10" fontWeight="600" className={nxt ? "fill-white" : "fill-neutral-500 dark:fill-neutral-200"}>
         {center2}
       </text>
     </svg>
@@ -246,7 +249,7 @@ function FocusComparison() {
           <span className="text-gradient-brand">NXT Remote</span> focuses on one thing.
         </Heading>
       </div>
-      <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
+      <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_auto_1fr] lg:gap-4">
         {/* Others */}
         <div className="rounded-2xl border border-border bg-muted/40 p-4 md:p-6">
           <div className="mx-auto mb-2 w-fit rounded-lg bg-neutral-800 px-4 py-1.5 text-center dark:bg-neutral-200">
@@ -256,6 +259,21 @@ function FocusComparison() {
             <p className="text-[10px] text-white/70 dark:text-neutral-500">Doing all the stuff</p>
           </div>
           <RadialHub spokes={OTHERS_SPOKES} center1="ALL" center2="ROLES" />
+        </div>
+        {/* NXT Remote brand mark — the pivot between the two approaches */}
+        <div className="flex shrink-0 flex-col items-center justify-center px-2 py-2">
+          <div className="rounded-2xl border border-brand-secondary/25 bg-background/70 px-5 py-4 shadow-[0_10px_30px_rgba(32,28,103,0.10)] backdrop-blur-sm">
+            <img
+              src="/logo-nxr.png"
+              alt="NXT Remote"
+              className="h-9 w-auto md:h-11 dark:hidden"
+            />
+            <img
+              src="/logo-nxr-white.png"
+              alt="NXT Remote"
+              className="hidden h-9 w-auto md:h-11 dark:block"
+            />
+          </div>
         </div>
         {/* NXT Remote */}
         <div className="card-premium rounded-2xl p-4 md:p-6">
