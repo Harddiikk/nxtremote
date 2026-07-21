@@ -58,13 +58,13 @@ export function LoginSkeleton({ className }: { className?: string }) {
                     type="checkbox"
                     className="size-2.5 cursor-pointer rounded-sm accent-neutral-700"
                   />
-                  <span className="text-[7px] text-neutral-600 dark:text-neutral-400">
+                  <span className="text-[7px] text-neutral-600 dark:text-neutral-200">
                     Remember me
                   </span>
                 </label>
                 <button
                   type="button"
-                  className="text-[7px] text-neutral-500 transition-colors hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200"
+                  className="text-[7px] text-neutral-500 transition-colors hover:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-200"
                 >
                   Forgot password?
                 </button>
@@ -83,7 +83,7 @@ export function LoginSkeleton({ className }: { className?: string }) {
 
               <div className="flex items-center gap-2">
                 <div className="h-px flex-1 bg-neutral-200 dark:bg-neutral-700" />
-                <span className="text-[7px] text-neutral-400 dark:text-neutral-500">
+                <span className="text-[7px] text-neutral-400 dark:text-neutral-300">
                   or continue with
                 </span>
                 <div className="h-px flex-1 bg-neutral-200 dark:bg-neutral-700" />
@@ -137,7 +137,7 @@ export function LoginSkeleton({ className }: { className?: string }) {
                 </button>
               </div>
 
-              <p className="text-center text-[7px] text-neutral-500 dark:text-neutral-400">
+              <p className="text-center text-[7px] text-neutral-500 dark:text-neutral-200">
                 Don&apos;t have an account?{" "}
                 <button
                   type="button"
@@ -176,7 +176,7 @@ function TestimonialCard() {
           <span className="text-[10px] font-medium text-neutral-800 dark:text-neutral-200">
             Sarah Chen
           </span>
-          <span className="text-[8px] text-neutral-500 dark:text-neutral-400">
+          <span className="text-[8px] text-neutral-500 dark:text-neutral-200">
             CTO at TechFlow
           </span>
         </div>

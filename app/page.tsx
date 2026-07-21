@@ -8,7 +8,6 @@ import { GlobeSection } from "@/components/globe-section";
 import Hero from "@/components/hero";
 import { IntegrationsBento } from "@/components/integrations-bento";
 import { LogoMarquee } from "@/components/logo-marquee";
-import { Pricing } from "@/components/pricing";
 import { Process } from "@/components/process";
 import { Testimonials } from "@/components/testimonials";
 import { Metadata } from "next";
@@ -43,7 +42,6 @@ export default function Home() {
       <Testimonials />
       <GlobeSection />
       <FeaturesTwo />
-      <Pricing />
       <AiAcademy />
       <Booking />
       <FAQs />

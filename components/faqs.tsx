@@ -163,7 +163,7 @@ export function FAQs() {
                         transition={{ duration: 0.2 }}
                         className="ml-4 shrink-0"
                       >
-                        <IconPlus className="size-5 text-neutral-500 dark:text-neutral-400" />
+                        <IconPlus className="size-5 text-neutral-500 dark:text-neutral-200" />
                       </motion.div>
                     </button>
                     <AnimatePresence initial={false}>
@@ -175,7 +175,7 @@ export function FAQs() {
                           transition={{ duration: 0.15, ease: "easeInOut" }}
                           className="relative"
                         >
-                          <p className="max-w-[90%] px-4 pb-4 text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                          <p className="max-w-[90%] px-4 pb-4 text-base text-neutral-600 dark:text-neutral-200 leading-relaxed">
                             {item.answer}
                           </p>
                         </motion.div>

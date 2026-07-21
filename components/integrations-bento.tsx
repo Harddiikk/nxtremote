@@ -79,7 +79,7 @@ export function IntegrationsBento() {
             Integrated with Your <span className="text-gradient-brand">Existing Workflows</span>
           </h2>
 
-          <p className="mt-4 text-base md:text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-base md:text-lg text-neutral-600 dark:text-neutral-200 max-w-2xl mx-auto leading-relaxed">
             Day-one fluency in the tools your agency already runs on.
           </p>
         </motion.div>
@@ -109,7 +109,6 @@ export function IntegrationsBento() {
                 ].map((t) => (
                   <div key={t.alt} className="flex flex-col items-center gap-2">
                     <LogoFallback baseName={t.base} alt={t.alt} fallbackText={t.fb} brandColor={t.color} glowColor={t.glow} />
-                    <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">{t.alt}</span>
                   </div>
                 ))}
               </div>
@@ -163,7 +162,6 @@ export function IntegrationsBento() {
                 ].map((t) => (
                   <div key={t.alt} className="flex flex-col items-center gap-2">
                     <LogoFallback baseName={t.base} alt={t.alt} fallbackText={t.fb} brandColor={t.color} glowColor={t.glow} />
-                    <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">{t.alt}</span>
                   </div>
                 ))}
               </div>
@@ -216,7 +214,6 @@ export function IntegrationsBento() {
                 ].map((t) => (
                   <div key={t.alt} className="flex flex-col items-center gap-2">
                     <LogoFallback baseName={t.base} alt={t.alt} fallbackText={t.fb} brandColor={t.color} glowColor={t.glow} />
-                    <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">{t.alt}</span>
                   </div>
                 ))}
               </div>
@@ -269,7 +266,6 @@ export function IntegrationsBento() {
                 ].map((t) => (
                   <div key={t.alt} className="flex flex-col items-center gap-2">
                     <LogoFallback baseName={t.base} alt={t.alt} fallbackText={t.fb} brandColor={t.color} glowColor={t.glow} />
-                    <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">{t.alt}</span>
                   </div>
                 ))}
               </div>
@@ -328,7 +324,6 @@ export function IntegrationsBento() {
                       brandColor={t.color}
                       glowColor="group-hover:shadow-[0_0_20px_rgba(139,92,246,0.35)]"
                     />
-                    <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">{t.alt}</span>
                   </div>
                 ))}
               </div>
@@ -391,7 +386,6 @@ export function IntegrationsBento() {
                       brandColor={t.color}
                       glowColor="group-hover:shadow-[0_0_20px_rgba(217,70,239,0.35)]"
                     />
-                    <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">{t.alt}</span>
                   </div>
                 ))}
               </div>
@@ -451,7 +445,6 @@ export function IntegrationsBento() {
                       brandColor={t.color}
                       glowColor="group-hover:shadow-[0_0_20px_rgba(99,102,241,0.35)]"
                     />
-                    <span className="text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">{t.alt}</span>
                   </div>
                 ))}
               </div>
@@ -550,7 +543,7 @@ function CardTitle({ children, className }: { children: React.ReactNode; classNa
 
 function CardDescription({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
-    <p className={cn("text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed", className)}>
+    <p className={cn("text-sm text-neutral-500 dark:text-neutral-200 leading-relaxed", className)}>
       {children}
     </p>
   );

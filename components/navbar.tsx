@@ -38,7 +38,7 @@ const DesktopNav = ({ navItems }: { navItems: any[] }) => {
   return (
     <motion.div
       className={cn(
-        "relative z-50 mx-auto hidden w-full flex-row items-center justify-between rounded-full border border-neutral-200/40 bg-white/70 backdrop-blur-lg px-6 py-3 lg:flex dark:border-white/5 dark:bg-[#17171E]/80 shadow-lg",
+        "relative z-50 mx-auto hidden w-full flex-row items-center justify-between rounded-full border border-neutral-200/70 bg-white/85 backdrop-blur-xl px-6 py-3 lg:flex dark:border-white/10 dark:bg-[#1D1E2B]/85 shadow-lg",
       )}
     >
       <Logo />
@@ -105,7 +105,7 @@ const MobileNav = ({ navItems }: { navItems: any[] }) => {
       <motion.div
         animate={{ borderRadius: open ? "16px" : "9999px" }}
         key={String(open)}
-        className="relative mx-auto flex w-full flex-col items-center justify-between border border-neutral-200/40 bg-white/75 backdrop-blur-lg px-6 py-4 dark:border-white/5 dark:bg-[#17171E]/80 shadow-lg"
+        className="relative mx-auto flex w-full flex-col items-center justify-between border border-neutral-200/70 bg-white/85 backdrop-blur-xl px-6 py-4 dark:border-white/10 dark:bg-[#1D1E2B]/85 shadow-lg"
       >
         <div className="flex w-full flex-row items-center justify-between">
           <Logo />
@@ -189,7 +189,7 @@ const MobileChildNavItems = ({ navItem }: { navItem: any }) => {
         className="relative flex w-full items-center justify-between text-sm font-semibold text-neutral-700 hover:text-brand-secondary dark:text-neutral-300 dark:hover:text-brand-accent py-1.5 cursor-pointer focus:outline-none"
       >
         <motion.span className="block">{navItem.name}</motion.span>
-        <IconChevronDown className={cn("h-4 w-4 text-neutral-500 dark:text-neutral-400 transition-transform duration-200", open && "rotate-180")} />
+        <IconChevronDown className={cn("h-4 w-4 text-neutral-500 dark:text-neutral-200 transition-transform duration-200", open && "rotate-180")} />
       </button>
       <AnimatePresence>
         {open && (
@@ -203,7 +203,7 @@ const MobileChildNavItems = ({ navItem }: { navItem: any }) => {
               <Link
                 key={`child-${childIdx}`}
                 href={child.link}
-                className="relative text-xs font-medium text-neutral-600 hover:text-brand-secondary dark:text-neutral-400 dark:hover:text-brand-accent block py-1"
+                className="relative text-xs font-medium text-neutral-600 hover:text-brand-secondary dark:text-neutral-200 dark:hover:text-brand-accent block py-1"
               >
                 <motion.span className="block">{child.name}</motion.span>
               </Link>
@@ -354,7 +354,7 @@ export const HoveredLink = ({ children, ...rest }: any) => {
   return (
     <Link
       {...rest}
-      className="text-neutral-600 hover:text-brand-secondary dark:text-neutral-400 dark:hover:text-brand-accent transition-colors block py-0.5"
+      className="text-neutral-600 hover:text-brand-secondary dark:text-neutral-200 dark:hover:text-brand-accent transition-colors block py-0.5"
     >
       {children}
     </Link>

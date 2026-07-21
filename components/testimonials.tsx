@@ -109,7 +109,7 @@ export function Testimonials() {
               <span className="font-semibold text-neutral-900 dark:text-white">
                 {FEATURED.name}
               </span>{" "}
-              <span className="text-neutral-500 dark:text-neutral-400">
+              <span className="text-neutral-500 dark:text-neutral-200">
                 · {FEATURED.role}
               </span>
             </figcaption>
@@ -119,7 +119,7 @@ export function Testimonials() {
                   <p className="font-display text-2xl font-bold text-gradient-brand md:text-3xl">
                     {s.value}
                   </p>
-                  <p className="mt-0.5 font-mono text-[10px] tracking-[0.15em] text-neutral-500 uppercase dark:text-neutral-400">
+                  <p className="mt-0.5 font-mono text-[10px] tracking-[0.15em] text-neutral-500 uppercase dark:text-neutral-200">
                     {s.label}
                   </p>
                 </div>

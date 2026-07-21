@@ -98,9 +98,10 @@
 .dark {
   --background: #0F0F12;
   --foreground: #F4F5FB;
-  --card: #17171E;
+  /* Lifted card surface: dark cards were blending into the page bg */
+  --card: #1D1E2B;
   --card-foreground: #F4F5FB;
-  --popover: #17171E;
+  --popover: #1D1E2B;
   --popover-foreground: #F4F5FB;
   --primary: #4F2FE5;
   --primary-foreground: #FFFFFF;
@@ -225,6 +226,76 @@
 @keyframes logoFloat {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
+}
+
+/* ---------------------------------------------------------------------------
+   Hero background kit: dot grid, rotating aurora, sweeping beams, spotlight,
+   floating glass chips. Theme-aware via CSS vars.
+--------------------------------------------------------------------------- */
+.hero-dot-grid {
+  --dot: rgba(32, 28, 103, 0.16);
+  background-image: radial-gradient(var(--dot) 1.2px, transparent 1.2px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 38%, black 25%, transparent 78%);
+}
+.dark .hero-dot-grid {
+  --dot: rgba(244, 245, 251, 0.10);
+}
+.hero-aurora {
+  background: conic-gradient(
+    from 0deg,
+    rgba(79, 47, 229, 0.32),
+    rgba(9, 180, 228, 0.24),
+    rgba(79, 47, 229, 0.05),
+    rgba(9, 180, 228, 0.28),
+    rgba(79, 47, 229, 0.32)
+  );
+  filter: blur(90px);
+  animation: heroSpin 46s linear infinite;
+}
+@keyframes heroSpin {
+  to { transform: rotate(360deg); }
+}
+.hero-beam {
+  position: absolute;
+  width: 42vw;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, rgba(79, 47, 229, 0.55), rgba(9, 180, 228, 0.75), transparent);
+  transform: rotate(-24deg);
+  opacity: 0;
+  animation: heroBeam 9s ease-in-out infinite;
+}
+.dark .hero-beam {
+  background: linear-gradient(90deg, transparent, rgba(124, 108, 240, 0.7), rgba(9, 180, 228, 0.9), transparent);
+}
+@keyframes heroBeam {
+  0% { opacity: 0; transform: rotate(-24deg) translateX(-42vw); }
+  12% { opacity: 1; }
+  32% { opacity: 0; transform: rotate(-24deg) translateX(52vw); }
+  100% { opacity: 0; transform: rotate(-24deg) translateX(52vw); }
+}
+.hero-spotlight {
+  background: radial-gradient(ellipse 55% 48% at 50% 50%, rgba(79, 47, 229, 0.14), rgba(9, 180, 228, 0.07) 45%, transparent 72%);
+  animation: heroPulse 7s ease-in-out infinite;
+}
+.dark .hero-spotlight {
+  background: radial-gradient(ellipse 55% 48% at 50% 50%, rgba(124, 108, 240, 0.20), rgba(9, 180, 228, 0.10) 45%, transparent 72%);
+}
+@keyframes heroPulse {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.09); opacity: 1; }
+}
+.hero-chip {
+  animation: chipFloat 7s ease-in-out infinite;
+}
+@keyframes chipFloat {
+  0%, 100% { transform: translateY(0) rotate(var(--chip-rot, -2deg)); }
+  50% { transform: translateY(-12px) rotate(var(--chip-rot, -2deg)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-aurora, .hero-beam, .hero-spotlight, .hero-chip {
+    animation: none;
+  }
 }
 
 @keyframes marquee {

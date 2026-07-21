@@ -229,7 +229,7 @@ export function Pricing() {
                     {plan.teamSize}
                   </span>
                 </div>
-                <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400 min-h-8">
+                <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-200 min-h-8">
                   {plan.description}
                 </p>
 
@@ -241,7 +241,7 @@ export function Pricing() {
                     <p className="text-sm font-bold text-neutral-900 dark:text-white">
                       Flat monthly rate
                     </p>
-                    <p className="text-xs text-neutral-500 dark:text-neutral-400">
+                    <p className="text-xs text-neutral-500 dark:text-neutral-200">
                       Custom quote on your discovery call
                     </p>
                   </div>
@@ -287,7 +287,7 @@ export function Pricing() {
             <Subheading className="text-brand-secondary font-semibold tracking-wider text-xs uppercase">
               What Each Tier Includes
             </Subheading>
-            <Heading as="h3" className="text-2xl md:text-3xl font-bold mt-2">
+            <Heading as="h3" className="text-2xl md:text-3xl lg:text-3xl font-bold mt-2">
               Compare <span className="text-gradient-brand">Every Feature</span> Across Tiers
             </Heading>
           </div>
@@ -297,7 +297,7 @@ export function Pricing() {
             <table className="w-full min-w-[640px] border-collapse text-left">
               <thead>
                 <tr className="border-b border-neutral-200 dark:border-white/10 bg-neutral-100/50 dark:bg-neutral-950/40">
-                  <th className="px-6 py-5 align-bottom text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 w-[28%]">
+                  <th className="px-6 py-5 align-bottom text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-200 w-[28%]">
                     Features
                   </th>
                   {featureTiers.map((tier) => (
@@ -322,7 +322,7 @@ export function Pricing() {
                       >
                         {tier.name}
                       </div>
-                      <div className="mt-1 text-xs font-normal normal-case text-neutral-500 dark:text-neutral-400">
+                      <div className="mt-1 text-xs font-normal normal-case text-neutral-500 dark:text-neutral-200">
                         {tier.subtitle}
                       </div>
                     </th>
@@ -381,7 +381,7 @@ export function Pricing() {
             <Subheading className="text-brand-accent font-semibold tracking-wider text-xs uppercase">
               The Offshore Advantage
             </Subheading>
-            <Heading as="h3" className="text-2xl md:text-3xl font-bold mt-2 text-white">
+            <Heading as="h3" className="text-2xl md:text-3xl lg:text-3xl font-bold mt-2 text-white">
               Why Agency Founders Choose NXT Remote Over Local US/UK Hires
             </Heading>
 
@@ -471,7 +471,7 @@ export function Pricing() {
             <Subheading className="text-brand-secondary font-semibold tracking-wider text-xs uppercase">
               Rigorous Evaluation
             </Subheading>
-            <Heading as="h3" className="text-2xl md:text-3xl font-bold mt-2">
+            <Heading as="h3" className="text-2xl md:text-3xl lg:text-3xl font-bold mt-2">
               Comparison Chart for <span className="text-gradient-brand">Services We Offer</span>
             </Heading>
           </div>
@@ -480,7 +480,7 @@ export function Pricing() {
           <div className="hidden md:block overflow-hidden rounded-2xl border border-neutral-200 dark:border-white/10 bg-white/50 dark:bg-neutral-900/30 backdrop-blur-md shadow-lg">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="border-b border-neutral-200 dark:border-white/10 bg-neutral-100/50 dark:bg-neutral-950/40 text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+                <tr className="border-b border-neutral-200 dark:border-white/10 bg-neutral-100/50 dark:bg-neutral-950/40 text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-200">
                   <th className="px-6 py-5 w-1/4">Evaluation Criteria</th>
                   <th className="px-6 py-5 bg-[#0b75e2]/5 dark:bg-[#8b5cf6]/5 w-3/8 text-neutral-950 dark:text-white font-extrabold border-x border-[#0b75e2]/15 dark:border-[#8b5cf6]/10 text-sm">
                     <span className="flex items-center gap-2">
@@ -488,7 +488,7 @@ export function Pricing() {
                       NXT Remote (Our Standard)
                     </span>
                   </th>
-                  <th className="px-6 py-5 w-3/8 text-neutral-600 dark:text-neutral-400 text-sm">Generalist Agencies</th>
+                  <th className="px-6 py-5 w-3/8 text-neutral-600 dark:text-neutral-200 text-sm">Generalist Agencies</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-neutral-200/60 dark:divide-white/5 text-sm leading-relaxed">
@@ -501,7 +501,7 @@ export function Pricing() {
                         <span>{row.nxt}</span>
                       </div>
                     </td>
-                    <td className="px-6 py-5 text-neutral-500 dark:text-neutral-400">
+                    <td className="px-6 py-5 text-neutral-500 dark:text-neutral-200">
                       <div className="flex items-start gap-2.5">
                         <X className="size-4 text-red-500 shrink-0 mt-0.5" />
                         <span>{row.market}</span>
@@ -535,11 +535,11 @@ export function Pricing() {
                 </div>
 
                 <div className="p-4 rounded-xl border border-neutral-100 dark:border-white/5 bg-neutral-50/50 dark:bg-neutral-950/20">
-                  <span className="flex items-center gap-1.5 text-[10px] font-black text-neutral-400 dark:text-neutral-500 uppercase tracking-widest">
+                  <span className="flex items-center gap-1.5 text-[10px] font-black text-neutral-400 dark:text-neutral-300 uppercase tracking-widest">
                     <X className="size-3.5 text-red-400" />
                     Generalist Agencies
                   </span>
-                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-2">
+                  <p className="text-sm text-neutral-500 dark:text-neutral-200 mt-2">
                     {row.market}
                   </p>
                 </div>

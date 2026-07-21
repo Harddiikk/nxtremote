@@ -4,14 +4,31 @@ import React from "react";
 import { Button } from "@/components/button";
 import Link from "next/link";
 import { motion } from "motion/react";
-import { IconArrowRight } from "@tabler/icons-react";
-import { LinesGradientShader } from "./lines-gradient-shader";
+import {
+  IconArrowRight,
+  IconChartArrows,
+  IconSeo,
+  IconAd2,
+  IconRobot,
+  IconMail,
+  IconBrandGoogleAnalytics,
+} from "@tabler/icons-react";
 import { BOOKING_URL } from "@/lib/site";
 
 const STATS = [
   { value: "Top 3%", label: "Vetted Candidates" },
   { value: "70%", label: "payroll savings" },
   { value: "Day 5", label: "interview-ready" },
+];
+
+/* Floating specialist chips that frame the headline on desktop */
+const CHIPS = [
+  { label: "SEO", icon: IconSeo, pos: "top-[24%] left-[6%]", rot: "-4deg", delay: "0s" },
+  { label: "Paid Ads", icon: IconAd2, pos: "top-[46%] left-[3%]", rot: "3deg", delay: "1.4s" },
+  { label: "ROAS +212%", icon: IconChartArrows, pos: "top-[68%] left-[8%]", rot: "-2deg", delay: "2.8s" },
+  { label: "AI Automation", icon: IconRobot, pos: "top-[26%] right-[5%]", rot: "3deg", delay: "0.8s" },
+  { label: "Email & CRM", icon: IconMail, pos: "top-[50%] right-[3%]", rot: "-3deg", delay: "2.2s" },
+  { label: "Analytics", icon: IconBrandGoogleAnalytics, pos: "top-[70%] right-[7%]", rot: "2deg", delay: "3.6s" },
 ];
 
 const rise = {
@@ -26,15 +43,16 @@ const rise = {
 export default function Hero() {
   return (
     <div className="relative w-full overflow-hidden text-foreground">
-      {/* Flowing gradient bands — the visible hero background animation */}
-      <LinesGradientShader
-        className="absolute inset-0 bg-transparent opacity-50"
-        bandSpacing={44}
-        bandThickness={110}
-        waveAmplitude={0.22}
-        speed={1}
+      {/* L1: dot grid, radially masked to fade at the edges */}
+      <div aria-hidden className="hero-dot-grid pointer-events-none absolute inset-0" />
+
+      {/* L2: rotating conic aurora behind the headline */}
+      <div
+        aria-hidden
+        className="hero-aurora pointer-events-none absolute left-1/2 top-[8%] h-[720px] w-[720px] -translate-x-1/2 rounded-full opacity-60 dark:opacity-70"
       />
-      {/* Ambient aurora — slow drifting glow orbs */}
+
+      {/* L3: slow drifting glow orbs */}
       <motion.div
         aria-hidden
         animate={{ x: [0, 60, -30, 0], y: [0, -40, 30, 0], scale: [1, 1.15, 0.95, 1] }}
@@ -47,6 +65,29 @@ export default function Hero() {
         transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
         className="pointer-events-none absolute top-[30%] left-[2%] -z-0 h-[420px] w-[420px] rounded-full bg-brand-accent/8 blur-[130px]"
       />
+
+      {/* L4: sweeping light beams */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+        <span className="hero-beam top-[22%] left-[8%]" />
+        <span className="hero-beam top-[48%] left-[30%]" style={{ animationDelay: "3s" }} />
+        <span className="hero-beam top-[68%] left-[2%]" style={{ animationDelay: "6s" }} />
+      </div>
+
+      {/* L5: floating specialist chips (desktop only) */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 hidden xl:block">
+        {CHIPS.map((chip) => (
+          <div
+            key={chip.label}
+            className={`hero-chip absolute ${chip.pos} flex items-center gap-2 rounded-full border border-brand-secondary/20 bg-white/70 px-4 py-2 shadow-[0_8px_24px_rgba(32,28,103,0.12)] backdrop-blur-md dark:border-white/15 dark:bg-white/[0.07]`}
+            style={{ "--chip-rot": chip.rot, animationDelay: chip.delay } as React.CSSProperties}
+          >
+            <chip.icon className="size-4 text-brand-secondary dark:text-brand-accent" />
+            <span className="text-xs font-bold text-brand-primary dark:text-neutral-100">
+              {chip.label}
+            </span>
+          </div>
+        ))}
+      </div>
 
       <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-4 pt-36 pb-16 text-center md:px-8 md:pt-44 md:pb-24">
         <motion.h1
@@ -75,8 +116,10 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={2}
-          className="mt-14"
+          className="relative mt-14"
         >
+          {/* pulsing spotlight behind the TOP 3% */}
+          <div aria-hidden className="hero-spotlight pointer-events-none absolute -inset-x-32 -inset-y-16" />
           <p className="font-mono text-sm tracking-[0.3em] text-muted-foreground uppercase">
             Discover
           </p>

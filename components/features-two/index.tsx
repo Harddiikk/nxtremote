@@ -79,7 +79,7 @@ export function FeaturesTwo() {
           We Don't Just Vet Their Skills. We Validate Their{" "}
           <span className="text-gradient-brand">Infrastructure</span>.
         </Heading>
-        <p className="text-base text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base text-neutral-600 dark:text-neutral-200 max-w-2xl mx-auto leading-relaxed">
           Every candidate undergoes a grueling 3-stage technical, operational, and physical screening before joining a client shortlist. Skip the resume scrolling and avoid administrative friction.
         </p>
       </div>
@@ -244,7 +244,7 @@ function FocusComparison() {
   return (
     <div className="mb-24 md:mb-32">
       <div className="mx-auto mb-10 max-w-3xl text-center">
-        <Heading as="h2" className="text-2xl md:text-3xl">
+        <Heading as="h2" className="text-2xl md:text-3xl lg:text-3xl">
           Others do everything.{" "}
           <span className="text-gradient-brand">NXT Remote</span> focuses on one thing.
         </Heading>
@@ -256,7 +256,7 @@ function FocusComparison() {
             <p className="text-xs font-bold uppercase tracking-wide text-white dark:text-neutral-900">
               Others / Traditional Agencies
             </p>
-            <p className="text-[10px] text-white/70 dark:text-neutral-500">Doing all the stuff</p>
+            <p className="text-[10px] text-white/70 dark:text-neutral-300">Doing all the stuff</p>
           </div>
           <RadialHub spokes={OTHERS_SPOKES} center1="ALL" center2="ROLES" />
         </div>
@@ -308,7 +308,7 @@ function BeamCircle({ label, active }: { label: string; active?: boolean }) {
       <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border ${active ? 'border-brand-accent bg-brand-primary' : 'border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900'} shadow-sm`}>
         <div className={`h-3 w-3 rounded-full ${active ? 'bg-brand-accent animate-pulse' : 'bg-brand-secondary'}`} />
       </div>
-      <span className="text-[10px] font-medium text-neutral-500 dark:text-neutral-400">{label}</span>
+      <span className="text-[10px] font-medium text-neutral-500 dark:text-neutral-200">{label}</span>
     </div>
   );
 }
@@ -323,7 +323,7 @@ function FeatureTitle({ children }: { children: React.ReactNode }) {
 
 function FeatureDescription({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mx-auto mt-2 max-w-xs text-center text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+    <p className="mx-auto mt-2 max-w-xs text-center text-sm leading-relaxed text-neutral-500 dark:text-neutral-200">
       {children}
     </p>
   );
@@ -357,7 +357,7 @@ function PillarCard({
           </h4>
         </div>
       </div>
-      <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+      <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-200">
         {description}
       </p>
     </div>

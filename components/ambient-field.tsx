@@ -71,7 +71,8 @@ export function AmbientField() {
       const dt = last ? t - last : 16;
       last = t;
       ctx.clearRect(0, 0, w, h);
-      const darkBoost = isDark() ? 1.7 : 1;
+      // Client wants the glyph animation clearly visible in BOTH themes.
+      const darkBoost = isDark() ? 1.7 : 1.5;
       for (const p of particles) {
         if (!reduce) {
           p.y -= p.vy * dt;

@@ -27,10 +27,11 @@ export function Button({
         size === "md" && "px-6 py-3 text-sm",
         size === "lg" && "px-8 py-3.5 text-base",
         variant === "default" && [
-          "bg-brand-secondary text-white",
-          "shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_1px_2px_rgba(0,0,0,0.2)]",
-          "hover:bg-[#1a83f0]",
-          "hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.25),0_4px_16px_rgba(11,117,226,0.45)]",
+          // Brand gradient sweep (violet -> cyan), same as the logo
+          "bg-gradient-to-r from-[#4F2FE5] via-[#2A7EE9] to-[#09B4E4] text-white",
+          "shadow-[inset_0_1px_0_rgba(255,255,255,0.25),0_2px_8px_rgba(79,47,229,0.35)]",
+          "hover:brightness-110",
+          "hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_6px_20px_rgba(9,180,228,0.45)]",
         ],
         variant === "outline" && [
           "bg-card text-foreground",

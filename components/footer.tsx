@@ -71,7 +71,7 @@ export function Footer() {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+              className="text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-200 dark:hover:text-white"
               aria-label="Twitter"
             >
               <TwitterIcon className="size-5" />
@@ -80,14 +80,14 @@ export function Footer() {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+              className="text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-200 dark:hover:text-white"
               aria-label="LinkedIn"
             >
               <LinkedInIcon className="size-5" />
             </Link>
           </div>
 
-          <div className="mt-4 ml-2 text-neutral-500 dark:text-neutral-400">
+          <div className="mt-4 ml-2 text-neutral-500 dark:text-neutral-200">
             &copy; 2026 NXT Remote. All rights reserved.
           </div>
         </div>

@@ -17,7 +17,7 @@ export function FeaturesOne() {
           <Heading className="mt-2 text-neutral-900 dark:text-neutral-100">
             High Local Salaries Shouldn't Stall Your <span className="text-gradient-brand">Agency’s Growth</span>
           </Heading>
-          <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-200 max-w-2xl mx-auto leading-relaxed">
             Same creative output. Up to 70% less payroll. Embedded in your
             workflow by day five.
           </p>
@@ -66,7 +66,7 @@ export function FeaturesOne() {
               ].map((item, idx) => (
                 <div key={idx} className="flex flex-col p-2.5 rounded-xl bg-neutral-50 dark:bg-neutral-950 border border-neutral-100 dark:border-white/5">
                   <span className="text-xs font-bold text-neutral-800 dark:text-neutral-200">{item.region}</span>
-                  <span className="text-[10px] text-neutral-500 dark:text-neutral-400 mt-0.5">{item.overlap}</span>
+                  <span className="text-[10px] text-neutral-500 dark:text-neutral-200 mt-0.5">{item.overlap}</span>
                 </div>
               ))}
             </div>
@@ -93,7 +93,7 @@ export function FeaturesOne() {
                     <span className="text-xs md:text-sm font-bold text-neutral-800 dark:text-neutral-200">{item.name}</span>
                     <span className="text-[9px] text-brand-accent font-semibold uppercase">{item.status}</span>
                   </div>
-                  <p className="text-[10px] md:text-xs text-neutral-500 dark:text-neutral-400 mt-1">{item.desc}</p>
+                  <p className="text-[10px] md:text-xs text-neutral-500 dark:text-neutral-200 mt-1">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -116,7 +116,7 @@ export function FeaturesOne() {
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center justify-between p-2.5 rounded-xl bg-neutral-50 dark:bg-neutral-950 border border-neutral-100 dark:border-white/5">
                   <span className="text-xs font-semibold text-neutral-800 dark:text-neutral-200">{item.skill}</span>
-                  <span className="text-[10px] font-medium text-neutral-500 dark:text-neutral-400">{item.level}</span>
+                  <span className="text-[10px] font-medium text-neutral-500 dark:text-neutral-200">{item.level}</span>
                 </div>
               ))}
             </div>
@@ -222,7 +222,7 @@ function CardDescription({
   return (
     <p
       className={cn(
-        "text-base text-balance text-neutral-600 dark:text-neutral-400 leading-relaxed",
+        "text-base text-balance text-neutral-600 dark:text-neutral-200 leading-relaxed",
         className,
       )}
     >
@@ -275,14 +275,14 @@ function FeatureCard({
         <span className="text-gradient-brand text-3xl md:text-4xl font-bold leading-none">
           {metric}
         </span>
-        <span className="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+        <span className="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-200">
           {metricLabel}
         </span>
       </div>
       <h3 className="mt-3 text-base font-semibold text-neutral-900 dark:text-white">
         {title}
       </h3>
-      <p className="mt-2 text-base text-balance text-neutral-600 dark:text-neutral-400 leading-relaxed">
+      <p className="mt-2 text-base text-balance text-neutral-600 dark:text-neutral-200 leading-relaxed">
         {description}
       </p>
     </div>
