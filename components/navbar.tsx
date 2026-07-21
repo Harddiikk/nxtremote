@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import { IconChevronDown, IconMenu2, IconX } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { ModeToggle } from "./mode-toggle";
 
@@ -217,17 +216,13 @@ const MobileChildNavItems = ({ navItem }: { navItem: any }) => {
 };
 
 const Logo = () => {
-  const router = useRouter();
   return (
+    // Plain Link: Next intercepts for client-side nav, and the native href="/"
+    // is a guaranteed fallback. (An earlier onClick+preventDefault killed that
+    // fallback, which is why the logo could silently fail to navigate.)
     <Link
       href="/"
       aria-label="NXT Remote home"
-      // A framer-motion ancestor preventDefaults the click, which makes Next's
-      // Link skip navigation. Force it via the router so the logo always goes home.
-      onClick={(e) => {
-        e.preventDefault();
-        router.push("/");
-      }}
       className="relative z-20 flex items-center"
     >
       {/* New nXtRemote logo — dark wordmark (light theme) */}

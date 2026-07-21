@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import React from "react";
 import { whatsappLink, BOOKING_URL } from "@/lib/site";
 
@@ -188,16 +185,10 @@ export function Footer() {
 }
 
 const Logo = () => {
-  const router = useRouter();
   return (
     <Link
       href="/"
-      onClick={(e) => {
-        // A framer-motion ancestor can swallow the anchor's default nav, so
-        // route imperatively to keep the logo a reliable link to Home.
-        e.preventDefault();
-        router.push("/");
-      }}
+      aria-label="NXT Remote home"
       className="relative z-20 mr-4 flex items-center py-1"
     >
       {/* New nXtRemote logo, theme-aware */}
