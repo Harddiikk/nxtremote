@@ -92,11 +92,11 @@ export function IntegrationsBento() {
             {/* Background Glow */}
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-amber-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
-            <CardSkeleton className="py-4 relative min-h-[172px] flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative h-[184px] flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
               {/* Layer 1: sub-section eyebrow label */}
-              <span className="relative z-10 text-[9px] font-bold uppercase tracking-[0.15em] text-amber-600">
+              <span className="relative z-10 text-[9px] font-bold uppercase tracking-[0.15em] text-amber-700">
                 Connected Platforms
               </span>
 
@@ -105,7 +105,7 @@ export function IntegrationsBento() {
                 {[
                   { base: "logos/hubspot", alt: "HubSpot", fb: "HS", color: "bg-[#FF7A59]", glow: "group-hover:shadow-[0_0_20px_rgba(255,122,89,0.3)]" },
                   { base: "logos/gohighlevel", alt: "GoHighLevel", fb: "GHL", color: "bg-[#188BF6]", glow: "group-hover:shadow-[0_0_20px_rgba(24,139,246,0.3)]" },
-                  { base: "logos/zapier", alt: "Zapier", fb: "ZP", color: "bg-[#FF4A00]", glow: "group-hover:shadow-[0_0_20px_rgba(255,74,0,0.3)]" },
+                  { base: "logos/salesforce", alt: "Salesforce", fb: "SF", color: "bg-[#00A1E0]", glow: "group-hover:shadow-[0_0_20px_rgba(0,161,224,0.3)]" },
                 ].map((t) => (
                   <div key={t.alt} className="flex flex-col items-center gap-2">
                     <LogoFallback baseName={t.base} alt={t.alt} fallbackText={t.fb} brandColor={t.color} glowColor={t.glow} />
@@ -116,7 +116,7 @@ export function IntegrationsBento() {
               {/* Feature mini indicators */}
               <div className="flex gap-1.5 relative z-10 flex-wrap justify-center">
                 {["Pipeline Automation", "Lead Distribution", "CRM Sync"].map((tag) => (
-                  <span key={tag} className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-amber-500/5 text-amber-600 dark:text-amber-400 border border-amber-500/10 backdrop-blur-md">
+                  <span key={tag} className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-amber-500/15 text-amber-700 border border-amber-500/30 font-bold backdrop-blur-md">
                     {tag}
                   </span>
                 ))}
@@ -126,7 +126,7 @@ export function IntegrationsBento() {
             <CardContent>
               <div className="flex items-start justify-between">
                 <div>
-                  <span className="text-[10px] font-bold tracking-widest uppercase text-amber-500 dark:text-amber-400">
+                  <span className="inline-block rounded-full px-3 py-1 text-xs font-black tracking-widest uppercase bg-white/5 ring-1 ring-white/10 text-amber-500 dark:text-amber-400">
                     CRM & Pipelines
                   </span>
                   <CardTitle className="text-left mt-1 text-xl md:text-2xl font-bold">
@@ -145,7 +145,7 @@ export function IntegrationsBento() {
             {/* Background Glow */}
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-violet-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
-            <CardSkeleton className="py-4 relative min-h-[172px] flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative h-[184px] flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
               {/* Layer 1: sub-section eyebrow label */}
@@ -168,7 +168,7 @@ export function IntegrationsBento() {
 
               <div className="flex gap-1.5 relative z-10 flex-wrap justify-center">
                 {["Flows & Segments", "LTV Retention"].map((tag) => (
-                  <span key={tag} className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-violet-500/5 text-violet-600 dark:text-violet-400 border border-violet-500/10 backdrop-blur-md">
+                  <span key={tag} className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-violet-500/15 text-violet-700 border border-violet-500/30 font-bold backdrop-blur-md">
                     {tag}
                   </span>
                 ))}
@@ -178,7 +178,7 @@ export function IntegrationsBento() {
             <CardContent>
               <div className="flex items-start justify-between">
                 <div>
-                  <span className="text-[10px] font-bold tracking-widest uppercase text-violet-500 dark:text-violet-400">
+                  <span className="inline-block rounded-full px-3 py-1 text-xs font-black tracking-widest uppercase bg-white/5 ring-1 ring-white/10 text-violet-500 dark:text-violet-400">
                     Retention & Flows
                   </span>
                   <CardTitle className="text-left mt-1 text-xl md:text-2xl font-bold">
@@ -197,7 +197,7 @@ export function IntegrationsBento() {
             {/* Background Glow */}
             <div className="absolute -left-10 -bottom-10 -z-10 size-48 rounded-full bg-blue-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
-            <CardSkeleton className="py-4 relative min-h-[172px] flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative h-[184px] flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
               {/* Layer 1: sub-section eyebrow label */}
@@ -220,7 +220,7 @@ export function IntegrationsBento() {
 
               <div className="flex gap-1.5 relative z-10 flex-wrap justify-center">
                 {["GA4 Config", "CM360 Tracking"].map((tag) => (
-                  <span key={tag} className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-blue-500/5 text-blue-600 dark:text-blue-400 border border-blue-500/10 backdrop-blur-md">
+                  <span key={tag} className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-blue-500/15 text-blue-700 border border-blue-500/30 font-bold backdrop-blur-md">
                     {tag}
                   </span>
                 ))}
@@ -230,7 +230,7 @@ export function IntegrationsBento() {
             <CardContent>
               <div className="flex items-start justify-between">
                 <div>
-                  <span className="text-[10px] font-bold tracking-widest uppercase text-blue-500 dark:text-blue-400">
+                  <span className="inline-block rounded-full px-3 py-1 text-xs font-black tracking-widest uppercase bg-white/5 ring-1 ring-white/10 text-blue-500 dark:text-blue-400">
                     Analytics & Performance
                   </span>
                   <CardTitle className="text-left mt-1 text-xl md:text-2xl font-bold">
@@ -249,7 +249,7 @@ export function IntegrationsBento() {
             {/* Background Glow */}
             <div className="absolute -left-10 -bottom-10 -z-10 size-48 rounded-full bg-emerald-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
-            <CardSkeleton className="py-4 relative min-h-[172px] flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative h-[184px] flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
               {/* Layer 1: sub-section eyebrow label */}
@@ -272,7 +272,7 @@ export function IntegrationsBento() {
 
               <div className="flex gap-1.5 relative z-10 flex-wrap justify-center">
                 {["Sprint Delivery", "Async Comm", "Task Allocation"].map((tag) => (
-                  <span key={tag} className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/5 text-emerald-600 dark:text-emerald-400 border border-emerald-500/10 backdrop-blur-md">
+                  <span key={tag} className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-700 border border-emerald-500/30 font-bold backdrop-blur-md">
                     {tag}
                   </span>
                 ))}
@@ -282,7 +282,7 @@ export function IntegrationsBento() {
             <CardContent>
               <div className="flex items-start justify-between">
                 <div>
-                  <span className="text-[10px] font-bold tracking-widest uppercase text-teal-500 dark:text-teal-400">
+                  <span className="inline-block rounded-full px-3 py-1 text-xs font-black tracking-widest uppercase bg-white/5 ring-1 ring-white/10 text-teal-500 dark:text-teal-400">
                     Operations & Projects
                   </span>
                   <CardTitle className="text-left mt-1 text-xl md:text-2xl font-bold">
@@ -300,7 +300,7 @@ export function IntegrationsBento() {
           <GlassBentoCard className="md:col-span-2 relative overflow-hidden group">
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-fuchsia-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
-            <CardSkeleton className="py-4 relative min-h-[172px] flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative h-[184px] flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
               {/* Layer 1: sub-section eyebrow label */}
@@ -340,7 +340,7 @@ export function IntegrationsBento() {
             <CardContent>
               <div className="flex items-start justify-between">
                 <div>
-                  <span className="text-[10px] font-bold tracking-widest uppercase text-fuchsia-500 dark:text-fuchsia-400">
+                  <span className="inline-block rounded-full px-3 py-1 text-xs font-black tracking-widest uppercase bg-white/5 ring-1 ring-white/10 text-fuchsia-500 dark:text-fuchsia-400">
                     Design & Creative
                   </span>
                   <CardTitle className="text-left mt-1 text-xl md:text-2xl font-bold">
@@ -362,7 +362,7 @@ export function IntegrationsBento() {
             {/* Background Glow */}
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-fuchsia-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
-            <CardSkeleton className="py-4 relative min-h-[172px] flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative h-[184px] flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
               {/* Layer 1: sub-section eyebrow label */}
@@ -392,7 +392,7 @@ export function IntegrationsBento() {
 
               <div className="flex gap-1.5 relative z-10 flex-wrap justify-center">
                 {["Short-form Reels", "Motion Graphics", "Video Editing"].map((tag) => (
-                  <span key={tag} className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-fuchsia-500/5 text-fuchsia-600 dark:text-fuchsia-400 border border-fuchsia-500/10 backdrop-blur-md">
+                  <span key={tag} className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-fuchsia-500/15 text-fuchsia-700 border border-fuchsia-500/30 font-bold backdrop-blur-md">
                     {tag}
                   </span>
                 ))}
@@ -402,7 +402,7 @@ export function IntegrationsBento() {
             <CardContent>
               <div className="flex items-start justify-between">
                 <div>
-                  <span className="text-[10px] font-bold tracking-widest uppercase text-fuchsia-500 dark:text-fuchsia-400">
+                  <span className="inline-block rounded-full px-3 py-1 text-xs font-black tracking-widest uppercase bg-white/5 ring-1 ring-white/10 text-fuchsia-500 dark:text-fuchsia-400">
                     Multimedia & Animation
                   </span>
                   <CardTitle className="text-left mt-1 text-xl md:text-2xl font-bold">
@@ -461,7 +461,7 @@ export function IntegrationsBento() {
             <CardContent>
               <div className="flex items-start justify-between">
                 <div>
-                  <span className="text-[10px] font-bold tracking-widest uppercase text-indigo-500 dark:text-indigo-400">
+                  <span className="inline-block rounded-full px-3 py-1 text-xs font-black tracking-widest uppercase bg-white/5 ring-1 ring-white/10 text-indigo-500 dark:text-indigo-400">
                     AI Automation
                   </span>
                   <CardTitle className="text-left mt-1 text-xl md:text-2xl font-bold">
@@ -500,7 +500,7 @@ function GlassBentoCard({
         // Site runs forced-dark; card-premium is a custom class so it can't
         // sit behind a dark: variant (Tailwind variants only compose real
         // utilities) — apply it directly.
-        "group relative flex flex-col justify-between gap-2.5 rounded-2xl p-5 md:p-6 overflow-hidden",
+        "group relative flex flex-col justify-start gap-4 rounded-2xl p-5 md:p-6 overflow-hidden",
         "card-premium",
         "shadow-[0_16px_48px_rgba(32,28,103,0.08)]",
         "hover:shadow-[0_24px_64px_rgba(79,47,229,0.12)]",

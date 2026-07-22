@@ -70,7 +70,7 @@ export function TalentShowcase() {
 
   return (
     <section className="relative overflow-hidden bg-background section-pad">
-      <div className="mx-auto max-w-7xl px-4 md:px-8">
+      <div className="mx-auto max-w-[86rem] px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -83,7 +83,7 @@ export function ProcessSteps() {
         />
       </div>
 
-      <ol className="relative grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4">
+      <ol className="relative grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
         {STEPS.map((s, i) => {
           const Icon = s.icon;
           return (
@@ -134,7 +134,7 @@ export function ProcessSteps() {
 
               {/* revealed on hover */}
               <div className="pcard-detail">
-                <p className="mt-2 text-xs leading-relaxed text-neutral-200">
+                <p className="mt-2 text-[13px] leading-relaxed text-neutral-100">
                   {s.detail}
                 </p>
               </div>

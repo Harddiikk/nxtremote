@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Heading } from "@/components/heading";
 import { Subheading } from "@/components/subheading";
 import { cn } from "@/lib/utils";
-import { IconPlus } from "@tabler/icons-react";
+import { IconPlus, IconUserCheck, IconSettingsAutomation, IconShieldCheck } from "@tabler/icons-react";
 import { GridLineHorizontal, GridLineVertical } from "./grid-lines";
 
 interface FAQItem {
@@ -17,6 +17,34 @@ interface FAQSection {
   title: string;
   items: FAQItem[];
 }
+
+/* Per-section brand accent: icon + colors so the FAQ is not a grey wall */
+const SECTION_ACCENTS: Record<
+  string,
+  { icon: React.ReactNode; text: string; border: string; bg: string; plus: string }
+> = {
+  "Talent & Vetting": {
+    icon: <IconUserCheck className="size-5 text-white" />,
+    text: "text-[#8B7BF0]",
+    border: "border-l-[#4F2FE5]",
+    bg: "bg-[#4F2FE5]/[0.07] hover:bg-[#4F2FE5]/[0.14]",
+    plus: "text-[#8B7BF0]",
+  },
+  "Operations & Integration": {
+    icon: <IconSettingsAutomation className="size-5 text-white" />,
+    text: "text-[#3FC6F0]",
+    border: "border-l-[#09B4E4]",
+    bg: "bg-[#09B4E4]/[0.07] hover:bg-[#09B4E4]/[0.14]",
+    plus: "text-[#3FC6F0]",
+  },
+  "Infrastructure & Compliances": {
+    icon: <IconShieldCheck className="size-5 text-white" />,
+    text: "text-[#6BA5F5]",
+    border: "border-l-[#2A7EE9]",
+    bg: "bg-[#2A7EE9]/[0.07] hover:bg-[#2A7EE9]/[0.14]",
+    plus: "text-[#6BA5F5]",
+  },
+};
 
 const faqData: FAQSection[] = [
   {
@@ -111,11 +139,19 @@ export function FAQs() {
         ref={containerRef}
         className="relative mt-16 flex flex-col gap-12 px-4 md:px-8"
       >
-        {faqData.map((section) => (
+        {faqData.map((section) => {
+          const accent = SECTION_ACCENTS[section.title] ?? SECTION_ACCENTS["Talent & Vetting"];
+          return (
           <div key={section.title}>
-            <h3 className="mb-6 text-lg font-medium text-neutral-800 dark:text-neutral-200">
-              {section.title}
-            </h3>
+            <div className="mb-6 flex items-center gap-3">
+              <span className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#4F2FE5] to-[#09B4E4] shadow-md">
+                {accent.icon}
+              </span>
+              <h3 className={cn("text-xl font-bold", accent.text)}>
+                {section.title}
+              </h3>
+              <span className="h-px flex-1 bg-gradient-to-r from-white/25 to-transparent" />
+            </div>
             <div className="flex flex-col gap-3">
               {section.items.map((item, index) => {
                 const id = `${section.title}-${index}`;
@@ -125,10 +161,11 @@ export function FAQs() {
                   <div
                     key={id}
                     className={cn(
-                      "relative rounded-lg transition-all duration-200",
+                      "relative rounded-lg border-l-[3px] transition-all duration-200",
+                      accent.border,
                       isActive
-                        ? "bg-white shadow-sm ring-1 shadow-black/10 ring-black/10 dark:bg-card dark:shadow-white/5 dark:ring-white/10"
-                        : "hover:bg-neutral-50 dark:hover:bg-white/5",
+                        ? "bg-card shadow-md ring-1 ring-white/10"
+                        : accent.bg,
                     )}
                   >
                     {isActive && (
@@ -163,7 +200,7 @@ export function FAQs() {
                         transition={{ duration: 0.2 }}
                         className="ml-4 shrink-0"
                       >
-                        <IconPlus className="size-5 text-neutral-500 dark:text-neutral-200" />
+                        <IconPlus className={cn("size-5", accent.plus)} />
                       </motion.div>
                     </button>
                     <AnimatePresence initial={false}>
@@ -186,7 +223,8 @@ export function FAQs() {
               })}
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
