@@ -97,8 +97,9 @@ export function ProcessSteps() {
                 ease: "easeOut",
                 delay: reduce ? 0 : 0.15 + i * 0.14,
               }}
-              className="pcard group relative z-10 p-4"
+              className="relative z-10 hover:z-20"
             >
+              <div className="pcard group p-4">
               {/* terminal traffic lights */}
               <div className="flex items-center gap-1.5">
                 <span className="size-2.5 rounded-full bg-[#ff605c] shadow-[-3px_3px_4px_rgba(0,0,0,0.28)]" />
@@ -137,6 +138,7 @@ export function ProcessSteps() {
                 <p className="mt-2 text-[13px] leading-relaxed text-neutral-100">
                   {s.detail}
                 </p>
+              </div>
               </div>
             </motion.li>
           );
