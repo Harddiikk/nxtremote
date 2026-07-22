@@ -20,6 +20,10 @@ export function Footer() {
       title: "Pricing",
       href: "/pricing",
     },
+    {
+      title: "Blogs",
+      href: "/blog",
+    },
   ];
 
   const socials = [

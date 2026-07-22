@@ -124,49 +124,43 @@ export function TalentShowcase() {
                 transition={{ duration: 0.45, ease: "easeOut", delay: i * 0.08 }}
                 className="group"
               >
-                {/* Gradient tile: colored frame + colour-cast on the portrait */}
-                <div
-                  className={`relative overflow-hidden rounded-2xl bg-gradient-to-br p-[3px] shadow-lg ${
-                    CARD_GRADIENT
-                  }`}
-                >
-                  <div className="relative overflow-hidden rounded-[15px]">
+                {/* Morphing profile card: portrait shrinks to an avatar while
+                    the gradient sheet slides up with the details */}
+                <div className="tcard aspect-[4/4.8] w-full">
+                  <div className="tcard-pic">
                     <img
                       src={s.photo}
                       alt={`${s.name}, ${s.role}`}
-                      className="relative aspect-[4/4.6] w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                       loading="lazy"
                     />
-                    <div
-                      className={`pointer-events-none absolute inset-0 bg-gradient-to-br opacity-25 mix-blend-soft-light ${
-                        CARD_GRADIENT
-                      }`}
-                    />
-                    <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/80 to-transparent" />
-                    <span className="absolute top-2.5 right-2.5 rounded-full border border-white/25 bg-black/40 px-2 py-0.5 font-mono text-[8px] font-semibold tracking-[0.15em] text-white uppercase backdrop-blur-sm">
-                      Vetted
-                    </span>
-                    <div className="absolute inset-x-0 bottom-0 p-4 pb-3">
-                      <p className="truncate font-display text-lg font-bold text-white">
+                  </div>
+                  <div className="tcard-sheet">
+                    <div className="tcard-info text-center transition-[padding] duration-500 group-hover:pl-[5.2rem] group-hover:text-left">
+                      <p className="truncate font-display text-base font-bold leading-tight md:text-lg">
                         {s.name}
                       </p>
-                      <p className="truncate font-mono text-[10px] tracking-wide text-white/75">
+                      <p className="truncate font-mono text-[10px] tracking-wide text-white/80">
                         {s.role}
                       </p>
                     </div>
+                    <div className="tcard-more">
+                      <ul className="mt-2 space-y-2.5 font-mono text-[11px] leading-relaxed text-white/90 md:text-xs">
+                        <li className="flex items-start gap-2">
+                          <span className="font-bold text-white">&gt;_</span> {s.years}
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="font-bold text-white">&gt;_</span> {s.stack}
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="font-bold text-white">&gt;_</span> Fully managed by NXT Remote
+                        </li>
+                      </ul>
+                      <span className="absolute bottom-0 left-0 inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-1.5 text-[10px] font-bold text-brand-secondary shadow-md">
+                        Interview-ready <ArrowRight className="size-3" />
+                      </span>
+                    </div>
                   </div>
                 </div>
-                <p className="mt-3 font-display text-base font-bold text-brand-secondary">
-                  {s.role}
-                </p>
-                <ul className="mt-2 space-y-2 font-mono text-xs text-muted-foreground md:text-[13px]">
-                  <li className="flex items-center gap-2.5">
-                    <span className="text-gradient-brand font-bold">&gt;_</span> {s.years}
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <span className="text-gradient-brand font-bold">&gt;_</span> {s.stack}
-                  </li>
-                </ul>
               </motion.article>
             ))}
           </AnimatePresence>

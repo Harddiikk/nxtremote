@@ -108,7 +108,7 @@
   --secondary: #201C67;
   --secondary-foreground: #FFFFFF;
   --muted: #1C1C24;
-  --muted-foreground: #A6ABBC;
+  --muted-foreground: #C3C8D6;
   --accent: #09B4E4;
   --accent-foreground: #0F0F12;
   --destructive: #EF4444;
@@ -248,6 +248,184 @@
 @keyframes logoFloat {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
+}
+
+/* ---------------------------------------------------------------------------
+   Talent profile card: full-bleed portrait morphs to a circular avatar while
+   a brand-gradient sheet slides up with the details (Uiverse Centered101
+   pattern, recolored + restructured for NXT).
+--------------------------------------------------------------------------- */
+.tcard {
+  position: relative;
+  border-radius: 32px;
+  padding: 3px;
+  background: linear-gradient(135deg, #4f2fe5, #2a7ee9 55%, #09b4e4);
+  box-shadow: 0 26px 50px -28px rgba(32, 28, 103, 0.65);
+  transition: all 0.5s ease-in-out;
+}
+.tcard .tcard-pic {
+  position: absolute;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  top: 3px;
+  left: 3px;
+  border-radius: 29px;
+  z-index: 1;
+  overflow: hidden;
+  border: 0 solid #09b4e4;
+  transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
+}
+.tcard .tcard-pic img {
+  object-fit: cover;
+  object-position: center 12%;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease-in-out;
+}
+.tcard .tcard-sheet {
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+  right: 3px;
+  top: 80%;
+  border-radius: 29px;
+  z-index: 2;
+  overflow: hidden;
+  background: linear-gradient(150deg, #4f2fe5, #1e6fe8 55%, #09b4e4);
+  box-shadow: inset 0 5px 8px rgba(10, 10, 26, 0.28);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+.tcard .tcard-info {
+  position: absolute;
+  top: 0.8rem;
+  left: 1.3rem;
+  right: 1.3rem;
+  color: #fff;
+}
+.tcard .tcard-more {
+  position: absolute;
+  top: 4.6rem;
+  left: 1.3rem;
+  right: 1.3rem;
+  bottom: 0.9rem;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out 0s;
+}
+.tcard:hover {
+  border-top-left-radius: 55px;
+}
+.tcard:hover .tcard-sheet {
+  top: 26%;
+  border-radius: 80px 29px 29px 29px;
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+}
+.tcard:hover .tcard-more {
+  opacity: 1;
+  transition: opacity 0.35s ease-in-out 0.55s;
+}
+.tcard:hover .tcard-pic {
+  width: 92px;
+  height: 92px;
+  top: 12px;
+  left: 12px;
+  border-radius: 50%;
+  z-index: 3;
+  border: 4px solid #09b4e4;
+  box-shadow: 0 10px 18px rgba(10, 10, 26, 0.4);
+  transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tcard, .tcard * { transition: none !important; }
+}
+
+/* ---------------------------------------------------------------------------
+   Spin-border card: conic gradient ring that spins on hover (Uiverse
+   gharsh11032000 pattern, brand colors). Used for pillars + blog cards.
+--------------------------------------------------------------------------- */
+.spin-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 2px;
+  overflow: hidden;
+  transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.spin-card::before {
+  content: "";
+  position: absolute;
+  height: 220%;
+  width: 220%;
+  top: -60%;
+  left: -60%;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    rgba(79, 47, 229, 0.9),
+    rgba(9, 180, 228, 0.9),
+    rgba(79, 47, 229, 0.12),
+    rgba(9, 180, 228, 0.9),
+    rgba(79, 47, 229, 0.9)
+  );
+  opacity: 0.28;
+  animation: spinBorder 4.8s linear infinite paused;
+  transition: opacity 0.4s ease;
+}
+.spin-card:hover::before {
+  opacity: 1;
+  animation-play-state: running;
+}
+.spin-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(79, 47, 229, 0.22), 0 30px 60px rgba(9, 180, 228, 0.1);
+}
+.spin-card > .spin-inner {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  border-radius: 18px;
+  background: var(--card);
+}
+@keyframes spinBorder {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .spin-card::before { animation: none; }
+}
+
+/* ---------------------------------------------------------------------------
+   Process step card: skewed glass terminal that straightens + expands on
+   hover to reveal the step detail (Uiverse Fcodingx pattern, NXT glass).
+--------------------------------------------------------------------------- */
+.pcard {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.32);
+  border-left-width: 2px;
+  box-shadow: -18px 26px 30px rgba(0, 0, 0, 0.3);
+  transform: skewX(5deg);
+  transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+}
+.pcard:hover {
+  transform: skewX(0deg) translateY(-4px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: -10px 30px 40px rgba(0, 0, 0, 0.38), 0 0 40px rgba(79, 47, 229, 0.18);
+}
+.pcard .pcard-detail {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.45s ease, opacity 0.35s ease;
+}
+.pcard:hover .pcard-detail {
+  max-height: 10rem;
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pcard { transform: none; transition: none; }
+  .pcard .pcard-detail { max-height: none; opacity: 1; }
 }
 
 /* ---------------------------------------------------------------------------

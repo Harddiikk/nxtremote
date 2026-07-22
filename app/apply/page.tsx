@@ -60,7 +60,7 @@ export default function ApplyPage() {
       <Container className="max-w-2xl px-4 relative z-10">
         <Link 
           href="/" 
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white mb-6 transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-500 hover:text-neutral-900 dark:text-neutral-200 dark:hover:text-white mb-6 transition-colors"
         >
           <ChevronLeft className="size-3.5" /> Back to Home
         </Link>
@@ -89,7 +89,7 @@ export default function ApplyPage() {
               <Heading as="h1" className="text-3xl font-black text-neutral-900 dark:text-white mt-1.5 mb-2 leading-tight">
                 Join Our Elite Global Roster
               </Heading>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-8 leading-relaxed">
+              <p className="text-sm text-neutral-500 dark:text-neutral-200 mb-8 leading-relaxed">
                 Only the top 3% of global digital marketing candidates pass our screening. Share your portfolio and show us your technical capabilities.
               </p>
             </div>

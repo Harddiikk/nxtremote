@@ -11,7 +11,7 @@ export default function LoginPage() {
         <h1 className="mb-2 text-center text-xl font-semibold text-neutral-900 dark:text-white">
           Sign in to your account
         </h1>
-        <p className="mb-8 text-center text-sm text-neutral-500 dark:text-neutral-400">
+        <p className="mb-8 text-center text-sm text-neutral-500 dark:text-neutral-200">
           Welcome back! Please enter your details.
         </p>
 
@@ -44,7 +44,7 @@ export default function LoginPage() {
               </label>
               <Link
                 href="#"
-                className="text-sm text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+                className="text-sm text-neutral-500 hover:text-neutral-900 dark:text-neutral-200 dark:hover:text-white"
               >
                 Forgot?
               </Link>
@@ -64,7 +64,7 @@ export default function LoginPage() {
 
         <div className="my-6 flex items-center gap-4">
           <div className="h-px flex-1 bg-[repeating-linear-gradient(90deg,var(--color-neutral-300)_0px,var(--color-neutral-300)_4px,transparent_4px,transparent_8px)] dark:bg-[repeating-linear-gradient(90deg,var(--color-neutral-700)_0px,var(--color-neutral-700)_4px,transparent_4px,transparent_8px)]" />
-          <span className="text-xs tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
+          <span className="text-xs tracking-wide text-neutral-500 uppercase dark:text-neutral-200">
             or
           </span>
           <div className="h-px flex-1 bg-[repeating-linear-gradient(90deg,var(--color-neutral-300)_0px,var(--color-neutral-300)_4px,transparent_4px,transparent_8px)] dark:bg-[repeating-linear-gradient(90deg,var(--color-neutral-700)_0px,var(--color-neutral-700)_4px,transparent_4px,transparent_8px)]" />
@@ -81,7 +81,7 @@ export default function LoginPage() {
           </Button>
         </div>
 
-        <p className="mt-6 text-center text-sm text-neutral-500 dark:text-neutral-400">
+        <p className="mt-6 text-center text-sm text-neutral-500 dark:text-neutral-200">
           Don&apos;t have an account?{" "}
           <Link
             href="#"

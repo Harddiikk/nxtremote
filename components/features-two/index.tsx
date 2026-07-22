@@ -135,13 +135,15 @@ export function FeaturesTwo() {
             title="AI-Ready Workflows"
             description="Assessed on modern AI tooling: prompt-driven ad copy, programmatic SEO, and automated reporting."
           />
-          {/* Pillar 7 (Compliance) */}
+          {/* Pillar 7 (Compliance), centered in the final row */}
+          <div className="sm:col-span-2 sm:mx-auto sm:w-full sm:max-w-md lg:col-span-1 lg:col-start-2 lg:max-w-none">
           <PillarCard
             icon={<ShieldCheck className="size-5 text-brand-secondary" />}
             number="VII"
             title="GDPR & Data Protection"
             description="Contractually bound to NDA terms, credential vault practices (1Password/LastPass), and security training."
           />
+          </div>
         </div>
       </div>
     </Container>
@@ -171,9 +173,9 @@ const NXT_ROLES = [
 ];
 
 const OTHERS_SPOKES = [
-  "Branding", "Market Research", "Email Marketing", "Social Media Mgmt",
-  "Web Development", "SEO", "Content Writing", "Video Production",
-  "Graphic Design", "Offline Marketing",
+  "Account Management", "Virtual Assistants", "Virtual Admin", "Data Entry",
+  "Bookkeeping", "Cold Calling", "Customer Service", "Transcription",
+  "Admin Support", "Offline Marketing",
 ];
 const NXT_SPOKES = [
   "SEO", "Social Media Ads", "Paid Advertising",
@@ -341,7 +343,8 @@ function PillarCard({
   description: string;
 }) {
   return (
-    <div className="group relative rounded-xl border border-neutral-200 bg-white p-5 shadow-xs transition-all duration-200 hover:border-brand-accent dark:border-white/10 dark:bg-card">
+    <div className="spin-card group h-full">
+      <div className="spin-inner p-5">
       <div className="flex items-center gap-3">
         <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-50 dark:bg-neutral-800/80 group-hover:bg-brand-secondary/10 transition-colors">
           {icon}
@@ -360,6 +363,7 @@ function PillarCard({
       <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-200">
         {description}
       </p>
+      </div>
     </div>
   );
 }

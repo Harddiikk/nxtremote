@@ -183,7 +183,7 @@ export default function AdminPage() {
           <h1 className="text-2xl font-black text-center text-neutral-900 dark:text-white mb-2 tracking-tight">
             Admin Portal Access
           </h1>
-          <p className="text-sm text-center text-neutral-500 dark:text-neutral-400 mb-8">
+          <p className="text-sm text-center text-neutral-500 dark:text-neutral-200 mb-8">
             Please enter your administrator credentials to login.
           </p>
 
@@ -256,7 +256,7 @@ export default function AdminPage() {
           </div>
           <button 
             onClick={handleLogout}
-            className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold border border-neutral-300 dark:border-neutral-800 rounded-full text-neutral-600 hover:text-red-500 dark:text-neutral-400 dark:hover:text-red-400 bg-white dark:bg-neutral-900 cursor-pointer transition-colors self-start sm:self-center"
+            className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold border border-neutral-300 dark:border-neutral-800 rounded-full text-neutral-600 hover:text-red-500 dark:text-neutral-200 dark:hover:text-red-400 bg-white dark:bg-neutral-900 cursor-pointer transition-colors self-start sm:self-center"
           >
             <LogOut className="size-3.5" /> Log Out
           </button>
@@ -276,7 +276,7 @@ export default function AdminPage() {
               className={`flex items-center gap-2 px-5 py-3 border-b-2 font-semibold text-sm transition-all cursor-pointer whitespace-nowrap ${
                 activeTab === tab.id
                   ? "border-brand-secondary text-brand-secondary dark:border-brand-accent dark:text-brand-accent"
-                  : "border-transparent text-neutral-500 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-white"
+                  : "border-transparent text-neutral-500 hover:text-neutral-800 dark:text-neutral-200 dark:hover:text-white"
               }`}
             >
               {tab.icon}
@@ -297,33 +297,33 @@ export default function AdminPage() {
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
                   <div className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-xs">
                     <div className="flex justify-between items-start">
-                      <span className="text-xs font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-wider">Talent Applications</span>
+                      <span className="text-xs font-bold text-neutral-400 dark:text-neutral-300 uppercase tracking-wider">Talent Applications</span>
                       <Users className="size-5 text-brand-secondary dark:text-brand-accent" />
                     </div>
                     <p className="text-3xl font-black text-neutral-900 dark:text-white mt-4">{stats.apps}</p>
-                    <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
+                    <p className="text-xs text-neutral-500 dark:text-neutral-200 mt-1">
                       <span className="font-semibold text-brand-secondary dark:text-brand-accent">{stats.pendingApps}</span> pending review
                     </p>
                   </div>
 
                   <div className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-xs">
                     <div className="flex justify-between items-start">
-                      <span className="text-xs font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-wider">Business Leads</span>
+                      <span className="text-xs font-bold text-neutral-400 dark:text-neutral-300 uppercase tracking-wider">Business Leads</span>
                       <Activity className="size-5 text-brand-secondary dark:text-brand-accent" />
                     </div>
                     <p className="text-3xl font-black text-neutral-900 dark:text-white mt-4">{stats.leads}</p>
-                    <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
+                    <p className="text-xs text-neutral-500 dark:text-neutral-200 mt-1">
                       <span className="font-semibold text-brand-secondary dark:text-brand-accent">{stats.newLeads}</span> new inquiries
                     </p>
                   </div>
 
                   <div className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-xs">
                     <div className="flex justify-between items-start">
-                      <span className="text-xs font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-wider">Open Positions</span>
+                      <span className="text-xs font-bold text-neutral-400 dark:text-neutral-300 uppercase tracking-wider">Open Positions</span>
                       <Briefcase className="size-5 text-brand-secondary dark:text-brand-accent" />
                     </div>
                     <p className="text-3xl font-black text-neutral-900 dark:text-white mt-4">{stats.jobs}</p>
-                    <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">Listed on open roles list</p>
+                    <p className="text-xs text-neutral-500 dark:text-neutral-200 mt-1">Listed on open roles list</p>
                   </div>
                 </div>
 
@@ -339,7 +339,7 @@ export default function AdminPage() {
                         <div key={app.id} className="flex justify-between items-center p-3 rounded-xl bg-neutral-50 dark:bg-neutral-950/40">
                           <div>
                             <p className="text-sm font-bold text-neutral-800 dark:text-neutral-100">{app.fullName}</p>
-                            <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">{app.role} • {app.experienceYears} yrs exp</p>
+                            <p className="text-xs text-neutral-500 dark:text-neutral-200 mt-0.5">{app.role} • {app.experienceYears} yrs exp</p>
                           </div>
                           <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
                             app.status === "Shortlisted" ? "bg-green-500/10 text-green-500" :
@@ -365,7 +365,7 @@ export default function AdminPage() {
                         <div key={lead.id} className="flex justify-between items-center p-3 rounded-xl bg-neutral-50 dark:bg-neutral-950/40">
                           <div>
                             <p className="text-sm font-bold text-neutral-800 dark:text-neutral-100">{lead.companyName}</p>
-                            <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Needs {lead.roleNeeded} • {lead.budget}</p>
+                            <p className="text-xs text-neutral-500 dark:text-neutral-200 mt-0.5">Needs {lead.roleNeeded} • {lead.budget}</p>
                           </div>
                           <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-brand-secondary/10 text-brand-secondary">
                             {lead.status}
@@ -401,12 +401,12 @@ export default function AdminPage() {
                         <tr key={app.id} className="hover:bg-neutral-50/30 dark:hover:bg-neutral-900/10">
                           <td className="px-6 py-4">
                             <p className="font-bold text-neutral-900 dark:text-white">{app.fullName}</p>
-                            <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">{app.email}</p>
+                            <p className="text-xs text-neutral-500 dark:text-neutral-200 mt-0.5">{app.email}</p>
                           </td>
                           <td className="px-6 py-4 font-medium text-neutral-800 dark:text-neutral-250">
                             {app.role}
                           </td>
-                          <td className="px-6 py-4 text-neutral-600 dark:text-neutral-400">
+                          <td className="px-6 py-4 text-neutral-600 dark:text-neutral-200">
                             {app.experienceYears} Years
                           </td>
                           <td className="px-6 py-4">
@@ -477,9 +477,9 @@ export default function AdminPage() {
                         <tr key={lead.id} className="hover:bg-neutral-50/30 dark:hover:bg-neutral-900/10">
                           <td className="px-6 py-4">
                             <p className="font-bold text-neutral-900 dark:text-white">{lead.companyName}</p>
-                            <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">{lead.contactName}</p>
+                            <p className="text-xs text-neutral-500 dark:text-neutral-200 mt-0.5">{lead.contactName}</p>
                           </td>
-                          <td className="px-6 py-4 text-neutral-600 dark:text-neutral-400">
+                          <td className="px-6 py-4 text-neutral-600 dark:text-neutral-200">
                             <p>{lead.email}</p>
                             <p className="text-xs text-neutral-500 mt-0.5">{lead.phone}</p>
                           </td>

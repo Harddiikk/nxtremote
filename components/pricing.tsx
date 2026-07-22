@@ -196,92 +196,13 @@ export function Pricing() {
           </p>
         </div>
 
-        {/* Engagement Cards */}
-        <div className="relative grid w-full grid-cols-1 gap-6 overflow-hidden p-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {plans.map((plan, planIdx) => (
-            <motion.div
-              key={plan.id}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "0px 0px -80px 0px" }}
-              transition={{ duration: 0.5, ease: "easeOut", delay: planIdx * 0.1 }}
-              className={cn(
-                "relative rounded-xl bg-white border border-neutral-200 p-6 flex flex-col justify-between dark:bg-card dark:border-white/10 shadow-sm transition-all duration-300",
-                "hover:-translate-y-2 hover:scale-[1.02] hover:border-brand-secondary dark:hover:border-brand-accent",
-                "hover:shadow-[0_20px_40px_rgba(11,117,226,0.08)] dark:hover:shadow-[0_20px_40px_rgba(139,92,246,0.12)]",
-                plan.featured
-                  ? "ring-2 ring-brand-secondary border-transparent dark:bg-card shadow-[0_4px_20px_rgba(11,117,226,0.15)] dark:shadow-[0_4px_20px_rgba(139,92,246,0.15)]"
-                  : ""
-              )}
-            >
-              {plan.featured && (
-                <div className="absolute -top-3 right-6 rounded-full bg-brand-secondary px-3 py-0.5 text-[10px] font-bold tracking-widest uppercase text-white">
-                  Most Popular
-                </div>
-              )}
-
-              <div>
-                <div className="flex items-baseline justify-between">
-                  <p className="text-lg font-bold text-neutral-900 dark:text-white">
-                    {plan.name}
-                  </p>
-                  <span className="rounded-full bg-brand-secondary/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-secondary dark:bg-brand-accent/10 dark:text-brand-accent">
-                    {plan.teamSize}
-                  </span>
-                </div>
-                <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-200 min-h-8">
-                  {plan.description}
-                </p>
-
-                <div className="my-6 flex items-center gap-3 border-y border-neutral-100 dark:border-white/5 py-4">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-secondary/10 dark:bg-brand-accent/10">
-                    <CalendarCheck className="size-5 text-brand-secondary dark:text-brand-accent" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-neutral-900 dark:text-white">
-                      Flat monthly rate
-                    </p>
-                    <p className="text-xs text-neutral-500 dark:text-neutral-200">
-                      Custom quote on your discovery call
-                    </p>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  {plan.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-start gap-2.5">
-                      <div className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-brand-accent/20 dark:bg-brand-accent/15">
-                        <IconCheck className="h-3 w-3 stroke-[4px] text-[#8B5CF6]" />
-                      </div>
-                      <span className="text-sm text-neutral-600 dark:text-neutral-300">
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-8">
-                <Link href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-                  <Button
-                    variant={plan.featured ? "default" : "outline"}
-                    className="w-full justify-center text-xs py-2.5"
-                  >
-                    {plan.buttonText}
-                  </Button>
-                </Link>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
         {/* Tier Feature Comparison Matrix */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "0px 0px -80px 0px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mt-20"
+          className="mt-2"
         >
           <div className="mx-auto mb-10 max-w-3xl text-center">
             <Subheading className="text-brand-secondary font-semibold tracking-wider text-xs uppercase">
@@ -293,7 +214,7 @@ export function Pricing() {
           </div>
 
           {/* Horizontally scrollable so it never breaks page width on mobile */}
-          <div className="overflow-x-auto rounded-2xl border border-neutral-200 dark:border-white/10 bg-white/50 dark:bg-neutral-900/30 backdrop-blur-md shadow-lg">
+          <div className="overflow-x-auto rounded-3xl border border-white/10 bg-white/50 dark:bg-white/[0.04] backdrop-blur-md shadow-[0_24px_70px_rgba(32,28,103,0.35)]">
             <table className="w-full min-w-[640px] border-collapse text-left">
               <thead>
                 <tr className="border-b border-neutral-200 dark:border-white/10 bg-neutral-100/50 dark:bg-neutral-950/40">
@@ -365,6 +286,33 @@ export function Pricing() {
                   </React.Fragment>
                 ))}
               </tbody>
+              <tfoot>
+                <tr className="border-t border-neutral-200 dark:border-white/10">
+                  <td className="px-6 py-6 text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-300">
+                    Get started
+                  </td>
+                  {featureTiers.map((tier) => (
+                    <td
+                      key={tier.key}
+                      className={cn(
+                        "px-4 py-6 text-center",
+                        tier.featured &&
+                          "bg-[#0b75e2]/5 dark:bg-[#8b5cf6]/5 border-x border-[#0b75e2]/10 dark:border-[#8b5cf6]/5"
+                      )}
+                    >
+                      <Link href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                        <Button
+                          variant={tier.featured ? "default" : "outline"}
+                          size="sm"
+                          className="w-full max-w-[190px] justify-center"
+                        >
+                          {tier.key === "enterprise" ? "Book an Enterprise Call" : "Book a Discovery Call"}
+                        </Button>
+                      </Link>
+                    </td>
+                  ))}
+                </tr>
+              </tfoot>
             </table>
           </div>
         </motion.div>

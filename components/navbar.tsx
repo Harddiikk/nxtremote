@@ -10,7 +10,7 @@ export function Navbar() {
   const navItems = [
     { name: "About Us", link: "/about" },
     { name: "How We Hire", link: "/services#process" },
-    { name: "Hire Marketers", link: "/services" },
+    { name: "Blogs", link: "/blog" },
     { name: "Pricing", link: "/pricing" },
     {
       name: "Resources",
@@ -56,9 +56,9 @@ const DesktopNav = ({ navItems }: { navItems: any[] }) => {
             </span>
           </Link>
 
-          <Link href="/services" className="flex items-center">
+          <Link href="/blog" className="flex items-center">
             <span className="cursor-pointer text-sm font-semibold text-neutral-800 hover:text-brand-secondary transition-colors px-3 py-1">
-              Hire Marketers
+              Blogs
             </span>
           </Link>
 

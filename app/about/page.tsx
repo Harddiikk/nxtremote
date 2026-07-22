@@ -74,7 +74,7 @@ export default function AboutPage() {
                   <h3 className="font-bold text-base text-neutral-800 dark:text-neutral-100">
                     Laser Focus
                   </h3>
-                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed">
+                  <p className="text-sm text-neutral-500 dark:text-neutral-200 mt-1 leading-relaxed">
                     100% digital marketing specialization. No generalists, no administrative fillers.
                   </p>
                 </div>
@@ -90,7 +90,7 @@ export default function AboutPage() {
                   <h3 className="font-bold text-base text-neutral-800 dark:text-neutral-100">
                     Rigorous Standard
                   </h3>
-                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed">
+                  <p className="text-sm text-neutral-500 dark:text-neutral-200 mt-1 leading-relaxed">
                     Our triple-vetted pipeline accepts only the top 3% of global digital applicants.
                   </p>
                 </div>
@@ -106,7 +106,7 @@ export default function AboutPage() {
                   <h3 className="font-bold text-base text-neutral-800 dark:text-neutral-100">
                     Seamless Fit
                   </h3>
-                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed">
+                  <p className="text-sm text-neutral-500 dark:text-neutral-200 mt-1 leading-relaxed">
                     Natively trained in Slack, Jira, ClickUp, and Asana for zero integration lag.
                   </p>
                 </div>
@@ -127,7 +127,7 @@ export default function AboutPage() {
           </blockquote>
           <div className="mt-8 flex items-center justify-center gap-3">
             <div className="h-1 w-8 rounded-full bg-brand-secondary" />
-            <span className="text-xs font-semibold tracking-widest text-neutral-500 uppercase dark:text-neutral-400">
+            <span className="text-xs font-semibold tracking-widest text-neutral-500 uppercase dark:text-neutral-200">
               NXT Remote Core Belief
             </span>
             <div className="h-1 w-8 rounded-full bg-brand-secondary" />

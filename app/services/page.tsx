@@ -5,6 +5,7 @@ import { Heading } from "@/components/heading";
 import { Subheading } from "@/components/subheading";
 import { Button } from "@/components/button";
 import { CTA } from "@/components/cta";
+import { ProcessSteps } from "@/components/process";
 import { LinesGradientShader } from "@/components/lines-gradient-shader";
 import { 
   Megaphone, 
@@ -184,7 +185,7 @@ export default function ServicesPage() {
                   </h3>
                 </div>
                 <div>
-                  <span className="text-[10px] font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-widest block">
+                  <span className="text-[10px] font-bold text-neutral-400 dark:text-neutral-300 uppercase tracking-widest block">
                     Competencies
                   </span>
                   <p className="text-sm text-neutral-600 dark:text-neutral-300 mt-0.5">
@@ -192,7 +193,7 @@ export default function ServicesPage() {
                   </p>
                 </div>
                 <div className="flex items-center justify-between border-t border-neutral-100 dark:border-white/5 pt-3 mt-1">
-                  <span className="text-[10px] font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-widest">
+                  <span className="text-[10px] font-bold text-neutral-400 dark:text-neutral-300 uppercase tracking-widest">
                     Placement Time
                   </span>
                   <span className="text-xs font-bold text-brand-secondary dark:text-brand-accent">
@@ -215,41 +216,12 @@ export default function ServicesPage() {
             <Heading as="h2" className="mt-2 mb-4">
               Our Hiring Process Workflow
             </Heading>
-            <p className="text-base text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base text-neutral-600 dark:text-neutral-200 max-w-2xl mx-auto leading-relaxed">
               Our seamless onboarding structure ensures your new team member hits the ground running without disrupting your current operations.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-            {timelineSteps.map((step, idx) => (
-              <div
-                key={step.title}
-                className={`relative group p-6 rounded-2xl border shadow-xs flex flex-col gap-4 ${step.gradient}`}
-              >
-                <div className="flex justify-between items-start">
-                  <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-white/70 dark:bg-white/10 text-[#0B1D45] dark:text-[#09B4E4] group-hover:bg-[#0B75E2]/10 group-hover:text-[#0B75E2] transition-colors">
-                    {step.icon}
-                  </div>
-                  <span className="text-xs font-bold px-3 py-1 rounded-full bg-brand-secondary/15 text-brand-secondary dark:bg-brand-secondary/20 dark:text-brand-accent">
-                    {step.day}
-                  </span>
-                </div>
-                <div>
-                  <h3 className="font-bold text-sm text-neutral-800 dark:text-neutral-50">
-                    {step.title}
-                  </h3>
-                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-2 leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-                {idx < 3 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10 text-neutral-300 dark:text-neutral-700">
-                    <ArrowRight className="size-4" />
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+          <ProcessSteps />
         </Container>
       </section>
 
