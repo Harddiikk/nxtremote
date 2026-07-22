@@ -97,7 +97,7 @@ export function Footer() {
         </div>
         <div className="mt-10 grid grid-cols-2 items-start gap-10 sm:mt-0 md:mt-0 lg:grid-cols-4">
           <div className="flex w-full flex-col justify-center gap-4">
-            <p className="font-extrabold uppercase tracking-wide text-brand-secondary">
+            <p className="text-gradient-brand font-extrabold uppercase tracking-wide">
               Pages
             </p>
             <ul className="flex list-none flex-col gap-4 text-neutral-600 transition-colors dark:text-neutral-300">
@@ -115,7 +115,7 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col justify-center gap-4">
-            <p className="font-extrabold uppercase tracking-wide text-brand-secondary">
+            <p className="text-gradient-brand font-extrabold uppercase tracking-wide">
               Socials
             </p>
             <ul className="flex list-none flex-col gap-4 text-neutral-600 transition-colors dark:text-neutral-300">
@@ -135,7 +135,7 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col justify-center gap-4">
-            <p className="font-extrabold uppercase tracking-wide text-brand-secondary">
+            <p className="text-gradient-brand font-extrabold uppercase tracking-wide">
               Policies
             </p>
             <ul className="flex list-none flex-col gap-4 text-neutral-600 transition-colors dark:text-neutral-300">
@@ -152,7 +152,7 @@ export function Footer() {
             </ul>
           </div>
           <div className="flex flex-col justify-center gap-4">
-            <p className="font-extrabold uppercase tracking-wide text-brand-secondary">
+            <p className="text-gradient-brand font-extrabold uppercase tracking-wide">
               Contact
             </p>
             <ul className="flex list-none flex-col gap-4 text-neutral-600 transition-colors dark:text-neutral-300">

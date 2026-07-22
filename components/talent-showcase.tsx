@@ -136,15 +136,15 @@ export function TalentShowcase() {
                   </div>
                   <div className="tcard-sheet">
                     <div className="tcard-info text-center transition-[padding] duration-500 group-hover:pl-[5.2rem] group-hover:text-left">
-                      <p className="truncate font-display text-lg font-bold leading-tight md:text-xl">
+                      <p className="truncate font-display text-xl font-extrabold leading-tight md:text-2xl">
                         {s.name}
                       </p>
-                      <p className="truncate font-mono text-xs tracking-wide text-white/85">
+                      <p className="truncate font-mono text-[13px] font-semibold tracking-wide text-white/90">
                         {s.role}
                       </p>
                     </div>
                     <div className="tcard-more">
-                      <ul className="mt-2 space-y-3 font-mono text-xs leading-relaxed text-white/95 md:text-[13px]">
+                      <ul className="mt-2 space-y-3.5 font-mono text-sm font-bold leading-relaxed text-white md:text-[15px]">
                         <li className="flex items-start gap-2">
                           <span className="font-bold text-white">&gt;_</span> {s.years}
                         </li>

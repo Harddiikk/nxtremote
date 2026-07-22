@@ -86,7 +86,7 @@ const DesktopNav = ({ navItems }: { navItems: any[] }) => {
         </Link>
 
         <Link href="/hire">
-          <button className="rounded-full bg-brand-primary text-xs px-5 py-2.5 font-bold text-white shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.4)_inset] hover:opacity-90 transition-opacity cursor-pointer">
+          <button className="rounded-full bg-gradient-to-r from-[#4F2FE5] via-[#2A7EE9] to-[#09B4E4] text-xs px-5 py-2.5 font-bold text-white shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.35)_inset,0_2px_10px_rgba(79,47,229,0.35)] hover:brightness-110 transition-all cursor-pointer">
             Hire Talent
           </button>
         </Link>
@@ -163,7 +163,7 @@ const MobileNav = ({ navItems }: { navItems: any[] }) => {
                   onClick={() => setOpen(false)}
                   className="w-full"
                 >
-                  <button className="w-full rounded-lg bg-brand-primary py-2.5 font-bold text-white shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.4)_inset] text-sm cursor-pointer hover:opacity-90 transition-opacity">
+                  <button className="w-full rounded-lg bg-gradient-to-r from-[#4F2FE5] via-[#2A7EE9] to-[#09B4E4] py-2.5 font-bold text-white shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.35)_inset] text-sm cursor-pointer hover:brightness-110 transition-all">
                     Hire Talent
                   </button>
                 </Link>
