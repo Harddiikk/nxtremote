@@ -1,5 +1,20 @@
-import { GlobeViz } from "./globe";
+"use client";
+
+import dynamic from "next/dynamic";
 import { Subheading, Eyebrow } from "./subheading";
+
+// three.js + react-globe.gl are heavy; keep them out of the critical bundle
+const GlobeViz = dynamic(
+  () => import("./globe").then((m) => m.GlobeViz),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex h-[420px] w-full items-center justify-center">
+        <div className="size-40 animate-pulse rounded-full bg-brand-secondary/20 blur-2xl" />
+      </div>
+    ),
+  },
+);
 
 const STATS = [
   { value: "Global", label: "reach across continents" },

@@ -6,7 +6,18 @@ import { Heading } from "../heading";
 import { Subheading } from "../subheading";
 import { WorldMapSkeleton } from "../features-one/world-map-skeleton";
 import { SecuritySkeleton } from "./security-skeleton";
-import { FocusMindMap } from "../focus-mindmap";
+import dynamic from "next/dynamic";
+
+// React Flow is interactive-only; load it lazily off the critical path
+const FocusMindMap = dynamic(
+  () => import("../focus-mindmap").then((m) => m.FocusMindMap),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-[380px] w-full animate-pulse rounded-2xl border border-white/10 bg-white/[0.04] sm:h-[440px] md:h-[500px]" />
+    ),
+  },
+);
 import { EdgeComputing } from "./edge-computing";
 import { Compliance } from "./compliance";
 import { 

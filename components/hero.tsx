@@ -62,15 +62,6 @@ const CHIPS = [
   { label: "Analytics", icon: IconBrandGoogleAnalytics, pos: "top-[70%] right-[7%]", rot: "2deg", delay: "3.6s" },
 ];
 
-const rise = {
-  hidden: { opacity: 0, y: 22 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: 0.1 + i * 0.14, duration: 0.6, ease: [0.21, 0.65, 0.36, 1] as const },
-  }),
-};
-
 export default function Hero() {
   return (
     <div className="relative w-full overflow-hidden text-foreground">
@@ -121,33 +112,24 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-4 pt-36 pb-16 text-center md:px-8 md:pt-44 md:pb-24">
-        <motion.h1
-          variants={rise}
-          initial="hidden"
-          animate="visible"
-          custom={0}
-          className="font-display text-4xl font-bold tracking-tight text-balance text-white sm:text-6xl md:text-7xl"
+        <h1
+          style={{ "--rd": "0.1s" } as React.CSSProperties}
+          className="rise-in font-display text-4xl font-bold tracking-tight text-balance text-white sm:text-6xl md:text-7xl"
         >
           Elite offshore <span className="text-gradient-brand">digital marketing</span> talent
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          variants={rise}
-          initial="hidden"
-          animate="visible"
-          custom={1}
-          className="mt-3 text-xl font-medium text-muted-foreground sm:text-2xl md:text-3xl"
+        <p
+          style={{ "--rd": "0.24s" } as React.CSSProperties}
+          className="rise-in mt-3 text-xl font-medium text-muted-foreground sm:text-2xl md:text-3xl"
         >
           Fully managed, vetted like it&apos;s your own hire
-        </motion.p>
+        </p>
 
         {/* The giant TOP 3% treatment */}
-        <motion.div
-          variants={rise}
-          initial="hidden"
-          animate="visible"
-          custom={2}
-          className="relative mt-14"
+        <div
+          style={{ "--rd": "0.38s" } as React.CSSProperties}
+          className="rise-in relative mt-14"
         >
           {/* pulsing spotlight behind the TOP 3% */}
           <div aria-hidden className="hero-spotlight pointer-events-none absolute -inset-x-32 -inset-y-16" />
@@ -168,14 +150,11 @@ export default function Hero() {
             26 months average specialist tenure.
             <br className="sm:hidden" /> Interview-ready shortlist in 5 days.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={rise}
-          initial="hidden"
-          animate="visible"
-          custom={3}
-          className="mt-12 flex w-full max-w-md flex-col items-center gap-3"
+        <div
+          style={{ "--rd": "0.52s" } as React.CSSProperties}
+          className="rise-in mt-12 flex w-full max-w-md flex-col items-center gap-3"
         >
           <Link
             href={BOOKING_URL}
@@ -191,23 +170,14 @@ export default function Hero() {
             <span className="font-semibold text-foreground">No commitment.</span>{" "}
             30 minutes. Shortlist in 5 days.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.dl
-          variants={rise}
-          initial="hidden"
-          animate="visible"
-          custom={4}
-          className="mx-auto mt-16 grid w-full max-w-xl grid-cols-3 gap-x-8 gap-y-6 border-t border-border pt-8"
+        <dl
+          style={{ "--rd": "0.66s" } as React.CSSProperties}
+          className="rise-in mx-auto mt-16 grid w-full max-w-xl grid-cols-3 gap-x-8 gap-y-6 border-t border-border pt-8"
         >
-          {STATS.map((stat, statIdx) => (
-            <motion.div
-              key={stat.label}
-              className="text-center"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 + statIdx * 0.1, duration: 0.45, ease: "easeOut" }}
-            >
+          {STATS.map((stat) => (
+            <div key={stat.label} className="text-center">
               <dt className="sr-only">{stat.label}</dt>
               <dd className="font-display text-2xl font-bold text-foreground md:text-3xl">
                 <CountUp to={stat.to} prefix={stat.prefix} suffix={stat.suffix} />
@@ -215,9 +185,9 @@ export default function Hero() {
               <dd className="mt-1 font-mono text-[10px] tracking-[0.15em] text-muted-foreground uppercase">
                 {stat.label}
               </dd>
-            </motion.div>
+            </div>
           ))}
-        </motion.dl>
+        </dl>
       </div>
     </div>
   );
