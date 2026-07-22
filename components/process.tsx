@@ -109,17 +109,22 @@ export function ProcessSteps() {
                 </span>
               </div>
 
-              {/* step imagery */}
-              <div className="relative mt-3 overflow-hidden rounded-lg">
-                <img
-                  src={s.image}
-                  alt={s.title}
-                  loading="lazy"
-                  className="h-24 w-full object-cover object-[center_18%] transition-transform duration-500 group-hover:scale-[1.06]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F12]/70 via-transparent to-transparent" />
-                <div className="absolute bottom-1.5 left-1.5 flex size-7 items-center justify-center rounded-md bg-white/90 shadow-md">
-                  <Icon className="size-4 text-brand-secondary" />
+              {/* animated terminal lines + step symbol */}
+              <div className="relative mt-3 h-24 overflow-hidden rounded-lg border border-white/10 bg-[#0F0F16]/70 p-3">
+                <div className="space-y-2.5 pr-14">
+                  <div className="codeline w-4/5" style={{ animationDelay: `${i * 0.35}s` }} />
+                  <div className="codeline codeline--dim w-3/5" style={{ animationDelay: `${i * 0.35 + 0.25}s` }} />
+                  <div className="codeline w-full" style={{ animationDelay: `${i * 0.35 + 0.5}s` }} />
+                  <div className="flex items-center gap-1.5">
+                    <div className="codeline codeline--dim w-2/5" style={{ animationDelay: `${i * 0.35 + 0.75}s` }} />
+                    <span className="cursor-blink h-2.5 w-1.5 rounded-[2px] bg-brand-accent" />
+                  </div>
+                </div>
+                <div className="absolute top-1/2 right-3 -translate-y-1/2">
+                  <span className="icon-ping absolute inset-0 rounded-xl bg-brand-accent/40" />
+                  <div className="relative flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#4F2FE5] to-[#09B4E4] shadow-lg">
+                    <Icon className="size-5 text-white" />
+                  </div>
                 </div>
               </div>
 

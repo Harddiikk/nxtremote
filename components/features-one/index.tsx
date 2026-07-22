@@ -267,24 +267,29 @@ function FeatureCard({
   description: string;
 }) {
   return (
-    <div className="group rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-card dark:ring-white/10">
-      <div className="glass-tile flex size-14 items-center justify-center rounded-2xl">
-        {icon}
-      </div>
-      <div className="mt-5 flex items-baseline gap-2">
-        <span className="text-gradient-brand text-3xl md:text-4xl font-bold leading-none">
-          {metric}
-        </span>
-        <span className="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-200">
+    <div className="spin-card group h-full">
+      <div className="spin-inner p-6">
+        <div className="relative w-fit">
+          <span className="icon-ping absolute inset-0 rounded-2xl bg-brand-accent/30" />
+          <div className="glass-tile relative flex size-14 items-center justify-center rounded-2xl">
+            {icon}
+          </div>
+        </div>
+        <div className="mt-5 flex items-baseline gap-2">
+          <span className="text-gradient-brand text-3xl md:text-4xl font-bold leading-none transition-transform duration-300 group-hover:scale-105 origin-left inline-block">
+            {metric}
+          </span>
+          <span className="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-200">
           {metricLabel}
-        </span>
+          </span>
+        </div>
+        <h3 className="mt-3 text-base font-semibold text-neutral-900 dark:text-white">
+          {title}
+        </h3>
+        <p className="mt-2 text-base text-balance text-neutral-600 dark:text-neutral-200 leading-relaxed">
+          {description}
+        </p>
       </div>
-      <h3 className="mt-3 text-base font-semibold text-neutral-900 dark:text-white">
-        {title}
-      </h3>
-      <p className="mt-2 text-base text-balance text-neutral-600 dark:text-neutral-200 leading-relaxed">
-        {description}
-      </p>
     </div>
   );
 }

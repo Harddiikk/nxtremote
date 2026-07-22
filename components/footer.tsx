@@ -57,7 +57,7 @@ export function Footer() {
       href: BOOKING_URL,
     },
     {
-      title: "WhatsApp Direct",
+      title: "WhatsApp Business",
       href: whatsappLink("Hi NXT Remote!"),
     },
   ];

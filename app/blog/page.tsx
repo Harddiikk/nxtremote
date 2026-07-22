@@ -6,6 +6,7 @@ import { Button } from "@/components/button";
 import { CTA } from "@/components/cta";
 import { ArrowRight, Clock3 } from "lucide-react";
 import { BOOKING_URL } from "@/lib/site";
+import { POSTS } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: "Blog | NXT Remote",
@@ -13,62 +14,6 @@ export const metadata: Metadata = {
     "Playbooks, benchmarks, and hiring insight for agencies building offshore digital marketing teams.",
 };
 
-const POSTS = [
-  {
-    category: "Hiring",
-    title: "The Real Cost of a Bad Marketing Hire, and How Vetting Prevents It",
-    excerpt:
-      "A mis-hire costs an agency far more than a salary. Here is the screening system that keeps them off your payroll.",
-    read: "6 min read",
-    date: "July 18, 2026",
-    image: "/talent/in-01.jpg",
-  },
-  {
-    category: "Offshore Teams",
-    title: "How Agencies Cut Payroll up to 70% Without Cutting Output",
-    excerpt:
-      "The currency-arbitrage math behind offshore staffing, and where the savings actually come from.",
-    read: "8 min read",
-    date: "July 14, 2026",
-    image: "/talent/in-06.jpg",
-  },
-  {
-    category: "Paid Media",
-    title: "What a Top 3% Media Buyer Does Differently in Meta and Google Ads",
-    excerpt:
-      "Signals we test for in live-tool exams: structure, pacing, creative iteration, and reporting discipline.",
-    read: "7 min read",
-    date: "July 9, 2026",
-    image: "/talent/in-08.jpg",
-  },
-  {
-    category: "AI & Automation",
-    title: "Zapier, n8n, Make, GPT and Claude: the New Agency Operations Stack",
-    excerpt:
-      "Where AI automation actually saves agency hours today, from lead routing to reporting.",
-    read: "9 min read",
-    date: "July 2, 2026",
-    image: "/talent/in-17.jpg",
-  },
-  {
-    category: "SEO & Content",
-    title: "Building an SEO Pod That Ships: Roles, Rituals, and Reporting",
-    excerpt:
-      "How a two-person offshore SEO pod plugs into your delivery calendar without adding management load.",
-    read: "5 min read",
-    date: "June 25, 2026",
-    image: "/talent/in-19.jpg",
-  },
-  {
-    category: "Operations",
-    title: "Timezone Overlap Is a Design Choice: Scheduling Offshore Teams Right",
-    excerpt:
-      "Dedicated working-hours overlap beats midnight standups. The scheduling patterns that work.",
-    read: "6 min read",
-    date: "June 18, 2026",
-    image: "/talent/in-12.jpg",
-  },
-];
 
 export default function BlogPage() {
   return (
@@ -90,7 +35,8 @@ export default function BlogPage() {
 
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {POSTS.map((post) => (
-              <article key={post.title} className="spin-card group">
+              <Link key={post.slug} href={`/blog/${post.slug}`} className="block">
+              <article className="spin-card group h-full">
                 <div className="spin-inner flex h-full flex-col overflow-hidden">
                   <div className="relative overflow-hidden">
                     <img
@@ -115,10 +61,14 @@ export default function BlogPage() {
                       <span className="inline-flex items-center gap-1.5">
                         <Clock3 className="size-3.5" /> {post.read}
                       </span>
+                      <span className="inline-flex items-center gap-1 font-bold text-brand-accent">
+                        Read <ArrowRight className="size-3.5" />
+                      </span>
                     </div>
                   </div>
                 </div>
               </article>
+              </Link>
             ))}
           </div>
 

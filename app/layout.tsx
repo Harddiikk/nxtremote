@@ -6,6 +6,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { AmbientField } from "@/components/ambient-field";
+import { WhatsappFab } from "@/components/whatsapp-fab";
 import { SITE } from "@/lib/site";
 
 // Brand font — Manrope for both display and body (client brand spec 2026-07-16)
@@ -59,6 +60,7 @@ export default function RootLayout({
             <Navbar />
             {children}
             <Footer />
+            <WhatsappFab />
           </MotionConfig>
         </ThemeProvider>
       </body>

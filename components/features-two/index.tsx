@@ -6,6 +6,7 @@ import { Heading } from "../heading";
 import { Subheading } from "../subheading";
 import { WorldMapSkeleton } from "../features-one/world-map-skeleton";
 import { SecuritySkeleton } from "./security-skeleton";
+import { FocusMindMap } from "../focus-mindmap";
 import { EdgeComputing } from "./edge-computing";
 import { Compliance } from "./compliance";
 import { 
@@ -251,43 +252,7 @@ function FocusComparison() {
           <span className="text-gradient-brand">NXT Remote</span> focuses on one thing.
         </Heading>
       </div>
-      <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_auto_1fr] lg:gap-4">
-        {/* Others */}
-        <div className="rounded-2xl border border-border bg-muted/40 p-4 md:p-6">
-          <div className="mx-auto mb-2 w-fit rounded-lg bg-neutral-800 px-4 py-1.5 text-center dark:bg-neutral-200">
-            <p className="text-xs font-bold uppercase tracking-wide text-white dark:text-neutral-900">
-              Others / Traditional Agencies
-            </p>
-            <p className="text-[10px] text-white/70 dark:text-neutral-300">Doing all the stuff</p>
-          </div>
-          <RadialHub spokes={OTHERS_SPOKES} center1="ALL" center2="ROLES" />
-        </div>
-        {/* NXT Remote brand mark — the pivot between the two approaches */}
-        <div className="flex shrink-0 flex-col items-center justify-center px-2 py-2">
-          <div className="rounded-2xl border border-brand-secondary/25 bg-background/70 px-5 py-4 shadow-[0_10px_30px_rgba(32,28,103,0.10)] backdrop-blur-sm">
-            <img
-              src="/logo-nxr.png"
-              alt="NXT Remote"
-              className="h-9 w-auto md:h-11 dark:hidden"
-            />
-            <img
-              src="/logo-nxr-white.png"
-              alt="NXT Remote"
-              className="hidden h-9 w-auto md:h-11 dark:block"
-            />
-          </div>
-        </div>
-        {/* NXT Remote */}
-        <div className="card-premium rounded-2xl p-4 md:p-6">
-          <div className="mx-auto mb-2 w-fit rounded-lg border border-brand-secondary/40 px-4 py-1.5 text-center">
-            <p className="text-xs font-bold uppercase tracking-wide text-brand-secondary">
-              NXT Remote
-            </p>
-            <p className="text-[10px] text-muted-foreground">Focused on one thing</p>
-          </div>
-          <RadialHub spokes={NXT_SPOKES} center1="100%" center2="DIGITAL MKT" nxt />
-        </div>
-      </div>
+      <FocusMindMap />
     </div>
   );
 }

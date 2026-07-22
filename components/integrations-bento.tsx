@@ -87,16 +87,16 @@ export function IntegrationsBento() {
         {/* Bento Grid */}
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           
-          {/* Card 1: CRM - HubSpot, GoHighLevel & Zapier */}
+          {/* Card 1: CRM - Pipeline Management & Lead Scoring */}
           <GlassBentoCard className="md:col-span-1 relative overflow-hidden group">
             {/* Background Glow */}
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-amber-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
-            <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative min-h-[172px] flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
               {/* Layer 1: sub-section eyebrow label */}
-              <span className="relative z-10 text-[9px] font-bold uppercase tracking-[0.15em] text-amber-500/80 dark:text-amber-400/80">
+              <span className="relative z-10 text-[9px] font-bold uppercase tracking-[0.15em] text-amber-600">
                 Connected Platforms
               </span>
 
@@ -129,8 +129,8 @@ export function IntegrationsBento() {
                   <span className="text-[10px] font-bold tracking-widest uppercase text-amber-500 dark:text-amber-400">
                     CRM & Pipelines
                   </span>
-                  <CardTitle className="text-left mt-1 text-lg font-bold">
-                    HubSpot, GoHighLevel & Zapier
+                  <CardTitle className="text-left mt-1 text-xl md:text-2xl font-bold">
+                    Pipeline Management & Lead Scoring
                   </CardTitle>
                   <CardDescription className="text-left mt-2">
                     Pipelines, lead capture, and CRM sync, handled.
@@ -140,12 +140,12 @@ export function IntegrationsBento() {
             </CardContent>
           </GlassBentoCard>
 
-          {/* Card 2: Retention - Klaviyo, Brevo & Mailchimp */}
+          {/* Card 2: Retention - Email Flows & Customer Retention */}
           <GlassBentoCard className="md:col-span-1 relative overflow-hidden group">
             {/* Background Glow */}
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-violet-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
-            <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative min-h-[172px] flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
               {/* Layer 1: sub-section eyebrow label */}
@@ -181,8 +181,8 @@ export function IntegrationsBento() {
                   <span className="text-[10px] font-bold tracking-widest uppercase text-violet-500 dark:text-violet-400">
                     Retention & Flows
                   </span>
-                  <CardTitle className="text-left mt-1 text-lg font-bold">
-                    Klaviyo, Brevo & Mailchimp
+                  <CardTitle className="text-left mt-1 text-xl md:text-2xl font-bold">
+                    Email Flows & Customer Retention
                   </CardTitle>
                   <CardDescription className="text-left mt-2">
                     Flows and segments that grow client LTV.
@@ -192,12 +192,12 @@ export function IntegrationsBento() {
             </CardContent>
           </GlassBentoCard>
 
-          {/* Card 3: Analytics - GA4, CM360 & Search Console */}
+          {/* Card 3: Analytics - Attribution & Performance Reporting */}
           <GlassBentoCard className="md:col-span-1 relative overflow-hidden group">
             {/* Background Glow */}
             <div className="absolute -left-10 -bottom-10 -z-10 size-48 rounded-full bg-blue-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
-            <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative min-h-[172px] flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
               {/* Layer 1: sub-section eyebrow label */}
@@ -233,8 +233,8 @@ export function IntegrationsBento() {
                   <span className="text-[10px] font-bold tracking-widest uppercase text-blue-500 dark:text-blue-400">
                     Analytics & Performance
                   </span>
-                  <CardTitle className="text-left mt-1 text-lg font-bold">
-                    GA4, CM360 & Search Console
+                  <CardTitle className="text-left mt-1 text-xl md:text-2xl font-bold">
+                    Attribution & Performance Reporting
                   </CardTitle>
                   <CardDescription className="text-left mt-2">
                     Attribution, conversions, and reporting, done right.
@@ -244,12 +244,12 @@ export function IntegrationsBento() {
             </CardContent>
           </GlassBentoCard>
 
-          {/* Card 4: Operations - Slack, ClickUp & Asana */}
+          {/* Card 4: Operations - Sprint Delivery & Task Management */}
           <GlassBentoCard className="md:col-span-1 relative overflow-hidden group">
             {/* Background Glow */}
             <div className="absolute -left-10 -bottom-10 -z-10 size-48 rounded-full bg-emerald-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
-            <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative min-h-[172px] flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
               {/* Layer 1: sub-section eyebrow label */}
@@ -285,8 +285,8 @@ export function IntegrationsBento() {
                   <span className="text-[10px] font-bold tracking-widest uppercase text-teal-500 dark:text-teal-400">
                     Operations & Projects
                   </span>
-                  <CardTitle className="text-left mt-1 text-lg font-bold">
-                    Slack, ClickUp & Asana
+                  <CardTitle className="text-left mt-1 text-xl md:text-2xl font-bold">
+                    Sprint Delivery & Task Management
                   </CardTitle>
                   <CardDescription className="text-left mt-2">
                     Slots straight into your sprints. Zero missed tasks.
@@ -296,11 +296,11 @@ export function IntegrationsBento() {
             </CardContent>
           </GlassBentoCard>
 
-          {/* Card 5: Design & Creative - Canva, Photoshop, Illustrator & Adobe Express */}
+          {/* Card 5: Design & Creative - Ad Creatives & Brand Design */}
           <GlassBentoCard className="md:col-span-2 relative overflow-hidden group">
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-fuchsia-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
-            <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative min-h-[172px] flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
               {/* Layer 1: sub-section eyebrow label */}
@@ -343,8 +343,8 @@ export function IntegrationsBento() {
                   <span className="text-[10px] font-bold tracking-widest uppercase text-fuchsia-500 dark:text-fuchsia-400">
                     Design & Creative
                   </span>
-                  <CardTitle className="text-left mt-1 text-lg font-bold">
-                    Canva, Photoshop, Illustrator & Adobe Express
+                  <CardTitle className="text-left mt-1 text-xl md:text-2xl font-bold">
+                    Ad Creatives & Brand Design
                   </CardTitle>
                   <CardDescription className="text-left mt-2 max-w-lg">
                     Scroll-stopping creatives, on brand, on schedule.
@@ -357,12 +357,12 @@ export function IntegrationsBento() {
             </CardContent>
           </GlassBentoCard>
 
-          {/* Card 6: Multimedia & Animation - DaVinci, Premiere Pro, After Effects & CapCut */}
+          {/* Card 6: Multimedia & Animation - Video Editing & Motion Graphics */}
           <GlassBentoCard className="md:col-span-1 relative overflow-hidden group">
             {/* Background Glow */}
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-fuchsia-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
-            <CardSkeleton className="py-4 relative flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative min-h-[172px] flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
               {/* Layer 1: sub-section eyebrow label */}
@@ -405,8 +405,8 @@ export function IntegrationsBento() {
                   <span className="text-[10px] font-bold tracking-widest uppercase text-fuchsia-500 dark:text-fuchsia-400">
                     Multimedia & Animation
                   </span>
-                  <CardTitle className="text-left mt-1 text-lg font-bold">
-                    DaVinci, Premiere Pro, After Effects & CapCut
+                  <CardTitle className="text-left mt-1 text-xl md:text-2xl font-bold">
+                    Video Editing & Motion Graphics
                   </CardTitle>
                   <CardDescription className="text-left mt-2">
                     Scroll-stopping edits, reels, and motion graphics.
@@ -464,8 +464,8 @@ export function IntegrationsBento() {
                   <span className="text-[10px] font-bold tracking-widest uppercase text-indigo-500 dark:text-indigo-400">
                     AI Automation
                   </span>
-                  <CardTitle className="text-left mt-1 text-lg font-bold">
-                    Zapier, n8n, Make, GPT & Claude
+                  <CardTitle className="text-left mt-1 text-xl md:text-2xl font-bold">
+                    Workflow Automation & AI Operations
                   </CardTitle>
                   <CardDescription className="text-left mt-2 max-w-lg">
                     Automated workflows, lead routing, and AI ops.
@@ -523,7 +523,7 @@ function CardSkeleton({
   className?: string;
 }) {
   return (
-    <div className={cn("flex items-center justify-center rounded-xl bg-muted border border-border overflow-hidden", className)}>
+    <div className={cn("flex items-center justify-center rounded-xl bg-white border border-neutral-200/80 overflow-hidden", className)}>
       {children}
     </div>
   );

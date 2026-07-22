@@ -112,7 +112,7 @@ export function TalentShowcase() {
         </div>
 
         {/* Clean portrait grid — 4 specialists per category */}
-        <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 gap-x-7 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
           <AnimatePresence mode="popLayout">
             {visible.map((s, i) => (
               <motion.article
@@ -126,7 +126,7 @@ export function TalentShowcase() {
               >
                 {/* Morphing profile card: portrait shrinks to an avatar while
                     the gradient sheet slides up with the details */}
-                <div className="tcard aspect-[4/4.8] w-full">
+                <div className="tcard aspect-[4/5.15] w-full">
                   <div className="tcard-pic">
                     <img
                       src={s.photo}
@@ -136,15 +136,15 @@ export function TalentShowcase() {
                   </div>
                   <div className="tcard-sheet">
                     <div className="tcard-info text-center transition-[padding] duration-500 group-hover:pl-[5.2rem] group-hover:text-left">
-                      <p className="truncate font-display text-base font-bold leading-tight md:text-lg">
+                      <p className="truncate font-display text-lg font-bold leading-tight md:text-xl">
                         {s.name}
                       </p>
-                      <p className="truncate font-mono text-[10px] tracking-wide text-white/80">
+                      <p className="truncate font-mono text-xs tracking-wide text-white/85">
                         {s.role}
                       </p>
                     </div>
                     <div className="tcard-more">
-                      <ul className="mt-2 space-y-2.5 font-mono text-[11px] leading-relaxed text-white/90 md:text-xs">
+                      <ul className="mt-2 space-y-3 font-mono text-xs leading-relaxed text-white/95 md:text-[13px]">
                         <li className="flex items-start gap-2">
                           <span className="font-bold text-white">&gt;_</span> {s.years}
                         </li>
@@ -155,7 +155,7 @@ export function TalentShowcase() {
                           <span className="font-bold text-white">&gt;_</span> Fully managed by NXT Remote
                         </li>
                       </ul>
-                      <span className="absolute bottom-0 left-0 inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-1.5 text-[10px] font-bold text-brand-secondary shadow-md">
+                      <span className="absolute bottom-0 left-0 inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-1.5 text-xs font-bold text-brand-secondary shadow-md">
                         Interview-ready <ArrowRight className="size-3" />
                       </span>
                     </div>
