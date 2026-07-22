@@ -135,7 +135,7 @@ export function TalentShowcase() {
                     />
                   </div>
                   <div className="tcard-sheet">
-                    <div className="tcard-info text-center transition-[padding] duration-500 group-hover:pl-[5.2rem] group-hover:text-left">
+                    <div className="tcard-info text-center">
                       <p className="truncate font-display text-xl font-extrabold leading-tight md:text-2xl">
                         {s.name}
                       </p>
