@@ -92,7 +92,7 @@ export function IntegrationsBento() {
             {/* Background Glow */}
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-amber-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
-            <CardSkeleton className="py-4 relative h-[184px] flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative min-h-[184px] flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
               {/* Layer 1: sub-section eyebrow label */}
@@ -145,7 +145,7 @@ export function IntegrationsBento() {
             {/* Background Glow */}
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-violet-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
-            <CardSkeleton className="py-4 relative h-[184px] flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative min-h-[184px] flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
               {/* Layer 1: sub-section eyebrow label */}
@@ -197,7 +197,7 @@ export function IntegrationsBento() {
             {/* Background Glow */}
             <div className="absolute -left-10 -bottom-10 -z-10 size-48 rounded-full bg-blue-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
-            <CardSkeleton className="py-4 relative h-[184px] flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative min-h-[184px] flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
               {/* Layer 1: sub-section eyebrow label */}
@@ -249,7 +249,7 @@ export function IntegrationsBento() {
             {/* Background Glow */}
             <div className="absolute -left-10 -bottom-10 -z-10 size-48 rounded-full bg-emerald-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
-            <CardSkeleton className="py-4 relative h-[184px] flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative min-h-[184px] flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
               {/* Layer 1: sub-section eyebrow label */}
@@ -300,7 +300,7 @@ export function IntegrationsBento() {
           <GlassBentoCard className="md:col-span-2 relative overflow-hidden group">
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-fuchsia-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
-            <CardSkeleton className="py-4 relative h-[184px] flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative min-h-[184px] flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
               {/* Layer 1: sub-section eyebrow label */}
@@ -362,7 +362,7 @@ export function IntegrationsBento() {
             {/* Background Glow */}
             <div className="absolute -right-10 -bottom-10 -z-10 size-48 rounded-full bg-fuchsia-500/10 blur-[50px] transition-all duration-500 group-hover:scale-125" />
 
-            <CardSkeleton className="py-4 relative h-[184px] flex-col justify-center items-center gap-3">
+            <CardSkeleton className="py-4 relative min-h-[184px] flex-col justify-center items-center gap-3">
               <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
               {/* Layer 1: sub-section eyebrow label */}

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import {
   ReactFlow,
   Background,
@@ -7,6 +8,7 @@ import {
   useNodesState,
   type Node,
   type Edge,
+  type ReactFlowInstance,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 
@@ -97,15 +99,28 @@ const EDGES: Edge[] = [
 
 export function FocusMindMap() {
   const [nodes, , onNodesChange] = useNodesState(INITIAL_NODES);
+  const rfRef = useRef<ReactFlowInstance | null>(null);
+
+  // Keep the whole map in view on phones and after orientation changes.
+  useEffect(() => {
+    const refit = () => rfRef.current?.fitView({ padding: 0.1 });
+    window.addEventListener("resize", refit);
+    return () => window.removeEventListener("resize", refit);
+  }, []);
 
   return (
-    <div className="relative h-[440px] w-full overflow-hidden rounded-2xl border border-white/15 bg-[#F6F7FB] shadow-[0_24px_60px_rgba(10,10,26,0.45)] md:h-[500px]">
+    <div className="relative h-[380px] w-full overflow-hidden rounded-2xl border border-white/15 bg-[#F6F7FB] shadow-[0_24px_60px_rgba(10,10,26,0.45)] sm:h-[440px] md:h-[500px]">
       <ReactFlow
         nodes={nodes}
         edges={EDGES}
         onNodesChange={onNodesChange}
+        onInit={(inst) => {
+          rfRef.current = inst;
+          requestAnimationFrame(() => inst.fitView({ padding: 0.1 }));
+        }}
         fitView
-        fitViewOptions={{ padding: 0.12 }}
+        fitViewOptions={{ padding: 0.1 }}
+        minZoom={0.15}
         nodesConnectable={false}
         nodesDraggable
         zoomOnScroll={false}

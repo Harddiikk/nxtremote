@@ -194,6 +194,13 @@
     background-clip: text;
     color: transparent;
   }
+  /* Light variant for dark surfaces (footer headings): readable pastel sweep */
+  .text-gradient-brand-light {
+    background: linear-gradient(100deg, #a29bfa 0%, #64d8f7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
   /* Hollow display type (hero TOP 3%) — indigo stroke on white */
   .text-outline {
     -webkit-text-stroke: 2.5px rgba(32, 28, 103, 0.85);
